@@ -1,0 +1,288 @@
+﻿
+.bdpGridDataRowFocus {
+    background: none repeat scroll 0 0 #FF9C3C !important;
+    color: #000000;
+}
+
+.om-state-highlight tr.bdpGridDataRowHover,
+.om-grid div.bDiv tr.bdpGridDataRowHover {
+    background: none repeat scroll 0 0 #FFE7A2 !important;
+    color: #4F4F4F;
+}
+
+
+/*#region 编辑器相关 */
+.om-combo {
+    height: auto;
+}
+
+    .om-combo .om-combo-trigger {
+        /*height: 24px;*/
+    }
+
+.om-state-hover .om-combo-trigger {
+    background-color: transparent;
+    background-position: -76px 0px;
+}
+
+.om-state-default .om-combo-trigger {
+    background-position: -76px 0px;
+    background-color: transparent;
+}
+
+.om-state-hover .om-combo-trigger {
+    background-position: -19px 0px;
+    background-color: transparent;
+}
+
+.bdpEditForm {
+    background-color: #ffffff;
+    line-height: 128%;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+}
+
+    .bdpEditForm .om-calendar,
+    .bdpEditForm .om-calendar .om-calendar-trigger,
+    .bdpEditForm .om-combo,
+    .bdpEditForm .om-combo .om-combo-trigger {
+        height: 26px;
+    }
+    /* trigger */
+    .bdpEditForm .om-state-default .om-combo-trigger, .om-state-default .om-calendar-trigger {
+        background-position: 0px 3px;
+    }
+
+    .bdpEditForm .om-state-hover .om-combo-trigger, .om-state-hover .om-calendar-trigger {
+        background-position: -19px 3px;
+    }
+
+.bdpEditFormTable {
+    color: #000000;
+    margin: 10px 0;
+    padding: 0;
+    line-height: 200%;
+    width: 100%;
+    border: 0;
+}
+
+    .bdpEditFormTable pre {
+        line-height: 120%;
+    }
+
+.om-grid div.bDiv td.bdpEditFormCaption,
+.bdpEditFormCaption {
+    border-width: 0px 1px 1px 0px;
+    border-color: #86A3C4;
+    border-style: solid;
+    white-space: nowrap;
+    cursor: default;
+    vertical-align: middle;
+    padding: 2px 8px 2px 8px;
+}
+
+.om-grid div.bDiv td.bdpEditFormCell,
+.bdpEditFormCell {
+    border-width: 0px 1px 1px 0px;
+    border-color: #86A3C4;
+    border-style: solid;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+    .om-widget input, input.om-widget,
+    .bdpEditFormCell input {
+        color: #000!important;
+        font-size: 14px;
+        line-height: 1.2;
+        margin: 0;
+        padding: 3px 0;
+        font-family: inherit;
+    }
+
+.om-grid div.hDiv th div.bdpEditFormError,
+.om-grid div.bDiv td div.bdpEditFormError,
+div.colCopy div.bdpEditFormError,
+.bdpEditFormError {
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    color: Red;
+    /*font: 12px Tahoma;*/
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVChTnZLBDYAgDEWZxwFIGMIZXMol2IezMTHx6MGTN3xYJKZyEJtvtP0PaFUT7zhC2MZxHYbZOcQDKcVsX5Hp3ful76euU6KIJQyRaPLZWsUVYZUFhrPUrmI8KwDSkqG5p4HeNAJLNNMoo0qDJZrxlVGlwdrpdydV5U7apmx7g1wNX0du5OoEEcWCEr/+qk8R4wlqcqeTMvoikgAAAABJRU5ErkJggg==') /*../../Frame/resources/images/error.png*/ no-repeat;
+}
+
+.bdpGridRowEditPanel {
+    background-color: white;
+    width: 100%;
+}
+
+.bdpGridRowEditToolbar {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 1px;
+    padding: 0px 0px 0px 0px;
+}
+/*#endregion */
+
+/*#region 多行编辑*/
+.om-grid .bdpEditForm > table tr.oddRow, .om-grid .bdpEditForm > table tr.evenRow,
+.om-grid .bdpEditForm > table tr.om-state-highlight:hover td,
+.om-grid .bdpEditForm > table tr.om-state-highlight td {
+    background-color: transparent;
+}
+
+.om-grid .bdpEditForm > table tr:hover td {
+    background-color: #E8EEF7;
+}
+
+.om-grid .bdpEditForm > table tr > td {
+    border-bottom: 1px solid #bdcbe8;
+}
+
+    .om-grid .bdpEditForm > table tr > td > div.innerCol {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+/*#endregion*/
+
+/*#region 表格树相关*/
+.treeline {
+    background: url(images/tree/treeview-default-line.gif) 0 0 no-repeat;
+    zoom: 1;
+}
+
+.treeline-noline {
+    background-position: 50px 50px;
+}
+
+.treeline-nolast {
+    background-position: 0 0;
+}
+
+.treeline-last {
+    background-position: 0 -1763px;
+}
+
+.treeline-hitarea {
+    background-position: 0 -176px;
+}
+
+.treeline-line {
+    background-position: 0 -50px;
+}
+
+.treebtn {
+    background: url(images/tree/treeview-default.gif) 0 0 no-repeat;
+    height: 16px;
+    width: 16px;
+    float: left;
+    cursor: pointer;
+    padding: 0;
+}
+
+.treebtn-expandable {
+    background-position: -80px -3px;
+}
+
+.treebtn-collapsable {
+    background-position: -64px -25px;
+}
+
+.treebtn-lastExpandable {
+    background-position: -32px -67px;
+}
+
+.treebtn-lastCollapsable {
+    background-position: 0 -111px;
+}
+
+.om-grid .innerCol .treenode-header {
+    padding: 0;
+    margin: -5px 0 -5px 0;
+    float: left;
+}
+
+.om-grid .innerCol .treenode-ident {
+    padding: 0;
+    float: left;
+    width: 15px;
+    height: 24px;
+}
+
+.om-grid .innerCol .treenode-hitarea {
+    margin-top: 4px;
+}
+
+.om-grid .innerCol .treenode-title {
+    padding: 0 0 0 3px;
+    float: left;
+}
+
+.om-grid .innerCol .treenode-image {
+    float: left;
+    padding: 1px 0px 1px 1px;
+    width: 16px;
+    height: 16px;
+    /*margin-right: 5px;*/
+    vertical-align: top;
+}
+
+.om-grid .bdpEditForm .innerCol .treeline-nolast {
+    background-position: 0 5px;
+}
+
+.om-grid .bdpEditForm .innerCol .treeline-last {
+    background-position: 0 -1758px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-ident {
+    height: 35px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-hitarea {
+    margin-top: 9px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-title {
+    padding: 7px 0 0 3px;
+    float: left;
+}
+
+/*#endregion*/
+
+/*#region 列模型选择器*/
+.ColumnSelector {
+    max-height: 410px;
+}
+
+    .ColumnSelector .ColumnSelectPanel {
+        position: relative;
+        /*padding: 13px 0 13px 0;*/
+    }
+
+        .ColumnSelector .ColumnSelectPanel .space {
+            height: 1px;
+            background-color: #86A3C4;
+            margin: 3px 0 15px 0;
+        }
+
+        .ColumnSelector .ColumnSelectPanel .row {
+            line-height: 200%;
+        }
+
+            .ColumnSelector .ColumnSelectPanel .row .col {
+                float: left;
+                width: 50%;
+                display: inline-block;
+            }
+
+            .ColumnSelector .ColumnSelectPanel .row input {
+                margin-right: 13px;
+                margin-left: 7px;
+            }
+
+/*#endregion*/

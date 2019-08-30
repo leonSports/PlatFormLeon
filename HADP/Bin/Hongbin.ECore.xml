@@ -1,0 +1,3958 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hongbin.ECore</name>
+    </assembly>
+    <members>
+        <member name="P:Hongbin.Business.BdpBusinessLibrary.gdc">
+            <summary>
+            通用数据容器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.BdpBusinessLibrary.#ctor">
+            <summary>
+            实例化业务处理对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.BdpBusinessLibrary.Modules">
+            <summary>
+            子系统/模块管理
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.BdpBusinessLibrary.Privs">
+            <summary>
+            权限处理
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.BdpBusinessLibrary.CreateBusinessInstance``1">
+            <summary>
+            创建业务类实例
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Business.BusinessBaseObject">
+            <summary>
+            所有业务类的基类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.BusinessBaseObject.gdc">
+            <summary>
+            通用数据窗口，业务类实例化时传递
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.RecordEditorValues">
+            <summary>
+            表示记录编辑器中的值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.RecordEditorValues.OldValues">
+            <summary>
+            修改前的值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.RecordEditorValues.NewValues">
+            <summary>
+            修改后的值
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.SimpleTreeNode">
+            <summary>
+            简单树节点类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.SimpleTreeNode.classes">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.SimpleTreeNode.tag">
+            <summary>
+            其它的辅助数据
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.SimpleEmployeeInfo">
+            <summary>
+            简单的人员信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportManager.ParseUploadFile">
+            <summary>
+            分析上传文件，生成源数据的字段信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportManager.CreateMappings">
+            <summary>
+            创建字段映射
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportManager.ExecImport">
+            <summary>
+            执行导入
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportManager.Importer">
+            <summary>
+            导入执行器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportManager.LoadExcelFieldInfos(System.Collections.Generic.IList{Hongbin.Business.Classes.DIFieldInfo},System.String,System.String,System.Int32)">
+            <summary>
+            从Excel文件中获取列信息
+            </summary>
+            <param name="list">接收列信息</param>
+            <param name="fname">Excel文件名</param>
+            <param name="SheetName">工作表名称，空表示第1个工作表</param>
+            <param name="StartRow">数据起始行，从0开始。大于0则自动使用前一行的值作为列名称 </param>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportManager.LoadDbfFieldInfos(System.Collections.Generic.IList{Hongbin.Business.Classes.DIFieldInfo},System.String,System.Boolean)">
+            <summary>
+            从DBF中获取字段信息
+            </summary>
+            <param name="list"></param>
+            <param name="fname"></param>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportManager.CreateDbfConnection(System.String,System.Boolean)">
+            <summary>
+            根据DBF文件名创建数据库连接对象
+            </summary>
+            <param name="fNameOrPath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Business.Classes.DataImportParams">
+            <summary>
+            数据导入参数类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportParams.#ctor">
+            <summary>
+            实例化数据导入参数
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.DataImportParams.Asign(Hongbin.Business.Classes.DataImportParams)">
+            <summary>
+            从另一个数据导入参数对象赋值
+            </summary>
+            <param name="src"></param>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.EntityClassName">
+            <summary>
+            实体类，即要导入数据的表
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.ImportClassName">
+            <summary>
+            实现具体导入功能的ICustomDataImport接口实现类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.DataFileUrl">
+            <summary>
+            数据源文件地址
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.DataFileName">
+            <summary>
+            数据源文件名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.FileType">
+            <summary>
+            数据源文件类型
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.SheetName">
+            <summary>
+            Sheet名称，仅FileType=EXCEL适用, 若为空则采用第1个表
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.StartRow">
+            <summary>
+            开始行号，仅FileType=EXCEL适用. 从0开始
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.DbfType">
+            <summary>
+            DBF文件类型，dBASE或Foxpro，缺省为dBASE
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.ImportMode">
+            <summary>
+            导入方式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.CreateLogfile">
+            <summary>
+            是否生成日志文件
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.LogAllDataRow">
+            <summary>
+            是否记录所有数据行, 缺省为false, 只记录出错的行
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.Logfile">
+            <summary>
+            日志文件
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.SourceFields">
+            <summary>
+            数据源字段信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.Mappings">
+            <summary>
+            字段映射信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DataImportParams.Options">
+            <summary>
+            其它自定义参数
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.DIFieldInfo">
+            <summary>
+            导入字段信息或Excel列信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIFieldInfo.FldId">
+            <summary>
+            字段或列地址名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIFieldInfo.FldName">
+            <summary>
+            字段说明
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIFieldInfo.FldValue">
+            <summary>
+            当前字段的值
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.ImportMode">
+            <summary>
+            数据导入方式
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Classes.ImportMode.AutoAppend">
+            <summary>
+            自动附加，有则修改，没有的追加
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Classes.ImportMode.FullNew">
+            <summary>
+            全新增加，删除原来的再新增
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Classes.ImportMode.SkipExist">
+            <summary>
+            跳过已经存在的，追加不存在的
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.DIMapItem">
+            <summary>
+            数据导入字段映射类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.PropName">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.PropDesc">
+            <summary>
+            字段中文名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.Requred">
+            <summary>
+            要求必填
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.Uniqued">
+            <summary>
+            要求唯一
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.LimitLength">
+            <summary>
+            长度限制，仅字符串适用
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.SrcFldId">
+            <summary>
+            源字段名,DBF是字段名，EXCEL是列地址(列地址格式，如A、B、AA...)
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.SrcFldDesc">
+            <summary>
+            源字段中文名，DBF与SrcFldId一样，EXCEL为标题串
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.DIMapItem.Remark">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.BeforeImportArgs">
+            <summary>
+            导入前事件参数类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.BeforeImportArgs.Cancel">
+            <summary>
+            是否允许导入
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.BeforeImportArgs.Tag">
+            <summary>
+            辅助对象
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.ImportRowDataArgs">
+            <summary>
+            行数据导入参数对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.ImportRowDataArgs.Cancel">
+            <summary>
+            是否中止导入
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.ImportRowDataArgs.Target">
+            <summary>
+            数据导入目标数据集，可能为null
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.ImportRowDataArgs.NewValues">
+            <summary>
+            从源行中读取的新数据字典，已根据映射关系建立值绑定，即字典的Key是映射中的目标字段名(属性名),
+            Value是源数据行（Excel的行或DBF的记录）对应的字段值（或列值）。
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.ImportRowDataArgs.ErrorList">
+            <summary>
+            接收错误信息
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.CustomDataImport">
+            <summary>
+            数据导入器基类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.CustomDataImport.ImportParams">
+            <summary>
+            导入参数对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.CustomDataImport.Progress">
+            <summary>
+            任务进度监视器
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Classes.CustomDataImport.ReturnValues">
+            <summary>
+            自定义需要返回到前台的数据
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.BeforeImport">
+            <summary>
+            虚拟方法，导入前执行，如果返回false则不会执行导入
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.ImportRowData(Hongbin.Business.Classes.ImportRowDataArgs)">
+            <summary>
+            导入一行数据
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.AfterImport">
+            <summary>
+            虚拟方法，导入后执行
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.FindBy(System.Data.Objects.ObjectQuery,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            在导入目标数据集中查找已经存在的记录.
+            以唯一键字段为条件，返回查询结果。多个唯一键是逻辑或的关系，因此返回结果可能会有多条，
+            如果要判断一个唯一键是否重复，需要在结果中再处理。
+            </summary>
+            <param name="dset"></param>
+            <param name="newValues"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.DefaultRowDataImport(Hongbin.Business.Classes.ImportRowDataArgs)">
+            <summary>
+            缺省的行数据导入过程
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.CheckBasic(System.Linq.IQueryable,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.List{System.String})">
+            <summary>
+            基础验证: 必填、长度
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.LoadFrom(Hongbin.Data.GeneralDataContainer,System.Type,System.Collections.Generic.List{Hongbin.Business.Classes.DIMapItem},System.Collections.Generic.IEnumerable{Hongbin.Business.Classes.DIFieldInfo})">
+            <summary>
+            从数据字典中调入某实体类的所有字段并建立初始映射
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.CustomDataImport.LoadFrom``1(Hongbin.Data.GeneralDataContainer,System.Collections.Generic.List{Hongbin.Business.Classes.DIMapItem},System.Collections.Generic.IEnumerable{Hongbin.Business.Classes.DIFieldInfo})">
+            <summary>
+            从数据字典中调用某实体类的所有字段并建立初始映射
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.TaskProgress">
+            <summary>
+            任务进度处理类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgress.ID">
+            <summary>
+            该进度信息对象在缓存中的标志
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgress.Progress">
+            <summary>
+            进度信息对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.TaskProgress.Update(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新进度信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.TaskProgress.Update(System.String)">
+            <summary>
+            更新进度信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.TaskProgress.Update(System.Int32)">
+            <summary>
+            更新进度信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.TaskProgress.Update(System.String,System.Int32)">
+            <summary>
+            更新进度信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Classes.TaskProgress.GetProgress(System.String)">
+            <summary>
+            获取缓存中的进度信息
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Business.Classes.TaskProcessStatus">
+            <summary>
+            定义服务器状态
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Classes.TaskProcessStatus.Idle">
+            <summary>
+            空闲
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Classes.TaskProcessStatus.Busy">
+            <summary>
+            忙
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Classes.TaskProgressInfo">
+            <summary>
+            任务处理进度信息类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.Status">
+            <summary>
+            服务当前状态
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.MinValue">
+            <summary>
+            最小进度值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.MaxValue">
+            <summary>
+            最大进度值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.Position">
+            <summary>
+            当前进度值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.Message">
+            <summary>
+            当前进度信息串
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.ExtraData">
+            <summary>
+            扩展数据，如过程处理结果对象，一般用于传递到前台
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.TimeSpan">
+            <summary>
+            持续的秒钟数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Classes.TaskProgressInfo.Canceling">
+            <summary>
+            是否前台用户按了中止按钮
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Edm.BdpEdmBusiness.LoadEdmTreeNodes(System.String,System.String)">
+            <summary>
+            读取模型树节点信息集
+            </summary>
+            <param name="pid"></param>
+            <param name="classes">节点类型：model-group/model-name/entity</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Edm.BdpEdmBusiness.LoadEntityMappingInfos(System.String,System.String)">
+            <summary>
+            读取实体类集合
+            </summary>
+            <param name="groupName">对应配置节中的 EfModelInfo</param>
+            <param name="modelName">对应配置节中的 ModelName</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Edm.BdpEdmBusiness.LoadEntityMappingInfos(Hongbin.Data.DbCfg.EfModelInfo,System.String)">
+            <summary>
+            读取实体类集合
+            </summary>
+            <param name="ginfo">对应配置节中的 EfModelInfo</param>
+            <param name="modelName">对应配置节中的 ModelName</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Edm.BdpEdmBusiness.LoadEntityPropertyMappingInfos(System.String,System.String,System.String)">
+            <summary>
+            读取一个实体类的属性集合
+            </summary>
+            <param name="groupName">对应配置节中的 EfModelInfo</param>
+            <param name="modelName">对应配置节中的 ModelName</param>
+            <param name="typeName">实体类名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Edm.BdpEdmBusiness.LoadEntityPropertyMappingInfos(System.String,System.Xml.Linq.XElement,System.Xml.Linq.XElement,System.Xml.Linq.XElement)">
+            <summary>
+            读取一个实体类的属性集合
+            </summary>
+            <param name="typeName">实体类名</param>
+            <param name="csdl"></param>
+            <param name="msl"></param>
+            <param name="ssdl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Edm.BdpEdmBusiness.UpdateDict(System.String,System.String,System.String)">
+            <summary>
+            以实体类为准更新数据字典
+            </summary>
+            <param name="groupName">对应配置节中的 EfModelInfo</param>
+            <param name="modelName">对应配置节中的 ModelName</param>
+            <param name="typeName">实体类名, 不含命名空间</param>
+        </member>
+        <member name="M:Hongbin.Business.Modules.BdpModuleBusiness.GetSystems(System.Collections.Generic.List{Hongbin.Data.BdpBaseData.BdpPrivRole})">
+            <summary>
+            获取一批角色所在的业务系统
+            </summary>
+            <param name="roles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Modules.BdpModuleBusiness.QueryRootModuleInfos(System.String)">
+            <summary>
+            获取所有子系统。在BdpWebTree中，如果有统一的根，则第二层视为子系统，否则第一层视为子系统
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Modules.BdpModuleBusiness.QueryModuleInfos(System.String)">
+            <summary>
+            获取子模块
+            </summary>
+            <param name="pid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Modules.BdpModuleBusiness.FindModuleInfos(System.String)">
+            <summary>
+            查找模块，模糊匹配文本或地址
+            </summary>
+            <param name="txtOrUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Modules.BdpModuleBusiness.QueryFuncTreeNodes(System.String)">
+            <summary>
+            查询指定角色的操作权限数据，全部
+            </summary>
+            <param name="roleid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Modules.BdpModuleBusiness.QueryFuncTreeNodes(System.String,System.String)">
+            <summary>
+            查询指定角色的操作权限数据, 一级
+            </summary>
+            <param name="pid"></param>
+            <param name="roleid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Business.Modules.ModuleSimpleInfo">
+            <summary>
+            模块简明信息
+            </summary>
+        </member>
+        <member name="T:Hongbin.Business.Modules.FuncTreeNode">
+            <summary>
+            功能树节点信息，包括资源节点
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Modules.FuncTreeNode.IsRes">
+            <summary>
+            是否资源节点
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Modules.FuncTreeNode.Visible">
+            <summary>
+            可见
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Modules.FuncTreeNode.Enabled">
+            <summary>
+            可用
+            </summary>
+        </member>
+        <member name="P:Hongbin.Business.Modules.FuncTreeNode.Active">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Privs.BdpPrivBusiness.cnCommonUser">
+            <summary>
+            系统帐户节点的虚拟ID
+            </summary>
+        </member>
+        <member name="F:Hongbin.Business.Privs.BdpPrivBusiness.cnBussinessUser">
+            <summary>
+            业务帐户节点的虚拟ID
+            </summary>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.LoadRoleTreeData(System.Boolean,System.String,System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            返回某公司下的所有角色和子公司
+            </summary>
+            <param name="parentCompanyId"></param>
+            <param name="companyIds">允许访问的公司ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.LoadRoleTreeData(System.String[])">
+            <summary>
+            返回由公司和角色名称组成的树形结构
+            </summary>
+            <param name="companyIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.SaveRole(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+             保存角色
+            </summary>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.SaveRoleFuncPrivs(System.String,System.Collections.Generic.Dictionary{System.String,System.Object}[])">
+            <summary>
+            保存角色的操作权限。仅保存可用或者可见的模块和资源
+            </summary>
+            <param name="roleid"></param>
+            <param name="dicts"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.LoadBOTreeData(System.String[],System.String[],System.String,System.String,System.String,System.String)">
+            <summary>
+            返回由公司和部门组成的树形结构.其中classes为company或dept
+            注意：结果中不包含指定的上级公司和上级部门
+            </summary>
+            <param name="companyIds">可以访问的公司ID，null表示不受限</param>
+            <param name="deptIds">可以访问的部门ID，null表示不受限</param>
+            <param name="parentCompanyId">上级公司ID，为null时取顶级公司</param>
+            <param name="parentDeptId">上级部门ID，为null取挂在公司parentCompanyId下的部门</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.LoadCompanyInfos(System.String[])">
+            <summary>
+            返回公司信息
+            </summary>
+            <param name="companyIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.LoadBOPrivs(System.String)">
+            <summary>
+            返回角色的业务组织权限
+            </summary>
+            <param name="roleid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.SaveRoleBoPrivs(System.String,System.Int32,System.Boolean,Hongbin.Security.CompanyDepartment[])">
+            <summary>
+            保存角色的业务组织权限
+            </summary>
+            <param name="roleid"></param>
+            <param name="bok">类别:0 不限制,1 本公司,2 本部门,3 指定公司或部门</param>
+            <param name="bosub">是否包括下级</param>
+            <param name="cids">公司和部门</param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.QueryOrgUsers(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            查询组织机构下的用户
+            </summary>
+            <param name="companyId">指定公司，为空只返回系统帐户</param>
+            <param name="deptId">部门，可以为空</param>
+            <param name="includeChildren">是否包括下级，公司和部门都最多支持6级</param>
+            <param name="sfilter">模糊过滤帐户名或姓名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.GrantRoleToUsers(System.String,System.String[])">
+            <summary>
+            将角色授予用户
+            </summary>
+            <param name="roleid"></param>
+            <param name="listUserIds"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.SaveEditingUserInfo(Hongbin.Business.RecordEditorValues)">
+            <summary>
+            保存编辑的用户信息
+            </summary>
+            <param name="r"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.SaveEditingUserInfo(System.Collections.Generic.IEnumerable{Hongbin.Business.RecordEditorValues})">
+            <summary>
+            保存编辑的用户信息
+            </summary>
+            <param name="r"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.DeleteUsers(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            删除指定的用户, 直接删除，没有考虑是否已经使用.
+            </summary>
+            <param name="uids"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.ChangePwd(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            修改指定用户的密码
+            </summary>
+            <param name="uids"></param>
+            <param name="pwd"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.GetUserRoleIds(System.String)">
+            <summary>
+            获取指定用户所拥有的角色ID
+            </summary>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.SaveUserRoles(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            为用户授予一个或多个角色
+            </summary>
+            <param name="userid"></param>
+            <param name="roleIds"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.DeleteRoleById(System.String)">
+            <summary>
+            删除角色及其分配的所有权限，会处理用户角色对应表、功能权限表、数据权限表
+            </summary>
+            <param name="roleid"></param>
+        </member>
+        <member name="M:Hongbin.Business.Privs.BdpPrivBusiness.QueryOnlineUsers(System.Nullable{System.Int32})">
+            <summary>
+            查询在线用户信息，如果指定了timeout,则只返回没有超时的在线用户
+            </summary>
+            <param name="timeout">超时分钟数，一般是Session.Timeout</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Business.BdpMsgTask.HellowUser">
+            <summary>
+            该类演示如何实现一个系统自动任务：
+            1. 任务实现类必须实现ITask接口
+            2. 将任务实现类注册到系统任务设置中
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.BdpDataExtension.Update``1(Hongbin.Data.BdpObjectSet{``0},System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Object[])">
+            <summary>
+            批量更新数据. 只更新存在的记录，不会新增记录
+            </summary>
+            <typeparam name="TEntity">实体类</typeparam>
+            <param name="source">对象集, 即需要更新的表</param>
+            <param name="setValues">赋值表，即字段需要设置的新值</param>
+            <param name="predicate">记录查询条件, 条件中以@0,@1的形式引用参数值</param>
+            <param name="values">记录查询条件中用到的参数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpDataExtension.Update``1(Hongbin.Data.BdpObjectSet{``0},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            批量更新数据. 只更新存在的记录，不会新增记录
+            </summary>
+            <typeparam name="TEntity">实体类</typeparam>
+            <param name="source">对象集, 即需要更新的表</param>
+            <param name="setValues">赋值表，即字段需要设置的新值</param>
+            <param name="matchValues">记录查询条件，以字典方式给出，如果需要多个字段匹配，则在字典中增加多条</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpDataExtension.Update``1(Hongbin.Data.BdpObjectSet{``0},System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            批量更新数据, 可指定是否自动增加记录
+            </summary>
+            <typeparam name="TEntity">实体类</typeparam>
+            <param name="source">对象集, 即需要更新的表</param>
+            <param name="setValues">赋值表，即字段需要设置的新值</param>
+            <param name="matchValues">记录查询条件，以字典方式给出，如果需要多个字段匹配，则在字典中增加多条</param>
+            <param name="autoAppend">是否自动增加记录,即没有找到符合条件的记录时是否自动增加1条</param>
+            <param name="defValues">增加记录时的缺省值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpDataExtension.Update``1(Hongbin.Data.BdpObjectSet{``0},System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Object[])">
+            <summary>
+            批量更新数据, 可指定是否自动增加记录
+            </summary>
+            <typeparam name="TEntity">实体类</typeparam>
+            <param name="source">对象集, 即需要更新的表</param>
+            <param name="setValues">赋值表，即字段需要设置的新值</param>
+            <param name="autoAppend">是否自动增加记录,即没有找到符合条件的记录时是否自动增加1条</param>
+            <param name="defValues">增加记录时的缺省值</param>
+            <param name="predicate">记录查询条件, 条件中以@0,@1的形式引用参数值</param>
+            <param name="values">记录查询条件中用到的参数值</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Data.ColumnKind">
+            <summary>
+            统计结果对象的列类别
+            </summary>
+        </member>
+        <member name="F:Hongbin.Data.ColumnKind.Unknow">
+            <summary>
+            保留类别
+            </summary>
+        </member>
+        <member name="F:Hongbin.Data.ColumnKind.Group">
+            <summary>
+            没有主分组时生成的项目列，字段名固定为ItemName
+            </summary>
+        </member>
+        <member name="F:Hongbin.Data.ColumnKind.Groupfor">
+            <summary>
+            有主分组时生成的分组项目列，字段名为分组字段
+            </summary>
+        </member>
+        <member name="F:Hongbin.Data.ColumnKind.Total">
+            <summary>
+            合计列
+            </summary>
+        </member>
+        <member name="F:Hongbin.Data.ColumnKind.Countfor">
+            <summary>
+            某一横向分组值的统计列
+            </summary>
+        </member>
+        <member name="T:Hongbin.Data.TotalResultProperty">
+            <summary>
+            统计结果类的属性
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.TotalResultProperty.GroupByField">
+            <summary>
+            分组字段名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.TotalResultProperty.GroupByValue">
+            <summary>
+            分组值
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.TotalResultProperty.TakeColumnEsql(System.String)">
+            <summary>
+            生成列统计SQL
+            </summary>
+            <param name="alia"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Data.DataStatisticResult">
+            <summary>
+            数据统计结果对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.DataStatisticResult.TotalQuery">
+            <summary>
+            统计查询对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.DataStatisticResult.Properties">
+            <summary>
+            统计结果集元素类型的属性
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.DataStatisticResult.ResultType">
+            <summary>
+            统计结果类型
+            </summary>
+        </member>
+        <member name="T:Hongbin.Data.DataStatistics">
+            <summary>
+            数据统计相关支持的静态扩展类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.DataStatistics.GetEntitySetName``1(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            获取实体集名称
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.DataStatistics.GroupBy``2(System.Linq.IQueryable{``0},``1)">
+            <summary>
+            按指定字段分组
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.DataStatistics.DataCount``1(System.Linq.IQueryable{``0},System.String[],System.String[])">
+            <summary>
+            数据统计，在源查询中统计数量(计数,Count)。
+            任何查询都可以调用此方法进行统计，其中：
+            mainColumns 指定主栏（即纵向栏）的分组字段，可以多个。
+            sideColumns 指定宾栏（即横向栏）的分组字段，可以多个。
+            该函数返回统计结果对象DataStatisticResult，其中：
+                TotalQuery  统计数据的查询对象，即IQueryable
+                ResultType  统计结果集的元素类型，是一个自动生成的类，
+            属性包括主分组字段名、合计列(Total)、sideColumns预分组查询
+            结果的条数，它们的命名规则为：
+               主分组字段列：  与mainColumns中指定的字段名一致；
+               合计列：         固定为Total
+               其它分项统计列：sideColumns中的第一个字段预先分组统计，
+            结果有几条就有几个字段，字段名是分组字段名加序号，结果值为
+            该字段的说明。
+            
+            todo: 基于IQueryable源的统计还未完成
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.DataStatistics.DataCount(Hongbin.Data.GeneralDataContainer,System.String,System.String[],System.String[],System.Data.Objects.ObjectParameter[])">
+            <summary>
+            数据统计，在源查询中统计数量(计数,Count)。
+            任何查询都可以调用此方法进行统计，其中：
+            mainColumns 指定主栏（即纵向栏）的分组字段，可以多个。
+            sideColumns 指定宾栏（即横向栏）的分组字段，可以多个。
+            该函数返回统计结果对象DataStatisticResult，其中：
+                TotalQuery  统计数据的查询对象，即IQueryable
+                ResultType  统计结果集的元素类型，是一个自动生成的类，
+            属性包括主分组字段名、合计列(Total)、sideColumns预分组查询
+            结果的条数，它们的命名规则为：
+               主分组字段列：  与mainColumns中指定的字段名一致；
+               合计列：         固定为Total
+               其它分项统计列：sideColumns中的第一个字段预先分组统计，
+            结果有几条就有几个字段，字段名是分组字段名加序号，结果值为
+            该字段的说明。
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.DataStatistics.DataCount(Hongbin.Data.GeneralDataContainer,System.String,System.String[],System.String[],System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            计数统计, 返回统计结果对象DataStatisticResult
+            </summary>
+            <param name="gdc">数据上下文</param>
+            <param name="eSqlText">基本数据查询语句</param>
+            <param name="mainColumns">分组</param>
+            <param name="sideColumns">分栏</param>
+            <param name="args">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CommonExtension.IntToXlsColumnName(System.Int32)">
+            <summary>
+            将数值转换为Excel列名，如：1-A,2-B...26-Z,27-AA...
+            </summary>
+            <param name="n">需要转换的整数</param>
+        </member>
+        <member name="M:Hongbin.Common.CommonExtension.XlsColumnNameToInt(System.String)">
+            <summary>
+            将Excel列名字符串转换为数值，如：A=1,B=2...Z=26,AA=27,AB=28...AZ=52,ZZ=676...）
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.SerializationInfoExtension.AddValue(System.Runtime.Serialization.SerializationInfo,Hongbin.Data.BaseEntityObject,System.String)">
+            <summary>
+            在序列化信息中添加一个需要序列化的实体对象
+            </summary>
+            <param name="info"></param>
+            <param name="entity"></param>
+            <param name="OwnerPropertyName"></param>
+        </member>
+        <member name="M:Hongbin.Common.SerializationInfoExtension.GetEntityObject(System.Runtime.Serialization.SerializationInfo,Hongbin.Data.BaseEntityObject,System.String)">
+            <summary>
+            从序列化信息中反序列化一个实体对象
+            </summary>
+            <param name="info"></param>
+            <param name="entity"></param>
+            <param name="OwnerPropertyName"></param>
+        </member>
+        <member name="M:Hongbin.Common.SerializationInfoExtension.HasValue(System.Runtime.Serialization.SerializationInfo,System.String)">
+            <summary>
+            判断序列信息对象中有没有指定名称的值
+            </summary>
+            <param name="info"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Common.SystemParameters">
+            <summary>
+            系统配置参数。所有参数先从系统参数表中取，如果没有再从web.config的SystemParameters配置节中取,还是没有就返回缺省值
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.SystemParameters.Instance">
+            <summary>
+            系统配置参数对象，参数先从系统参数表中取，如果没有再从web.config的SystemParameters配置节中取,还是没有就返回缺省值。
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.SystemParameters.#ctor">
+            <summary>
+            初始化系统参数对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.SysParamDictionary">
+            <summary>
+            系统发布后用户配置的系统参数字典，优先于web.config中的SystemParameters配置节。
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.SystemParameters.GetString(System.String,System.String)">
+            <summary>
+            先从系统参数表中取，如果没有再从web.config的SystemParameters配置节中取,还是没有就返回缺省值 
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.ApplicationTitle">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.LoginPageUrl">
+            <summary>
+            系统登录页面地址，缺省为 ~/Login.aspx
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.DefaultPageUrl">
+            <summary>
+            缺省页地址
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.SuperUserName">
+            <summary>
+            超级用户名称，缺省为admin
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.IconPath">
+            <summary>
+            图标路径, 如：~/Images/16x16/
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.DefaultIconFile">
+            <summary>
+            缺省的图标文件
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.SqlLogFile">
+            <summary>
+            SQL语句记录文件
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.DataCacheEnabled">
+            <summary>
+            数据缓存数据
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.RLPM">
+            <summary>
+            获取或设置重复登录的处理方式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.TemporaryFileLiveDays">
+            <summary>
+            临时文件存活天数
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.SystemParameters.GetParam(System.String)">
+            <summary>
+            在SystemParameters节中读取参数值
+            </summary>
+            <param name="paramName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.SystemParameters.GetParam(System.String,System.String)">
+            <summary>
+             在系统参数中读取参数值
+            </summary>
+            <param name="paramName"></param>
+            <param name="defValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.AutoUpdate">
+            <summary>
+            是否允许自动更新
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.SystemParameters.IsDebug">
+            <summary>
+            是否为调试模式, 系统参数中设定Debug参数
+            </summary>
+        </member>
+        <member name="T:Hongbin.Logger.BdpDbLogger">
+            <summary>
+            日志实现类，日志信息保存到数据库中
+            </summary>
+        </member>
+        <member name="M:Hongbin.Logger.BdpDbLogger.#ctor">
+            <summary>
+            实例化 BdpDbLogger
+            </summary>
+        </member>
+        <member name="T:Hongbin.Logger.BdpEventLogger">
+            <summary>
+            Windows应用程序事件日志，实现IBdpLogger
+            </summary>
+        </member>
+        <member name="M:Hongbin.Logger.BdpEventLogger.#ctor">
+            <summary>
+            实例化 BdpEventLogger
+            </summary>
+        </member>
+        <member name="T:Hongbin.Logger.BdpLogger">
+            <summary>
+            日志处理统一的接口类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Debug(System.String)">
+            <summary>
+            写入调试信息
+            </summary>
+            <param name="message">信息文本</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Info(System.String)">
+            <summary>
+            写入信息日志
+            </summary>
+            <param name="message">信息文本</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Warn(System.String)">
+            <summary>
+            写入警告日志
+            </summary>
+            <param name="message">信息文本</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Error(System.String)">
+            <summary>
+            写入错误日志
+            </summary>
+            <param name="message">信息文本</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Error(System.Exception)">
+            <summary>
+            写入错误日志，不抛出异常
+            </summary>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Error(System.String,System.Exception)">
+            <summary>
+            写入错误日志，不抛出异常
+            </summary>
+            <param name="message">信息文本</param>
+            <param name="ex">异常</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Error(System.Exception,System.Boolean)">
+            <summary>
+            写入错误日志，可指定是否抛出异常
+            </summary>
+            <param name="ex">异常</param>
+            <param name="throwException">是否抛出异常</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Error(System.String,System.Exception,System.Boolean)">
+            <summary>
+            写入错误日志，可指定是否抛出异常
+            </summary>
+            <param name="message">信息文本</param>
+            <param name="ex">异常</param>
+            <param name="throwException">是否抛出异常</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Log(System.String,System.String)">
+            <summary>
+            将信息写入LOG文件
+            </summary>
+            <param name="logFolder"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.Log(System.String)">
+            <summary>
+            将信息写入LOG文件. LOG文件在 配置目录下的dblog
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.DeleteFiles(System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            删除指定目录下符合条件的文件
+            </summary>
+            <param name="path">指定文件夹</param>
+            <param name="searchPattern">文件通配符，如：log*.*</param>
+            <param name="beforeTime">在此时间之前的文件才删除</param>
+        </member>
+        <member name="M:Hongbin.Logger.BdpLogger.DeleteFiles(System.String,System.String)">
+            <summary>
+            删除指定目录下符合条件的文件. 
+            注：使用系统参数TempFileLiveDays, 缺省删除3天前的文件
+            </summary>
+            <param name="path">指定文件夹</param>
+            <param name="searchPattern">文件通配符，如：log*.*</param>
+        </member>
+        <member name="T:Hongbin.Logger.EventLogType">
+            <summary>
+            日志类别
+            </summary>
+        </member>
+        <member name="F:Hongbin.Logger.EventLogType.Debug">
+            <summary>
+            调试
+            </summary>
+        </member>
+        <member name="F:Hongbin.Logger.EventLogType.Information">
+            <summary>
+            一般信息
+            </summary>
+        </member>
+        <member name="F:Hongbin.Logger.EventLogType.Warning">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="F:Hongbin.Logger.EventLogType.Error">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="T:Hongbin.Message.MessageReceiverBase">
+            <summary>
+            消息接收器基类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.MessageReceiverBase.ReceiveMsg(System.String,System.String,System.String[],System.Object[])">
+            <summary>
+            接收消息
+            </summary>
+            <param name="msgCode">消息代码，必须。消息代码可参见消息定义表（BDP_MSG_INFO_DEFINE）</param>
+            <param name="msgText">消息文本，必须。</param>
+            <param name="receiverUserIds">接收人用户标识数组, null表示不确定接收对象</param>
+            <param name="msgParam">消息参数，可选</param>
+        </member>
+        <member name="M:Hongbin.Message.MessageReceiverBase.SendMessage(System.String,System.String,System.String[],System.Object[])">
+            <summary>
+            发送消息
+            </summary>
+            <param name="msgCode">消息代码，必须。消息代码可参见消息定义表（BDP_MSG_INFO_DEFINE）</param>
+            <param name="msgText">消息文本，必须。</param>
+            <param name="receiverUserIds">接收人用户标识数组, null表示不确定接收对象</param>
+            <param name="msgParam">消息参数，可选</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.MessageReceiverBase.Dispose">
+            <summary>
+            实现从消息管理器中移出
+            </summary>
+        </member>
+        <member name="F:Hongbin.Message.BdpMessageManager.MsgReceiverCollection">
+            <summary>
+            系统中注册的所有发送器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.BdpMessageManager.SendMessage(System.String,System.String,System.String[],System.Object[])">
+            <summary>
+            发送消息，可以指定发送人定向发送。如果没有指定发送人接收器需自行判断是否接收。
+            </summary>
+            <param name="msgCode">消息代码，必须。消息代码可参见消息定义表（BDP_MSG_INFO_DEFINE）</param>
+            <param name="msgText">消息文本，必须。</param>
+            <param name="receiverUserIds">接收人用户标识数组, null表示不确定接收对象</param>
+            <param name="msgParam">消息参数，可选</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.BdpMessageManager.SendComment(System.String,System.String[],System.Object[])">
+            <summary>
+            向指定的接收人发送留言信息串。必须至少指定一个接收人。
+            </summary>
+            <param name="msgText">信息文本</param>
+            <param name="receiverUserIds">接收人Id</param>
+            <param name="msgParam">需要携带的参数对象</param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Message.BdpMessageManager.DefaultMsgProcessor">
+            <summary>
+            获取系统缺省的消息处理器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.BdpMessageManager.RegisterMsgProcessor(Hongbin.Message.MessageReceiverBase)">
+            <summary>
+            注册消息接收器
+            </summary>
+            <param name="msgReceiver"></param>
+        </member>
+        <member name="M:Hongbin.Message.BdpMessageManager.UnRegisterMsgProcessor(Hongbin.Message.MessageReceiverBase)">
+            <summary>
+            移出消息接收器
+            </summary>
+            <param name="msgReceiver"></param>
+        </member>
+        <member name="T:Hongbin.Message.MsgPacketInfo">
+            <summary>
+            消息包
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.MsgPacketInfo.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            实例化消息包
+            </summary>
+            <param name="msgNo"></param>
+            <param name="msgCode"></param>
+            <param name="msgName"></param>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgNo">
+            <summary>
+            消息处理号，只读
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgCode">
+            <summary>
+            消息代码，即消息代码表中的Code，只读
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgName">
+            <summary>
+            消息名称，即消息处理定义表中的MsgName，只读
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgTextFormat">
+            <summary>
+            消息文本格式，可读写
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgText">
+            <summary>
+            消息文本，需根据业务需要组织，该文本呈现给最终用户。可读写
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgProcessUrl">
+            <summary>
+            消息处理地址，即处理该消息的业务模块. 可读写
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgProcessUrlParams">
+            <summary>
+            消息处理参数，在生成消息处理地址时会附加这些参数。只读
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.UserId">
+            <summary>
+            可以处理此消息的用户. 只读
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.MsgParam">
+            <summary>
+            消息处理参数对象，在发送消息时会传来这些参数。只读
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.Enabled">
+            <summary>
+            是否启用此消息处理, 可读写
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.MsgPacketInfo.gdc">
+            <summary>
+            使用的数据上下文. 只读
+            </summary>
+        </member>
+        <member name="T:Hongbin.Message.UserMsgNo">
+            <summary>
+            用户-消息号
+            </summary>
+        </member>
+        <member name="T:Hongbin.Message.BdpMsgReceiver">
+            <summary>
+            缺省的消息接收处理类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.FindMsgGenerator(System.String)">
+            <summary>
+            创建消息生成器实例。如果消息类名为空则创建缺省的消息生成器
+            </summary>
+            <param name="generatorClassName">消息生成器类名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.FindMsgCode(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            获取消息代码对象
+            </summary>
+            <param name="gdc"></param>
+            <param name="msgCode">代码，区分大小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.CreateMsgLog(Hongbin.Message.MsgPacketInfo)">
+            <summary>
+            创建消息记录
+            </summary>
+            <param name="mp"></param>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.GetMyNews(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            获取当前登录用户的新消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.QueryNewMessages(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            查询指定用户的新消息。未查看的消息视为新消息。
+            </summary>
+            <param name="gdc"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.QueryNewMessages(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            查询指定用户的新消息。未查看的消息视为新消息。
+            </summary>
+            <param name="gdc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.BroadcastMessage(System.String)">
+            <summary>
+            给每个在线用户广播一条在线信息，没有消息参数。仅在线用户才能接收
+            </summary>
+            <param name="msgText"></param>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.Notify(System.String,System.String)">
+            <summary>
+            通知指定用户一条讯息。仅在线用户才能接收
+            </summary>
+            <param name="msgText">消息文本</param>
+            <param name="userId">用户ID</param>
+        </member>
+        <member name="M:Hongbin.Message.BdpMsgReceiver.Notify(System.String)">
+            <summary>
+            通知当前用户一条讯息。仅在线用户才能接收
+            </summary>
+            <param name="msgText">消息文本</param>
+        </member>
+        <member name="P:Hongbin.Message.NewMessageInfo.UserId">
+            <summary>
+            读取用户ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.NewMessageInfo.UserName">
+            <summary>
+            读取用户名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.NewMessageInfo.Count">
+            <summary>
+            读取新消息数量
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.NewMessageInfo.LastMsgText">
+            <summary>
+            读取第一条新消息文本
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.NewMessageInfo.IsAccept">
+            <summary>
+            新消息是否已经接收
+            </summary>
+        </member>
+        <member name="P:Hongbin.Message.NewMessageInfo.IsBroadcastMsg">
+            <summary>
+            是否为广播消息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.NewMessageInfo.Update(System.Int32,System.String,System.Boolean)">
+            <summary>
+            更新消息
+            </summary>
+            <param name="newsCount"></param>
+            <param name="lastMsgText"></param>
+        </member>
+        <member name="M:Hongbin.Message.NewMessageInfo.Update(System.String)">
+            <summary>
+            更新消息
+            </summary>
+            <param name="msgText"></param>
+        </member>
+        <member name="T:Hongbin.Message.IBdpSystemUpdateTask">
+            <summary>
+            系统更新任务接口。系统更新任务必须实现该接口并且指定类特性PatchNumberAttribute
+            </summary>
+        </member>
+        <member name="M:Hongbin.Message.IBdpSystemUpdateTask.Execute(Hongbin.Data.GeneralDataContainer,System.Int32)">
+            <summary>
+            执行更新
+            </summary>
+            <param name="gdc"></param>
+            <param name="LastUpdateNumber">最后更新号</param>
+        </member>
+        <member name="T:Hongbin.Message.PatchNumberAttribute">
+            <summary>
+            系统自动更新任务实现类的特性类，必须设定该更新任务适用的补丁号。
+            只有补丁号大于最后更新号的更新任务才会被执行。
+            </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScript.Execute">
+            <summary> 执行 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScript.Evaluate">
+            <summary> 求值运算 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.GetScriptType(System.String)">
+            <summary> 检测脚本的源类型，如果脚本是处理器支持的，则返回源类型，否则返回空串 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.Init">
+            <summary> 初始化脚本处理器 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.SetVar(System.String,System.Double)">
+            <summary> 在脚本运行环境中设置变量 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.SetVar(System.String,System.String)">
+            <summary> 在脚本运行环境中设置变量 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.SetVar(System.String,System.Object)">
+            <summary> 在脚本运行环境中设置变量 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.Parse(System.String)">
+            <summary>
+            解析脚本，返回解析后的脚本对象，如果失败则返回 nil/null
+            如果脚本需要多次执行/运算，应用程序则应先调用此方法解析脚本，然后调用脚本对象的 Execute/Evaluate
+            </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.Execute(System.String)">
+            <summary> 直接执行脚本你，如果解析脚本出错，则抛出异常 </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.Evaluate(System.String)">
+            <summary>
+            直接对脚本进行运算求值，此方法返回的脚本对象不必释放，直接用AsXxxx获得结果即可。形如：
+            ExpScriptProcessor.Evaluate('ExpText').AsString
+            如果解析脚本出错，则抛出异常
+             </summary>
+        </member>
+        <member name="M:Hongbin.Script.Ruby.RubyScriptProcessor.GetErrorMessage">
+            <summary> 获取最近一次解析／执行脚本的错误信息，如果没有出错返回空 </summary>
+        </member>
+        <member name="T:Hongbin.Security.BOPrivilegeKind">
+            <summary>
+            业务组织权限类别
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.BOPrivilegeKind.NoLimit">
+            <summary>
+            不限制
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.BOPrivilegeKind.MyCompany">
+            <summary>
+            仅自己所在的公司
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.BOPrivilegeKind.MyDepartment">
+            <summary>
+            仅自己所在的部门
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.BOPrivilegeKind.Specified">
+            <summary>
+            指定的公司和部门
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.BOrgPrivilege.MergePrivilege(Hongbin.Data.BdpBaseData.BdpPrivUser,Hongbin.Security.BOrgPrivilege)">
+            <summary>
+            合并权限
+            </summary>
+            <param name="user">用户信息</param>
+            <param name="second">待合并的权限</param>
+        </member>
+        <member name="T:Hongbin.Security.BOrgPrivComparer">
+            <summary>
+            业务组织权限比较器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.RoleExtension.LoadBOrgPrivilege(Hongbin.Data.BdpBaseData.BdpPrivRole)">
+            <summary>
+            业务组织权限-调入
+            </summary>
+            <param name="role"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.RoleExtension.SaveBOrgPrivilege(Hongbin.Data.BdpBaseData.BdpPrivRole,Hongbin.Security.BOrgPrivilege)">
+            <summary>
+            业务组织权限-保存
+            </summary>
+            <param name="role"></param>
+            <param name="bop"></param>
+        </member>
+        <member name="M:Hongbin.Security.RoleExtension.DeleteBOrgPrivilege(Hongbin.Data.BdpBaseData.BdpPrivRole)">
+            <summary>
+            业务组织权限-删除
+            </summary>
+            <param name="role"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.CreateLoginId(System.String,System.String)">
+            <summary>
+            创建用户登录ID，当成功登录系统后调用
+            </summary>
+            <param name="userId">用户标识</param>
+            <param name="userName">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.Logout(System.String)">
+            <summary>
+            记录用户退出
+            </summary>
+            <param name="userLoginId"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.AppendOperLog(System.String,System.String,System.String)">
+            <summary>
+            增加一条操作记录，同时更新用户在线状态
+            </summary>
+            <param name="userLoginId"></param>
+            <param name="moduleId"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.AppendOperLog(Hongbin.Data.GeneralDataContainer,System.String,System.String,System.String)">
+            <summary>
+            增加一条操作日志
+            </summary>
+            <param name="gdc"></param>
+            <param name="userLoginId">当前登录用户的登录ID，不能为空</param>
+            <param name="moduleId">模块ID，可以为空</param>
+            <param name="operDesc">操作描述</param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.ClearDeadUser(System.Int32)">
+            <summary>
+            清理超时用户
+            </summary>
+            <param name="timeout">必须指定超时分钟数，一般应是Session中的Timeout</param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.ProcessReLogin(Hongbin.Data.GeneralDataContainer,System.String,Hongbin.Security.ReLoginProcessingMode)">
+            <summary>
+            检查并处理重复登录
+            </summary>
+            <param name="gdc"></param>
+            <param name="userId"></param>
+            <param name="rlpm"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.ForceLogout(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            将登录记录的在线标志设置成3-强制下线
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.IsForceLogout(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            检查登录记录是否置为了强制下线标志
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.IsForceLogout(System.String)">
+            <summary>
+            检查登录记录是否置为了强制下线标志
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.UserOperationLog.ForceLogoutLoginIds">
+            <summary>
+            记录已经强制下线的用户登录ID
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.ForceLogoutAdd(System.String)">
+            <summary>
+            设置指定的登录ID已经被强制下线
+            </summary>
+            <param name="loginId"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.ForceLogoutCheck(System.String)">
+            <summary>
+            返回指定的登录ID是否已经被强制踢出
+            </summary>
+            <param name="loginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserOperationLog.ForceLogoutClear(System.String)">
+            <summary>
+            清除强制下线标志
+            </summary>
+            <param name="loginId"></param>
+        </member>
+        <member name="T:Hongbin.Security.ReLoginProcessingMode">
+            <summary>
+            重复登录处理方式
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.ReLoginProcessingMode.Allow">
+            <summary>
+            允许重复登录，同一用户可以在不同的地方登录系统
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.ReLoginProcessingMode.Deny">
+            <summary>
+            拒绝登录，如果检查到用户已经登录了，则不允许重复登录
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.ReLoginProcessingMode.Force">
+            <summary>
+            强制登录，如果检查到用户已经登录了，则清除先前的登录信息后重新登录
+            </summary>
+        </member>
+        <member name="T:Hongbin.Security.UserPrivilegeInfo">
+            <summary>
+            用户特权信息类，包括角色、数据权限、功能权限
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.AppHadCheckBasicRowAndUser">
+            <summary>
+            一个全局性的标志，标明应用程序是否已经检查过基本的角色和用户
+            </summary>
+        </member>
+        <member name="F:Hongbin.Security.UserPrivilegeInfo.BasicRoleName">
+            <summary>
+            基本权限角色名称
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.BaseInfo">
+            <summary>
+            读取用户基本信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.Roles">
+            <summary>
+            读取角色清单，一个用户可以有多种角色
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.DataPrivileges">
+            <summary>
+            读取数据权限清单, 包括用户所有角色的权限
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.FunctionPrivileges">
+            <summary>
+            读取功能权限清单, 包括用户所有角色的权限
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.BOrgPrivileges">
+            <summary>
+            业务组织权限, 返回可访问的业务组织集，如果BOrgPrivileges=null，表示不受限制。
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.BOIncludeChildNode">
+            <summary>
+            业务组织权限是否包括下级
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.BOrgCompanyIdList">
+            <summary>
+            获取可以访问的单位ID清单(已包括下级), 如果为null则表示不受限制.
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.BOrgDepartmentIdList">
+            <summary>
+            获取可以访问的部门ID清单(已包括下级), 如果为null则表示不受限制
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.IsLoginFromPortal">
+            <summary>
+            读取是否从门户登录系统
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.UserPrivilegeInfo.LoginId">
+            <summary>
+            登录标识，登录时由页面填入
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.#ctor">
+            <summary>
+            实例化用户特权信息对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.#ctor(Hongbin.Data.BdpBaseData.BdpPrivUser)">
+            <summary>
+            实例化用户特权信息对象
+            </summary>
+            <param name="baseInfo">用户基本信息</param>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.EncryptPassword(System.String)">
+            <summary>
+            MD5方式加密密码, 加密串不可逆
+            </summary>
+            <param name="rawPwd">明文密码串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.Md5Hash(System.String)">
+            <summary>
+            32位MD5加密
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckBasicRole">
+            <summary>
+            检查并创建基本权限角色，返回角色ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckSystemUser(System.String,System.String,Hongbin.Security.ReLoginProcessingMode)">
+            <summary>
+            检查系统用户
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="password">密码，明码串</param>
+            <param name="rlpm">检查到重复登录时如何处理</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckSystemUser(System.String,System.String,System.String,Hongbin.Security.ReLoginProcessingMode)">
+            <summary>
+            检查系统用户
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="password">密码，当verifyCode不为空时是待比较的加密串，否则为密码明文</param>
+            <param name="verifyCode">验证码</param>
+            <param name="rlpm">检查到重复登录时如何处理</param>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckSystemUser(System.String,Hongbin.Security.ReLoginProcessingMode)">
+            <summary>
+            检查系统用户
+            </summary>
+            <param name="uid">用户ID</param>
+            <param name="rlpm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckPortalUser(System.String,System.String,System.Boolean)">
+            <summary>
+            检查门户用户
+            </summary>
+            <param name="portalUserId">门户用户标识</param>
+            <param name="userName">用户名</param>
+            <param name="autoCreate">不存在是否自动创建</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckPortalUser(System.String)">
+            <summary>
+            检查门户用户
+            </summary>
+            <param name="portalUserId">门户用户标识</param>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.ExtractCompanyIds(Hongbin.Data.GeneralDataContainer,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            根据业务组织权限提取合法的公司ID，包括上级公司。如果IncludeSubNode为true，也包括下级公司。
+            </summary>
+            <param name="companyIds"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.ExtractDepartmentIds(Hongbin.Data.GeneralDataContainer,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            根据业务组织权限提取合法的部门ID，包括上级部门。如果IncludeSubNode为true，也包括下级部门。
+            </summary>
+            <param name="depatmentIds"></param>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckUser(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            检查系统帐户
+            </summary>
+            <param name="gdc"></param>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckUser(Hongbin.Data.GeneralDataContainer,System.String,System.String)">
+            <summary>
+            检查用户密码，成功返回用户信息BdpPrivUser，不正确返回空
+            </summary>
+            <param name="userName">用户名</param>
+            <param name="password">明文密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.CheckUser(Hongbin.Data.GeneralDataContainer,System.String,System.String,System.String)">
+            <summary>
+            检查用户密码，成功返回用户信息BdpPrivUser，不正确返回空
+            </summary>
+            <param name="gdc"></param>
+            <param name="userName">用户名</param>
+            <param name="encStr">加密串</param>
+            <param name="verifyCode">验证码</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Security.UserPrivilegeInfo.FunctionPrivComparer">
+            <summary>
+            功能权限比较器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.FetchPrivilegeData(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            填充特定用户的权限信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.UserPrivilegeInfo.GetLimitedCtrlList(System.String)">
+            <summary>
+            获取指定页面的受限控件清单
+            </summary>
+            <param name="pageId">页面ID,即WebTree中的NodeId</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Security.LimitCtrlInfo">
+            <summary>
+            受限控件信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.LimitCtrlInfo.CtrlID">
+            <summary>
+            控件ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.LimitCtrlInfo.PermissionId">
+            <summary>
+            权限ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.LimitCtrlInfo.ResourceId">
+            <summary>
+            资源ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.LimitCtrlInfo.CanEnable">
+            <summary>
+            可用
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.LimitCtrlInfo.CanVisible">
+            <summary>
+            可见
+            </summary>
+        </member>
+        <member name="T:Hongbin.Security.HierarchyInfo">
+            <summary>
+            简单的层级信息对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.HierarchyInfo.Id">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.Security.HierarchyInfo.Pid">
+            <summary>
+            上级ID
+            </summary>
+        </member>
+        <member name="M:Hongbin.Security.ListExtension.Add(System.Collections.Generic.IList{System.String},System.String,System.Collections.Generic.List{Hongbin.Security.HierarchyInfo},System.Boolean,System.Boolean)">
+            <summary>
+            将字符串添加到目标清单中，同时递归增加上级和下级。
+            </summary>
+            <param name="list">目标清单</param>
+            <param name="s">待加入的字符串</param>
+            <param name="HierarchyList">层级清单对象</param>
+            <param name="includeFather">是否添加上级</param>
+            <param name="includeChildren">是否添加下级</param>
+        </member>
+        <member name="T:Hongbin.Setting.BdpSettingBase">
+            <summary>
+            系统配置参数基类
+            1. 可以保存或读取单个参数
+            2. 也可以保存或读取参数对象    
+            </summary>
+        </member>
+        <member name="F:Hongbin.Setting.BdpSettingBase.FLAG_GLOBAL_SETTING">
+            <summary>
+            系统公共配置参数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Setting.BdpSettingBase.Item(System.String)">
+            <summary>
+            获取或设置系统公共配置参数
+            </summary>
+            <param name="key">参数名</param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Setting.BdpSettingBase.Item(System.String,System.String)">
+            <summary>
+            获取或设置配置参数
+            </summary>
+            <param name="flag">标志串</param>
+            <param name="key">参数名</param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Setting.BdpSettingBase.Item(System.String,System.String,System.String)">
+            <summary>
+            获取或设置配置参数
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.SaveObject``1(``0)">
+            <summary>
+            保存参数对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.SaveObject``1(System.String,``0)">
+            <summary>
+            保存参数对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flag"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.ReadObject``1">
+            <summary>
+            读取参数对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.ReadObject``1(System.String)">
+            <summary>
+            读取参数对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.SaveObject``1(System.String,System.String,``0)">
+            <summary>
+            保存参数对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.ReadObject``1(System.String,System.String)">
+            <summary>
+            读取参数对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.GetAs``1(System.String,System.String,System.String,``0)">
+            <summary>
+            获取参数值并转换为指定类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="flag1"></param>
+            <param name="flag2"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.GetAs``1(System.String,System.String,``0)">
+            <summary>
+            获取参数值并转换为指定类型
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingBase.GetAs``1(System.String,``0)">
+            <summary>
+            获取参数值并转换为指定类型
+            </summary>
+        </member>
+        <member name="T:Hongbin.Setting.SettingBaseObject">
+            <summary>
+            参数对象的基类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Setting.GdcExtensionForSetting.CreateSettingsForDatabase(Hongbin.Data.GeneralDataContainer,System.Boolean)">
+            <summary>
+            创建一个应用程序配置参数类的实例, 该对象将参数数据保存在数据库BDP_SYS_PARAMS表中。
+            通过该对象读取或设置系统运行过程中需要用到的配置参数。
+            </summary>
+            <param name="gdc">数据上下文</param>
+            <param name="AutoSave">参数发生变化时是否自动保存</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingWithDb.#ctor(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            初始化参数对象, 参数发生变化时自动保存
+            </summary>
+            <param name="gdc"></param>
+        </member>
+        <member name="M:Hongbin.Setting.BdpSettingWithDb.#ctor(Hongbin.Data.GeneralDataContainer,System.Boolean)">
+            <summary>
+            创建参数对象，可以指定参数变化时是否自动保存
+            </summary>
+            <param name="gdc"></param>
+            <param name="autoSave">参数变化时是否自动保存</param>
+        </member>
+        <member name="T:Hongbin.WorkFlow.AuditFlow">
+            <summary>
+            审批流操作类. 发起新的审批流程调用SubmitToAuditing方法，审批过程中提交审批意见调用SubmitAuditOpinion方法.
+            强调：审批流是基于单据的，如考勤表、工资表等，这些业务表必须是定义在某个实体模型中的实体类. 是针对实体类的一个
+                 具体实体对象的审批
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditFlow.WF_MSG_CODE">
+            <summary>
+            流程消息代码, MsgParam[0] 当前审批记录ID
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditFlow.pnWfAuditLogId">
+            <summary>
+            审批记录参数名，一般由审批页面传递
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditFlow.WfCountersignDoneFlag">
+            <summary>
+            会签结束标志，当所有会签人都完成会签后，系统在会签处理记录上的会签意见中填写此标记
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditFlow.WfCountersigningFlage">
+            <summary>
+            正在会签标志, 若是会签节点，启动会签时会创建一条会签处理记录，缺省其审批意见为此会签标志
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetAuditStateId(Hongbin.WorkFlow.AuditState)">
+            <summary>
+            获取审核状态的数据库存储标识串
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetAuditStateId(Hongbin.WorkFlow.AuditState,Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            获取审核状态的数据库存储标识串
+            </summary>
+            <param name="state"></param>
+            <param name="gdc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetAuditStateText(Hongbin.WorkFlow.AuditState)">
+            <summary>
+            获取审核状态的显示文本
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetAuditStateFromText(System.String)">
+            <summary>
+            返回显示文本对应的审核状态
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetAuditStateFromId(System.String,Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            返回id对应的审核状态
+            </summary>
+            <param name="id"></param>
+            <param name="gdc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetAuditStateFromId(System.String)">
+            <summary>
+            返回id对应的审核状态
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.CancelAuditing(Hongbin.Data.GeneralDataContainer,Hongbin.Data.BaseEntityObject,System.Boolean,System.Boolean)">
+            <summary>
+            取消审批，不会修改业务单据的状态。
+            正在运行的审批流程因为某些特殊原因需要取消时调用该过程
+            </summary>
+            <param name="gdc"></param>
+            <param name="entity">业务对象</param>
+            <param name="clearAuditLog">是否清除审批记录，缺省不清除，只是将审批标志置为已终止。</param>
+            <param name="cancelAllAuditingOfThisEntity">是否取消该业务对象所有的审批，缺省为false，只取消最后一次尚未结束的审批流程。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.CheckBillStatus(Hongbin.Data.GeneralDataContainer,Hongbin.Data.BaseEntityObject)">
+            <summary>
+            检查单据对象的审批状态是否与审批流中一致，如果不一致则用流程状态更新单据的审批状态。
+            </summary>
+            <param name="gdc"></param>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.CheckBillStatus(Hongbin.Data.GeneralDataContainer,System.Type)">
+            <summary>
+            修复流程状态与业务单据状态不一致的情况。
+            造成不一致的原因未找到，提供此方法只是事后修补。一般在需要查看审批状态的模块进入时调用该过程。
+            </summary>
+            <param name="gdc"></param>
+            <param name="entityType"></param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.CheckBillStatus``1(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+             修复流程状态与业务单据状态不一致的情况。
+             造成不一致的原因未找到，提供此方法只是事后修补。一般在需要查看审批状态的模块进入时调用该过程。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="gdc"></param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.AutoAudit(System.String,Hongbin.Data.BaseEntityObject,System.Boolean,System.String,Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            自动审批流程，摸拟用户完成某条单据的审批。
+            </summary>
+            <param name="currUserId">当前用户ID</param>
+            <param name="billObj">待审批的业务对象</param>
+            <param name="isPass">是否通过</param>
+            <param name="opinion">审批意见</param>
+            <param name="gdc"></param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.#ctor">
+            <summary>
+            实例化审批流操作类，在审批过程中可能会改变业务单据对象的审核状态,请确保你的业务单据类在数据模型中
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.#ctor(System.Boolean)">
+            <summary>
+            实例化审批流操作类，在审批过程中可能会改变业务单据对象的审核状态,请确保你的业务单据类在数据模型中
+            </summary>
+            <param name="throwOnError">错误发生时是否抛出异常,缺省为false</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.#ctor(Hongbin.Data.GeneralDataContainer,System.Boolean)">
+            <summary>
+            实例化审批流操作类，在审批过程中可能会改变业务单据对象的审核状态,请确保你的业务单据类在数据模型中
+            </summary>
+            <param name="gdc">通用数据上下文对象</param>
+            <param name="throwOnError">错误时是否抛出异常</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.AuditFlow.LastErrorMessage">
+            <summary>
+            最后的错误信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.SubmitToAuditing(System.String,Hongbin.Data.BaseEntityObject,System.String,System.String,Hongbin.WorkFlow.Model.BdpWfFlowNode,System.Collections.Generic.IList{System.String})">
+            <summary>
+            发起审批
+            </summary>
+            <param name="senderId">发起人标识，一般是当前用户</param>
+            <param name="billId">业务对象的主键值</param>
+            <param name="billKindId">业务类别标识</param>
+            <param name="hintMsg">针对该业务对象的说明信息</param>
+            <param name="flowNode">第一个流程节点对象</param>
+            <param name="nodeAuditorList">第一个流程节点的审批人</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.AddAuditLog(Hongbin.WorkFlow.Model.BdpWfActionMaster,System.String,Hongbin.WorkFlow.Model.BdpWfFlowNode,System.Collections.Generic.IList{System.String},Hongbin.WorkFlow.Model.BdpWfActionDetail,System.Boolean)">
+            <summary>
+            增加审批记录
+            </summary>
+            <param name="master">工作流实例</param>
+            <param name="hintMsg">信息串</param>
+            <param name="nextNode">审批节点对象</param>
+            <param name="nextNodePersons">该节点上的审批人列表</param>
+            <param name="senderLog">发送人，即上一个审批记录对象</param>
+            <param name="isCountersign">是要增加会签汇总处理的审批记录吗？</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.SubmitAuditOption(Hongbin.WorkFlow.Model.BdpWfActionDetail,System.Boolean,System.Boolean,System.String,Hongbin.WorkFlow.Model.BdpWfFlowNode,System.Collections.Generic.IList{System.String},Hongbin.Data.BaseEntityObject)">
+            <summary>
+            提交审批记录
+            </summary>
+            <param name="auditLog">当前审批记录对象</param>
+            <param name="isPassed">是否通过</param>
+            <param name="isEndFlow">是否结束流程</param>
+            <param name="opinion">审批意见</param>
+            <param name="nextNode">下一审批节点</param>
+            <param name="nextNodePersons">下一审批节点的审批人</param>
+            <param name="billObj">审批对象</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.UpdateBillAuditInfo(Hongbin.Data.BaseEntityObject,System.String,System.String,System.DateTime,System.String,System.Int32)">
+            <summary>
+            更新业务对象的审核状态
+            </summary>
+            <param name="billObj">业务对象</param>
+            <param name="BillKindId">业务类别ID，即单据类型表的主键值</param>
+            <param name="auditPersonId">审核人标识</param>
+            <param name="auditDate">审核日期</param>
+            <param name="auditOpinion">审核意见</param>
+            <param name="auditStatusCode">审核状态代码，0 未审核,1 审核未通过,2 审核通过，3 等待审核</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.CheckFlowEnable(System.String)">
+            <summary>
+            检查流程是否已经启用
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.LoadFlowAuditorList(Hongbin.Data.BaseEntityObject,Hongbin.WorkFlow.Model.BdpWfFlowNode,System.Collections.Generic.IList{Hongbin.Data.BdpBaseData.BdpPrivUser})">
+            <summary>
+            调入审批节点上的审批人清单。公式变量有：Bill 业务单据, FlowNode: 审批节点, User:用户
+            计算原则：某人符合一定条件才能审批,如果指定的角色先换成人再计算条件
+            </summary>
+            <param name="billEntity">业务单据对象</param>
+            <param name="flowNode">审批节点</param>
+            <param name="auditorList">接收审批人清单，元素类型为 BdpPrivUser</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.LoadFlowNotifyList(Hongbin.Data.BaseEntityObject,Hongbin.WorkFlow.Model.BdpWfFlowNode)">
+            <summary>
+            调入审批节点上的通知人清单。公式变量有：Bill 业务单据, FlowNode: 审批节点
+            </summary>
+            <param name="billEntity">业务单据对象</param>
+            <param name="flowNode">审批节点</param>
+            <param name="notifyList">接收通知人清单，元素类型为 BdpPrivUser</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.FindNextFlowNode(Hongbin.Data.BaseEntityObject,Hongbin.WorkFlow.Model.BdpWfFlow,Hongbin.WorkFlow.Model.BdpWfFlowNode)">
+            <summary>
+            查找下一个审批节点，若当前节点为空，则查找第一个节点。若当前节点指定了下一节点序号或公式，则计算返回相应的节点，否则取当前节点的下一个节点。
+            </summary>
+            <param name="billEntity">待审批对象</param>
+            <param name="flow">流程对象</param>
+            <param name="currentFlowNode">当前节点，首次审批请保持为null</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.FindNextFlowNodes(Hongbin.Data.BaseEntityObject,Hongbin.WorkFlow.Model.BdpWfFlow,Hongbin.WorkFlow.Model.BdpWfFlowNode)">
+            <summary>
+            返回后续审批节点清单，不包含当前审批节点。
+            </summary>
+            <param name="billEntity">审批对象</param>
+            <param name="flow">流程</param>
+            <param name="currentFlowNode">当前节点，为null则从第一个节点开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.FindFlow(Hongbin.Data.BaseEntityObject,System.String)">
+            <summary>
+            查找适用于审批对象的审批流
+            </summary>
+            <param name="billEntity">审批对象</param>
+            <param name="sign">标志，可为空</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.FindFlow(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            查找适用于审批对象的审批流
+            </summary>
+            <param name="billEntity">审批对象</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetEntityDescription(Hongbin.WorkFlow.Model.BdpWfFlow,Hongbin.Data.BaseEntityObject)">
+            <summary>
+            返回实体对象的说明信息，需在BdpWfBillKind中定义了名称和显示标签属性名
+            </summary>
+            <param name="billEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.SubmitToAuditing(Hongbin.Data.BaseEntityObject,System.String,Hongbin.WorkFlow.Model.BdpWfFlow,System.Collections.Generic.IList{System.String})">
+            <summary>
+            提交审批，发起一个审批实例.
+            </summary>
+            <param name="billEntity">待审批对象，不能为null</param>
+            <param name="billDesc">待审批对象说明，对审批对象的一个简短描述，在待办事项中可能会用到该信息</param>
+            <param name="flow">审批流程，若为null将调用FindFlow查找与审批对象匹配的流程</param>
+            <param name="AuditorIdList">审批人标识清单，若为null，则取流程第一节点上配置的所有人员</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.SubmitToAuditing(Hongbin.Data.BaseEntityObject,System.String,Hongbin.WorkFlow.Model.BdpWfFlowNode,System.Collections.Generic.IList{System.String})">
+            <summary>
+            提交审批，发起一个审批实例.
+            </summary>
+            <param name="billEntity">待审批对象，不能为null</param>
+            <param name="billDesc">待审批对象说明，对审批对象的一个简短描述，在待办事项中可能会用到该信息</param>
+            <param name="flowNode">指定起始审批节点</param>
+            <param name="AuditorIdList">审批人标识清单，若为null，则取流程第一节点上配置的所有人员</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.SubmitAuditOption(Hongbin.Data.BaseEntityObject,System.String,System.Boolean,System.Boolean,System.String,Hongbin.WorkFlow.Model.BdpWfFlowNode,System.Collections.Generic.IList{System.String})">
+            <summary>
+            提交审批意见
+            </summary>
+            <param name="billEntity">待审批对象，不能为null</param>
+            <param name="auditLogId">当前审批记录ID</param>
+            <param name="isPassed">是否通过</param>
+            <param name="isEndFlow">是否结束流程</param>
+            <param name="opinion">审批意见</param>
+            <param name="nextNode">下一审批节点</param>
+            <param name="nextNodePersons">下一审批节点的审批人</param>
+        </member>
+        <member name="E:Hongbin.WorkFlow.AuditFlow.AfterAudit">
+            <summary>
+            流程审批后事件，任何节点执行审批后都将触发该事件
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.RevokeAuditing(System.String)">
+            <summary>
+            撤回审批
+            </summary>
+            <param name="auditLogId">审批记录ID，即流程实例明细记录ID值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.QueryWorkList(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            查询审批相关的工作项
+            </summary>
+            <param name="userId">用户标识</param>
+            <param name="isDone">是否查询已办，true 已办，false 未办, null 不限</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.QueryTodoList">
+            <summary>
+            查询当前用户的待办工作项
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.QueryDoneWorks">
+            <summary>
+            查询当前用户的已办工作项
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WorkFlow.AuditFlow.GetObjViewUrlByWfDetail(System.String)">
+            <summary>
+            根据流程审批记录查询审批对象的查看地址
+            </summary>
+            <param name="wfDetailId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.WorkFlow.RevokeState">
+            <summary>
+            流程撤回处理结果状态
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.RevokeState.Unknow">
+            <summary>
+            可能没有找到审批记录
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.RevokeState.NoRequired">
+            <summary>
+            尚未提交审批申请，不需要撤回
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.RevokeState.CantRevoke">
+            <summary>
+            审批申请已经处理，不能撤回
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.RevokeState.Succeed">
+            <summary>
+            撤回成功
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.RevokeState.Falied">
+            <summary>
+            撤回失败
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.WfAutoAuditResult.NonAuditInstance">
+            <summary>
+            未找到该业务单据的审批实例
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.WfAutoAuditResult.NonAuditLog">
+            <summary>
+            该业务单据没有适合指定用户的审批记录，可能是还未流转到指定用户，或者指定用户已经审批过了
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.WfAutoAuditResult.AuditOk">
+            <summary>
+            审批成功
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.WfAutoAuditResult.Error">
+            <summary>
+            审批失败
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.WfWorkItem">
+            <summary>
+            待办工作项
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.Id">
+            <summary>
+            流程实例明细的主键值
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.BillId">
+            <summary>
+            单据ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.Creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.SenderUserId">
+            <summary>
+            发送人用户ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.SenderName">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.SendDate">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.StatusName">
+            <summary>
+            当前状态
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.ProcessUrl">
+            <summary>
+            办理地址
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.ViewUrl">
+            <summary>
+            审批对象查看地址
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.AuditPerson">
+            <summary>
+            审批人
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.IsDone">
+            <summary>
+            是否已经办理
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.AuditDate">
+            <summary>
+            办理日期
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.AuditOpinion">
+            <summary>
+            处理意见
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfWorkItem.FlowIsEnd">
+            <summary>
+            流程是否结束
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.WfInstanceViewItem">
+            <summary>
+            流程实例视图类
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.Id">
+            <summary>
+            流程实例明细的主键值
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.InstanceId">
+            <summary>
+            流程实例的主键值
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.HintMessage">
+            <summary>
+            明细提示信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.FlowNodeId">
+            <summary>
+            流程节点Id
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.FlowNodeName">
+            <summary>
+            流程节点名称
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.FlowNodeOrder">
+            <summary>
+            流程节点序号
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.BillKindId">
+            <summary>
+            单据类别Id
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.BillKindName">
+            <summary>
+            单据类别名称
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfInstanceViewItem.BillKey">
+            <summary>
+            单据对象的主键值
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfFlowNode">
+            <summary>
+            流程节点表 (BDP_WF_FLOW_NODE)
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.AuditModeValue">
+            <summary>
+            读取或设置审批方式枚举值
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NotifyModeValue">
+            <summary>
+            读取或设置通知方式枚举值
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfFlowNode.CreateBdpWfFlowNode(System.String)">
+            <summary>
+            创建新的 BdpWfFlowNode 对象。
+            </summary>
+            <param name="nodeId">NodeId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfFlowNode.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NodeId">
+            <summary>
+            节点标识  [NODE_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.FlowId">
+            <summary>
+            审批流ID  [FLOW_ID,A(变长字符串),非空,50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NodeOrder">
+            <summary>
+            节点序号  [NODE_ORDER,F(长整数),非空]
+            </summary>
+            <LongDescription>
+            同一流程下的节点序号是唯一的
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NodeName">
+            <summary>
+            节点名称  [NODE_NAME,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.AllowEdit">
+            <summary>
+            允许修改  [ALLOW_EDIT,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            是否允许该节点的审批人修改单据
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.AuditMode">
+            <summary>
+            审批模式  [AUDIT_MODE,E(短整数)]
+            </summary>
+            <LongDescription>
+            如果该节点有多个审批人，确定他们是抢先审批还是会签审批.&#xA;0:抢先;1:会签
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.AllowSelectAuditor">
+            <summary>
+            是否允许选择审批人  [ALLOW_SELECT_AUDITOR,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            是否允许在发起流程节点时选定审批人.如果不允许，但某一节点有多个审批人，则视为多人审批&#xA;
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.AllowTerminate">
+            <summary>
+            是否允许终止流程  [ALLOW_TERMINATE,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NextNodeOrder">
+            <summary>
+            下一节点序号  [NEXT_NODE_ORDER,F(长整数)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NextNodeExp">
+            <summary>
+            下一节点公式  [NEXT_NODE_EXP,A(变长字符串),500]
+            </summary>
+            <LongDescription>
+            下一流程序号的计算公式，返回流程序号,数值型
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NotifyAttn">
+            <summary>
+            是否通知经办人  [NOTIFY_ATTN,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            该节点处理时是否通知相关经办人，包括流程发起者、已流转节点的审批人&#xA;是否通知已流转节点的审批人？
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.NotifyMode">
+            <summary>
+            通知方式  [NOTIFY_MODE,E(短整数)]
+            </summary>
+            <LongDescription>
+            0 主页消息&#xA;1 邮件&#xA;2 手机短信&#xA;
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.RelWfNotifyPersons">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfNotifyPerson 的对象集合.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.RelWfFlow">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.RelWfFlowReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowNode.RelWfAuditPersons">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfAuditPerson 的对象集合.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfAuditPerson">
+            <summary>
+            流程审核人 (BDP_WF_AUDIT_PERSON)
+            </summary>
+            <LongDescription>
+            审核人不一定是具体的人员，可能是角色、用户等
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfAuditPerson.CreateBdpWfAuditPerson(System.String)">
+            <summary>
+            创建新的 BdpWfAuditPerson 对象。
+            </summary>
+            <param name="auditPersonId">AuditPersonId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfAuditPerson.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.AuditPersonId">
+            <summary>
+            审核人标识  [AUDIT_PERSON_ID,A(变长字符串),非空,50], 主键
+            </summary>
+            <LongDescription>
+            k 
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.NodeId">
+            <summary>
+            流程节点标识  [NODE_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.AuditorCondition">
+            <summary>
+            审核人条件  [AUDITOR_CONDITION,A(变长字符串),500]
+            </summary>
+            <LongDescription>
+            条件成立时才使用审核人，缺省为成立
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.AuditorKind">
+            <summary>
+            审核人类别  [AUDITOR_KIND,E(短整数)]
+            </summary>
+            <LongDescription>
+            A:用户;B:角色
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.AuditorValue">
+            <summary>
+            审核人  [AUDITOR_VALUE,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            角色/用户的ID值
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.RelWfFlowNode">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditPerson.RelWfFlowNodeReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfNotifyPerson">
+            <summary>
+            流程通知人 (BDP_WF_NOTIFY_PERSON)
+            </summary>
+            <LongDescription>
+            审核人不一定是具体的人员，可能是角色、用户等
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.CreateBdpWfNotifyPerson(System.String)">
+            <summary>
+            创建新的 BdpWfNotifyPerson 对象。
+            </summary>
+            <param name="notifyPersonId">NotifyPersonId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.NotifyPersonId">
+            <summary>
+            审核人标识  [NOTIFY_PERSON_ID,A(变长字符串),非空,50], 主键
+            </summary>
+            <LongDescription>
+            k 
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.NodeId">
+            <summary>
+            流程节点标识  [NODE_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.NotifyCondition">
+            <summary>
+            通知条件  [NOTIFY_CONDITION,A(变长字符串),500]
+            </summary>
+            <LongDescription>
+            条件成立时才通知，缺省为成立
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.NotifyKind">
+            <summary>
+            接收人类别  [NOTIFY_KIND,E(短整数)]
+            </summary>
+            <LongDescription>
+            0:用户;1:角色
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.NotifyValue">
+            <summary>
+            接收人  [NOTIFY_VALUE,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            角色/用户的ID值
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.RelWfFlowNode">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfNotifyPerson.RelWfFlowNodeReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWorkFlowEntities">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.#ctor">
+            <summary>
+            请使用应用程序配置文件的“BdpWorkFlowEntities”部分中的连接字符串初始化新 BdpWorkFlowEntities 对象。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.#ctor(System.String)">
+            <summary>
+            初始化新的 BdpWorkFlowEntities 对象。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            初始化新的 BdpWorkFlowEntities 对象。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfActionDetails">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfActionMasters">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfAssigns">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfAuditPersons">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfAuditStates">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfBillKinds">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfBusinessAgents">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfFlows">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfFlowCategories">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfFlowNodes">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.BdpWfNotifyPersons">
+            <summary>
+            没有元数据文档可用。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfActionDetails(Hongbin.WorkFlow.Model.BdpWfActionDetail)">
+            <summary>
+            用于向 BdpWfActionDetails EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfActionMasters(Hongbin.WorkFlow.Model.BdpWfActionMaster)">
+            <summary>
+            用于向 BdpWfActionMasters EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfAssigns(Hongbin.WorkFlow.Model.BdpWfAssign)">
+            <summary>
+            用于向 BdpWfAssigns EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfAuditPersons(Hongbin.WorkFlow.Model.BdpWfAuditPerson)">
+            <summary>
+            用于向 BdpWfAuditPersons EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfAuditStates(Hongbin.WorkFlow.Model.BdpWfAuditState)">
+            <summary>
+            用于向 BdpWfAuditStates EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfBillKinds(Hongbin.WorkFlow.Model.BdpWfBillKind)">
+            <summary>
+            用于向 BdpWfBillKinds EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfBusinessAgents(Hongbin.WorkFlow.Model.BdpWfBusinessAgent)">
+            <summary>
+            用于向 BdpWfBusinessAgents EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfFlows(Hongbin.WorkFlow.Model.BdpWfFlow)">
+            <summary>
+            用于向 BdpWfFlows EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfFlowCategories(Hongbin.WorkFlow.Model.BdpWfFlowCategory)">
+            <summary>
+            用于向 BdpWfFlowCategories EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfFlowNodes(Hongbin.WorkFlow.Model.BdpWfFlowNode)">
+            <summary>
+            用于向 BdpWfFlowNodes EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWorkFlowEntities.AddToBdpWfNotifyPersons(Hongbin.WorkFlow.Model.BdpWfNotifyPerson)">
+            <summary>
+            用于向 BdpWfNotifyPersons EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfActionDetail">
+            <summary>
+            审批流执行子表 (BDP_WF_ACTION_DETAIL)
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfActionDetail.CreateBdpWfActionDetail(System.String)">
+            <summary>
+            创建新的 BdpWfActionDetail 对象。
+            </summary>
+            <param name="detailId">DetailId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfActionDetail.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.DetailId">
+            <summary>
+            执行记录标识  [DETAIL_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.ActionId">
+            <summary>
+            审批流执行ID  [ACTION_ID,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            WF_ACTION_MASTER的主键值
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.NodeId">
+            <summary>
+            流程节点标识  [NODE_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.NodeOrder">
+            <summary>
+            节点序号  [NODE_ORDER,F(长整数)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.HintMessage">
+            <summary>
+            信息  [HINT_MESSAGE,A(变长字符串),1000]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.AuditPerson">
+            <summary>
+            审核人  [AUDIT_PERSON,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            用户标识
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.AuditDate">
+            <summary>
+            审核日期  [AUDIT_DATE,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.AuditOpinion">
+            <summary>
+            审核意见  [AUDIT_OPINION,A(变长字符串),500]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.IsPassed">
+            <summary>
+            是否通过  [IS_PASSED,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.IsEnd">
+            <summary>
+            是否终止流程  [IS_END,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.IsCountersign">
+            <summary>
+            是否会签处理记录  [IS_COUNTERSIGN,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            是否为会签处理记录
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.IsDone">
+            <summary>
+            是否已经审批  [IS_DONE,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.SenderDetailId">
+            <summary>
+            发送者的审批记录标识  [SENDER_DETAIL_ID,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            发送者的审批记录标识
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelWfFlowNode">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelWfFlowNodeReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelWfActionMaster">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfActionMaster 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelWfActionMasterReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfActionMaster 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelReceiverAuditDetails">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象集合.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelSenderAuditDetail">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionDetail.RelSenderAuditDetailReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象实例.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfActionMaster">
+            <summary>
+            审批流执行主表 (BDP_WF_ACTION_MASTER)
+            </summary>
+            <LongDescription>
+            流程实例主表
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfActionMaster.CreateBdpWfActionMaster(System.String)">
+            <summary>
+            创建新的 BdpWfActionMaster 对象。
+            </summary>
+            <param name="actionId">ActionId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfActionMaster.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.ActionId">
+            <summary>
+            审批流执行ID  [ACTION_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.ActionName">
+            <summary>
+            实例名称  [ACTION_NAME,A(变长字符串),1000]
+            </summary>
+            <LongDescription>
+            审批流程实例名称
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.FlowId">
+            <summary>
+            审批流  [FLOW_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.CurrentNodeId">
+            <summary>
+            当前节点标识  [CURRENT_NODE_ID,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            当前审批节点标识
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.AuditObjectKey">
+            <summary>
+            单据编码  [AUDIT_OBJECT_KEY,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            单据表的主键值
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.AuditObjectKindId">
+            <summary>
+            单据类别标识  [AUDIT_OBJECT_KIND_ID,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            BDP_WF_BILL_KIND的主键值
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.AuditStatus">
+            <summary>
+            审批状态  [AUDIT_STATUS,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            BDP_WF_AUDIT_STATE表的主键值&#xA;0 未审核 &#xA;1 审核未通过 &#xA;2 审核通过 &#xA;3 审核中&#xA;
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.EndFlag">
+            <summary>
+            是否结束  [END_FLAG,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            True&#xA;False
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.SubmitPerson">
+            <summary>
+            提交人  [SUBMIT_PERSON,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            PrivUser的主键值
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.SubmitDate">
+            <summary>
+            提交日期  [SUBMIT_DATE,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfBillClass">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfBillKind 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfBillClassReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfBillKind 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfActionDetails">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象集合.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfFlow">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfFlowReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfAuditState">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfAuditState 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelWfAuditStateReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfAuditState 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelCurrentFlowNode">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfActionMaster.RelCurrentFlowNodeReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfAssign">
+            <summary>
+            流程分配表 (BDP_WF_ASSIGN)
+            </summary>
+            <LongDescription>
+            确定业务单据对应审批流程，比如请假单，如果BILL_KIND和DEPT_ID均为空，说明所有的请假单都是相同的审批流程；如果DEPT_ID不空，则说明请假单在不同的部门审批流程是不一样的；如果BILL_KIND不为空，则指某种定请假单的审批流程，比如科长的请假和一般员工的请假审批流程不
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfAssign.CreateBdpWfAssign(System.String)">
+            <summary>
+            创建新的 BdpWfAssign 对象。
+            </summary>
+            <param name="assignId">AssignId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfAssign.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.AssignId">
+            <summary>
+            分配标识  [ASSIGN_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.BillKindId">
+            <summary>
+            单据类别标识  [BILL_KIND_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.ApplianceSign">
+            <summary>
+            适用标志  [APPLIANCE_SIGN,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            一个标志串，意即标志匹配就用此流程
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.ApplianceExp">
+            <summary>
+            适用条件  [APPLIANCE_EXP,A(变长字符串),500]
+            </summary>
+            <LongDescription>
+            公式返回逻辑值，为真即使用此流程。公式中可以使用单据对象BILL
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.FlowId">
+            <summary>
+            审批流程  [FLOW_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.RelWfBillClass">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfBillKind 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.RelWfBillClassReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfBillKind 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.RelWfFlow">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAssign.RelWfFlowReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfAuditState">
+            <summary>
+            审核状态 (BDP_WF_AUDIT_STATE)
+            </summary>
+            <LongDescription>
+            BdpWfAuditState
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfAuditState.CreateBdpWfAuditState(System.String)">
+            <summary>
+            创建新的 BdpWfAuditState 对象。
+            </summary>
+            <param name="stateId">StateId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfAuditState.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.StateId">
+            <summary>
+            状态标识  [STATE_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.StateName">
+            <summary>
+            状态名称  [STATE_NAME,A(变长字符串),30]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.StateCode">
+            <summary>
+            状态代码  [STATE_CODE,E(短整数)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfAuditState.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfBillKind">
+            <summary>
+            单据类型表 (BDP_WF_BILL_KIND)
+            </summary>
+            <LongDescription>
+            本表中的表名应是实体类名，字段名应是实体类的属性名
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfBillKind.CreateBdpWfBillKind(System.String)">
+            <summary>
+            创建新的 BdpWfBillKind 对象。
+            </summary>
+            <param name="billKindId">BillKindId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfBillKind.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.BillKindId">
+            <summary>
+            单据类别标识  [BILL_KIND_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.BillKindName">
+            <summary>
+            单据类别名称  [BILL_KIND_NAME,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.BillTableName">
+            <summary>
+            单据表名  [BILL_TABLE_NAME,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            实体类名
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.FldKey">
+            <summary>
+            主键字段名  [FLD_KEY,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.FldLabel">
+            <summary>
+            标签字段名  [FLD_LABEL,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.FldAuditPerson">
+            <summary>
+            审核人字段名  [FLD_AUDIT_PERSON,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.FldAuditDate">
+            <summary>
+            审核日期字段  [FLD_AUDIT_DATE,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.FldAuditOpinion">
+            <summary>
+            审核意见字段名  [FLD_AUDIT_OPINION,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.FldAuditState">
+            <summary>
+            审核状态字段名  [FLD_AUDIT_STATE,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.AuditUrl">
+            <summary>
+            审核页面地址  [AUDIT_URL,A(变长字符串),200]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.ViewUrl">
+            <summary>
+            查看地址  [VIEW_URL,A(变长字符串),200]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBillKind.RelWfAssigns">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfAssign 的对象集合.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfBusinessAgent">
+            <summary>
+            业务代理人表  (BDP_WF_BUSINESS_AGENT)
+            </summary>
+            <LongDescription>
+            业务代理人应该是全局性的，表述某人的某项业务由谁来代理
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.CreateBdpWfBusinessAgent(System.String)">
+            <summary>
+            创建新的 BdpWfBusinessAgent 对象。
+            </summary>
+            <param name="agentId">AgentId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.AgentId">
+            <summary>
+            代理人标识  [AGENT_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.AgentName">
+            <summary>
+            代理说明  [AGENT_NAME,A(变长字符串),100]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.UserId">
+            <summary>
+            人员  [USER_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.BizSign">
+            <summary>
+            业务标志  [BIZ_SIGN,A(变长字符串),50]
+            </summary>
+            <LongDescription>
+            可能暂时用不上
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.AgentUserId">
+            <summary>
+            代理人  [AGENT_USER_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.EnableFlag">
+            <summary>
+            启用标志  [ENABLE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.StartDate">
+            <summary>
+            开始日期  [START_DATE,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.EndDate">
+            <summary>
+            结束日期  [END_DATE,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfBusinessAgent.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfFlow">
+            <summary>
+            审批流程定义表 (BDP_WF_FLOW)
+            </summary>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfFlow.CreateBdpWfFlow(System.String)">
+            <summary>
+            创建新的 BdpWfFlow 对象。
+            </summary>
+            <param name="flowId">FlowId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfFlow.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.FlowId">
+            <summary>
+            审批流标识  [FLOW_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.FlowName">
+            <summary>
+            流程名称  [FLOW_NAME,A(变长字符串),60]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.CategoryId">
+            <summary>
+            流程分类  [CATEGORY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.BackToPrevenient">
+            <summary>
+            是否逐级拒绝  [BACK_TO_PREVENIENT,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.AllowEdit">
+            <summary>
+            是否允许编辑  [ALLOW_EDIT,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            审批人在审批时是否允许修改单据
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.AllowSelectNode">
+            <summary>
+            是否允许选择节点  [ALLOW_SELECT_NODE,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.PreserveTraces">
+            <summary>
+            保存痕迹  [PRESERVE_TRACES,D(逻辑值)]
+            </summary>
+            <LongDescription>
+            弃核后是否保存痕迹
+            </LongDescription>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.EnableFlag">
+            <summary>
+            启用标识  [ENABLE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.Description">
+            <summary>
+            流程说明  [DESCRIPTION,A(变长字符串),1000]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.RelWfFlowNodes">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象集合.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.RelWfFlowCategory">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowCategory 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.RelWfFlowCategoryReference">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowCategory 的对象实例.
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlow.RelWfAssigns">
+            <summary>
+            返回类型为 Hongbin.WorkFlow.Model.BdpWfAssign 的对象集合.
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.Model.BdpWfFlowCategory">
+            <summary>
+            流程分类表 (BDP_WF_FLOW_CATEGORY)
+            </summary>
+            <LongDescription>
+            有关该数据集说明信息
+            </LongDescription>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfFlowCategory.CreateBdpWfFlowCategory(System.String)">
+            <summary>
+            创建新的 BdpWfFlowCategory 对象。
+            </summary>
+            <param name="categoryId">CategoryId 属性的初始值。</param>
+        </member>
+        <member name="M:Hongbin.WorkFlow.Model.BdpWfFlowCategory.AssignTo(Hongbin.Data.BaseEntityObject)">
+            <summary>
+            重载对象复制
+            </summary>
+            <param name="destEntity">目标实体对象</param>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.CategoryId">
+            <summary>
+            流程分类标识  [CATEGORY_ID,A(变长字符串),非空,50], 主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.Name">
+            <summary>
+            分类名称  [NAME,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.Code">
+            <summary>
+            分类代码  [CODE,A(变长字符串),10]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.Notes">
+            <summary>
+            分类说明  [NOTES,A(变长字符串),100]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.InnerCompanyId">
+            <summary>
+            公司  [INNER_COMPANY_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.InnerCreatorId">
+            <summary>
+            创建人  [INNER_CREATOR_ID,A(变长字符串),50]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.InnerCreateTime">
+            <summary>
+            创建时间  [INNER_CREATE_TIME,J(日期)]
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.Model.BdpWfFlowCategory.InnerDeleteFlag">
+            <summary>
+            删除标志  [INNER_DELETE_FLAG,D(逻辑值)]
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.AuditState">
+            <summary>
+            审批状态
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditState.NoAudit">
+            <summary>
+            未审批
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditState.NoPass">
+            <summary>
+            审批未通过
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditState.Passed">
+            <summary>
+            审批已通过
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditState.Auditing">
+            <summary>
+            审批中
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.AuditMode">
+            <summary>
+            审批方式
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditMode.Forestall">
+            <summary>
+            抢先
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.AuditMode.Countersign">
+            <summary>
+            会签
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.NotifyMode">
+            <summary>
+            通知方式
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.NotifyMode.Message">
+            <summary>
+            系统/或网站首页消息
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.NotifyMode.Email">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.NotifyMode.SMS">
+            <summary>
+            手机消息
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.PersonKind">
+            <summary>
+            人员类别
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.PersonKind.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="F:Hongbin.WorkFlow.PersonKind.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.WfGetAuditingObjectArgs">
+            <summary>
+            获取待审批对象事件参数类
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfGetAuditingObjectArgs.AuditingObject">
+            <summary>
+            待审批对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.AuditingObject">
+            <summary>
+            读取当前待审批对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.DefaultObjectName">
+            <summary>
+            读取或设置审批对象的缺省名称(用户可能修改此名称)
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.Cancel">
+            <summary>
+            读取或设置是否取消审批,如果取消将不会出现审批对象框
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.IsFirst">
+            <summary>
+            读取是否第一审批节点，即提交审批
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.IsLast">
+            <summary>
+            读取是否为最终审批
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.Flow">
+            <summary>
+            当前流程
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfBeforeAuditing.Node">
+            <summary>
+            当前节点
+            </summary>
+        </member>
+        <member name="T:Hongbin.WorkFlow.WfAfterAuditArgs">
+            <summary>
+            流程审批后事件参数类
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfAfterAuditArgs.AuditingObject">
+            <summary>
+            正在审批的对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.WorkFlow.WfAfterAuditArgs.AuditState">
+            <summary>
+            审批状态,是指整个流程的审批状态，审批过程中状态值总是 Auditing
+            </summary>
+        </member>
+    </members>
+</doc>

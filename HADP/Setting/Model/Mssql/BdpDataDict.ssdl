@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hongbin.Data.DataDict.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0">
+  <EntityContainer Name="BdpDataDictEntitiesStoreContainer">
+    <EntitySet Name="DD_BAKs" EntityType="Hongbin.Data.DataDict.Store.DD_BAK" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_BAK" />
+    <EntitySet Name="DD_CLSs" EntityType="Hongbin.Data.DataDict.Store.DD_CLS" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_CLS" />
+    <EntitySet Name="DD_DTTs" EntityType="Hongbin.Data.DataDict.Store.DD_DTT" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_DTT" />
+    <EntitySet Name="DD_EXTs" EntityType="Hongbin.Data.DataDict.Store.DD_EXT" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_EXT" />
+    <EntitySet Name="DD_FLDs" EntityType="Hongbin.Data.DataDict.Store.DD_FLD" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_FLD" />
+    <EntitySet Name="DD_OBJs" EntityType="Hongbin.Data.DataDict.Store.DD_OBJ" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_OBJ" />
+    <EntitySet Name="DD_RELs" EntityType="Hongbin.Data.DataDict.Store.DD_REL" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_REL" />
+    <EntitySet Name="DD_SETs" EntityType="Hongbin.Data.DataDict.Store.DD_SET" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_SET" />
+    <EntitySet Name="DD_SQLs" EntityType="Hongbin.Data.DataDict.Store.DD_SQL" store:Type="Tables" Schema="ECSYSDATA.dbo" Table="DD_SQL" />
+  </EntityContainer>
+  <EntityType Name="DD_BAK">
+    <Key>
+      <PropertyRef Name="SETID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="BAKPERIOD" Type="varchar" MaxLength="4" />
+    <Property Name="BAKTIME" Type="datetime" />
+    <Property Name="BAKAUTO" Type="char" />
+    <Property Name="BAKPRIORITY" Type="int" />
+    <Property Name="BAKCONDITION" Type="image" />
+    <Property Name="BAKCONDTYPE" Type="char" />
+    <Property Name="BAKTABLENAME" Type="varchar" MaxLength="30" />
+    <Property Name="BAKKEEPDATA" Type="char" />
+  </EntityType>
+  <EntityType Name="DD_CLS">
+    <Key>
+      <PropertyRef Name="CLSCODE" />
+    </Key>
+    <Property Name="CLSCODE" Nullable="false" Type="varchar" MaxLength="4" />
+    <Property Name="CLSPARENTCODE" Type="varchar" MaxLength="4" />
+    <Property Name="CLSORDER" Type="int" />
+    <Property Name="CLSNAME" Type="varchar" MaxLength="30" />
+    <Property Name="CLSNOTE" Type="varchar" MaxLength="254" />
+    <Property Name="CLSDSETIDS" Type="image" />
+  </EntityType>
+  <EntityType Name="DD_DTT">
+    <Key>
+      <PropertyRef Name="TYPCODE" />
+    </Key>
+    <Property Name="TYPCODE" Nullable="false" Type="char" />
+    <Property Name="TYPNAME" Nullable="false" Type="varchar" MaxLength="30" />
+    <Property Name="TYPID" Nullable="false" Type="varchar" MaxLength="30" />
+    <Property Name="FLDLEN" Type="int" />
+    <Property Name="TYPPRECISION" Type="int" />
+    <Property Name="CSHARPTYPE" Type="varchar" MaxLength="20" />
+    <Property Name="FLDDEC" Type="int" />
+    <Property Name="SSDLTYPE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DD_EXT">
+    <Key>
+      <PropertyRef Name="SETID" />
+      <PropertyRef Name="OBJOWNER" />
+      <PropertyRef Name="OBJID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJOWNER" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJNAME" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJNOTE" Type="varchar" MaxLength="254" />
+    <Property Name="OBJCRTIME" Type="datetime" />
+    <Property Name="OBJUPTIME" Type="datetime" />
+    <Property Name="OBJKIND" Type="varchar" MaxLength="10" />
+    <Property Name="OBJPARAM" Type="varbinary" />
+    <Property Name="OBJSTATE" Type="char" />
+  </EntityType>
+  <EntityType Name="DD_FLD">
+    <Key>
+      <PropertyRef Name="SETID" />
+      <PropertyRef Name="FLDID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="FLDID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="FLDNAME" Type="varchar" MaxLength="100" />
+    <Property Name="FLDORDER" Type="int" />
+    <Property Name="FLDTYPE" Type="char" />
+    <Property Name="FLDLEN" Type="int" />
+    <Property Name="FLDDEC" Type="int" />
+    <Property Name="FLDUNIT" Type="varchar" MaxLength="16" />
+    <Property Name="FLDDEFAULT" Type="varchar" MaxLength="100" />
+    <Property Name="FLDNULLFLAG" Type="char" />
+    <Property Name="FLDPRIMARYFLAG" Type="char" />
+    <Property Name="FLDUNIQFLAG" Type="char" />
+    <Property Name="FLDCOND" Type="varchar" MaxLength="100" />
+    <Property Name="FLDCTRLTYPE" Type="char" />
+    <Property Name="FLDCTRLARGV" Type="varchar" MaxLength="2000" />
+    <Property Name="FLDEDITFLAG" Type="char" />
+    <Property Name="FLDVIEWFLAG" Type="char" />
+    <Property Name="FLDNOTE" Type="varchar" MaxLength="254" />
+    <Property Name="FLDLOCATEFLAG" Type="char" />
+  </EntityType>
+  <EntityType Name="DD_OBJ">
+    <Key>
+      <PropertyRef Name="SETID" />
+      <PropertyRef Name="OBJOWNER" />
+      <PropertyRef Name="OBJID" />
+      <PropertyRef Name="OBJNAME" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJOWNER" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJNAME" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="OBJNOTE" Type="varchar" MaxLength="254" />
+    <Property Name="OBJCRTIME" Type="datetime" />
+    <Property Name="OBJUPTIME" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DD_REL">
+    <Key>
+      <PropertyRef Name="RELID" />
+    </Key>
+    <Property Name="RELID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="RELCODE" Type="varchar" MaxLength="50" />
+    <Property Name="RELNAME" Type="varchar" MaxLength="50" />
+    <Property Name="PARENT_DSET" Type="varchar" MaxLength="50" />
+    <Property Name="PARENT_FLDID" Type="varchar" MaxLength="50" />
+    <Property Name="PARENT_MULTIPLICITY" Type="varchar" MaxLength="10" />
+    <Property Name="PARENT_ROLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="CHILD_DSET" Type="varchar" MaxLength="50" />
+    <Property Name="CHILD_FLDID" Type="varchar" MaxLength="50" />
+    <Property Name="CHILD_MULTIPLICITY" Type="varchar" MaxLength="10" />
+    <Property Name="CHILD_ROLE_NAME" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DD_SET">
+    <Key>
+      <PropertyRef Name="SETID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="SETNAME" Nullable="false" Type="varchar" MaxLength="100" />
+    <Property Name="SETTYPE" Nullable="false" Type="varchar" MaxLength="8" />
+    <Property Name="SETCCODE" Type="varchar" MaxLength="8" />
+    <Property Name="SETNOTE" Type="varchar" MaxLength="254" />
+    <Property Name="SETOBJOWNER" Type="varchar" MaxLength="50" />
+    <Property Name="SETOBJNAME" Type="varchar" MaxLength="80" />
+    <Property Name="SETCOND" Type="varchar" MaxLength="512" />
+    <Property Name="SETUPDATEPERIOD" Type="varchar" MaxLength="4" />
+    <Property Name="SETUPDATEMODE" Type="varchar" MaxLength="4" />
+    <Property Name="SETUPDATESQL" Type="image" />
+  </EntityType>
+  <EntityType Name="DD_SQL">
+    <Key>
+      <PropertyRef Name="SETID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="varchar" MaxLength="30" />
+    <Property Name="SETCREATESQL" Type="image" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HADP", "HADP\", "{FB370361-5B31-497A-A516-6C7C53F4B3CD}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_5899"
+		Debug.AspNetCompiler.PhysicalPath = "HADP\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5899\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_5899"
+		Release.AspNetCompiler.PhysicalPath = "HADP\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_5899\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "5899"
+		SlnRelativePath = "HADP\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfPlatformApp", "WpfPlatform\WpfPlatformApp\WpfPlatformApp.csproj", "{D398165B-1CD8-4A17-9EFF-658CE78DF5F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeManage", "CodeManage", "{0FDAFCF2-0C77-4555-9E53-6C6A438E23BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinPlatformApp", "WinPlatformApp\WinPlatformApp.csproj", "{6A986A2E-667F-4850-BB5E-B99CC5298E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormFactory", "CodeManage\FormFactory\FormFactory.csproj", "{1CD0DB3D-7ADA-4ABE-9A79-095B72868225}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataEntity", "CodeManage\DataEntity\DataEntity.csproj", "{310A4114-5D6B-42A1-8B37-46478E3500B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB370361-5B31-497A-A516-6C7C53F4B3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB370361-5B31-497A-A516-6C7C53F4B3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB370361-5B31-497A-A516-6C7C53F4B3CD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB370361-5B31-497A-A516-6C7C53F4B3CD}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D398165B-1CD8-4A17-9EFF-658CE78DF5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D398165B-1CD8-4A17-9EFF-658CE78DF5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D398165B-1CD8-4A17-9EFF-658CE78DF5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D398165B-1CD8-4A17-9EFF-658CE78DF5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A986A2E-667F-4850-BB5E-B99CC5298E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A986A2E-667F-4850-BB5E-B99CC5298E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A986A2E-667F-4850-BB5E-B99CC5298E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A986A2E-667F-4850-BB5E-B99CC5298E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD0DB3D-7ADA-4ABE-9A79-095B72868225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD0DB3D-7ADA-4ABE-9A79-095B72868225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD0DB3D-7ADA-4ABE-9A79-095B72868225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD0DB3D-7ADA-4ABE-9A79-095B72868225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310A4114-5D6B-42A1-8B37-46478E3500B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310A4114-5D6B-42A1-8B37-46478E3500B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310A4114-5D6B-42A1-8B37-46478E3500B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310A4114-5D6B-42A1-8B37-46478E3500B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1CD0DB3D-7ADA-4ABE-9A79-095B72868225} = {0FDAFCF2-0C77-4555-9E53-6C6A438E23BB}
+		{310A4114-5D6B-42A1-8B37-46478E3500B5} = {0FDAFCF2-0C77-4555-9E53-6C6A438E23BB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E397DF3-67A0-4C9A-ABD3-A928FE6FC16D}
+	EndGlobalSection
+EndGlobal

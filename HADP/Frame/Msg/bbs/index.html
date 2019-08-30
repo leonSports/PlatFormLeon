@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
+    <!--<meta charset="GB2312">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' />-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+
+    <link href="../../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../resources/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../resources/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bbs.css?v=1.16" rel="stylesheet" />
+</head>
+<body class="bbs-main-bg bbs-fix-top">
+    <header id="sec-header" class="container">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-brand">系统交流区</div>
+                <div class="navbar-right">
+                    <a id="newsrefresh" class="btn btn-link text-danger" style="cursor:pointer;text-decoration:none; color:#007aff;"><i class="glyphicon glyphicon-refresh"></i> 刷新</a>
+                    <button type="button" id="newtopic" class="btn btn-default navbar-btn">发表新话题</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="sec-content" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="bbs-content-bg">
+                    <div class="bbs-logo">
+                        <div class="bbs-logo-bkimg">
+
+                        </div>
+                        <div class="bbs-logo-bottom"></div>
+                        <div class="bbs-logo-user">
+                            <div class="username">
+                                <h3 class="text-center">
+                                    <span id="username">无名</span>
+                                </h3>
+                            </div>
+                            <div id="head-photo" class="head-photo" style="background-image:url()">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sec-newtopic" class="bbs-newtopic">
+                        <div class="panel panel-body">
+                            <span id="lblReferName" class="bars"></span>
+                            <textarea id="newseditor" name="newseditor"></textarea>
+                        </div>
+                        <div id="editor-tools" class="pull-right">
+                            <a id="btnSaveNews" class="btn btn-link" title="提交">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </a>
+                            <a id="btnCancelNews" class="btn btn-link" title="取消">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="sec-topic" class="bbs-topic">
+                        <ul class="list-group">
+                            <!--<li class="list-group-item">
+                                <div class="bbs-topic-card">
+                                    <div class="head">
+                                        <img src="css/images/ma1.jpg" />
+                                    </div>
+                                    <div class="mbody">
+                                        <div class="anthor">
+                                            马云
+                                        </div>
+                                        <div class="words">
+                                            2014年9月19日 - 微信扫一扫分享到朋友圈 原版阅读如果你还没有开始使用Bootstrap模板,那你可真是有够OUT,这是一个帮助你快速开发的工具,Bootstrap是基于jQuery框架开发...
+                                        </div>
+                                        <div class="tools">
+                                            <div class="ptime">
+                                                2小时前
+                                            </div>
+                                            <div class="reply">
+                                                <a href="#">回复</a>
+                                            </div>
+                                        </div>
+                                        <div class="replybox">
+                                            <div class="zan"></div>
+                                            <div class="comment" data-id="0448ebad961f48a0a93ad62117fe88e3">
+                                                <div class="header">
+                                                    <span class="observer">Admin: </span>
+                                                </div>
+                                                <div class="opinion"><p>什么东西？</p></div>
+                                            </div>
+                                            <div class="comment">
+                                                <a class="observer">朱双民</a>
+                                                <span class="opinion">微信是一种生活方式！</span>
+                                            </div>
+                                            <div class="comment">
+                                                <a class="observer">李江林</a>回复<a class="observer">朱双民</a>
+                                                <span class="opinion">在线翻译，一般是指在线翻译工具，如百度翻译，阿里翻译1688或Google翻译等。这类翻译工具的作用是利用计算机程序将一种自然语言(源语言)转换为另一种自然语言(目标语言)。</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>-->
+                        </ul>
+                        <div class="bbs-nomore">没有更多了</div>
+                        <!--加载状态条-->
+                        <div class="bbs-loading">
+                            <div class="info">
+                                <img src="css/images/loading.gif" />
+                                <span>正在加载，请稍候...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="sec-footer" class="container">
+        <div class="bbs-footer center-block">西安红彬科技发展有限公司</div>
+    </footer>
+    <!--回到顶部-->
+    <a class="btn btn-default bbs-gotop">
+        <i class="glyphicon glyphicon-hand-up"></i>
+    </a>
+    <!--ajax上传-->
+    <input type="file" id="bbsupload" name="bbsupload" />
+
+    <script src="../../resources/js/jquery.min.js"></script>
+    <script src="../../resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../resources/js/bdp-base.js"></script>
+    <script src="../../resources/js/bdp-utils.js"></script>
+    <script src="../../resources/ueditor/ueditor.config.js"></script>
+    <script src="../../resources/ueditor/ueditor.all.min.js"></script>
+    <script src="bbs.js"></script>
+</body>
+</html>

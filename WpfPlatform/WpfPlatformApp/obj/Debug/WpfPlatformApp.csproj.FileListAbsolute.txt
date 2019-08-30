@@ -1,0 +1,14 @@
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\bin\Debug\WpfPlatformApp.exe
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\bin\Debug\WpfPlatformApp.pdb
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.csprojAssemblyReference.cache
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\MainWindow.g.cs
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\App.g.cs
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp_MarkupCompile.cache
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp_MarkupCompile.lref
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\MainWindow.baml
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.g.resources
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.Properties.Resources.resources
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.csproj.GenerateResource.cache
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.csproj.CoreCompileInputs.cache
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.exe
+D:\myself\work\平台发布20190816\PlatFormLeon\WpfPlatform\WpfPlatformApp\obj\Debug\WpfPlatformApp.pdb

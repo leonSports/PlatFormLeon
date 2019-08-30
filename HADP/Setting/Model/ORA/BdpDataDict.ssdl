@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hongbin.Data.DataDict.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Ora10gR2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0">
+  <EntityContainer Name="BdpDataDictEntitiesStoreContainer">
+    <EntitySet Name="DD_CLSs" EntityType="Hongbin.Data.DataDict.Store.DD_CLS" store:Type="Tables" Schema="EMPDATA" Table="DD_CLS" />
+    <EntitySet Name="DD_SETs" EntityType="Hongbin.Data.DataDict.Store.DD_SET" store:Type="Tables" Schema="EMPDATA" Table="DD_SET" />
+    <EntitySet Name="DD_SQLs" EntityType="Hongbin.Data.DataDict.Store.DD_SQL" store:Type="Tables" Schema="EMPDATA" Table="DD_SQL" />
+    <EntitySet Name="DD_FLDs" EntityType="Hongbin.Data.DataDict.Store.DD_FLD" store:Type="Tables" Schema="EMPDATA" Table="DD_FLD" />
+    <EntitySet Name="DD_OBJs" EntityType="Hongbin.Data.DataDict.Store.DD_OBJ" store:Type="Tables" Schema="EMPDATA" Table="DD_OBJ" />
+    <EntitySet Name="DD_EXTs" EntityType="Hongbin.Data.DataDict.Store.DD_EXT" store:Type="Tables" Schema="EMPDATA" Table="DD_EXT" />
+    <EntitySet Name="DD_BAKs" EntityType="Hongbin.Data.DataDict.Store.DD_BAK" store:Type="Tables" Schema="EMPDATA" Table="DD_BAK" />
+    <EntitySet Name="DD_DTTs" EntityType="Hongbin.Data.DataDict.Store.DD_DTT" store:Type="Tables" Schema="EMPDATA" Table="DD_DTT" />
+    <EntitySet Name="DD_RELs" EntityType="Hongbin.Data.DataDict.Store.DD_REL" store:Type="Tables" Schema="EMPDATA" Table="DD_REL" />
+  </EntityContainer>
+  <EntityType Name="DD_CLS">
+    <Key>
+      <PropertyRef Name="CLSCODE" />
+    </Key>
+    <Property Name="CLSCODE" Nullable="false" Type="NVARCHAR2" MaxLength="4" />
+    <Property Name="CLSPARENTCODE" Type="NVARCHAR2" MaxLength="4" />
+    <Property Name="CLSORDER" Type="int" />
+    <Property Name="CLSNAME" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="CLSNOTE" Type="NVARCHAR2" MaxLength="254" />
+    <Property Name="CLSDSETIDS" Type="BLOB" />
+  </EntityType>
+  <EntityType Name="DD_SET">
+    <Key>
+      <PropertyRef Name="SETID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SETNAME" Nullable="false" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="SETTYPE" Nullable="false" Type="NVARCHAR2" MaxLength="8" />
+    <Property Name="SETCCODE" Type="NVARCHAR2" MaxLength="8" />
+    <Property Name="SETNOTE" Type="NVARCHAR2" MaxLength="2000" />
+    <Property Name="SETOBJOWNER" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SETOBJNAME" Type="NVARCHAR2" MaxLength="80" />
+    <Property Name="SETCOND" Type="NVARCHAR2" MaxLength="512" />
+    <Property Name="SETUPDATEPERIOD" Type="NVARCHAR2" MaxLength="4" />
+    <Property Name="SETUPDATEMODE" Type="NVARCHAR2" MaxLength="4" />
+    <Property Name="SETUPDATESQL" Type="BLOB" />
+  </EntityType>
+  <EntityType Name="DD_SQL">
+    <Key>
+      <PropertyRef Name="SETID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="SETCREATESQL" Type="BLOB" />
+  </EntityType>
+  <EntityType Name="DD_FLD">
+    <Key>
+      <PropertyRef Name="SETID" />
+      <PropertyRef Name="FLDID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FLDID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FLDNAME" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="FLDORDER" Type="int" />
+    <Property Name="FLDTYPE" Type="CHAR" />
+    <Property Name="FLDLEN" Type="int" />
+    <Property Name="FLDDEC" Type="int" />
+    <Property Name="FLDUNIT" Type="NVARCHAR2" MaxLength="16" />
+    <Property Name="FLDDEFAULT" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="FLDNULLFLAG" Type="CHAR" />
+    <Property Name="FLDPRIMARYFLAG" Type="CHAR" />
+    <Property Name="FLDUNIQFLAG" Type="CHAR" />
+    <Property Name="FLDCOND" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="FLDCTRLTYPE" Type="CHAR" />
+    <Property Name="FLDCTRLARGV" Type="NVARCHAR2" MaxLength="254" />
+    <Property Name="FLDEDITFLAG" Type="CHAR" />
+    <Property Name="FLDVIEWFLAG" Type="CHAR" />
+    <Property Name="FLDNOTE" Type="NVARCHAR2" MaxLength="254" />
+    <Property Name="FLDLOCATEFLAG" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="DD_OBJ">
+    <Key>
+      <PropertyRef Name="SETID" />
+      <PropertyRef Name="OBJOWNER" />
+      <PropertyRef Name="OBJID" />
+      <PropertyRef Name="OBJNAME" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJOWNER" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJNAME" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJNOTE" Type="NVARCHAR2" MaxLength="254" />
+    <Property Name="OBJCRTIME" Type="DATE" />
+    <Property Name="OBJUPTIME" Type="DATE" />
+  </EntityType>
+  <EntityType Name="DD_EXT">
+    <Key>
+      <PropertyRef Name="OBJID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJOWNER" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJNAME" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OBJNOTE" Type="NVARCHAR2" MaxLength="254" />
+    <Property Name="OBJCRTIME" Type="DATE" />
+    <Property Name="OBJUPTIME" Type="DATE" />
+    <Property Name="OBJKIND" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="OBJPARAM" Type="LONG RAW" />
+    <Property Name="OBJSTATE" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="DD_BAK">
+    <Key>
+      <PropertyRef Name="SETID" />
+    </Key>
+    <Property Name="SETID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BAKPERIOD" Type="NVARCHAR2" MaxLength="4" />
+    <Property Name="BAKTIME" Type="DATE" />
+    <Property Name="BAKAUTO" Type="CHAR" />
+    <Property Name="BAKPRIORITY" Type="int" />
+    <Property Name="BAKCONDITION" Type="BLOB" />
+    <Property Name="BAKCONDTYPE" Type="CHAR" />
+    <Property Name="BAKTABLENAME" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="BAKKEEPDATA" Type="CHAR" />
+  </EntityType>
+  <EntityType Name="DD_DTT">
+    <Key>
+      <PropertyRef Name="TYPCODE" />
+    </Key>
+    <Property Name="TYPCODE" Nullable="false" Type="CHAR" />
+    <Property Name="TYPNAME" Nullable="false" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="TYPID" Nullable="false" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="FLDLEN" Type="int" />
+    <Property Name="TYPPRECISION" Type="int" />
+    <Property Name="FLDDEC" Type="int" />
+    <Property Name="CSHARPTYPE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="SSDLTYPE" Type="NVARCHAR2" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DD_REL">
+    <Key>
+      <PropertyRef Name="RELID" />
+    </Key>
+    <Property Name="RELID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="RELCODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="RELNAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_DSET" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_FLDID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_MULTIPLICITY" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="PARENT_ROLE_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHILD_DSET" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHILD_FLDID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHILD_MULTIPLICITY" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="CHILD_ROLE_NAME" Type="NVARCHAR2" MaxLength="50" />
+  </EntityType>
+</Schema>

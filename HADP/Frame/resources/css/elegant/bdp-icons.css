@@ -1,0 +1,606 @@
+﻿
+.bdp-icons-add {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -1px;
+}
+
+.bdp-icons-addcopy {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -1px;
+}
+
+.bdp-icons-edit {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -1px;
+}
+
+.bdp-icons-delete {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -1px;
+}
+
+.bdp-icons-save {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -1px;
+}
+
+.bdp-icons-printer {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -1px;
+}
+
+.bdp-icons-refresh {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -1px;
+}
+
+.bdp-icons-search {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -1px;
+    background-color: transparent;
+}
+
+.bdp-icons-home {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -1px;
+}
+
+.bdp-icons-cancel {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -1px;
+}
+
+.bdp-icons-lock {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -1px;
+}
+
+.bdp-icons-unlock {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -1px;
+}
+
+.bdp-icons-password {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -236px -1px;
+}
+
+.bdp-icons-clear {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -1px;
+}
+
+.bdp-icons-restoration {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -272px -1px;
+}
+
+.bdp-icons-setting {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -1px;
+}
+
+.bdp-icons-card {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -1px;
+}
+
+.bdp-icons-card_setting {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -326px -1px;
+}
+
+.treedept {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -1px;
+}
+/*文件夹*/
+.bdp-icons-H_folder {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -19px;
+}
+
+.bdp-icons-H_folder_open {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -19px;
+}
+
+.bdp-icons-H_folder_search {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -19px;
+}
+
+.bdp-icons-folder {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -19px;
+}
+
+.bdp-icons-folder_open {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -19px;
+}
+
+.bdp-icons-folder_tree {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -19px;
+}
+
+.bdp-icons-folders {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -19px;
+}
+
+.bdp-icons-folders_more {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -19px;
+}
+
+.bdp-icons-folder_add {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -19px;
+}
+
+.bdp-icons-folder_delete {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -19px;
+}
+
+.bdp-icons-folder_import {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -19px;
+}
+
+.bdp-icons-folder_export {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -19px;
+}
+
+.bdp-icons-folder_remove {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -19px;
+}
+
+.bdp-icons-Blue_H_folder {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -236px -19px;
+}
+
+.bdp-icons-Blue_H_folder_open {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -19px;
+}
+
+.bdp-icons-Blue_folder {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -272px -19px;
+}
+
+.bdp-icons-Blue_folder_open {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -19px;
+}
+
+.bdp-icons-Blue_folders {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -19px;
+}
+
+.bdp-icons-Blue_folders_more {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -326px -19px;
+}
+
+.bdp-icons-Blue_folder_tree {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -37px;
+}
+/*报警*/
+.bdp-icons-alert {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -37px;
+}
+
+.bdp-icons-alert_array {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -37px;
+}
+/*警告*/
+.bdp-icons-warning {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -37px;
+}
+
+.bdp-icons-warning_diam {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -37px;
+}
+/*错误*/
+.bdp-icons-close {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -37px;
+}
+
+.bdp-icons-error {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -37px;
+}
+
+.bdp-icons-error_butt {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -37px;
+}
+
+.bdp-icons-revoke {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -37px;
+}
+
+.bdp-icons-debug {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -236px -37px;
+}
+
+.bdp-icons-debug_normal {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -37px;
+}
+
+.bdp-icons-information {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -37px;
+}
+
+.bdp-icons-help {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -37px;
+}
+
+.bdp-icons-nav_back {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -55px;
+}
+
+.bdp-icons-nav_go {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -55px;
+}
+
+.bdp-icons-nav_back_white {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -55px;
+}
+
+.bdp-icons-nav_go_white {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -55px;
+}
+
+.bdp-icons-remove {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -55px;
+}
+
+.bdp-icons-remove_add {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -55px;
+}
+
+.bdp-icons-remove_detele {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -55px;
+}
+
+.bdp-icons-remove_child {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -55px;
+}
+/*tick*/
+.bdp-icons-tick {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -55px;
+}
+
+.bdp-icons-tick_ifram {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -55px;
+}
+
+.bdp-icons-tick_button {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -55px;
+}
+
+.bdp-icons-word_13 {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -55px;
+}
+
+.bdp-icons-excel_13 {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -272px -55px;
+}
+
+.bdp-icons-word_07 {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -55px;
+}
+
+.bdp-icons-excel_07 {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -55px;
+}
+
+.bdp-icons-backlog {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -73px;
+}
+
+.bdp-icons-task_look {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -73px;
+}
+
+.bdp-icons-task_time {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -73px;
+}
+
+.bdp-icons-task_seal {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -73px;
+}
+
+.bdp-icons-sum {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -73px;
+}
+
+.bdp-icons-chart {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -73px;
+}
+
+.bdp-icons-chart_pie {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -73px;
+}
+
+.bdp-icons-calculator {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -73px;
+}
+
+.bdp-icons-calculator_save {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -73px;
+}
+
+.bdp-icons-rmb {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -73px;
+}
+
+.bdp-icons-coin {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -73px;
+}
+
+.bdp-icons-coin_add {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -73px;
+}
+
+.bdp-icons-coin_del {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -73px;
+}
+
+.bdp-icons-coin_setting {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -236px -73px;
+}
+
+.bdp-icons-credit {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -73px;
+}
+
+.bdp-icons-credits {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -272px -73px;
+}
+
+.bdp-icons-credit_go {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -73px;
+}
+
+.bdp-icons-table {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -73px;
+}
+
+.bdp-icons-table_export {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -326px -73px;
+}
+
+.bdp-icons-contract {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -91px;
+}
+
+.bdp-icons-contract_add {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -91px;
+}
+
+.bdp-icons-contract_setting {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -91px;
+}
+
+.bdp-icons-contract_check {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -91px;
+}
+
+.bdp-icons-contract_look {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -91px;
+}
+
+.bdp-icons-report {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -91px;
+}
+.bdp-icons-notice{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -91px;
+}
+
+
+
+.bdp-icons-look {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -1px;
+}
+.bdp-icons-ellipsis {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -145px;
+}
+.bdp-icons-ellipsis2 {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -145px;
+}
+
+
+.bdp-icons-flow{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -91px;
+}
+.bdp-icons-flow_tick{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -91px;
+}
+.bdp-icons-flow_edit{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -91px;
+}
+.bdp-icons-flow_look{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -91px;
+}
+.bdp-icons-vip{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -91px;
+}
+.bdp-icons-vip_cancel{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -272px -91px;
+}
+.bdp-icons-come_in{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -91px;
+}
+.bdp-icons-voice{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -91px;
+}
+
+
+.bdp-icons-car_card{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -109px;
+}
+.bdp-icons-carcard_cancel{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -109px;
+}
+.bdp-icons-mark {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -109px;
+}
+.bdp-icons-mark_cancel{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -109px;
+}
+.bdp-icons-goods{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -109px;
+}
+.bdp-icons-goods_Change{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -109px;
+}
+.bdp-icons-goods2{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -109px;
+}
+.bdp-icons-Files{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -109px;
+}
+.bdp-icons-Pre_sale{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -109px;
+}
+.bdp-icons-book{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -109px;
+}
+.bdp-icons-calendar{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -182px -109px;
+}
+.bdp-icons-work{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -200px -109px;
+}
+.bdp-icons-work_agent{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -109px;
+}
+.bdp-icons-work_look{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -236px -109px;
+}
+.bdp-icons-clock{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -109px;
+}
+.bdp-icons-clock_add{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -272px -109px;
+}
+.bdp-icons-clock_edit{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -109px;
+}
+.bdp-icons-clock_select{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -109px;
+}
+.bdp-icons-clock_select_remain{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -326px -109px;
+}
+
+.bdp-icons-mail{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -127px;
+}
+.bdp-icons-mail_Handle{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -127px;
+}
+.bdp-icons-mail_View{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -127px;
+}
+.bdp-icons-mail_go{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -127px;
+}
+
+
+/*人物相关*/
+.bdp-icons-UsersGroup{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -181px;
+}
+.bdp-icons-Users{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -181px;
+}
+.bdp-icons-Users_add{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -181px;
+}
+.bdp-icons-Users_edit{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -181px;
+}
+.bdp-icons-Users_delete{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -181px;
+}
+.bdp-icons-Users_remove{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -181px;
+}
+.bdp-icons-Users_setting{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -181px;
+}
+.bdp-icons-User{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -181px;
+}
+.bdp-icons-boss{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -181px;
+}
+.bdp-icons-worker{
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -181px;
+}
+
+
+
+.error {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -218px -1px;
+}
+
+.search_2 {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -236px -1px;
+}
+
+.priv {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -254px -1px;
+}
+
+.recycle {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -290px -1px;
+}
+
+.close {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -308px -1px;
+}
+
+.moveline {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -19px;
+}
+
+.addline {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -19px;
+}
+
+.delline {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -19px;
+}
+
+.work {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -19px;
+}
+
+.work_view {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -19px;
+}
+
+.undo {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -19px;
+}
+
+.view {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -19px;
+}
+
+.addpre {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -19px;
+}
+
+/*角色*/
+.per {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -2px -91px;
+}
+
+.users {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -20px -91px;
+}
+
+.users_add {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -38px -91px;
+}
+
+.users_mod {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -56px -91px;
+}
+
+.users_dell {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -74px -91px;
+}
+
+.users_arrow {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -92px -91px;
+}
+
+.user {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -110px -91px;
+}
+
+.user_boss {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -128px -91px;
+}
+
+.user_worker {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -146px -91px;
+}
+
+.user_set {
+    background: url("images/bdp/jr_icons_tool.png") no-repeat -164px -91px;
+}

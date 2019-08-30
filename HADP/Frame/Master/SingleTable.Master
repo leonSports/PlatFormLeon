@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SingleTable.master.cs" Inherits="Hongbin.Web.Frame.Master.SingleTable" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/frame/resources/css/default/om-default.css" rel="stylesheet" />
+    <link href="~/frame/resources/css/default/bdp-common.css" rel="stylesheet" />
+    <link href="~/frame/resources/css/default/bdp-editor.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="PlaceCss" runat="server">
+        <%--放自己的css文件--%>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#master_container").omBorderLayout({
+                    panels: [{
+                        id: "master_toolbar",
+                        region: "north",
+                        height: 30,
+                        header: false
+                    }, {
+                        id: "master_content",
+                        region: "center",
+                        header: false
+                    }],
+                    fit: true
+                });
+                $('#master_toolbar').css({ overflow: 'hidden', border: 0 });
+                $('#master_toolbar').parent().css({ border: 0 });
+            });
+        </script>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+        <div id="master_container">
+            <div id="master_toolbar">
+                <div id="master_tools">
+                    <asp:ContentPlaceHolder ID="PlaceToolbar" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="master_search">
+                    <asp:ContentPlaceHolder ID="PlaceSearch" runat="server">
+                        <div id="searchbox" style="display: none;"
+                            title="搜索, 模糊匹配">
+                            <span style="display: block; top: 5px; position: relative; float: left;">
+                                <input id="edtSearchText" />
+                                <img id="btnSearch" alt="搜索" src="" />
+                            </span>
+                        </div>
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                                //如果要显示搜索框，放开下面这一行
+                                //$('#searchbox').show();
+
+                                // 完善下面执行搜索的代码
+                                var doSearch = function() {
+
+                                };
+
+
+
+                                // 下面的代码一般不用修改
+                                $('#edtSearchText:visible').omSuggestion({
+                                    // 给定及时提示数据源
+                                    dataSource: '',
+                                    minChars: 3,
+                                    listMaxHeight: 40
+                                }).width(130).css('font-size', '13px')
+                                .keypress(function (event) {
+                                    if (event.keyCode == 13) {
+                                        doSearch();
+                                    }
+                                });
+                                $("#btnSearch:visible").attr("src", getImageUrl("sousuo.gif"))
+                                .click(function () {
+                                    doSearch();
+                                });
+                            });
+                        </script>
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div id="master_content">
+                <asp:ContentPlaceHolder ID="PlaceContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

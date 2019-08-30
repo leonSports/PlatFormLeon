@@ -1,0 +1,1401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hongbin.WorkFlow.Model" Alias="Self" devart:FilePerClass="false" devart:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0">
+  <EntityContainer Name="BdpWorkFlowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BdpWfActionDetails" EntityType="Hongbin.WorkFlow.Model.BdpWfActionDetail" />
+    <EntitySet Name="BdpWfActionMasters" EntityType="Hongbin.WorkFlow.Model.BdpWfActionMaster" />
+    <EntitySet Name="BdpWfAssigns" EntityType="Hongbin.WorkFlow.Model.BdpWfAssign" />
+    <EntitySet Name="BdpWfAuditPersons" EntityType="Hongbin.WorkFlow.Model.BdpWfAuditPerson" />
+    <EntitySet Name="BdpWfAuditStates" EntityType="Hongbin.WorkFlow.Model.BdpWfAuditState" />
+    <EntitySet Name="BdpWfBillKinds" EntityType="Hongbin.WorkFlow.Model.BdpWfBillKind" />
+    <EntitySet Name="BdpWfBusinessAgents" EntityType="Hongbin.WorkFlow.Model.BdpWfBusinessAgent" />
+    <EntitySet Name="BdpWfFlows" EntityType="Hongbin.WorkFlow.Model.BdpWfFlow" />
+    <EntitySet Name="BdpWfFlowCategories" EntityType="Hongbin.WorkFlow.Model.BdpWfFlowCategory" />
+    <EntitySet Name="BdpWfFlowNodes" EntityType="Hongbin.WorkFlow.Model.BdpWfFlowNode" />
+    <EntitySet Name="BdpWfNotifyPersons" EntityType="Hongbin.WorkFlow.Model.BdpWfNotifyPerson" />
+    <AssociationSet Name="BdpWfFlowNode_NodeId_BdpWfActionDetail_NodeIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfActionDetail_NodeId">
+      <End Role="BdpWfFlowNode" EntitySet="BdpWfFlowNodes" />
+      <End Role="BdpWfActionDetails" EntitySet="BdpWfActionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfBillKind_BillKindId_BdpWfActionMaster_AuditObjectKindIdSet" Association="Hongbin.WorkFlow.Model.BdpWfBillKind_BillKindId_BdpWfActionMaster_AuditObjectKindId">
+      <End Role="BdpWfBillKind" EntitySet="BdpWfBillKinds" />
+      <End Role="BdpWfActionMasters" EntitySet="BdpWfActionMasters" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlowNode_NodeId_BdpWfNotifyPerson_NodeIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfNotifyPerson_NodeId">
+      <End Role="BdpWfFlowNode" EntitySet="BdpWfFlowNodes" />
+      <End Role="BdpWfNotifyPersons" EntitySet="BdpWfNotifyPersons" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfBillKind_BillKindId_BdpWfAssign_BillKindIdSet" Association="Hongbin.WorkFlow.Model.BdpWfBillKind_BillKindId_BdpWfAssign_BillKindId">
+      <End Role="BdpWfBillKind" EntitySet="BdpWfBillKinds" />
+      <End Role="BdpWfAssigns" EntitySet="BdpWfAssigns" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlow_FlowId_BdpWfFlowNode_FlowIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfFlowNode_FlowId">
+      <End Role="BdpWfFlow" EntitySet="BdpWfFlows" />
+      <End Role="BdpWfFlowNodes" EntitySet="BdpWfFlowNodes" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlowCategory_CategoryId_BdpWfFlow_CategoryIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlowCategory_CategoryId_BdpWfFlow_CategoryId">
+      <End Role="BdpWfFlowCategory" EntitySet="BdpWfFlowCategories" />
+      <End Role="BdpWfFlows" EntitySet="BdpWfFlows" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfActionMaster_ActionId_BdpWfActionDetail_ActionIdSet" Association="Hongbin.WorkFlow.Model.BdpWfActionMaster_ActionId_BdpWfActionDetail_ActionId">
+      <End Role="BdpWfActionMaster" EntitySet="BdpWfActionMasters" />
+      <End Role="BdpWfActionDetails" EntitySet="BdpWfActionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlow_FlowId_BdpWfActionMaster_FlowIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfActionMaster_FlowId">
+      <End Role="BdpWfFlow" EntitySet="BdpWfFlows" />
+      <End Role="BdpWfActionMasters" EntitySet="BdpWfActionMasters" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfActionDetail_DetailId_BdpWfActionDetail_SenderDetailIdSet" Association="Hongbin.WorkFlow.Model.BdpWfActionDetail_DetailId_BdpWfActionDetail_SenderDetailId">
+      <End Role="BdpWfActionDetail" EntitySet="BdpWfActionDetails" />
+      <End Role="BdpWfActionDetails" EntitySet="BdpWfActionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfAuditState_StateId_BdpWfActionMaster_AuditStatusSet" Association="Hongbin.WorkFlow.Model.BdpWfAuditState_StateId_BdpWfActionMaster_AuditStatus">
+      <End Role="BdpWfAuditState" EntitySet="BdpWfAuditStates" />
+      <End Role="BdpWfActionMasters" EntitySet="BdpWfActionMasters" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlowNode_NodeId_BdpWfActionMaster_CurrentNodeIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfActionMaster_CurrentNodeId">
+      <End Role="BdpWfFlowNode" EntitySet="BdpWfFlowNodes" />
+      <End Role="BdpWfActionMasters" EntitySet="BdpWfActionMasters" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlow_FlowId_BdpWfAssign_FlowIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfAssign_FlowId">
+      <End Role="BdpWfFlow" EntitySet="BdpWfFlows" />
+      <End Role="BdpWfAssigns" EntitySet="BdpWfAssigns" />
+    </AssociationSet>
+    <AssociationSet Name="BdpWfFlowNode_NodeId_BdpWfAuditPerson_NodeIdSet" Association="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfAuditPerson_NodeId">
+      <End Role="BdpWfFlowNode" EntitySet="BdpWfFlowNodes" />
+      <End Role="BdpWfAuditPersons" EntitySet="BdpWfAuditPersons" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BdpWfActionDetail">
+    <Documentation>
+      <Summary>审批流执行子表 (BDP_WF_ACTION_DETAIL)</Summary>
+      <LongDescription>
+      </LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="DetailId" />
+    </Key>
+    <Property Name="DetailId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>执行记录标识  [DETAIL_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ActionId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审批流执行ID  [ACTION_ID,A(变长字符串),50]</Summary>
+        <LongDescription>WF_ACTION_MASTER的主键值</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NodeId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>流程节点标识  [NODE_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NodeOrder" Type="Int64">
+      <Documentation>
+        <Summary>节点序号  [NODE_ORDER,F(长整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="HintMessage" Type="String" MaxLength="1000">
+      <Documentation>
+        <Summary>信息  [HINT_MESSAGE,A(变长字符串),1000]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditPerson" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审核人  [AUDIT_PERSON,A(变长字符串),50]</Summary>
+        <LongDescription>用户标识</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditDate" Type="DateTime">
+      <Documentation>
+        <Summary>审核日期  [AUDIT_DATE,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditOpinion" Type="String" MaxLength="500">
+      <Documentation>
+        <Summary>审核意见  [AUDIT_OPINION,A(变长字符串),500]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="IsPassed" Type="Boolean">
+      <Documentation>
+        <Summary>是否通过  [IS_PASSED,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="IsEnd" Type="Boolean">
+      <Documentation>
+        <Summary>是否终止流程  [IS_END,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="IsCountersign" Type="Boolean">
+      <Documentation>
+        <Summary>是否会签处理记录  [IS_COUNTERSIGN,D(逻辑值)]</Summary>
+        <LongDescription>是否为会签处理记录</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="IsDone" Type="Boolean">
+      <Documentation>
+        <Summary>是否已经审批  [IS_DONE,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="SenderDetailId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>发送者的审批记录标识  [SENDER_DETAIL_ID,A(变长字符串),50]</Summary>
+        <LongDescription>发送者的审批记录标识</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfFlowNode" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfActionDetail_NodeId" FromRole="BdpWfActionDetails" ToRole="BdpWfFlowNode">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfActionMaster" Relationship="Hongbin.WorkFlow.Model.BdpWfActionMaster_ActionId_BdpWfActionDetail_ActionId" FromRole="BdpWfActionDetails" ToRole="BdpWfActionMaster">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfActionMaster 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelReceiverAuditDetails" Relationship="Hongbin.WorkFlow.Model.BdpWfActionDetail_DetailId_BdpWfActionDetail_SenderDetailId" FromRole="BdpWfActionDetail" ToRole="BdpWfActionDetails">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelSenderAuditDetail" Relationship="Hongbin.WorkFlow.Model.BdpWfActionDetail_DetailId_BdpWfActionDetail_SenderDetailId" FromRole="BdpWfActionDetails" ToRole="BdpWfActionDetail">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfActionMaster">
+    <Documentation>
+      <Summary>审批流执行主表 (BDP_WF_ACTION_MASTER)</Summary>
+      <LongDescription>流程实例主表</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="ActionId" />
+    </Key>
+    <Property Name="ActionId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>审批流执行ID  [ACTION_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ActionName" Type="String" MaxLength="1000">
+      <Documentation>
+        <Summary>实例名称  [ACTION_NAME,A(变长字符串),1000]</Summary>
+        <LongDescription>审批流程实例名称</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FlowId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审批流  [FLOW_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="CurrentNodeId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>当前节点标识  [CURRENT_NODE_ID,A(变长字符串),50]</Summary>
+        <LongDescription>当前审批节点标识</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditObjectKey" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>单据编码  [AUDIT_OBJECT_KEY,A(变长字符串),50]</Summary>
+        <LongDescription>单据表的主键值</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditObjectKindId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>单据类别标识  [AUDIT_OBJECT_KIND_ID,A(变长字符串),50]</Summary>
+        <LongDescription>BDP_WF_BILL_KIND的主键值</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditStatus" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审批状态  [AUDIT_STATUS,A(变长字符串),50]</Summary>
+        <LongDescription>BDP_WF_AUDIT_STATE表的主键值
+0 未审核 
+1 审核未通过 
+2 审核通过 
+3 审核中
+</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="EndFlag" Type="Boolean">
+      <Documentation>
+        <Summary>是否结束  [END_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>True
+False</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="SubmitPerson" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>提交人  [SUBMIT_PERSON,A(变长字符串),50]</Summary>
+        <LongDescription>PrivUser的主键值</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="SubmitDate" Type="DateTime">
+      <Documentation>
+        <Summary>提交日期  [SUBMIT_DATE,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfBillClass" Relationship="Hongbin.WorkFlow.Model.BdpWfBillKind_BillKindId_BdpWfActionMaster_AuditObjectKindId" FromRole="BdpWfActionMasters" ToRole="BdpWfBillKind">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfBillKind 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfActionDetails" Relationship="Hongbin.WorkFlow.Model.BdpWfActionMaster_ActionId_BdpWfActionDetail_ActionId" FromRole="BdpWfActionMaster" ToRole="BdpWfActionDetails">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfActionDetail 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfFlow" Relationship="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfActionMaster_FlowId" FromRole="BdpWfActionMasters" ToRole="BdpWfFlow">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfAuditState" Relationship="Hongbin.WorkFlow.Model.BdpWfAuditState_StateId_BdpWfActionMaster_AuditStatus" FromRole="BdpWfActionMasters" ToRole="BdpWfAuditState">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfAuditState 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelCurrentFlowNode" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfActionMaster_CurrentNodeId" FromRole="BdpWfActionMasters" ToRole="BdpWfFlowNode">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfAssign">
+    <Documentation>
+      <Summary>流程分配表 (BDP_WF_ASSIGN)</Summary>
+      <LongDescription>确定业务单据对应审批流程，比如请假单，如果BILL_KIND和DEPT_ID均为空，说明所有的请假单都是相同的审批流程；如果DEPT_ID不空，则说明请假单在不同的部门审批流程是不一样的；如果BILL_KIND不为空，则指某种定请假单的审批流程，比如科长的请假和一般员工的请假审批流程不</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="AssignId" />
+    </Key>
+    <Property Name="AssignId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>分配标识  [ASSIGN_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="BillKindId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>单据类别标识  [BILL_KIND_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ApplianceSign" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>适用标志  [APPLIANCE_SIGN,A(变长字符串),50]</Summary>
+        <LongDescription>一个标志串，意即标志匹配就用此流程</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ApplianceExp" Type="String" MaxLength="500">
+      <Documentation>
+        <Summary>适用条件  [APPLIANCE_EXP,A(变长字符串),500]</Summary>
+        <LongDescription>公式返回逻辑值，为真即使用此流程。公式中可以使用单据对象BILL</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FlowId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审批流程  [FLOW_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfBillClass" Relationship="Hongbin.WorkFlow.Model.BdpWfBillKind_BillKindId_BdpWfAssign_BillKindId" FromRole="BdpWfAssigns" ToRole="BdpWfBillKind">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfBillKind 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfFlow" Relationship="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfAssign_FlowId" FromRole="BdpWfAssigns" ToRole="BdpWfFlow">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfAuditPerson">
+    <Documentation>
+      <Summary>流程审核人 (BDP_WF_AUDIT_PERSON)</Summary>
+      <LongDescription>审核人不一定是具体的人员，可能是角色、用户等</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="AuditPersonId" />
+    </Key>
+    <Property Name="AuditPersonId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>审核人标识  [AUDIT_PERSON_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>k </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NodeId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>流程节点标识  [NODE_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditorCondition" Type="String" MaxLength="500">
+      <Documentation>
+        <Summary>审核人条件  [AUDITOR_CONDITION,A(变长字符串),500]</Summary>
+        <LongDescription>条件成立时才使用审核人，缺省为成立</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditorKind" Type="Int32">
+      <Documentation>
+        <Summary>审核人类别  [AUDITOR_KIND,E(短整数)]</Summary>
+        <LongDescription>A:用户;B:角色</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditorValue" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审核人  [AUDITOR_VALUE,A(变长字符串),50]</Summary>
+        <LongDescription>角色/用户的ID值</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfFlowNode" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfAuditPerson_NodeId" FromRole="BdpWfAuditPersons" ToRole="BdpWfFlowNode">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfAuditState">
+    <Documentation>
+      <Summary>审核状态 (BDP_WF_AUDIT_STATE)</Summary>
+      <LongDescription>BdpWfAuditState</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>状态标识  [STATE_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="StateName" Type="String" MaxLength="30">
+      <Documentation>
+        <Summary>状态名称  [STATE_NAME,A(变长字符串),30]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="StateCode" Type="Int32">
+      <Documentation>
+        <Summary>状态代码  [STATE_CODE,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="BdpWfBillKind">
+    <Documentation>
+      <Summary>单据类型表 (BDP_WF_BILL_KIND)</Summary>
+      <LongDescription>本表中的表名应是实体类名，字段名应是实体类的属性名</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="BillKindId" />
+    </Key>
+    <Property Name="BillKindId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>单据类别标识  [BILL_KIND_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="BillKindName" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>单据类别名称  [BILL_KIND_NAME,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="BillTableName" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>单据表名  [BILL_TABLE_NAME,A(变长字符串),50]</Summary>
+        <LongDescription>实体类名</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FldKey" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>主键字段名  [FLD_KEY,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FldLabel" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>标签字段名  [FLD_LABEL,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FldAuditPerson" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审核人字段名  [FLD_AUDIT_PERSON,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FldAuditDate" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审核日期字段  [FLD_AUDIT_DATE,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FldAuditOpinion" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审核意见字段名  [FLD_AUDIT_OPINION,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FldAuditState" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>审核状态字段名  [FLD_AUDIT_STATE,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditUrl" Type="String" MaxLength="200">
+      <Documentation>
+        <Summary>审核页面地址  [AUDIT_URL,A(变长字符串),200]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ViewUrl" Type="String" MaxLength="200">
+      <Documentation>
+        <Summary>查看地址  [VIEW_URL,A(变长字符串),200]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfAssigns" Relationship="Hongbin.WorkFlow.Model.BdpWfBillKind_BillKindId_BdpWfAssign_BillKindId" FromRole="BdpWfBillKind" ToRole="BdpWfAssigns">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfAssign 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfBusinessAgent">
+    <Documentation>
+      <Summary>业务代理人表  (BDP_WF_BUSINESS_AGENT)</Summary>
+      <LongDescription>业务代理人应该是全局性的，表述某人的某项业务由谁来代理</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="AgentId" />
+    </Key>
+    <Property Name="AgentId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>代理人标识  [AGENT_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AgentName" Type="String" MaxLength="100">
+      <Documentation>
+        <Summary>代理说明  [AGENT_NAME,A(变长字符串),100]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="UserId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>人员  [USER_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="BizSign" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>业务标志  [BIZ_SIGN,A(变长字符串),50]</Summary>
+        <LongDescription>可能暂时用不上</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AgentUserId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>代理人  [AGENT_USER_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="EnableFlag" Type="Boolean">
+      <Documentation>
+        <Summary>启用标志  [ENABLE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="StartDate" Type="DateTime">
+      <Documentation>
+        <Summary>开始日期  [START_DATE,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="EndDate" Type="DateTime">
+      <Documentation>
+        <Summary>结束日期  [END_DATE,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="BdpWfFlow">
+    <Documentation>
+      <Summary>审批流程定义表 (BDP_WF_FLOW)</Summary>
+      <LongDescription>
+      </LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="FlowId" />
+    </Key>
+    <Property Name="FlowId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>审批流标识  [FLOW_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FlowName" Type="String" MaxLength="60">
+      <Documentation>
+        <Summary>流程名称  [FLOW_NAME,A(变长字符串),60]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="CategoryId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>流程分类  [CATEGORY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="BackToPrevenient" Type="Boolean">
+      <Documentation>
+        <Summary>是否逐级拒绝  [BACK_TO_PREVENIENT,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AllowEdit" Type="Boolean">
+      <Documentation>
+        <Summary>是否允许编辑  [ALLOW_EDIT,D(逻辑值)]</Summary>
+        <LongDescription>审批人在审批时是否允许修改单据</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AllowSelectNode" Type="Boolean">
+      <Documentation>
+        <Summary>是否允许选择节点  [ALLOW_SELECT_NODE,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="PreserveTraces" Type="Boolean">
+      <Documentation>
+        <Summary>保存痕迹  [PRESERVE_TRACES,D(逻辑值)]</Summary>
+        <LongDescription>弃核后是否保存痕迹</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="EnableFlag" Type="Boolean">
+      <Documentation>
+        <Summary>启用标识  [ENABLE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Description" Type="String" MaxLength="1000">
+      <Documentation>
+        <Summary>流程说明  [DESCRIPTION,A(变长字符串),1000]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfFlowNodes" Relationship="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfFlowNode_FlowId" FromRole="BdpWfFlow" ToRole="BdpWfFlowNodes">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfFlowCategory" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowCategory_CategoryId_BdpWfFlow_CategoryId" FromRole="BdpWfFlows" ToRole="BdpWfFlowCategory">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowCategory 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfAssigns" Relationship="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfAssign_FlowId" FromRole="BdpWfFlow" ToRole="BdpWfAssigns">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfAssign 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfFlowCategory">
+    <Documentation>
+      <Summary>流程分类表 (BDP_WF_FLOW_CATEGORY)</Summary>
+      <LongDescription>有关该数据集说明信息</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>流程分类标识  [CATEGORY_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Name" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>分类名称  [NAME,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Code" Type="String" MaxLength="10">
+      <Documentation>
+        <Summary>分类代码  [CODE,A(变长字符串),10]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Notes" Type="String" MaxLength="100">
+      <Documentation>
+        <Summary>分类说明  [NOTES,A(变长字符串),100]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="BdpWfFlowNode">
+    <Documentation>
+      <Summary>流程节点表 (BDP_WF_FLOW_NODE)</Summary>
+      <LongDescription>
+      </LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="NodeId" />
+    </Key>
+    <Property Name="NodeId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>节点标识  [NODE_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="FlowId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>审批流ID  [FLOW_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NodeOrder" Type="Int64" Nullable="false">
+      <Documentation>
+        <Summary>节点序号  [NODE_ORDER,F(长整数),非空]</Summary>
+        <LongDescription>同一流程下的节点序号是唯一的</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NodeName" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>节点名称  [NODE_NAME,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AllowEdit" Type="Boolean">
+      <Documentation>
+        <Summary>允许修改  [ALLOW_EDIT,D(逻辑值)]</Summary>
+        <LongDescription>是否允许该节点的审批人修改单据</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AuditMode" Type="Int32">
+      <Documentation>
+        <Summary>审批模式  [AUDIT_MODE,E(短整数)]</Summary>
+        <LongDescription>如果该节点有多个审批人，确定他们是抢先审批还是会签审批.
+0:抢先;1:会签</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AllowSelectAuditor" Type="Boolean">
+      <Documentation>
+        <Summary>是否允许选择审批人  [ALLOW_SELECT_AUDITOR,D(逻辑值)]</Summary>
+        <LongDescription>是否允许在发起流程节点时选定审批人.如果不允许，但某一节点有多个审批人，则视为多人审批
+</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="AllowTerminate" Type="Boolean">
+      <Documentation>
+        <Summary>是否允许终止流程  [ALLOW_TERMINATE,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NextNodeOrder" Type="Int64">
+      <Documentation>
+        <Summary>下一节点序号  [NEXT_NODE_ORDER,F(长整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NextNodeExp" Type="String" MaxLength="500">
+      <Documentation>
+        <Summary>下一节点公式  [NEXT_NODE_EXP,A(变长字符串),500]</Summary>
+        <LongDescription>下一流程序号的计算公式，返回流程序号,数值型</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NotifyAttn" Type="Boolean">
+      <Documentation>
+        <Summary>是否通知经办人  [NOTIFY_ATTN,D(逻辑值)]</Summary>
+        <LongDescription>该节点处理时是否通知相关经办人，包括流程发起者、已流转节点的审批人
+是否通知已流转节点的审批人？</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NotifyMode" Type="Int32">
+      <Documentation>
+        <Summary>通知方式  [NOTIFY_MODE,E(短整数)]</Summary>
+        <LongDescription>0 主页消息
+1 邮件
+2 手机短信
+</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfNotifyPersons" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfNotifyPerson_NodeId" FromRole="BdpWfFlowNode" ToRole="BdpWfNotifyPersons">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfNotifyPerson 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfFlow" Relationship="Hongbin.WorkFlow.Model.BdpWfFlow_FlowId_BdpWfFlowNode_FlowId" FromRole="BdpWfFlowNodes" ToRole="BdpWfFlow">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlow 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelWfAuditPersons" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfAuditPerson_NodeId" FromRole="BdpWfFlowNode" ToRole="BdpWfAuditPersons">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfAuditPerson 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="BdpWfNotifyPerson">
+    <Documentation>
+      <Summary>流程通知人 (BDP_WF_NOTIFY_PERSON)</Summary>
+      <LongDescription>审核人不一定是具体的人员，可能是角色、用户等</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="NotifyPersonId" />
+    </Key>
+    <Property Name="NotifyPersonId" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>审核人标识  [NOTIFY_PERSON_ID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>k </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NodeId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>流程节点标识  [NODE_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NotifyCondition" Type="String" MaxLength="500">
+      <Documentation>
+        <Summary>通知条件  [NOTIFY_CONDITION,A(变长字符串),500]</Summary>
+        <LongDescription>条件成立时才通知，缺省为成立</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NotifyKind" Type="Int32">
+      <Documentation>
+        <Summary>接收人类别  [NOTIFY_KIND,E(短整数)]</Summary>
+        <LongDescription>0:用户;1:角色</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="NotifyValue" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>接收人  [NOTIFY_VALUE,A(变长字符串),50]</Summary>
+        <LongDescription>角色/用户的ID值</LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCompanyId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>公司  [INNER_COMPANY_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreatorId" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>创建人  [INNER_CREATOR_ID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerCreateTime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [INNER_CREATE_TIME,J(日期)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="InnerDeleteFlag" Type="Boolean">
+      <Documentation>
+        <Summary>删除标志  [INNER_DELETE_FLAG,D(逻辑值)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelWfFlowNode" Relationship="Hongbin.WorkFlow.Model.BdpWfFlowNode_NodeId_BdpWfNotifyPerson_NodeId" FromRole="BdpWfNotifyPersons" ToRole="BdpWfFlowNode">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.WorkFlow.Model.BdpWfFlowNode 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <Association Name="BdpWfFlowNode_NodeId_BdpWfActionDetail_NodeId">
+    <Documentation>
+      <Summary>WfFlowNode_WfActionDetail</Summary>
+      <LongDescription>BdpWfFlowNode_NodeId_BdpWfActionDetail_NodeId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlowNode" Type="Hongbin.WorkFlow.Model.BdpWfFlowNode" Multiplicity="0..1" />
+    <End Role="BdpWfActionDetails" Type="Hongbin.WorkFlow.Model.BdpWfActionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlowNode">
+        <PropertyRef Name="NodeId" />
+      </Principal>
+      <Dependent Role="BdpWfActionDetails">
+        <PropertyRef Name="NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfBillKind_BillKindId_BdpWfActionMaster_AuditObjectKindId">
+    <Documentation>
+      <Summary>WfBillClass_WfActionMaster</Summary>
+      <LongDescription>BdpWfBillKind_BillKindId_BdpWfActionMaster_AuditObjectKindId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfBillKind" Type="Hongbin.WorkFlow.Model.BdpWfBillKind" Multiplicity="0..1" />
+    <End Role="BdpWfActionMasters" Type="Hongbin.WorkFlow.Model.BdpWfActionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfBillKind">
+        <PropertyRef Name="BillKindId" />
+      </Principal>
+      <Dependent Role="BdpWfActionMasters">
+        <PropertyRef Name="AuditObjectKindId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlowNode_NodeId_BdpWfNotifyPerson_NodeId">
+    <Documentation>
+      <Summary>WfFlowNode_WfNotifyPerson</Summary>
+      <LongDescription>BdpWfFlowNode_NodeId_BdpWfNotifyPerson_NodeId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlowNode" Type="Hongbin.WorkFlow.Model.BdpWfFlowNode" Multiplicity="0..1" />
+    <End Role="BdpWfNotifyPersons" Type="Hongbin.WorkFlow.Model.BdpWfNotifyPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlowNode">
+        <PropertyRef Name="NodeId" />
+      </Principal>
+      <Dependent Role="BdpWfNotifyPersons">
+        <PropertyRef Name="NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfBillKind_BillKindId_BdpWfAssign_BillKindId">
+    <Documentation>
+      <Summary>WfBillClass_WfAssign</Summary>
+      <LongDescription>BdpWfBillKind_BillKindId_BdpWfAssign_BillKindId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfBillKind" Type="Hongbin.WorkFlow.Model.BdpWfBillKind" Multiplicity="0..1" />
+    <End Role="BdpWfAssigns" Type="Hongbin.WorkFlow.Model.BdpWfAssign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfBillKind">
+        <PropertyRef Name="BillKindId" />
+      </Principal>
+      <Dependent Role="BdpWfAssigns">
+        <PropertyRef Name="BillKindId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlow_FlowId_BdpWfFlowNode_FlowId">
+    <Documentation>
+      <Summary>WfFlow_WfAssign</Summary>
+      <LongDescription>BdpWfFlow_FlowId_BdpWfFlowNode_FlowId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlow" Type="Hongbin.WorkFlow.Model.BdpWfFlow" Multiplicity="1" />
+    <End Role="BdpWfFlowNodes" Type="Hongbin.WorkFlow.Model.BdpWfFlowNode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlow">
+        <PropertyRef Name="FlowId" />
+      </Principal>
+      <Dependent Role="BdpWfFlowNodes">
+        <PropertyRef Name="FlowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlowCategory_CategoryId_BdpWfFlow_CategoryId">
+    <Documentation>
+      <Summary>WfFlowCategory_WfFlow</Summary>
+      <LongDescription>BdpWfFlowCategory_CategoryId_BdpWfFlow_CategoryId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlowCategory" Type="Hongbin.WorkFlow.Model.BdpWfFlowCategory" Multiplicity="0..1" />
+    <End Role="BdpWfFlows" Type="Hongbin.WorkFlow.Model.BdpWfFlow" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlowCategory">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="BdpWfFlows">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfActionMaster_ActionId_BdpWfActionDetail_ActionId">
+    <Documentation>
+      <Summary>WfActionMaster_WfActionDetail</Summary>
+      <LongDescription>BdpWfActionMaster_ActionId_BdpWfActionDetail_ActionId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfActionMaster" Type="Hongbin.WorkFlow.Model.BdpWfActionMaster" Multiplicity="0..1" />
+    <End Role="BdpWfActionDetails" Type="Hongbin.WorkFlow.Model.BdpWfActionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfActionMaster">
+        <PropertyRef Name="ActionId" />
+      </Principal>
+      <Dependent Role="BdpWfActionDetails">
+        <PropertyRef Name="ActionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlow_FlowId_BdpWfActionMaster_FlowId">
+    <Documentation>
+      <Summary>WfFlow_WfActionMaster</Summary>
+      <LongDescription>BdpWfFlow_FlowId_BdpWfActionMaster_FlowId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlow" Type="Hongbin.WorkFlow.Model.BdpWfFlow" Multiplicity="0..1" />
+    <End Role="BdpWfActionMasters" Type="Hongbin.WorkFlow.Model.BdpWfActionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlow">
+        <PropertyRef Name="FlowId" />
+      </Principal>
+      <Dependent Role="BdpWfActionMasters">
+        <PropertyRef Name="FlowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfActionDetail_DetailId_BdpWfActionDetail_SenderDetailId">
+    <Documentation>
+      <Summary>WfActionDetail_SenderDetailLog</Summary>
+      <LongDescription>BdpWfActionDetail_DetailId_BdpWfActionDetail_SenderDetailId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfActionDetail" Type="Hongbin.WorkFlow.Model.BdpWfActionDetail" Multiplicity="0..1" />
+    <End Role="BdpWfActionDetails" Type="Hongbin.WorkFlow.Model.BdpWfActionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfActionDetail">
+        <PropertyRef Name="DetailId" />
+      </Principal>
+      <Dependent Role="BdpWfActionDetails">
+        <PropertyRef Name="SenderDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfAuditState_StateId_BdpWfActionMaster_AuditStatus">
+    <Documentation>
+      <Summary>WfAuditState_WfActionMaster</Summary>
+      <LongDescription>BdpWfAuditState_StateId_BdpWfActionMaster_AuditStatus</LongDescription>
+    </Documentation>
+    <End Role="BdpWfAuditState" Type="Hongbin.WorkFlow.Model.BdpWfAuditState" Multiplicity="0..1" />
+    <End Role="BdpWfActionMasters" Type="Hongbin.WorkFlow.Model.BdpWfActionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfAuditState">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="BdpWfActionMasters">
+        <PropertyRef Name="AuditStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlowNode_NodeId_BdpWfActionMaster_CurrentNodeId">
+    <Documentation>
+      <Summary>WfFlowNode_WfNotifyPerson</Summary>
+      <LongDescription>BdpWfFlowNode_NodeId_BdpWfActionMaster_CurrentNodeId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlowNode" Type="Hongbin.WorkFlow.Model.BdpWfFlowNode" Multiplicity="0..1" />
+    <End Role="BdpWfActionMasters" Type="Hongbin.WorkFlow.Model.BdpWfActionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlowNode">
+        <PropertyRef Name="NodeId" />
+      </Principal>
+      <Dependent Role="BdpWfActionMasters">
+        <PropertyRef Name="CurrentNodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlow_FlowId_BdpWfAssign_FlowId">
+    <Documentation>
+      <Summary>WfFlow_WfAssign</Summary>
+      <LongDescription>BdpWfFlow_FlowId_BdpWfAssign_FlowId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlow" Type="Hongbin.WorkFlow.Model.BdpWfFlow" Multiplicity="0..1" />
+    <End Role="BdpWfAssigns" Type="Hongbin.WorkFlow.Model.BdpWfAssign" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlow">
+        <PropertyRef Name="FlowId" />
+      </Principal>
+      <Dependent Role="BdpWfAssigns">
+        <PropertyRef Name="FlowId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BdpWfFlowNode_NodeId_BdpWfAuditPerson_NodeId">
+    <Documentation>
+      <Summary>WfFlowNode_WfAuditPerson</Summary>
+      <LongDescription>BdpWfFlowNode_NodeId_BdpWfAuditPerson_NodeId</LongDescription>
+    </Documentation>
+    <End Role="BdpWfFlowNode" Type="Hongbin.WorkFlow.Model.BdpWfFlowNode" Multiplicity="0..1" />
+    <End Role="BdpWfAuditPersons" Type="Hongbin.WorkFlow.Model.BdpWfAuditPerson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BdpWfFlowNode">
+        <PropertyRef Name="NodeId" />
+      </Principal>
+      <Dependent Role="BdpWfAuditPersons">
+        <PropertyRef Name="NodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

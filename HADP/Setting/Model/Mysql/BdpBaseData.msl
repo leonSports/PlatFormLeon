@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BdpBaseDataEntitiesStoreContainer" CdmEntityContainer="BdpBaseDataEntities">
+    <EntitySetMapping Name="BdpCalendars">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCalendar">
+        <MappingFragment StoreEntitySet="BDP_CALENDARs">
+          <ScalarProperty Name="CalendarId" ColumnName="CALENDAR_ID" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="Days" ColumnName="DAYS" />
+          <ScalarProperty Name="Holiday" ColumnName="HOLIDAY" />
+          <ScalarProperty Name="HolidayType" ColumnName="HOLIDAY_TYPE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Unit" ColumnName="UNIT" />
+          <ScalarProperty Name="Years" ColumnName="YEARS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeCommons">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeCommon">
+        <MappingFragment StoreEntitySet="BDP_CODE_COMMONs">
+          <ScalarProperty Name="CodeFather" ColumnName="CODE_FATHER" />
+          <ScalarProperty Name="CodeId" ColumnName="CODE_ID" />
+          <ScalarProperty Name="CodeKind" ColumnName="CODE_KIND" />
+          <ScalarProperty Name="CodeSeq" ColumnName="CODE_SEQ" />
+          <ScalarProperty Name="CodeText" ColumnName="CODE_TEXT" />
+          <ScalarProperty Name="CodeValue" ColumnName="CODE_VALUE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeCompanyTypes">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeCompanyType">
+        <MappingFragment StoreEntitySet="BDP_CODE_COMPANY_TYPEs">
+          <ScalarProperty Name="CompanyTypeCode" ColumnName="COMPANY_TYPE_CODE" />
+          <ScalarProperty Name="CompanyTypeDesc" ColumnName="COMPANY_TYPE_DESC" />
+          <ScalarProperty Name="CompanyTypeId" ColumnName="COMPANY_TYPE_ID" />
+          <ScalarProperty Name="CompanyTypeName" ColumnName="COMPANY_TYPE_NAME" />
+          <ScalarProperty Name="CompanyTypeSequence" ColumnName="COMPANY_TYPE_SEQUENCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeDegrees">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeDegree">
+        <MappingFragment StoreEntitySet="BDP_CODE_DEGREEs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Degree" ColumnName="DEGREE" />
+          <ScalarProperty Name="DegreeId" ColumnName="DEGREE_ID" />
+          <ScalarProperty Name="ParentId" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="Sequence" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="ShortName" ColumnName="SHORT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeEconomies">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeEconomy">
+        <MappingFragment StoreEntitySet="BDP_CODE_ECONOMYs">
+          <ScalarProperty Name="EconomyCode" ColumnName="ECONOMY_CODE" />
+          <ScalarProperty Name="EconomyDesc" ColumnName="ECONOMY_DESC" />
+          <ScalarProperty Name="EconomyId" ColumnName="ECONOMY_ID" />
+          <ScalarProperty Name="EconomyName" ColumnName="ECONOMY_NAME" />
+          <ScalarProperty Name="ParentId" ColumnName="PARENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeEdus">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeEdu">
+        <MappingFragment StoreEntitySet="BDP_CODE_EDUs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="EduId" ColumnName="EDU_ID" />
+          <ScalarProperty Name="EduName" ColumnName="EDU_NAME" />
+          <ScalarProperty Name="ParentId" ColumnName="PARENT_ID" />
+          <ScalarProperty Name="Sequence" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="ShortName" ColumnName="SHORT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeIndustries">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeIndustry">
+        <MappingFragment StoreEntitySet="BDP_CODE_INDUSTRYs">
+          <ScalarProperty Name="BigNum" ColumnName="BIG_NUM" />
+          <ScalarProperty Name="IndustryCode" ColumnName="INDUSTRY_CODE" />
+          <ScalarProperty Name="IndustryDesc" ColumnName="INDUSTRY_DESC" />
+          <ScalarProperty Name="IndustryId" ColumnName="INDUSTRY_ID" />
+          <ScalarProperty Name="IndustryName" ColumnName="INDUSTRY_NAME" />
+          <ScalarProperty Name="IndustrySeqence" ColumnName="INDUSTRY_SEQENCE" />
+          <ScalarProperty Name="Level1" ColumnName="LEVEL1" />
+          <ScalarProperty Name="Level2" ColumnName="LEVEL2" />
+          <ScalarProperty Name="Level3" ColumnName="LEVEL3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeNations">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeNation">
+        <MappingFragment StoreEntitySet="BDP_CODE_NATIONs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Nation" ColumnName="NATION" />
+          <ScalarProperty Name="NationId" ColumnName="NATION_ID" />
+          <ScalarProperty Name="Sequence" ColumnName="SEQUENCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodePoliticals">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodePolitical">
+        <MappingFragment StoreEntitySet="BDP_CODE_POLITICALs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="PoliticalStatus" ColumnName="POLITICAL_STATUS" />
+          <ScalarProperty Name="PoliticalStatusId" ColumnName="POLITICAL_STATUS_ID" />
+          <ScalarProperty Name="Sequence" ColumnName="SEQUENCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeRegionalisms">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeRegionalism">
+        <MappingFragment StoreEntitySet="BDP_CODE_REGIONALISMs">
+          <ScalarProperty Name="ParentRegionId" ColumnName="PARENT_REGION_ID" />
+          <ScalarProperty Name="RegionCode" ColumnName="REGION_CODE" />
+          <ScalarProperty Name="RegionLevel" ColumnName="REGION_LEVEL" />
+          <ScalarProperty Name="RegionName" ColumnName="REGION_NAME" />
+          <ScalarProperty Name="RegionalismId" ColumnName="REGIONALISM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeSexes">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeSex">
+        <MappingFragment StoreEntitySet="BDP_CODE_SEXs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="SexId" ColumnName="SEX_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeTaxpayers">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeTaxpayer">
+        <MappingFragment StoreEntitySet="BDP_CODE_TAXPAYERs">
+          <ScalarProperty Name="TaxpayerCode" ColumnName="TAXPAYER_CODE" />
+          <ScalarProperty Name="TaxpayerDesc" ColumnName="TAXPAYER_DESC" />
+          <ScalarProperty Name="TaxpayerId" ColumnName="TAXPAYER_ID" />
+          <ScalarProperty Name="TaxpayerName" ColumnName="TAXPAYER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeUnitTypes">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeUnitType">
+        <MappingFragment StoreEntitySet="BDP_CODE_UNIT_TYPEs">
+          <ScalarProperty Name="UnitSequence" ColumnName="UNIT_SEQUENCE" />
+          <ScalarProperty Name="UnitType" ColumnName="UNIT_TYPE" />
+          <ScalarProperty Name="UnitTypeCode" ColumnName="UNIT_TYPE_CODE" />
+          <ScalarProperty Name="UnitTypeDesc" ColumnName="UNIT_TYPE_DESC" />
+          <ScalarProperty Name="UnitTypeId" ColumnName="UNIT_TYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodeUserTypes">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodeUserType">
+        <MappingFragment StoreEntitySet="BDP_CODE_USER_TYPEs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodings">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCoding">
+        <MappingFragment StoreEntitySet="BDP_CODINGs">
+          <ScalarProperty Name="CodingFieldName" ColumnName="CODING_FIELD_NAME" />
+          <ScalarProperty Name="CodingId" ColumnName="CODING_ID" />
+          <ScalarProperty Name="CodingRuleId" ColumnName="CODING_RULE_ID" />
+          <ScalarProperty Name="LastCodeValue" ColumnName="LAST_CODE_VALUE" />
+          <ScalarProperty Name="LastNumValue" ColumnName="LAST_NUM_VALUE" />
+          <ScalarProperty Name="TableName" ColumnName="TABLE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCodingRuless">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCodingRules">
+        <MappingFragment StoreEntitySet="BDP_CODING_RULESs">
+          <ScalarProperty Name="CodeLength" ColumnName="CODE_LENGTH" />
+          <ScalarProperty Name="CodingRuleId" ColumnName="CODING_RULE_ID" />
+          <ScalarProperty Name="CodingType" ColumnName="CODING_TYPE" />
+          <ScalarProperty Name="Pattern" ColumnName="PATTERN" />
+          <ScalarProperty Name="RuleDesc" ColumnName="RULE_DESC" />
+          <ScalarProperty Name="StepValue" ColumnName="STEP_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCusAddresses">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCusAddress">
+        <MappingFragment StoreEntitySet="BDP_CUS_ADDRESSs">
+          <ScalarProperty Name="AddName" ColumnName="ADD_NAME" />
+          <ScalarProperty Name="CusAddressId" ColumnName="CUS_ADDRESS_ID" />
+          <ScalarProperty Name="CustomerBaseId" ColumnName="CUSTOMER_BASE_ID" />
+          <ScalarProperty Name="DefaultAddr" ColumnName="DEFAULT_ADDR" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="LinkMan" ColumnName="LINK_MAN" />
+          <ScalarProperty Name="Phone" ColumnName="PHONE" />
+          <ScalarProperty Name="Place" ColumnName="PLACE" />
+          <ScalarProperty Name="Region" ColumnName="REGION" />
+          <ScalarProperty Name="Route" ColumnName="ROUTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCustCombines">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCustCombine">
+        <MappingFragment StoreEntitySet="BDP_CUST_COMBINEs">
+          <ScalarProperty Name="CustCombineId" ColumnName="CUST_COMBINE_ID" />
+          <ScalarProperty Name="CustomerBaseId" ColumnName="CUSTOMER_BASE_ID" />
+          <ScalarProperty Name="DestCusCode" ColumnName="DEST_CUS_CODE" />
+          <ScalarProperty Name="DestCusId" ColumnName="DEST_CUS_ID" />
+          <ScalarProperty Name="DestCusName" ColumnName="DEST_CUS_NAME" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="SrcCusCode" ColumnName="SRC_CUS_CODE" />
+          <ScalarProperty Name="SrcCusId" ColumnName="SRC_CUS_ID" />
+          <ScalarProperty Name="SrcCusName" ColumnName="SRC_CUS_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCustomerBanks">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCustomerBank">
+        <MappingFragment StoreEntitySet="BDP_CUSTOMER_BANKs">
+          <ScalarProperty Name="BankAccNo" ColumnName="BANK_ACC_NO" />
+          <ScalarProperty Name="BankAddr" ColumnName="BANK_ADDR" />
+          <ScalarProperty Name="BankName" ColumnName="BANK_NAME" />
+          <ScalarProperty Name="CurrType" ColumnName="CURR_TYPE" />
+          <ScalarProperty Name="CustomerBankId" ColumnName="CUSTOMER_BANK_ID" />
+          <ScalarProperty Name="CustomerBaseId" ColumnName="CUSTOMER_BASE_ID" />
+          <ScalarProperty Name="DefaultBank" ColumnName="DEFAULT_BANK" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Memo" ColumnName="MEMO" />
+          <ScalarProperty Name="RegisterBank" ColumnName="REGISTER_BANK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCustomerBases">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCustomerBase">
+        <MappingFragment StoreEntitySet="BDP_CUSTOMER_BASEs">
+          <ScalarProperty Name="AreaId" ColumnName="AREA_ID" />
+          <ScalarProperty Name="BdpCustomerBaseId" ColumnName="BDP_CUSTOMER_BASE_ID" />
+          <ScalarProperty Name="ConAddr" ColumnName="CON_ADDR" />
+          <ScalarProperty Name="CorrespondUnit" ColumnName="CORRESPOND_UNIT" />
+          <ScalarProperty Name="CreditMny" ColumnName="CREDIT_MNY" />
+          <ScalarProperty Name="CusCode" ColumnName="CUS_CODE" />
+          <ScalarProperty Name="CusName" ColumnName="CUS_NAME" />
+          <ScalarProperty Name="CusShortName" ColumnName="CUS_SHORT_NAME" />
+          <ScalarProperty Name="CustProp" ColumnName="CUST_PROP" />
+          <ScalarProperty Name="CustomerBaseId" ColumnName="CUSTOMER_BASE_ID" />
+          <ScalarProperty Name="EcoTypesincefive" ColumnName="ECO_TYPESINCEFIVE" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="EnglishName" ColumnName="ENGLISH_NAME" />
+          <ScalarProperty Name="Fax1" ColumnName="FAX1" />
+          <ScalarProperty Name="Fax2" ColumnName="FAX2" />
+          <ScalarProperty Name="Fax3" ColumnName="FAX3" />
+          <ScalarProperty Name="FreeCustFlag" ColumnName="FREE_CUST_FLAG" />
+          <ScalarProperty Name="HeadQuatersId" ColumnName="HEAD_QUATERS_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="IsConnFlag" ColumnName="IS_CONN_FLAG" />
+          <ScalarProperty Name="LegalBody" ColumnName="LEGAL_BODY" />
+          <ScalarProperty Name="LinkMan1" ColumnName="LINK_MAN1" />
+          <ScalarProperty Name="LinkMan2" ColumnName="LINK_MAN2" />
+          <ScalarProperty Name="LinkMan3" ColumnName="LINK_MAN3" />
+          <ScalarProperty Name="Memo" ColumnName="MEMO" />
+          <ScalarProperty Name="MneCode" ColumnName="MNE_CODE" />
+          <ScalarProperty Name="MobilePhone1" ColumnName="MOBILE_PHONE1" />
+          <ScalarProperty Name="MobilePhone2" ColumnName="MOBILE_PHONE2" />
+          <ScalarProperty Name="MobilePhone3" ColumnName="MOBILE_PHONE3" />
+          <ScalarProperty Name="Phone1" ColumnName="PHONE1" />
+          <ScalarProperty Name="Phone2" ColumnName="PHONE2" />
+          <ScalarProperty Name="Phone3" ColumnName="PHONE3" />
+          <ScalarProperty Name="RegisterFund" ColumnName="REGISTER_FUND" />
+          <ScalarProperty Name="RegisterNum" ColumnName="REGISTER_NUM" />
+          <ScalarProperty Name="SaleAddr" ColumnName="SALE_ADDR" />
+          <ScalarProperty Name="SealFlag" ColumnName="SEAL_FLAG" />
+          <ScalarProperty Name="TaxpayeId" ColumnName="TAXPAYE_ID" />
+          <ScalarProperty Name="Trade" ColumnName="TRADE" />
+          <ScalarProperty Name="WebAdd" ColumnName="WEB_ADD" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZIP_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpCustomerDocs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpCustomerDoc">
+        <MappingFragment StoreEntitySet="BDP_CUSTOMER_DOCs">
+          <ScalarProperty Name="AccAwmny" ColumnName="ACC_AWMNY" />
+          <ScalarProperty Name="AccLimit" ColumnName="ACC_LIMIT" />
+          <ScalarProperty Name="AccLimitBeginDate" ColumnName="ACC_LIMIT_BEGIN_DATE" />
+          <ScalarProperty Name="ApproveDate" ColumnName="APPROVE_DATE" />
+          <ScalarProperty Name="BalanceMny" ColumnName="BALANCE_MNY" />
+          <ScalarProperty Name="BillCustId" ColumnName="BILL_CUST_ID" />
+          <ScalarProperty Name="BizAwmny" ColumnName="BIZ_AWMNY" />
+          <ScalarProperty Name="BizManId" ColumnName="BIZ_MAN_ID" />
+          <ScalarProperty Name="CmneCode" ColumnName="CMNE_CODE" />
+          <ScalarProperty Name="ConsignorId" ColumnName="CONSIGNOR_ID" />
+          <ScalarProperty Name="CooperateFlag" ColumnName="COOPERATE_FLAG" />
+          <ScalarProperty Name="CooperatingEnd" ColumnName="COOPERATING_END" />
+          <ScalarProperty Name="CooperatingFrom" ColumnName="COOPERATING_FROM" />
+          <ScalarProperty Name="CorrespSettleUnit" ColumnName="CORRESP_SETTLE_UNIT" />
+          <ScalarProperty Name="CreditLevel" ColumnName="CREDIT_LEVEL" />
+          <ScalarProperty Name="CreditLimitFlag" ColumnName="CREDIT_LIMIT_FLAG" />
+          <ScalarProperty Name="CreditLimitNum" ColumnName="CREDIT_LIMIT_NUM" />
+          <ScalarProperty Name="CreditMny" ColumnName="CREDIT_MNY" />
+          <ScalarProperty Name="CreditMoney" ColumnName="CREDIT_MONEY" />
+          <ScalarProperty Name="CustState" ColumnName="CUST_STATE" />
+          <ScalarProperty Name="CustomerBaseId" ColumnName="CUSTOMER_BASE_ID" />
+          <ScalarProperty Name="CustomerDocId" ColumnName="CUSTOMER_DOC_ID" />
+          <ScalarProperty Name="DefaultBiz" ColumnName="DEFAULT_BIZ" />
+          <ScalarProperty Name="DeptId" ColumnName="DEPT_ID" />
+          <ScalarProperty Name="DevelopDate" ColumnName="DEVELOP_DATE" />
+          <ScalarProperty Name="DiffCunFlag" ColumnName="DIFF_CUN_FLAG" />
+          <ScalarProperty Name="DiliveryType" ColumnName="DILIVERY_TYPE" />
+          <ScalarProperty Name="DiscountRate" ColumnName="DISCOUNT_RATE" />
+          <ScalarProperty Name="FreeofAcclmtCheck" ColumnName="FREEOF_ACCLMT_CHECK" />
+          <ScalarProperty Name="FreeofCremnyCheck" ColumnName="FREEOF_CREMNY_CHECK" />
+          <ScalarProperty Name="FrozenFlag" ColumnName="FROZEN_FLAG" />
+          <ScalarProperty Name="FrozenTime" ColumnName="FROZEN_TIME" />
+          <ScalarProperty Name="Grade" ColumnName="GRADE" />
+          <ScalarProperty Name="HouseWareId" ColumnName="HOUSE_WARE_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="InnerctlDays" ColumnName="INNERCTL_DAYS" />
+          <ScalarProperty Name="IoUnit" ColumnName="IO_UNIT" />
+          <ScalarProperty Name="IsCust" ColumnName="IS_CUST" />
+          <ScalarProperty Name="IsPrometeSettlement" ColumnName="IS_PROMETE_SETTLEMENT" />
+          <ScalarProperty Name="LinkMan" ColumnName="LINK_MAN" />
+          <ScalarProperty Name="MnyType" ColumnName="MNY_TYPE" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MOBILE_PHONE" />
+          <ScalarProperty Name="OrdAwmny" ColumnName="ORD_AWMNY" />
+          <ScalarProperty Name="ProtocolId" ColumnName="PROTOCOL_ID" />
+          <ScalarProperty Name="SalesStruId" ColumnName="SALES_STRU_ID" />
+          <ScalarProperty Name="SealFlag" ColumnName="SEAL_FLAG" />
+          <ScalarProperty Name="SettleUnitId" ColumnName="SETTLE_UNIT_ID" />
+          <ScalarProperty Name="StockPriceRatio" ColumnName="STOCK_PRICE_RATIO" />
+          <ScalarProperty Name="TestSaleMoney" ColumnName="TEST_SALE_MONEY" />
+          <ScalarProperty Name="WareStruId" ColumnName="WARE_STRU_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpDeptStations">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpDeptStation">
+        <MappingFragment StoreEntitySet="BDP_DEPT_STATIONs">
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="DeptStationId" ColumnName="DEPT_STATION_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="OrgDepartmentId" ColumnName="ORG_DEPARTMENT_ID" />
+          <ScalarProperty Name="StationId" ColumnName="STATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpInstallModules">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpInstallModule">
+        <MappingFragment StoreEntitySet="BDP_INSTALL_MODULEs">
+          <ScalarProperty Name="BuildTime" ColumnName="BUILD_TIME" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="IntallModuleId" ColumnName="INTALL_MODULE_ID" />
+          <ScalarProperty Name="ModuleId" ColumnName="MODULE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpModules">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpModule">
+        <MappingFragment StoreEntitySet="BDP_MODULEs">
+          <ScalarProperty Name="DisabelTime" ColumnName="DISABEL_TIME" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="InstallState" ColumnName="INSTALL_STATE" />
+          <ScalarProperty Name="ModuleDescription" ColumnName="MODULE_DESCRIPTION" />
+          <ScalarProperty Name="ModuleIcon" ColumnName="MODULE_ICON" />
+          <ScalarProperty Name="ModuleId" ColumnName="MODULE_ID" />
+          <ScalarProperty Name="ModuleLicence" ColumnName="MODULE_LICENCE" />
+          <ScalarProperty Name="ModuleName" ColumnName="MODULE_NAME" />
+          <ScalarProperty Name="Sequence" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="StartTime" ColumnName="START_TIME" />
+          <ScalarProperty Name="SystemId" ColumnName="SYSTEM_ID" />
+          <ScalarProperty Name="Version" ColumnName="VERSION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpModuleTotrees">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpModuleTotree">
+        <MappingFragment StoreEntitySet="BDP_MODULE_TOTREEs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="ModuleId" ColumnName="MODULE_ID" />
+          <ScalarProperty Name="ModuleTotreeId" ColumnName="MODULE_TOTREE_ID" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgAttaches">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgAttach">
+        <MappingFragment StoreEntitySet="BDP_MSG_ATTACHs">
+          <ScalarProperty Name="AttachId" ColumnName="ATTACH_ID" />
+          <ScalarProperty Name="AttachName" ColumnName="ATTACH_NAME" />
+          <ScalarProperty Name="FileExt" ColumnName="FILE_EXT" />
+          <ScalarProperty Name="FileName" ColumnName="FILE_NAME" />
+          <ScalarProperty Name="FileSize" ColumnName="FILE_SIZE" />
+          <ScalarProperty Name="FileUrl" ColumnName="FILE_URL" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="RelFlag" ColumnName="REL_FLAG" />
+          <ScalarProperty Name="RelId" ColumnName="REL_ID" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+          <ScalarProperty Name="UploadTime" ColumnName="UPLOAD_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgCodes">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgCode">
+        <MappingFragment StoreEntitySet="BDP_MSG_CODEs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="MsgCodeId" ColumnName="MSG_CODE_ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgDefines">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgDefine">
+        <MappingFragment StoreEntitySet="BDP_MSG_DEFINEs">
+          <ScalarProperty Name="MsgCodeId" ColumnName="MSG_CODE_ID" />
+          <ScalarProperty Name="MsgDefId" ColumnName="MSG_DEF_ID" />
+          <ScalarProperty Name="MsgGenerator" ColumnName="MSG_GENERATOR" />
+          <ScalarProperty Name="MsgName" ColumnName="MSG_NAME" />
+          <ScalarProperty Name="MsgNo" ColumnName="MSG_NO" />
+          <ScalarProperty Name="MsgTextFormat" ColumnName="MSG_TEXT_FORMAT" />
+          <ScalarProperty Name="ProcessUrl" ColumnName="PROCESS_URL" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgLogs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgLog">
+        <MappingFragment StoreEntitySet="BDP_MSG_LOGs">
+          <ScalarProperty Name="IsProcessed" ColumnName="IS_PROCESSED" />
+          <ScalarProperty Name="MsgCode" ColumnName="MSG_CODE" />
+          <ScalarProperty Name="MsgLogId" ColumnName="MSG_LOG_ID" />
+          <ScalarProperty Name="MsgNo" ColumnName="MSG_NO" />
+          <ScalarProperty Name="MsgParam" ColumnName="MSG_PARAM" />
+          <ScalarProperty Name="MsgText" ColumnName="MSG_TEXT" />
+          <ScalarProperty Name="ProcessTime" ColumnName="PROCESS_TIME" />
+          <ScalarProperty Name="ProcessUrl" ColumnName="PROCESS_URL" />
+          <ScalarProperty Name="ReceiveTime" ColumnName="RECEIVE_TIME" />
+          <ScalarProperty Name="SendTime" ColumnName="SEND_TIME" />
+          <ScalarProperty Name="SenderUserId" ColumnName="SENDER_USER_ID" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgNotices">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgNotice">
+        <MappingFragment StoreEntitySet="BDP_MSG_NOTICEs">
+          <ScalarProperty Name="AttachCount" ColumnName="ATTACH_COUNT" />
+          <ScalarProperty Name="ClassCode" ColumnName="CLASS_CODE" />
+          <ScalarProperty Name="ClassText" ColumnName="CLASS_TEXT" />
+          <ScalarProperty Name="ContentType" ColumnName="CONTENT_TYPE" />
+          <ScalarProperty Name="DeployTime" ColumnName="DEPLOY_TIME" />
+          <ScalarProperty Name="DeployUserId" ColumnName="DEPLOY_USER_ID" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="LobDataId" ColumnName="LOB_DATA_ID" />
+          <ScalarProperty Name="NoticeContent" ColumnName="NOTICE_CONTENT" />
+          <ScalarProperty Name="NoticeState" ColumnName="NOTICE_STATE" />
+          <ScalarProperty Name="NoticeTitle" ColumnName="NOTICE_TITLE" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgTasks">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgTask">
+        <MappingFragment StoreEntitySet="BDP_MSG_TASKs">
+          <ScalarProperty Name="Active" ColumnName="ACTIVE" />
+          <ScalarProperty Name="ExecClass" ColumnName="EXEC_CLASS" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+          <ScalarProperty Name="TaskCode" ColumnName="TASK_CODE" />
+          <ScalarProperty Name="TaskId" ColumnName="TASK_ID" />
+          <ScalarProperty Name="TaskName" ColumnName="TASK_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgTaskLogs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgTaskLog">
+        <MappingFragment StoreEntitySet="BDP_MSG_TASK_LOGs">
+          <ScalarProperty Name="ExecSuccessed" ColumnName="EXEC_SUCCESSED" />
+          <ScalarProperty Name="ExecTime" ColumnName="EXEC_TIME" />
+          <ScalarProperty Name="LogId" ColumnName="LOG_ID" />
+          <ScalarProperty Name="TaskId" ColumnName="TASK_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpMsgTopics">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpMsgTopic">
+        <MappingFragment StoreEntitySet="BDP_MSG_TOPICs">
+          <ScalarProperty Name="ContentType" ColumnName="CONTENT_TYPE" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="IsLock" ColumnName="IS_LOCK" />
+          <ScalarProperty Name="IsRecommend" ColumnName="IS_RECOMMEND" />
+          <ScalarProperty Name="IsTop" ColumnName="IS_TOP" />
+          <ScalarProperty Name="LobDataId" ColumnName="LOB_DATA_ID" />
+          <ScalarProperty Name="PostIp" ColumnName="POST_IP" />
+          <ScalarProperty Name="PostTime" ColumnName="POST_TIME" />
+          <ScalarProperty Name="PraiseCount" ColumnName="PRAISE_COUNT" />
+          <ScalarProperty Name="PraiseRemak" ColumnName="PRAISE_REMAK" />
+          <ScalarProperty Name="ReadCount" ColumnName="READ_COUNT" />
+          <ScalarProperty Name="ReferId" ColumnName="REFER_ID" />
+          <ScalarProperty Name="TopicContent" ColumnName="TOPIC_CONTENT" />
+          <ScalarProperty Name="TopicId" ColumnName="TOPIC_ID" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+          <ScalarProperty Name="UserName" ColumnName="USER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOnlineUsers">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOnlineUser">
+        <MappingFragment StoreEntitySet="BDP_ONLINE_USERs">
+          <ScalarProperty Name="CurrentModule" ColumnName="CURRENT_MODULE" />
+          <ScalarProperty Name="CurrentModuleId" ColumnName="CURRENT_MODULE_ID" />
+          <ScalarProperty Name="LastActiveTime" ColumnName="LAST_ACTIVE_TIME" />
+          <ScalarProperty Name="LoginId" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="LoginTime" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LOGOUT_TIME" />
+          <ScalarProperty Name="OnlineFlag" ColumnName="ONLINE_FLAG" />
+          <ScalarProperty Name="RemoteAddress" ColumnName="REMOTE_ADDRESS" />
+          <ScalarProperty Name="RequestUrl" ColumnName="REQUEST_URL" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+          <ScalarProperty Name="UserName" ColumnName="USER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOperationLogs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOperationLog">
+        <MappingFragment StoreEntitySet="BDP_OPERATION_LOGs">
+          <ScalarProperty Name="LoginId" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="OperDesc" ColumnName="OPER_DESC" />
+          <ScalarProperty Name="OperFunctionId" ColumnName="OPER_FUNCTION_ID" />
+          <ScalarProperty Name="OperFunctionName" ColumnName="OPER_FUNCTION_NAME" />
+          <ScalarProperty Name="OperId" ColumnName="OPER_ID" />
+          <ScalarProperty Name="OperModule" ColumnName="OPER_MODULE" />
+          <ScalarProperty Name="OperModuleId" ColumnName="OPER_MODULE_ID" />
+          <ScalarProperty Name="OperTime" ColumnName="OPER_TIME" />
+          <ScalarProperty Name="RemoteAddress" ColumnName="REMOTE_ADDRESS" />
+          <ScalarProperty Name="RequestUrl" ColumnName="REQUEST_URL" />
+          <ScalarProperty Name="UserName" ColumnName="USER_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgCompanies">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgCompany">
+        <MappingFragment StoreEntitySet="BDP_ORG_COMPANYs">
+          <ScalarProperty Name="Briefintro" ColumnName="BRIEFINTRO" />
+          <ScalarProperty Name="ChargedeptCode" ColumnName="CHARGEDEPT_CODE" />
+          <ScalarProperty Name="ChargedeptName" ColumnName="CHARGEDEPT_NAME" />
+          <ScalarProperty Name="Citycounty" ColumnName="CITYCOUNTY" />
+          <ScalarProperty Name="CompanyCode" ColumnName="COMPANY_CODE" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="CompanyIsIndependent" ColumnName="COMPANY_IS_INDEPENDENT" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="COMPANY_LOGO" />
+          <ScalarProperty Name="CompanyName" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="CompanyOrder" ColumnName="COMPANY_ORDER" />
+          <ScalarProperty Name="CorpKind" ColumnName="CORP_KIND" />
+          <ScalarProperty Name="Corptype" ColumnName="CORPTYPE" />
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="Currency" ColumnName="CURRENCY" />
+          <ScalarProperty Name="Ecotype" ColumnName="ECOTYPE" />
+          <ScalarProperty Name="Email1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="Email2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="Email3" ColumnName="EMAIL3" />
+          <ScalarProperty Name="FatherId" ColumnName="FATHER_ID" />
+          <ScalarProperty Name="Fax1" ColumnName="FAX1" />
+          <ScalarProperty Name="Fax2" ColumnName="FAX2" />
+          <ScalarProperty Name="Fax3" ColumnName="FAX3" />
+          <ScalarProperty Name="ForeignName" ColumnName="FOREIGN_NAME" />
+          <ScalarProperty Name="HoldFlag" ColumnName="HOLD_FLAG" />
+          <ScalarProperty Name="Industry" ColumnName="INDUSTRY" />
+          <ScalarProperty Name="InnerCode" ColumnName="INNER_CODE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Isseal" ColumnName="ISSEAL" />
+          <ScalarProperty Name="LinkMan1" ColumnName="LINK_MAN1" />
+          <ScalarProperty Name="LinkMan2" ColumnName="LINK_MAN2" />
+          <ScalarProperty Name="LinkMan3" ColumnName="LINK_MAN3" />
+          <ScalarProperty Name="Memo" ColumnName="MEMO" />
+          <ScalarProperty Name="OwnerSharerate" ColumnName="OWNER_SHARERATE" />
+          <ScalarProperty Name="Phone1" ColumnName="PHONE1" />
+          <ScalarProperty Name="Phone2" ColumnName="PHONE2" />
+          <ScalarProperty Name="Phone3" ColumnName="PHONE3" />
+          <ScalarProperty Name="Postaddr" ColumnName="POSTADDR" />
+          <ScalarProperty Name="PrincipalId" ColumnName="PRINCIPAL_ID" />
+          <ScalarProperty Name="PrincipalIdnumber" ColumnName="PRINCIPAL_IDNUMBER" />
+          <ScalarProperty Name="PrincipalName" ColumnName="PRINCIPAL_NAME" />
+          <ScalarProperty Name="Province" ColumnName="PROVINCE" />
+          <ScalarProperty Name="Region" ColumnName="REGION" />
+          <ScalarProperty Name="Saleaddr" ColumnName="SALEADDR" />
+          <ScalarProperty Name="SealedDate" ColumnName="SEALED_DATE" />
+          <ScalarProperty Name="ShortName" ColumnName="SHORT_NAME" />
+          <ScalarProperty Name="TaxCode" ColumnName="TAX_CODE" />
+          <ScalarProperty Name="TaxpayerType" ColumnName="TAXPAYER_TYPE" />
+          <ScalarProperty Name="Unitdistinction" ColumnName="UNITDISTINCTION" />
+          <ScalarProperty Name="Webadd" ColumnName="WEBADD" />
+          <ScalarProperty Name="Zip" ColumnName="ZIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgCompanyHiss">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgCompanyHis">
+        <MappingFragment StoreEntitySet="BDP_ORG_COMPANY_HISs">
+          <ScalarProperty Name="Briefintro" ColumnName="BRIEFINTRO" />
+          <ScalarProperty Name="ChargedeptCode" ColumnName="CHARGEDEPT_CODE" />
+          <ScalarProperty Name="ChargedeptName" ColumnName="CHARGEDEPT_NAME" />
+          <ScalarProperty Name="Citycounty" ColumnName="CITYCOUNTY" />
+          <ScalarProperty Name="CompanyCode" ColumnName="COMPANY_CODE" />
+          <ScalarProperty Name="CompanyHisId" ColumnName="COMPANY_HIS_ID" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="CompanyIsIndependent" ColumnName="COMPANY_IS_INDEPENDENT" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="COMPANY_LOGO" />
+          <ScalarProperty Name="CompanyName" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="CompanyOrder" ColumnName="COMPANY_ORDER" />
+          <ScalarProperty Name="CorpKind" ColumnName="CORP_KIND" />
+          <ScalarProperty Name="Corptype" ColumnName="CORPTYPE" />
+          <ScalarProperty Name="CreateDate" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="Currency" ColumnName="CURRENCY" />
+          <ScalarProperty Name="Ecotype" ColumnName="ECOTYPE" />
+          <ScalarProperty Name="Email1" ColumnName="EMAIL1" />
+          <ScalarProperty Name="Email2" ColumnName="EMAIL2" />
+          <ScalarProperty Name="Email3" ColumnName="EMAIL3" />
+          <ScalarProperty Name="FatherId" ColumnName="FATHER_ID" />
+          <ScalarProperty Name="Fax1" ColumnName="FAX1" />
+          <ScalarProperty Name="Fax2" ColumnName="FAX2" />
+          <ScalarProperty Name="Fax3" ColumnName="FAX3" />
+          <ScalarProperty Name="ForeignName" ColumnName="FOREIGN_NAME" />
+          <ScalarProperty Name="HoldFlag" ColumnName="HOLD_FLAG" />
+          <ScalarProperty Name="Industry" ColumnName="INDUSTRY" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Isseal" ColumnName="ISSEAL" />
+          <ScalarProperty Name="LinkMan1" ColumnName="LINK_MAN1" />
+          <ScalarProperty Name="LinkMan2" ColumnName="LINK_MAN2" />
+          <ScalarProperty Name="LinkMan3" ColumnName="LINK_MAN3" />
+          <ScalarProperty Name="Memo" ColumnName="MEMO" />
+          <ScalarProperty Name="OwnerSharerate" ColumnName="OWNER_SHARERATE" />
+          <ScalarProperty Name="Phone1" ColumnName="PHONE1" />
+          <ScalarProperty Name="Phone2" ColumnName="PHONE2" />
+          <ScalarProperty Name="Phone3" ColumnName="PHONE3" />
+          <ScalarProperty Name="Postaddr" ColumnName="POSTADDR" />
+          <ScalarProperty Name="PrincipalId" ColumnName="PRINCIPAL_ID" />
+          <ScalarProperty Name="PrincipalIdnumber" ColumnName="PRINCIPAL_IDNUMBER" />
+          <ScalarProperty Name="PrincipalName" ColumnName="PRINCIPAL_NAME" />
+          <ScalarProperty Name="Province" ColumnName="PROVINCE" />
+          <ScalarProperty Name="Region" ColumnName="REGION" />
+          <ScalarProperty Name="Saleaddr" ColumnName="SALEADDR" />
+          <ScalarProperty Name="SealedDate" ColumnName="SEALED_DATE" />
+          <ScalarProperty Name="ShortName" ColumnName="SHORT_NAME" />
+          <ScalarProperty Name="TaxCode" ColumnName="TAX_CODE" />
+          <ScalarProperty Name="TaxpayerType" ColumnName="TAXPAYER_TYPE" />
+          <ScalarProperty Name="Unitdistinction" ColumnName="UNITDISTINCTION" />
+          <ScalarProperty Name="Webadd" ColumnName="WEBADD" />
+          <ScalarProperty Name="Zip" ColumnName="ZIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgCompanyKinds">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgCompanyKind">
+        <MappingFragment StoreEntitySet="BDP_ORG_COMPANY_KINDs">
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgDepartments">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgDepartment">
+        <MappingFragment StoreEntitySet="BDP_ORG_DEPARTMENTs">
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="DeptCode" ColumnName="DEPT_CODE" />
+          <ScalarProperty Name="DeptKind" ColumnName="DEPT_KIND" />
+          <ScalarProperty Name="DeptLevel" ColumnName="DEPT_LEVEL" />
+          <ScalarProperty Name="DeptName" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DeptNote" ColumnName="DEPT_NOTE" />
+          <ScalarProperty Name="DeptOrder" ColumnName="DEPT_ORDER" />
+          <ScalarProperty Name="DeptParent" ColumnName="DEPT_PARENT" />
+          <ScalarProperty Name="DeptPrincipal" ColumnName="DEPT_PRINCIPAL" />
+          <ScalarProperty Name="DeptPrincipalId" ColumnName="DEPT_PRINCIPAL_ID" />
+          <ScalarProperty Name="DeptShortName" ColumnName="DEPT_SHORT_NAME" />
+          <ScalarProperty Name="InnerCode" ColumnName="INNER_CODE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="OrgDepartmentId" ColumnName="ORG_DEPARTMENT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgEmployees">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgEmployee">
+        <MappingFragment StoreEntitySet="BDP_ORG_EMPLOYEEs">
+          <ScalarProperty Name="Address" ColumnName="ADDRESS" />
+          <ScalarProperty Name="Birthday" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="CulturalLevel" ColumnName="CULTURAL_LEVEL" />
+          <ScalarProperty Name="Degree" ColumnName="DEGREE" />
+          <ScalarProperty Name="EMail" ColumnName="E_MAIL" />
+          <ScalarProperty Name="EmpCode" ColumnName="EMP_CODE" />
+          <ScalarProperty Name="EmpGender" ColumnName="EMP_GENDER" />
+          <ScalarProperty Name="EmpName" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="EmpSerial" ColumnName="EMP_SERIAL" />
+          <ScalarProperty Name="EmpState" ColumnName="EMP_STATE" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EMPLOYEE_ID" />
+          <ScalarProperty Name="FamilyPhone" ColumnName="FAMILY_PHONE" />
+          <ScalarProperty Name="IdNumberCode" ColumnName="ID_NUMBER_CODE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="JoinCompanyDate" ColumnName="JOIN_COMPANY_DATE" />
+          <ScalarProperty Name="JoinWorkDate" ColumnName="JOIN_WORK_DATE" />
+          <ScalarProperty Name="Leadership" ColumnName="LEADERSHIP" />
+          <ScalarProperty Name="Nation" ColumnName="NATION" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OFFICE_PHONE" />
+          <ScalarProperty Name="OrgDepartmentId" ColumnName="ORG_DEPARTMENT_ID" />
+          <ScalarProperty Name="Phone" ColumnName="PHONE" />
+          <ScalarProperty Name="PoliticalBackground" ColumnName="POLITICAL_BACKGROUND" />
+          <ScalarProperty Name="PostalCode" ColumnName="POSTAL_CODE" />
+          <ScalarProperty Name="UsedName" ColumnName="USED_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgEmployeeBases">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgEmployeeBase">
+        <MappingFragment StoreEntitySet="BDP_ORG_EMPLOYEE_BASEs">
+          <ScalarProperty Name="Addr" ColumnName="ADDR" />
+          <ScalarProperty Name="Birthday" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="EmployeeBaseId" ColumnName="EMPLOYEE_BASE_ID" />
+          <ScalarProperty Name="FamilyPhone" ColumnName="FAMILY_PHONE" />
+          <ScalarProperty Name="Idnumber" ColumnName="IDNUMBER" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="JoinWorkDate" ColumnName="JOIN_WORK_DATE" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MOBILE_PHONE" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="OfficePhone" ColumnName="OFFICE_PHONE" />
+          <ScalarProperty Name="Sex" ColumnName="SEX" />
+          <ScalarProperty Name="Ssnum" ColumnName="SSNUM" />
+          <ScalarProperty Name="UsedName" ColumnName="USED_NAME" />
+          <ScalarProperty Name="Zipcode" ColumnName="ZIPCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgEmployeeStations">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgEmployeeStation">
+        <MappingFragment StoreEntitySet="BDP_ORG_EMPLOYEE_STATIONs">
+          <ScalarProperty Name="EmployeeId" ColumnName="EMPLOYEE_ID" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="MainStation" ColumnName="MAIN_STATION" />
+          <ScalarProperty Name="StationId" ColumnName="STATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgEmployeeTypes">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgEmployeeType">
+        <MappingFragment StoreEntitySet="BDP_ORG_EMPLOYEE_TYPEs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="TypeCode" ColumnName="TYPE_CODE" />
+          <ScalarProperty Name="TypeId" ColumnName="TYPE_ID" />
+          <ScalarProperty Name="TypeName" ColumnName="TYPE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgEmployeeUfs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgEmployeeUf">
+        <MappingFragment StoreEntitySet="BDP_ORG_EMPLOYEE_UFs">
+          <ScalarProperty Name="BizMan" ColumnName="BIZ_MAN" />
+          <ScalarProperty Name="BizManCode" ColumnName="BIZ_MAN_CODE" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="EmpCode" ColumnName="EMP_CODE" />
+          <ScalarProperty Name="EmpName" ColumnName="EMP_NAME" />
+          <ScalarProperty Name="EmpState" ColumnName="EMP_STATE" />
+          <ScalarProperty Name="EmpType" ColumnName="EMP_TYPE" />
+          <ScalarProperty Name="EmployeeBaseId" ColumnName="EMPLOYEE_BASE_ID" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EMPLOYEE_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Move" ColumnName="MOVE" />
+          <ScalarProperty Name="OrgDepartmentId" ColumnName="ORG_DEPARTMENT_ID" />
+          <ScalarProperty Name="OutTime" ColumnName="OUT_TIME" />
+          <ScalarProperty Name="Scope" ColumnName="SCOPE" />
+          <ScalarProperty Name="StartTime" ColumnName="START_TIME" />
+          <ScalarProperty Name="Station" ColumnName="STATION" />
+          <ScalarProperty Name="StationLevel" ColumnName="STATION_LEVEL" />
+          <ScalarProperty Name="StationSeq" ColumnName="STATION_SEQ" />
+          <ScalarProperty Name="TypeId" ColumnName="TYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgJobss">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgJobs">
+        <MappingFragment StoreEntitySet="BDP_ORG_JOBSs">
+          <ScalarProperty Name="InnerCode" ColumnName="INNER_CODE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="JobsCode" ColumnName="JOBS_CODE" />
+          <ScalarProperty Name="JobsId" ColumnName="JOBS_ID" />
+          <ScalarProperty Name="JobsName" ColumnName="JOBS_NAME" />
+          <ScalarProperty Name="JobsOrder" ColumnName="JOBS_ORDER" />
+          <ScalarProperty Name="ParentJobsId" ColumnName="PARENT_JOBS_ID" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpOrgStations">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpOrgStation">
+        <MappingFragment StoreEntitySet="BDP_ORG_STATIONs">
+          <ScalarProperty Name="BelongCompanyId" ColumnName="BELONG_COMPANY_ID" />
+          <ScalarProperty Name="Duty" ColumnName="DUTY" />
+          <ScalarProperty Name="GuartersComCode" ColumnName="GUARTERS_COM_CODE" />
+          <ScalarProperty Name="GuartersGbCode" ColumnName="GUARTERS_GB_CODE" />
+          <ScalarProperty Name="InnerCode" ColumnName="INNER_CODE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="IsDown" ColumnName="IS_DOWN" />
+          <ScalarProperty Name="IsHarm" ColumnName="IS_HARM" />
+          <ScalarProperty Name="JobsId" ColumnName="JOBS_ID" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Sequence" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="StationId" ColumnName="STATION_ID" />
+          <ScalarProperty Name="StationLevel" ColumnName="STATION_LEVEL" />
+          <ScalarProperty Name="StationParent" ColumnName="STATION_PARENT" />
+          <ScalarProperty Name="WorkContent" ColumnName="WORK_CONTENT" />
+          <ScalarProperty Name="WorkPlace" ColumnName="WORK_PLACE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpPrivDataPermissions">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpPrivDataPermission">
+        <MappingFragment StoreEntitySet="BDP_PRIV_DATA_PERMISSIONs">
+          <ScalarProperty Name="DatasetId" ColumnName="DATASET_ID" />
+          <ScalarProperty Name="DatasetName" ColumnName="DATASET_NAME" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DisplayFields" ColumnName="DISPLAY_FIELDS" />
+          <ScalarProperty Name="EditableFields" ColumnName="EDITABLE_FIELDS" />
+          <ScalarProperty Name="FilterCondition" ColumnName="FILTER_CONDITION" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="OpDelete" ColumnName="OP_DELETE" />
+          <ScalarProperty Name="OpInsert" ColumnName="OP_INSERT" />
+          <ScalarProperty Name="OpSelect" ColumnName="OP_SELECT" />
+          <ScalarProperty Name="OpUpdate" ColumnName="OP_UPDATE" />
+          <ScalarProperty Name="PermissionId" ColumnName="PERMISSION_ID" />
+          <ScalarProperty Name="RoleId" ColumnName="ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpPrivFunctionPermissions">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpPrivFunctionPermission">
+        <MappingFragment StoreEntitySet="BDP_PRIV_FUNCTION_PERMISSIONs">
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="FuncEnable" ColumnName="FUNC_ENABLE" />
+          <ScalarProperty Name="FuncVisible" ColumnName="FUNC_VISIBLE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="PageId" ColumnName="PAGE_ID" />
+          <ScalarProperty Name="PermissionId" ColumnName="PERMISSION_ID" />
+          <ScalarProperty Name="ResourceId" ColumnName="RESOURCE_ID" />
+          <ScalarProperty Name="RoleId" ColumnName="ROLE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpPrivRoles">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpPrivRole">
+        <MappingFragment StoreEntitySet="BDP_PRIV_ROLEs">
+          <ScalarProperty Name="BelongCompany" ColumnName="BELONG_COMPANY" />
+          <ScalarProperty Name="BelongSystemId" ColumnName="BELONG_SYSTEM_ID" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="RoleCode" ColumnName="ROLE_CODE" />
+          <ScalarProperty Name="IsPublic" ColumnName="IS_PUBLIC" />
+          <ScalarProperty Name="RoleId" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="RoleName" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="RoleOrder" ColumnName="ROLE_ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpPrivUsers">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpPrivUser">
+        <MappingFragment StoreEntitySet="BDP_PRIV_USERs">
+          <ScalarProperty Name="AbleTime" ColumnName="ABLE_TIME" />
+          <ScalarProperty Name="Activity" ColumnName="ACTIVITY" />
+          <ScalarProperty Name="AuthenType" ColumnName="AUTHEN_TYPE" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="DeptId" ColumnName="DEPT_ID" />
+          <ScalarProperty Name="Descripition" ColumnName="DESCRIPITION" />
+          <ScalarProperty Name="DisableTime" ColumnName="DISABLE_TIME" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EMPLOYEE_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="LockFlag" ColumnName="LOCK_FLAG" />
+          <ScalarProperty Name="Note" ColumnName="NOTE" />
+          <ScalarProperty Name="Phone" ColumnName="PHONE" />
+          <ScalarProperty Name="PortalUserId" ColumnName="PORTAL_USER_ID" />
+          <ScalarProperty Name="PortalUserTs" ColumnName="PORTAL_USER_TS" />
+          <ScalarProperty Name="PrivUsersId" ColumnName="PRIV_USERS_ID" />
+          <ScalarProperty Name="Pwd" ColumnName="PWD" />
+          <ScalarProperty Name="PwdLevel" ColumnName="PWD_LEVEL" />
+          <ScalarProperty Name="PwdParam" ColumnName="PWD_PARAM" />
+          <ScalarProperty Name="PwdType" ColumnName="PWD_TYPE" />
+          <ScalarProperty Name="RealName" ColumnName="REAL_NAME" />
+          <ScalarProperty Name="Sex" ColumnName="SEX" />
+          <ScalarProperty Name="UserCode" ColumnName="USER_CODE" />
+          <ScalarProperty Name="UserName" ColumnName="USER_NAME" />
+          <ScalarProperty Name="UserType" ColumnName="USER_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpPrivUserMappings">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpPrivUserMapping">
+        <MappingFragment StoreEntitySet="BDP_PRIV_USER_MAPPINGs">
+          <ScalarProperty Name="BindingDate" ColumnName="BINDING_DATE" />
+          <ScalarProperty Name="BindingId" ColumnName="BINDING_ID" />
+          <ScalarProperty Name="BindingSysName" ColumnName="BINDING_SYS_NAME" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="IsDisabled" ColumnName="IS_DISABLED" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpPrivUserRoles">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpPrivUserRole">
+        <MappingFragment StoreEntitySet="BDP_PRIV_USER_ROLEs">
+          <ScalarProperty Name="DepartmentId" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="PrivUsersId" ColumnName="PRIV_USERS_ID" />
+          <ScalarProperty Name="RoleId" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="StationId" ColumnName="STATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSiSystemss">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSiSystems">
+        <MappingFragment StoreEntitySet="BDP_SI_SYSTEMSs">
+          <ScalarProperty Name="ApplianceSign" ColumnName="APPLIANCE_SIGN" />
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="HomeUrl" ColumnName="HOME_URL" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="IsActive" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="IsIntegated" ColumnName="IS_INTEGATED" />
+          <ScalarProperty Name="LoginUrl" ColumnName="LOGIN_URL" />
+          <ScalarProperty Name="NodeType" ColumnName="NODE_TYPE" />
+          <ScalarProperty Name="ParentSystemId" ColumnName="PARENT_SYSTEM_ID" />
+          <ScalarProperty Name="RoleId" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="Snapshot" ColumnName="SNAPSHOT" />
+          <ScalarProperty Name="SystemCode" ColumnName="SYSTEM_CODE" />
+          <ScalarProperty Name="SystemDescription" ColumnName="SYSTEM_DESCRIPTION" />
+          <ScalarProperty Name="SystemIcon" ColumnName="SYSTEM_ICON" />
+          <ScalarProperty Name="SystemId" ColumnName="SYSTEM_ID" />
+          <ScalarProperty Name="SystemShortName" ColumnName="SYSTEM_SHORT_NAME" />
+          <ScalarProperty Name="SystemTitle" ColumnName="SYSTEM_TITLE" />
+          <ScalarProperty Name="Target" ColumnName="TARGET" />
+          <ScalarProperty Name="UserType" ColumnName="USER_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSysLobDatas">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSysLobData">
+        <MappingFragment StoreEntitySet="BDP_SYS_LOB_DATAs">
+          <ScalarProperty Name="DataContext" ColumnName="DATA_CONTEXT" />
+          <ScalarProperty Name="DataDesc" ColumnName="DATA_DESC" />
+          <ScalarProperty Name="DataKind" ColumnName="DATA_KIND" />
+          <ScalarProperty Name="DataLength" ColumnName="DATA_LENGTH" />
+          <ScalarProperty Name="Flag1" ColumnName="FLAG1" />
+          <ScalarProperty Name="Flag2" ColumnName="FLAG2" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="LobId" ColumnName="LOB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSysLogs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSysLog">
+        <MappingFragment StoreEntitySet="BDP_SYS_LOGs">
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="LogInfo" ColumnName="LOG_INFO" />
+          <ScalarProperty Name="LogParticular" ColumnName="LOG_PARTICULAR" />
+          <ScalarProperty Name="LogTime" ColumnName="LOG_TIME" />
+          <ScalarProperty Name="LogUserName" ColumnName="LOG_USER_NAME" />
+          <ScalarProperty Name="PrivUsersId" ColumnName="PRIV_USERS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSysOperateLogs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSysOperateLog">
+        <MappingFragment StoreEntitySet="BDP_SYS_OPERATE_LOGs">
+          <ScalarProperty Name="BillCode" ColumnName="BILL_CODE" />
+          <ScalarProperty Name="BillId" ColumnName="BILL_ID" />
+          <ScalarProperty Name="BillType" ColumnName="BILL_TYPE" />
+          <ScalarProperty Name="BizLog" ColumnName="BIZ_LOG" />
+          <ScalarProperty Name="BizType" ColumnName="BIZ_TYPE" />
+          <ScalarProperty Name="CompanyName" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="EnterButton" ColumnName="ENTER_BUTTON" />
+          <ScalarProperty Name="EnterFunction" ColumnName="ENTER_FUNCTION" />
+          <ScalarProperty Name="EnterFunctionCode" ColumnName="ENTER_FUNCTION_CODE" />
+          <ScalarProperty Name="EnterIp" ColumnName="ENTER_IP" />
+          <ScalarProperty Name="EnterSystem" ColumnName="ENTER_SYSTEM" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="LoginTime" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LogoutTime" ColumnName="LOGOUT_TIME" />
+          <ScalarProperty Name="OperateLogId" ColumnName="OPERATE_LOG_ID" />
+          <ScalarProperty Name="OperateType" ColumnName="OPERATE_TYPE" />
+          <ScalarProperty Name="OperatorId" ColumnName="OPERATOR_ID" />
+          <ScalarProperty Name="OperatorName" ColumnName="OPERATOR_NAME" />
+          <ScalarProperty Name="PrivUsersId" ColumnName="PRIV_USERS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSysParamss">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSysParams">
+        <MappingFragment StoreEntitySet="BDP_SYS_PARAMSs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="ParamDesc" ColumnName="PARAM_DESC" />
+          <ScalarProperty Name="ParamFlag1" ColumnName="PARAM_FLAG1" />
+          <ScalarProperty Name="ParamFlag2" ColumnName="PARAM_FLAG2" />
+          <ScalarProperty Name="ParamId" ColumnName="PARAM_ID" />
+          <ScalarProperty Name="ParamName" ColumnName="PARAM_NAME" />
+          <ScalarProperty Name="ParamName2" ColumnName="PARAM_NAME2" />
+          <ScalarProperty Name="ParamValue" ColumnName="PARAM_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSysTemporaryDatas">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSysTemporaryData">
+        <MappingFragment StoreEntitySet="BDP_SYS_TEMPORARY_DATAs">
+          <ScalarProperty Name="GenTime" ColumnName="GEN_TIME" />
+          <ScalarProperty Name="Id" ColumnName="ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="RefFlag" ColumnName="REF_FLAG" />
+          <ScalarProperty Name="TempData" ColumnName="TEMP_DATA" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSystems">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSystem">
+        <MappingFragment StoreEntitySet="BDP_SYSTEMs">
+          <ScalarProperty Name="CustomerCompany" ColumnName="CUSTOMER_COMPANY" />
+          <ScalarProperty Name="DisableTime" ColumnName="DISABLE_TIME" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="InstallTime" ColumnName="INSTALL_TIME" />
+          <ScalarProperty Name="ServiceEmail" ColumnName="SERVICE_EMAIL" />
+          <ScalarProperty Name="ServicePhone" ColumnName="SERVICE_PHONE" />
+          <ScalarProperty Name="ServiceWeb" ColumnName="SERVICE_WEB" />
+          <ScalarProperty Name="StartTime" ColumnName="START_TIME" />
+          <ScalarProperty Name="SystemCode" ColumnName="SYSTEM_CODE" />
+          <ScalarProperty Name="SystemIconUrl" ColumnName="SYSTEM_ICON_URL" />
+          <ScalarProperty Name="SystemId" ColumnName="SYSTEM_ID" />
+          <ScalarProperty Name="SystemLicence" ColumnName="SYSTEM_LICENCE" />
+          <ScalarProperty Name="SystemName" ColumnName="SYSTEM_NAME" />
+          <ScalarProperty Name="WebTreeRootNodeId" ColumnName="WEB_TREE_ROOT_NODE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSystemLogs">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSystemLog">
+        <MappingFragment StoreEntitySet="BDP_SYSTEM_LOGs">
+          <ScalarProperty Name="CompanyId" ColumnName="COMPANY_ID" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DEPARTMENT_ID" />
+          <ScalarProperty Name="DetailMessage" ColumnName="DETAIL_MESSAGE" />
+          <ScalarProperty Name="LogDateTime" ColumnName="LOG_DATE_TIME" />
+          <ScalarProperty Name="LogId" ColumnName="LOG_ID" />
+          <ScalarProperty Name="LogLevel" ColumnName="LOG_LEVEL" />
+          <ScalarProperty Name="LogMessage" ColumnName="LOG_MESSAGE" />
+          <ScalarProperty Name="RequestUrl" ColumnName="REQUEST_URL" />
+          <ScalarProperty Name="UserHostAddress" ColumnName="USER_HOST_ADDRESS" />
+          <ScalarProperty Name="UserHostName" ColumnName="USER_HOST_NAME" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpSystemVersions">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpSystemVersion">
+        <MappingFragment StoreEntitySet="BDP_SYSTEM_VERSIONs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="ModuleId" ColumnName="MODULE_ID" />
+          <ScalarProperty Name="SystemId" ColumnName="SYSTEM_ID" />
+          <ScalarProperty Name="SystemVersionId" ColumnName="SYSTEM_VERSION_ID" />
+          <ScalarProperty Name="UpdateTime" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="VersionCode" ColumnName="VERSION_CODE" />
+          <ScalarProperty Name="VersionDescription" ColumnName="VERSION_DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWebLanguages">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpWebLanguage">
+        <MappingFragment StoreEntitySet="BDP_WEB_LANGUAGEs">
+          <ScalarProperty Name="Cn" ColumnName="CN" />
+          <ScalarProperty Name="En" ColumnName="EN" />
+          <ScalarProperty Name="L1" ColumnName="L1" />
+          <ScalarProperty Name="L2" ColumnName="L2" />
+          <ScalarProperty Name="L3" ColumnName="L3" />
+          <ScalarProperty Name="LangId" ColumnName="LANG_ID" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+          <ScalarProperty Name="Remark" ColumnName="REMARK" />
+          <ScalarProperty Name="Selector" ColumnName="SELECTOR" />
+          <ScalarProperty Name="Src" ColumnName="SRC" />
+          <ScalarProperty Name="Url" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWebResources">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpWebResource">
+        <MappingFragment StoreEntitySet="BDP_WEB_RESOURCEs">
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+          <ScalarProperty Name="ResId" ColumnName="RES_ID" />
+          <ScalarProperty Name="ResName" ColumnName="RES_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWebTrees">
+      <EntityTypeMapping TypeName="Hongbin.Data.BdpBaseData.BdpWebTree">
+        <MappingFragment StoreEntitySet="BDP_WEB_TREEs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="NodeActive" ColumnName="NODE_ACTIVE" />
+          <ScalarProperty Name="NodeComment" ColumnName="NODE_COMMENT" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+          <ScalarProperty Name="NodeImage" ColumnName="NODE_IMAGE" />
+          <ScalarProperty Name="NodeOrder" ColumnName="NODE_ORDER" />
+          <ScalarProperty Name="NodeParam" ColumnName="NODE_PARAM" />
+          <ScalarProperty Name="NodeParent" ColumnName="NODE_PARENT" />
+          <ScalarProperty Name="NodeText" ColumnName="NODE_TEXT" />
+          <ScalarProperty Name="NodeType" ColumnName="NODE_TYPE" />
+          <ScalarProperty Name="NodeUrl" ColumnName="NODE_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

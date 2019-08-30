@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ImportWizard.master.cs" Inherits="Hongbin.Web.Frame.Master.ImportWizard" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/frame/resources/css/default/om-default.css" rel="stylesheet" />
+    <link href="~/frame/resources/css/default/bdp-common.css" rel="stylesheet" />
+    <link href="~/frame/resources/css/default/bdp-editor.css" rel="stylesheet" />
+    <link href="~/frame/resources/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="css" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div id="step-root" class="bdp-wizard">
+            <div id="step-title" class="title">
+                <label>数据导入</label>
+            </div>
+            <div id="step-tabs">
+                <ul>
+                    <li><a href="#s1">导入规则</a></li>
+                    <li><a href="#s2">上传导入文件</a></li>
+                    <li><a href="#s3">列映射</a></li>
+                    <li><a href="#s4">执行导入</a></li>
+                </ul>
+                <div id="s1">
+                    <div class="col-xs-5 col-md-4">
+                        <div class="imprules-div">
+                            <label class="radio">
+                                <input type="radio" name="impmode" value="0" checked="checked" />自动追加，有则修改，没有的追加
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="impmode" value="1" />全新增加，删除原来的再新增
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="impmode" value="2" />跳过已经存在的，追加不存在的记录
+                            </label>
+
+                            <label class="checkbox">
+                                <input type="checkbox" name="implog" checked="checked" />生成导入记录
+                            </label>
+                            <div style="padding-left: 30px;">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="logall" />记录所有数据行 
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-md-8">
+                        <asp:ContentPlaceHolder ID="CustomOptions" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div id="s2">
+                    <div class="row">
+                        <span class="col-xs-2 col-md-2 text-right">
+                            <label class="">选择文件：</label>
+                        </span>
+                        <span class="col-xs-6 col-md-6">
+                            <input id="srcFile" name="srcFile" type="file" accept="application/msexcel,application/dbf" class="file" style="width: 90%" />
+                        </span>
+                        <span class="col-xs-4 col-md-4"></span>
+                    </div>
+                    <div class="row">
+                        <span class="col-xs-2 col-md-2 text-right">
+                            <label class="control-label">数据文件类型：</label>
+                        </span>
+                        <span class="col-xs-1 col-md-1">
+                            <label class="radio radio-inline" for="skExcel">
+                                <input class="radio radio-inline" type="radio" name="srcKind" id="skExcel" value="0" checked="" />
+                                EXCEL</label>
+                        </span>
+                        <span class="col-xs-1 col-md-1">
+                            <label class="radio radio-inline" for="skDBF">
+                                <input class="radio" type="radio" name="srcKind" id="skDBF" value="1" />
+                                DBF</label>
+                        </span>
+                        <span class="col-xs-3 col-md-3">
+                            <%--<label class="checkbox checkbox-inline">
+                            <input class="checkbox" type="checkbox" id="srcZip" value="0" />
+                            文件已压缩
+                        </label>--%>
+                        </span>
+                    </div>
+                    <div class="row rowExcel">
+                        <span class="col-xs-2 col-md-2 text-right">
+                            <label>工作表：</label>
+                        </span>
+                        <span class="col-xs-3 col-md-3">
+                            <input id="srcSheet" class="form-control-static " value="Sheet1" style="width: 120px;" />
+                        </span>
+                        <span class="col-xs-7 col-md-7">
+                            <label class="tip">即EXCEL文件中Sheet页的名字, 空串表示使用第1个Sheet表。</label>
+                        </span>
+                    </div>
+                    <div class="row rowExcel">
+                        <span class="col-xs-2 col-md-2 text-right">
+                            <label>数据起始行号：</label>
+                        </span>
+                        <span class="col-xs-3 col-md-3">
+                            <input id="srcRow" class="form-control-static" value="2" style="width: 60px;" />
+                        </span>
+                        <span class="col-xs-7 col-md-7">
+                            <label class="tip">一般建议第1行为标题，第2行开始是数据。</label>
+                        </span>
+                    </div>
+                    <div class="row rowDbf">
+                        <span class="col-xs-2 col-md-2 text-right">
+                            <label>文件类型：</label>
+                        </span>
+                        <span class="col-xs-1 col-md-1">
+                            <label class="radio radio-inline">
+                                <input class="radio radio-inline" type="radio" name="dbftype" id="dtDBase" value="0" />
+                                dBASE</label>
+                        </span>
+                        <span class="col-xs-9 col-md-9">
+                            <label class="radio radio-inline">
+                                <input class="radio" type="radio" name="dbftype" id="dtFoxpro" value="1" checked="checked" />
+                                Foxpro(需安装VFPOLE驱动程序)</label>
+                        </span>
+                    </div>
+                </div>
+                <div id="s3">
+                    <table id="gridMap"></table>
+                </div>
+                <div id="s4">
+                    <div class="row">
+                        <span class="col-xs-2 col-md-3"></span>
+                        <span class="col-xs-10 col-md-9">
+                            <label>数据准备完毕，点击“下一步”执行导入。</label>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-md-3"></div>
+                        <div class="col-xs-10 col-md-9 ">
+                            <label id="impLabel">
+                                <br />
+                            </label>
+
+                            <div id="impProgress" style="width: 200px"></div>
+
+                            <div id="impResult" class="result-div">
+                                <br />
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="step-btns">
+                <div class="block pull-right">
+                    <a class="btn btn-default step-btns-prev">上一步</a>
+                    <a class="btn btn-default step-btns-next">下一步</a>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

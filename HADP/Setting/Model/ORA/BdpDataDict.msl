@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BdpDataDictEntitiesStoreContainer" CdmEntityContainer="BdpDataDictEntities">
+    <EntitySetMapping Name="DdClss">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdCls">
+        <MappingFragment StoreEntitySet="DD_CLSs">
+          <ScalarProperty Name="Clscode" ColumnName="CLSCODE" />
+          <ScalarProperty Name="Clsdsetids" ColumnName="CLSDSETIDS" />
+          <ScalarProperty Name="Clsname" ColumnName="CLSNAME" />
+          <ScalarProperty Name="Clsnote" ColumnName="CLSNOTE" />
+          <ScalarProperty Name="Clsorder" ColumnName="CLSORDER" />
+          <ScalarProperty Name="Clsparentcode" ColumnName="CLSPARENTCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdSets">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdSet">
+        <MappingFragment StoreEntitySet="DD_SETs">
+          <ScalarProperty Name="Setccode" ColumnName="SETCCODE" />
+          <ScalarProperty Name="Setcond" ColumnName="SETCOND" />
+          <ScalarProperty Name="Setid" ColumnName="SETID" />
+          <ScalarProperty Name="Setname" ColumnName="SETNAME" />
+          <ScalarProperty Name="Setnote" ColumnName="SETNOTE" />
+          <ScalarProperty Name="Setobjname" ColumnName="SETOBJNAME" />
+          <ScalarProperty Name="Setobjowner" ColumnName="SETOBJOWNER" />
+          <ScalarProperty Name="Settype" ColumnName="SETTYPE" />
+          <ScalarProperty Name="Setupdatemode" ColumnName="SETUPDATEMODE" />
+          <ScalarProperty Name="Setupdateperiod" ColumnName="SETUPDATEPERIOD" />
+          <ScalarProperty Name="Setupdatesql" ColumnName="SETUPDATESQL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdSqls">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdSql">
+        <MappingFragment StoreEntitySet="DD_SQLs">
+          <ScalarProperty Name="Setcreatesql" ColumnName="SETCREATESQL" />
+          <ScalarProperty Name="Setid" ColumnName="SETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdFlds">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdFld">
+        <MappingFragment StoreEntitySet="DD_FLDs">
+          <ScalarProperty Name="Fldcond" ColumnName="FLDCOND" />
+          <ScalarProperty Name="Fldctrlargv" ColumnName="FLDCTRLARGV" />
+          <ScalarProperty Name="Fldctrltype" ColumnName="FLDCTRLTYPE" />
+          <ScalarProperty Name="Flddec" ColumnName="FLDDEC" />
+          <ScalarProperty Name="Flddefault" ColumnName="FLDDEFAULT" />
+          <ScalarProperty Name="Fldeditflag" ColumnName="FLDEDITFLAG" />
+          <ScalarProperty Name="Fldid" ColumnName="FLDID" />
+          <ScalarProperty Name="Fldlen" ColumnName="FLDLEN" />
+          <ScalarProperty Name="Fldlocateflag" ColumnName="FLDLOCATEFLAG" />
+          <ScalarProperty Name="Fldname" ColumnName="FLDNAME" />
+          <ScalarProperty Name="Fldnote" ColumnName="FLDNOTE" />
+          <ScalarProperty Name="Fldnullflag" ColumnName="FLDNULLFLAG" />
+          <ScalarProperty Name="Fldorder" ColumnName="FLDORDER" />
+          <ScalarProperty Name="Fldprimaryflag" ColumnName="FLDPRIMARYFLAG" />
+          <ScalarProperty Name="Fldtype" ColumnName="FLDTYPE" />
+          <ScalarProperty Name="Flduniqflag" ColumnName="FLDUNIQFLAG" />
+          <ScalarProperty Name="Fldunit" ColumnName="FLDUNIT" />
+          <ScalarProperty Name="Fldviewflag" ColumnName="FLDVIEWFLAG" />
+          <ScalarProperty Name="Setid" ColumnName="SETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdObjs">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdObj">
+        <MappingFragment StoreEntitySet="DD_OBJs">
+          <ScalarProperty Name="Objcrtime" ColumnName="OBJCRTIME" />
+          <ScalarProperty Name="Objid" ColumnName="OBJID" />
+          <ScalarProperty Name="Objname" ColumnName="OBJNAME" />
+          <ScalarProperty Name="Objnote" ColumnName="OBJNOTE" />
+          <ScalarProperty Name="Objowner" ColumnName="OBJOWNER" />
+          <ScalarProperty Name="Objuptime" ColumnName="OBJUPTIME" />
+          <ScalarProperty Name="Setid" ColumnName="SETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdExts">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdExt">
+        <MappingFragment StoreEntitySet="DD_EXTs">
+          <ScalarProperty Name="Objcrtime" ColumnName="OBJCRTIME" />
+          <ScalarProperty Name="Objid" ColumnName="OBJID" />
+          <ScalarProperty Name="Objkind" ColumnName="OBJKIND" />
+          <ScalarProperty Name="Objname" ColumnName="OBJNAME" />
+          <ScalarProperty Name="Objnote" ColumnName="OBJNOTE" />
+          <ScalarProperty Name="Objowner" ColumnName="OBJOWNER" />
+          <ScalarProperty Name="Objparam" ColumnName="OBJPARAM" />
+          <ScalarProperty Name="Objstate" ColumnName="OBJSTATE" />
+          <ScalarProperty Name="Objuptime" ColumnName="OBJUPTIME" />
+          <ScalarProperty Name="Setid" ColumnName="SETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdBaks">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdBak">
+        <MappingFragment StoreEntitySet="DD_BAKs">
+          <ScalarProperty Name="Bakauto" ColumnName="BAKAUTO" />
+          <ScalarProperty Name="Bakcondition" ColumnName="BAKCONDITION" />
+          <ScalarProperty Name="Bakcondtype" ColumnName="BAKCONDTYPE" />
+          <ScalarProperty Name="Bakkeepdata" ColumnName="BAKKEEPDATA" />
+          <ScalarProperty Name="Bakperiod" ColumnName="BAKPERIOD" />
+          <ScalarProperty Name="Bakpriority" ColumnName="BAKPRIORITY" />
+          <ScalarProperty Name="Baktablename" ColumnName="BAKTABLENAME" />
+          <ScalarProperty Name="Baktime" ColumnName="BAKTIME" />
+          <ScalarProperty Name="Setid" ColumnName="SETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdDtts">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdDtt">
+        <MappingFragment StoreEntitySet="DD_DTTs">
+          <ScalarProperty Name="Csharptype" ColumnName="CSHARPTYPE" />
+          <ScalarProperty Name="Flddec" ColumnName="FLDDEC" />
+          <ScalarProperty Name="Fldlen" ColumnName="FLDLEN" />
+          <ScalarProperty Name="Ssdltype" ColumnName="SSDLTYPE" />
+          <ScalarProperty Name="Typcode" ColumnName="TYPCODE" />
+          <ScalarProperty Name="Typid" ColumnName="TYPID" />
+          <ScalarProperty Name="Typname" ColumnName="TYPNAME" />
+          <ScalarProperty Name="Typprecision" ColumnName="TYPPRECISION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DdRels">
+      <EntityTypeMapping TypeName="Hongbin.Data.DataDict.DdRel">
+        <MappingFragment StoreEntitySet="DD_RELs">
+          <ScalarProperty Name="ChildDset" ColumnName="CHILD_DSET" />
+          <ScalarProperty Name="ChildFldid" ColumnName="CHILD_FLDID" />
+          <ScalarProperty Name="ChildMultiplicity" ColumnName="CHILD_MULTIPLICITY" />
+          <ScalarProperty Name="ChildRoleName" ColumnName="CHILD_ROLE_NAME" />
+          <ScalarProperty Name="ParentDset" ColumnName="PARENT_DSET" />
+          <ScalarProperty Name="ParentFldid" ColumnName="PARENT_FLDID" />
+          <ScalarProperty Name="ParentMultiplicity" ColumnName="PARENT_MULTIPLICITY" />
+          <ScalarProperty Name="ParentRoleName" ColumnName="PARENT_ROLE_NAME" />
+          <ScalarProperty Name="Relcode" ColumnName="RELCODE" />
+          <ScalarProperty Name="Relid" ColumnName="RELID" />
+          <ScalarProperty Name="Relname" ColumnName="RELNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

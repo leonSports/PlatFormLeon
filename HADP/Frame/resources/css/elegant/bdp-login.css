@@ -1,0 +1,93 @@
+﻿/*Login.aspx 登录页样式*/
+
+/*登录页面背景*/
+.back {
+    background-color: #1a70a6;
+    background-repeat: repeat;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.login-table {
+    margin: 0px;
+    padding: 0px;
+    width: 995px;
+    height: 658px; /*margin:auto;*/
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    margin: -329px 0 0 -498px;
+}
+
+.login-element {
+    position: absolute;
+    left: 610px;
+    width: 226px;
+    z-index: 2;
+    line-height: 25px;
+    color: #154663;
+    display: inline-block;
+    font-size: 12px;
+}
+
+    .login-element div.label {
+        float: left;
+    }
+/*登录用户名样式*/
+.txtUsername {
+    top: 280px;
+}
+
+/*登录密码样式*/
+.txtPassword {
+    top: 307px;
+}
+/*验证码*/
+.veri-code {
+    top: 335px;
+}
+
+    .veri-code img {
+        cursor: pointer;
+        width: 70px;
+        height: 22px;
+        vertical-align: top;
+        margin-top: 1px;
+        margin-left: 3px;
+    }
+
+/*错误行*/
+.error-row {
+    top: 361px;
+    line-height: 16px;
+}
+
+/*登录按钮样式*/
+.button-row {
+    top: 395px;
+}
+
+
+
+/*top页面logo样式*/
+.headText {
+    float: left;
+    bottom: 0px;
+    height: 66px;
+    left: 20px;
+    padding-top: 0px;
+    padding-left: 00px;
+}
+
+.bdp-inet-login {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAANoSURBVFhH1ZdbSBRRGMf/s667qanZxaIyKu0CXYjCeo2ipB4DK7KnIJQushRqdjOttNYM065UQiJEBNGNMrSiexTdCdp0K7PVCldNV11nZ/frzJkT61IPO77s9nuZ//ffb3fO+WbOOd9KxMAgqTzZjPnz4rAgNV44+jGIa+hQK6CXvj4vbcn/yPWDV24qq2jiejD8fxV49KSDSo9oM3alryGqOUe9TFvybOTz+bivB10DKD/WRPV3nVx3rV1HzvEp1H/9BnkuXORe0QE7vXzdxXWwhPwRSFXVDoowSujt9QpLIEmQ4uIAr1eVaHb0I9cyGrFMuzI3Q75RKxKB6MKdiEhKQuSSRah94sabdy4kDDOy6mqfk8ulCYHBwH6EMXvG0NAvQ8nW0EO36p3YnJUkLD/erExEzJ4J9PezTPVC8DS3QL5yXWT4icrbAurohDnKCLWiUGcfHQ04ncD2XVrSAPILGlFSmBIGFVDfxDanjENHmnCgaIqwNXqLrXCfOC0i/URt2wpT2hJEpCQLB/jxUwbbuGDdp90r4Cyw5H1E+cGpItLoXrsOnnsPRBQ8Q6vPgM0M5vQVwgHYEsX9R52wbJwgnDA4CwIGoM5+Z5Ed6iP5Q2xNFUzL0kQUPMrDxwGzv1nXhi9f3QGzVwmvCqioG0hXd+CmRIoiVPBI8YE9QnuHglEjTSLyE14VsOTasCkzCZMnRgmHrYL1G+Cpuy2i4DGMGwv59l0RARkrx4D1Eag+3yocjfCogCz7kJ1jQ7l1Gsxm/5j6Tp1BzJ6/t9Fg6LHkQHn6HL72duEASxePQOrcOBSXfhYOe1fYkqOTZ79hR84kYflRVqbDuHgh2xL7+FngdhMURyvky9dEhp9o6374GhphGhIJo8l/FvjsdhisZVqSQFEIew9+QuGO5NA/Aqms4gsljjLB1fOPfmAYW0oehfcDrd9lFGQn8o9YNwRlwPYcc7ycva0umNeswosGH+ruODE8IVLrB9iXqbtbSxQY2WnZw+43Z1Zs6CugqycsLLHT2/curn+lZ/CeUH76jNyVx7l39NRXqq1r4zpY/q8KqFy6+oOqalq47lqxmpTDh7nemm8jZ7vMtR50D0DF0eKm3N2NXH9wEO3ep+nBEPplqI5CaN2wf0iYMT0Gy9NGCkc/Ia4A8Bs1EtQijaCGzwAAAABJRU5ErkJggg==') /*images/bdp/inet.png*/ no-repeat;
+    *background: url(images/bdp/inet.png) no-repeat; /* For IE 6 and 7 */
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    top: 235px;
+    right: 145px;
+    position: absolute;
+}

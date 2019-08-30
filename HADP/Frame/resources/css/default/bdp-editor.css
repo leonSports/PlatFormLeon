@@ -1,0 +1,845 @@
+﻿ 
+.bdpGridDataRowFocus {
+    background: none repeat scroll 0 0 #FF9C3C !important;
+    color: #000000;
+}
+
+.om-state-highlight tr.bdpGridDataRowHover,
+.om-grid div.bDiv tr.bdpGridDataRowHover {
+    background: none repeat scroll 0 0 #FFE7A2 !important;
+    color: #4F4F4F;
+}
+
+.table_editor {
+    padding: 1px 5px 1px 5px;
+    vertical-align: middle;
+    border: 0;
+}
+
+/*#region 编辑器相关 */
+
+/*按钮选中时不要有边框线*/
+.om-btn input, button, select, textarea, a {
+    outline: none;
+}
+
+.om-combo {
+    height: auto;
+}
+
+    .om-combo .om-combo-trigger {
+        height: 22px;
+        /*margin-right: 1px;*/
+    }
+
+.om-calendar {
+    height: auto;
+}
+
+    .om-calendar .om-calendar-trigger {
+        height: 22px;
+        margin-right: 1px;
+    }
+
+.om-state-hover .om-calendar-trigger {
+    background-position-y: 50%;
+}
+
+.bdpEditForm {
+    background-color: #ffffff;
+    line-height: 158%;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.bdpEditFormTable {
+    color: #000000;
+    margin: 0;
+    padding: 5px;
+    /* line-height: 200%; */
+    width: 100%;
+    border: 0;
+}
+
+    .bdpEditFormTable pre {
+        line-height: 120%;
+    }
+
+.om-grid div.bDiv td.bdpEditFormCaption,
+.bdpEditFormCaption {
+    border-width: 0px 1px 1px 0px;
+    /*border-color: #86A3C4;*/
+    border-color: #ddd;
+    border-style: solid;
+    white-space: nowrap;
+    cursor: default;
+    vertical-align: middle;
+    padding: 2px 8px 2px 8px;
+}
+
+.om-grid div.bDiv td.bdpEditFormCell,
+.bdpEditFormCell {
+    border-width: 0px 1px 1px 0px;
+    /*border-color: #86A3C4;*/
+    border-color: #ddd;
+    border-style: solid;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+    .om-widget input, input.om-widget,
+    .bdpEditFormCell input {
+        color: #000 !important;
+        font-size: 12px;
+        line-height: 1.2;
+        margin: 0;
+        padding: 3px 0;
+        font-family: inherit;
+    }
+
+        .om-widget input[type=radio], .bdpEditFormCell input[type=radio] {
+            margin-right: 3px;
+            margin-bottom: 1px;
+            vertical-align: bottom;
+        }
+
+.om-grid div.hDiv th div.bdpEditFormError,
+.om-grid div.bDiv td div.bdpEditFormError,
+div.colCopy div.bdpEditFormError,
+.bdpEditFormError {
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    color: Red;
+    /*font: 12px Tahoma;*/
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAIAAAC0tAIdAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVChTnZLBDYAgDEWZxwFIGMIZXMol2IezMTHx6MGTN3xYJKZyEJtvtP0PaFUT7zhC2MZxHYbZOcQDKcVsX5Hp3ful76euU6KIJQyRaPLZWsUVYZUFhrPUrmI8KwDSkqG5p4HeNAJLNNMoo0qDJZrxlVGlwdrpdydV5U7apmx7g1wNX0du5OoEEcWCEr/+qk8R4wlqcqeTMvoikgAAAABJRU5ErkJggg==') /*../../Frame/resources/images/error.png*/ no-repeat;
+}
+
+.error-summary {
+    min-height: 130px;
+    max-height: 330px;
+}
+
+div.om-messageBox {
+    min-width: 350px;
+    max-width: 650px;
+}
+
+div.om-messageBox-content table {
+    width: 100%;
+}
+
+.bdpGridRowEditPanel {
+    background-color: white;
+    width: 100%;
+}
+
+.bdpGridRowEditToolbar {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 1px;
+    padding: 0px 0px 0px 0px;
+}
+
+.bdp-refer-trigger {
+    /*background: url("images/bdp-icons/dev1.png") no-repeat -110px 13px;*/
+    background: url("images/bdp-icons/refer-trigger-df.png") no-repeat;
+    /*background-color: #E6E6E6;*/
+    width: 19px;
+    height: 22px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: top;
+    margin: 0;
+    margin-top: 1px;
+    margin-right: 1px;
+    padding: 0;
+}
+
+    .bdp-refer-trigger:hover {
+        background: url("images/bdp-icons/refer-trigger-df.png") no-repeat -19px 0px;
+    }
+
+.bdpRadioList {
+    margin: 4px 0px 3px;
+}
+
+    .bdpRadioList label {
+        padding-left: 15px;
+    }
+
+        .bdpRadioList label input {
+            margin-right: 5px;
+            /*margin-top: 2px;*/
+            vertical-align: middle;
+        }
+
+/*#endregion */
+
+/*#region 多行编辑*/
+.om-grid .bdpEditForm > table tr.oddRow, .om-grid .bdpEditForm > table tr.evenRow,
+.om-grid .bdpEditForm > table tr.om-state-highlight:hover td,
+.om-grid .bdpEditForm > table tr.om-state-highlight td {
+    background-color: transparent;
+}
+/*grid行编辑*/
+.om-grid .bdpEditForm > table tr.om-grid-row.evenRow {
+        background-color: #f0f9fe;
+}
+    .om-grid .bdpEditForm > table tr.om-grid-row.oddRow.om-state-highlight, .om-grid .bdpEditForm > table tr.om-grid-row.evenRow.om-state-highlight {        
+    background-color: #5da5de;
+    }
+.om-grid .bdpEditForm > table tr:hover td {
+    background-color: #E8EEF7;
+}
+
+.om-grid .bdpEditForm > table tr > td {
+    border-bottom: 1px solid #bdcbe8;
+}
+
+    .om-grid .bdpEditForm > table tr > td > div.innerCol {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+/*#endregion*/
+
+/*#region 表格树相关*/
+.treeline {
+    background: url(images/tree/treeview-default-line.gif) 0 0 no-repeat;
+    zoom: 1;
+}
+
+.treeline-noline {
+    background-position: 50px 50px;
+}
+
+.treeline-nolast {
+    background-position: 0 0;
+}
+
+.treeline-last {
+    background-position: 0 -1763px;
+}
+
+.treeline-hitarea {
+    background-position: 0 -176px;
+}
+
+.treeline-line {
+    background-position: 0 -50px;
+}
+
+.treebtn {
+    background: url(images/tree/treeview-default.gif) 0 0 no-repeat;
+    height: 16px;
+    width: 16px;
+    float: left;
+    cursor: pointer;
+    padding: 0;
+}
+
+.treebtn-expandable {
+    background-position: -80px -3px;
+}
+
+.treebtn-collapsable {
+    background-position: -64px -25px;
+}
+
+.treebtn-lastExpandable {
+    background-position: -32px -67px;
+}
+
+.treebtn-lastCollapsable {
+    background-position: 0 -111px;
+}
+
+.om-grid .innerCol .treenode-header {
+    padding: 0;
+    margin: -5px 0 -5px 0;
+    float: left;
+}
+
+.om-grid .innerCol .treenode-ident {
+    padding: 0;
+    float: left;
+    width: 15px;
+    height: 24px;
+}
+
+.om-grid .innerCol .treenode-hitarea {
+    margin-top: 4px;
+}
+
+.om-grid .innerCol .treenode-title {
+    padding: 0 0 0 3px;
+    float: left;
+}
+
+.om-grid .innerCol .treenode-image {
+    float: left;
+    padding: 1px 0px 1px 1px;
+    width: 16px;
+    height: 16px;
+    /*margin-right: 5px;*/
+    vertical-align: top;
+}
+
+.om-grid .bdpEditForm .innerCol .treeline-nolast {
+    background-position: 0 5px;
+}
+
+.om-grid .bdpEditForm .innerCol .treeline-last {
+    background-position: 0 -1758px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-ident {
+    height: 35px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-hitarea {
+    margin-top: 9px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-title {
+    padding: 7px 0 0 3px;
+    float: left;
+}
+
+/*#endregion*/
+
+/*#region 列模型选择器*/
+.bdp-columnSelector {
+    width: auto;
+}
+
+.bdp-columnSelector-tabs {
+    /*width: 100% !important;*/
+}
+
+    .bdp-columnSelector-tabs .om-widget-header,
+    .bdp-columnSelector-tabs .om-tabs-headers,
+    .bdp-columnSelector-tabs .om-tabs-headers ul li {
+        /*background: none !important;*/
+    }
+
+/*#endregion*/
+
+
+/*#region 列表框样式*/
+.bdp-listbox {
+    position: relative;
+    width: auto;
+    line-height: 2.0;
+    display: table;
+}
+
+    .bdp-listbox .listheader {
+        display: table;
+        position: relative;
+        width: 100%;
+        /*border-bottom: 1px solid #86A3C4;*/
+        /*margin-bottom: 9px;*/
+    }
+
+        .bdp-listbox .listheader > div {
+            display: inline-block;
+            cursor: default;
+        }
+
+        .bdp-listbox .listheader .listtool {
+            float: right;
+            display: inline-block;
+            padding-right: 7px;
+            padding-left: 13px;
+            margin-top: 5px;
+        }
+
+            .bdp-listbox .listheader .listtool .movedown {
+                background: url("images/bdp-icons/listbox.png");
+                background-position: 0px -16px;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .bdp-listbox .listheader .listtool .moveup {
+                background: url("images/bdp-icons/listbox.png");
+                background-position: 0px 0px;
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+    .bdp-listbox .bdp-listbody {
+        overflow: auto;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 1px;
+    }
+
+    .bdp-listbox .listrow {
+        position: relative;
+    }
+
+    .bdp-listbox .layout-table {
+        /*display: table;*/
+        display: block;
+        width: 100%;
+    }
+
+    .bdp-listbox .layout-flow {
+        display: inline-block;
+        width: auto;
+    }
+
+    .bdp-listbox .listheader .checkbox,
+    .bdp-listbox .listrow .checkbox {
+        float: left;
+        background: url("images/bdp-icons/listbox.png");
+        background-position: -32px 0px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        display: table-cell;
+        margin: 4px;
+        /*background-color: inherit;*/
+    }
+
+    .bdp-listbox .listheader .selected,
+    .bdp-listbox .listrow .selected {
+        background: url("images/bdp-icons/listbox.png");
+        background-position: -16px 0px;
+        width: 16px;
+        height: 16px;
+        display: table-cell;
+        cursor: pointer;
+        margin: 4px;
+        /*background-color: inherit;*/
+    }
+
+    .bdp-listbox .listrow .textblock {
+        /*float: left;
+        display: inline-block;*/
+        display: inherit;
+        min-width: 50px;
+        padding-left: 3px;
+        /*background-color: inherit;*/
+    }
+
+        .bdp-listbox .listrow .textblock label {
+            display: table-cell;
+        }
+
+
+
+    .bdp-listbox .om-state-focused {
+        background-color: #ffca88;
+        color: black;
+        border: 0;
+    }
+
+    .bdp-listbox .om-state-hover {
+        background-color: #fcefa1;
+        color: black;
+        border: 0;
+    }
+
+.om-dialog-content .bdp-listbox {
+    display: block;
+}
+
+    .om-dialog-content .bdp-listbox .bdp-listbody {
+        display: block;
+    }
+/*#endregion*/
+
+
+/*#region 自定义查询*/
+.bdp-filterBox {
+    position: relative;
+    /*padding: 5px;
+    margin: 1px;*/
+    padding: 3px 5px 3px 7px;
+    margin: 0px;
+    display: table;
+}
+
+    .bdp-filterBox .fbody {
+        width: auto;
+        /*padding: 3px;
+        margin: 3px;*/
+        display: table;
+        /*border: 1px solid #86A3C4;*/
+        float: left;
+    }
+
+    .bdp-filterBox .ftool {
+        /*padding: 3px;*/
+        display: inline-block;
+        /*border: 1px solid #86A3C4;*/
+        float: left;
+        margin-left: 10px;
+        /*margin-top: 3px;*/
+    }
+
+.bdp-filterGroup {
+    padding-left: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 100%;
+}
+
+
+.bdp-filterTools {
+    float: left;
+    display: block;
+    width: auto;
+    /*height: 22px;*/
+    margin-right: 1px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+.bdp-filter-btn {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    /*background-color: #e6e6e6;*/
+    margin-right: 2px;
+    margin: 2px 2px 4px;
+}
+
+.bdp-filterItem {
+    display: inline-block;
+    /*position: relative;*/
+}
+
+    .bdp-filterItem input {
+        font-size: 12px;
+    }
+
+.bdp-filterItem-left {
+    float: left;
+    width: auto;
+}
+
+.bdp-filterItem-center {
+    float: left;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: auto;
+}
+
+.bdp-filterItem-right {
+    float: left;
+}
+
+.bdp-filterItem-cc {
+    float: left;
+    width: auto;
+    padding-left: 1px;
+}
+/*#endregion*/
+
+
+/*#region 向导相关*/
+
+.bdp-wizard {
+    margin: 11px;
+}
+
+    .bdp-wizard .imprules-div {
+        padding-left: 32px;
+    }
+
+    .bdp-wizard .om-progressbar {
+        height: 23px;
+        line-height: 1;
+    }
+
+    .bdp-wizard .om-progressbar-text {
+        margin-top: 3px;
+    }
+
+    .bdp-wizard .row {
+        line-height: 3.0;
+        border-bottom: 1px dotted;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .bdp-wizard input.srcfld {
+        font-size: inherit;
+        line-height: 23px;
+        padding: 0;
+        height: 21px;
+        vertical-align: middle;
+    }
+
+    .bdp-wizard .tip {
+        background-color: transparent;
+        font-style: italic;
+        border: none;
+    }
+
+    .bdp-wizard .result-div {
+        line-height: 1.3;
+        padding-top: 21px;
+    }
+/*#endregion*/
+
+.om-btn-span {
+    margin-right: 0px;
+}
+
+/*#region 多选面板控件：一个Combobox选中一个在右边的面板上增加一项*/
+.mselector {
+    position: relative;
+}
+
+    .mselector .msgroup {
+        display: inline;
+        float: left;
+    }
+
+        .mselector .msgroup .msitem {
+            float: left;
+            padding-left: 7px;
+            padding-right: 7px;
+            display: inline-block;
+        }
+
+            .mselector .msgroup .msitem label {
+                float: left;
+            }
+
+            .mselector .msgroup .msitem .msremove {
+                float: left;
+                background: url("images/tabs/om-tabs-closebtn.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+                display: block;
+                margin-left: 2px;
+                margin-top: 2px;
+                margin-right: 1px;
+                height: 10px;
+                width: 10px;
+                cursor: pointer;
+                /*margin-bottom: 5px;
+                        margin-left: 2px;*/
+            }
+
+    .mselector .ms-sel {
+        float: left;
+    }
+/*#endregion*/
+
+
+/*#region 统计显示控件*/
+.bdp-dsgrid {
+    position: relative;
+    padding: 5px;
+    margin: 1px;
+    /*display: table;*/
+}
+
+    .bdp-dsgrid > div[id$="_grd"] {
+        height: 100%;
+    }
+
+
+
+/*#endregion*/
+
+/*#region 批量更新对话框*/
+.batchUpdater {
+    position: relative;
+    height: 100%;
+}
+
+    .batchUpdater .row {
+        line-height: 2;
+        width: 100%;
+        display: table;
+        padding: 4px 7px 2px 4px;
+    }
+
+        .batchUpdater .row .cellLabel {
+            width: 20%;
+            float: left;
+            text-align: right;
+        }
+
+        .batchUpdater .row .cellEdit {
+            width: 70%;
+            float: left;
+        }
+
+            .batchUpdater .row .cellEdit label.radio input {
+                margin-right: 7px;
+            }
+
+    .batchUpdater .status {
+        position: absolute;
+        bottom: 5px;
+    }
+/*#endregion*/
+
+/*#region 仿excel*/
+.exEditableCell {
+    /*background-color:aquamarine!important;*/
+    border-color: #E6E6E6 !important;
+    border-style: solid !important;
+    border-width: 1px 1px 1px 1px !important;
+}
+
+.exCantEditCell {
+    /*background-color:aquamarine!important;*/
+    border-color: #be00ff !important;
+    border-style: solid !important;
+    border-width: 1px 1px 1px 1px !important;
+}
+
+.exInnerEditor {
+    padding: 1px !important;
+    margin: 0 !important;
+}
+
+.exLastValue {
+    /*background-color:#86A3C4;*/
+}
+/*#endregion*/
+
+.om-btn-txt {
+    color: #000 !important;
+}
+
+
+
+
+/*#region 表格树相关*/
+.table_tree {
+}
+
+.om-grid table.table_tree tr td {
+    padding: 0px 5px;
+    border-bottom: 0px solid #f7f7f7;
+    vertical-align: middle;
+}
+
+.om-grid div.bDiv .table_tree td div.innerCol {
+    border-top: 0px solid #fff;
+    padding: 0px;
+}
+
+.om-grid div.bDiv .table_tree td .treeline {
+    background: url(images/tree/treeview-default-line-grid.gif) 0 0 no-repeat;
+    zoom: 1;
+}
+
+.om-grid div.bDiv .table_tree td .treeline-noline {
+    background-position: 50px 50px;
+}
+
+.om-grid div.bDiv .table_tree td .treeline-nolast {
+    background-position: 0 0;
+}
+
+.om-grid div.bDiv .table_tree td .treeline-last {
+    background-position: 0 -1759px;
+}
+
+.om-grid div.bDiv .table_tree td .treeline-hitarea {
+    background-position: 0 -176px;
+}
+
+.om-grid div.bDiv .table_tree td .treeline-line {
+    background-position: 0 -50px;
+}
+
+.om-grid div.bDiv .table_tree td .treebtn {
+    background: url(images/tree/treeview-default-grid.png) 0 0 no-repeat;
+    height: 16px;
+    width: 16px;
+    float: left;
+    cursor: pointer;
+    padding: 0;
+}
+
+.om-grid div.bDiv .table_tree td .treebtn-expandable {
+    background-position: -80px -1px;
+}
+
+.om-grid div.bDiv .table_tree td .treebtn-collapsable {
+    background-position: -64px -25px;
+}
+
+.om-grid div.bDiv .table_tree td .treebtn-lastExpandable {
+    background-position: -32px -75px;
+}
+
+.om-grid div.bDiv .table_tree td .treebtn-lastCollapsable {
+    background-position: 0 -123px;
+}
+
+.om-grid div.bDiv .table_tree td .innerCol .treenode-header {
+    margin: 0px 0 0px 0;
+    padding: 0;
+    float: left;
+}
+
+.om-grid div.bDiv .table_tree td .innerCol .treenode-ident {
+    padding: 0;
+    float: left;
+    width: 15px;
+    height: 34px;
+}
+
+.om-grid .table_tree .innerCol .treenode-hitarea {
+    margin-top: 7px;
+}
+
+.om-grid div.bDiv .table_tree td .innerCol .treenode-title {
+    padding: 0 0 0 3px;
+    float: left;
+    margin-top: 9px;
+}
+
+.om-grid div.bDiv .table_tree td .innerCol .treenode-image {
+    float: left;
+    padding: 1px 0px 1px 1px;
+    width: 16px;
+    height: 16px;
+    /*margin-right: 5px;*/
+    vertical-align: top;
+    margin-top: 9px;
+}
+
+.om-grid .bdpEditForm .innerCol .treeline-nolast {
+    background-position: 0 5px;
+}
+
+.om-grid .bdpEditForm .innerCol .treeline-last {
+    background-position: 0 -1758px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-ident {
+    height: 35px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-hitarea {
+    margin-top: 9px;
+}
+
+.om-grid .bdpEditForm .innerCol .treenode-title {
+    padding: 7px 0 0 3px;
+    float: left;
+}
+
+/*#endregion*/

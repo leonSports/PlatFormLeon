@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hongbin.Data.DataDict" Alias="Self" devart:FilePerClass="false" devart:ViewGeneration="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:devart="http://devart.com/schemas/edml/ConceptualSchemaExtensions/1.0">
+  <EntityContainer Name="BdpDataDictEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DdBaks" EntityType="Hongbin.Data.DataDict.DdBak" />
+    <EntitySet Name="DdClss" EntityType="Hongbin.Data.DataDict.DdCls" />
+    <EntitySet Name="DdDtts" EntityType="Hongbin.Data.DataDict.DdDtt" />
+    <EntitySet Name="DdExts" EntityType="Hongbin.Data.DataDict.DdExt" />
+    <EntitySet Name="DdFlds" EntityType="Hongbin.Data.DataDict.DdFld" />
+    <EntitySet Name="DdObjs" EntityType="Hongbin.Data.DataDict.DdObj" />
+    <EntitySet Name="DdRels" EntityType="Hongbin.Data.DataDict.DdRel" />
+    <EntitySet Name="DdSets" EntityType="Hongbin.Data.DataDict.DdSet" />
+    <EntitySet Name="DdSqls" EntityType="Hongbin.Data.DataDict.DdSql" />
+    <AssociationSet Name="DdSet_Setid_DdSql_SetidSet" Association="Hongbin.Data.DataDict.DdSet_Setid_DdSql_Setid">
+      <End Role="DdSet" EntitySet="DdSets" />
+      <End Role="DdSql" EntitySet="DdSqls" />
+    </AssociationSet>
+    <AssociationSet Name="DdSet_Setid_DdFld_SetidSet" Association="Hongbin.Data.DataDict.DdSet_Setid_DdFld_Setid">
+      <End Role="DdSet" EntitySet="DdSets" />
+      <End Role="DdFlds" EntitySet="DdFlds" />
+    </AssociationSet>
+    <AssociationSet Name="DdSet_Setid_DdObj_SetidSet" Association="Hongbin.Data.DataDict.DdSet_Setid_DdObj_Setid">
+      <End Role="DdSet" EntitySet="DdSets" />
+      <End Role="DdObjs" EntitySet="DdObjs" />
+    </AssociationSet>
+    <AssociationSet Name="DdSet_Setid_DdExt_SetidSet" Association="Hongbin.Data.DataDict.DdSet_Setid_DdExt_Setid">
+      <End Role="DdSet" EntitySet="DdSets" />
+      <End Role="DdExts" EntitySet="DdExts" />
+    </AssociationSet>
+    <AssociationSet Name="DdDtt_Typcode_DdFld_FldtypeSet" Association="Hongbin.Data.DataDict.DdDtt_Typcode_DdFld_Fldtype">
+      <End Role="DdDtt" EntitySet="DdDtts" />
+      <End Role="DdFlds" EntitySet="DdFlds" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DdBak">
+    <Documentation>
+      <Summary>历史数据转储描述表 (DD_BAK)</Summary>
+      <LongDescription>历史数据转储描述表。对于一般应用系统，建议的方案是将2年以前的数据转储到一个相同结构的历史表中</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Setid" />
+    </Key>
+    <Property Name="Setid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>数据集标识  [SETID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Bakperiod" Type="String" MaxLength="4">
+      <Documentation>
+        <Summary>转储周期  [BAKPERIOD,A(变长字符串),4]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Baktime" Type="DateTime">
+      <Documentation>
+        <Summary>转储时间  [BAKTIME,K(时间)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Bakauto" Type="String">
+      <Documentation>
+        <Summary>自动转储  [BAKAUTO,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Bakpriority" Type="Int32">
+      <Documentation>
+        <Summary>优先级别  [BAKPRIORITY,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Bakcondition" Type="Binary">
+      <Documentation>
+        <Summary>转储条件  [BAKCONDITION,I(备注(2G变长字符数据))]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Bakcondtype" Type="String">
+      <Documentation>
+        <Summary>条件类型  [BAKCONDTYPE,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Baktablename" Type="String" MaxLength="30">
+      <Documentation>
+        <Summary>历史表名称  [BAKTABLENAME,A(变长字符串),30]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Bakkeepdata" Type="String">
+      <Documentation>
+        <Summary>转储后保留  [BAKKEEPDATA,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="DdCls">
+    <Documentation>
+      <Summary>数据集分类表 (DD_CLS)</Summary>
+      <LongDescription>数据字典的数据集分类描述表，描述数据集的分类树</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Clscode" />
+    </Key>
+    <Property Name="Clscode" Type="String" Nullable="false" MaxLength="4">
+      <Documentation>
+        <Summary>代码  [CLSCODE,A(变长字符串),非空,4]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Clsparentcode" Type="String" MaxLength="4">
+      <Documentation>
+        <Summary>父码  [CLSPARENTCODE,A(变长字符串),4]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Clsorder" Type="Int32">
+      <Documentation>
+        <Summary>序号  [CLSORDER,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Clsname" Type="String" MaxLength="30">
+      <Documentation>
+        <Summary>名称  [CLSNAME,A(变长字符串),30]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Clsnote" Type="String" MaxLength="254">
+      <Documentation>
+        <Summary>说明  [CLSNOTE,A(变长字符串),254]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Clsdsetids" Type="Binary">
+      <Documentation>
+        <Summary>数据集  [CLSDSETIDS,I(备注(2G变长字符数据))]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="DdDtt">
+    <Documentation>
+      <Summary>数据项类型代码表 (DD_DTT)</Summary>
+      <LongDescription>数据库类型</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Typcode" />
+    </Key>
+    <Property Name="Typcode" Type="String" Nullable="false">
+      <Documentation>
+        <Summary>类型代码  [TYPCODE,C(字符),非空]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Typname" Type="String" Nullable="false" MaxLength="30">
+      <Documentation>
+        <Summary>类型名称  [TYPNAME,A(变长字符串),非空,30]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Typid" Type="String" Nullable="false" MaxLength="30">
+      <Documentation>
+        <Summary>类型标识  [TYPID,A(变长字符串),非空,30]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldlen" Type="Int32">
+      <Documentation>
+        <Summary>长度  [FLDLEN,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Typprecision" Type="Int32">
+      <Documentation>
+        <Summary>精度  [TYPPRECISION,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Csharptype" Type="String" MaxLength="20">
+      <Documentation>
+        <Summary>C#类型  [CSHARPTYPE,A(变长字符串),20]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Flddec" Type="Int32">
+      <Documentation>
+        <Summary>小数  [FLDDEC,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Ssdltype" Type="String" MaxLength="20">
+      <Documentation>
+        <Summary>SSDL类型  [SSDLTYPE,A(变长字符串),20]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelDdFlds" Relationship="Hongbin.Data.DataDict.DdDtt_Typcode_DdFld_Fldtype" FromRole="DdDtt" ToRole="DdFlds">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdFld 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="DdExt">
+    <Documentation>
+      <Summary>辅助对象 (DD_EXT)</Summary>
+      <LongDescription>描述索引等辅助对象</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Setid" />
+      <PropertyRef Name="Objowner" />
+      <PropertyRef Name="Objid" />
+    </Key>
+    <Property Name="Setid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>数据集标识  [SETID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objowner" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>拥有者  [OBJOWNER,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>对象标识  [OBJID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objname" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>名字  [OBJNAME,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objnote" Type="String" MaxLength="254">
+      <Documentation>
+        <Summary>说明  [OBJNOTE,A(变长字符串),254]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objcrtime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [OBJCRTIME,K(时间)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objuptime" Type="DateTime">
+      <Documentation>
+        <Summary>修改时间  [OBJUPTIME,K(时间)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objkind" Type="String" MaxLength="10">
+      <Documentation>
+        <Summary>类别  [OBJKIND,A(变长字符串),10]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objparam" Type="Binary">
+      <Documentation>
+        <Summary>参数  [OBJPARAM,O(变长生字节串，2G)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objstate" Type="String">
+      <Documentation>
+        <Summary>状态  [OBJSTATE,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelDdSet" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdExt_Setid" FromRole="DdExts" ToRole="DdSet">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdSet 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="DdFld">
+    <Documentation>
+      <Summary>数据项描述表 (DD_FLD)</Summary>
+      <LongDescription>数据字典的数据项描述表，描述所有数据集的字段信息</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Setid" />
+      <PropertyRef Name="Fldid" />
+    </Key>
+    <Property Name="Setid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>数据集标识  [SETID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>数据项标识  [FLDID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldname" Type="String" MaxLength="100">
+      <Documentation>
+        <Summary>数据项名称  [FLDNAME,A(变长字符串),100]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldorder" Type="Int32">
+      <Documentation>
+        <Summary>数据项序号  [FLDORDER,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldtype" Type="String">
+      <Documentation>
+        <Summary>数据类型  [FLDTYPE,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldlen" Type="Int32">
+      <Documentation>
+        <Summary>长度  [FLDLEN,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Flddec" Type="Int32">
+      <Documentation>
+        <Summary>小数  [FLDDEC,E(短整数)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldunit" Type="String" MaxLength="16">
+      <Documentation>
+        <Summary>计量单位  [FLDUNIT,A(变长字符串),16]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Flddefault" Type="String" MaxLength="100">
+      <Documentation>
+        <Summary>缺省值  [FLDDEFAULT,A(变长字符串),100]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldnullflag" Type="String">
+      <Documentation>
+        <Summary>空值  [FLDNULLFLAG,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldprimaryflag" Type="String">
+      <Documentation>
+        <Summary>主键  [FLDPRIMARYFLAG,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Flduniqflag" Type="String">
+      <Documentation>
+        <Summary>唯一键  [FLDUNIQFLAG,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldcond" Type="String" MaxLength="100">
+      <Documentation>
+        <Summary>值约束  [FLDCOND,A(变长字符串),100]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldctrltype" Type="String">
+      <Documentation>
+        <Summary>控件类型  [FLDCTRLTYPE,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldctrlargv" Type="String" MaxLength="2000">
+      <Documentation>
+        <Summary>控件参数  [FLDCTRLARGV,A(变长字符串),2000]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldeditflag" Type="String">
+      <Documentation>
+        <Summary>编辑性  [FLDEDITFLAG,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldviewflag" Type="String">
+      <Documentation>
+        <Summary>浏览性  [FLDVIEWFLAG,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldnote" Type="String" MaxLength="254">
+      <Documentation>
+        <Summary>数据项说明  [FLDNOTE,A(变长字符串),254]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Fldlocateflag" Type="String">
+      <Documentation>
+        <Summary>定位性  [FLDLOCATEFLAG,C(字符)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelDdSet" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdFld_Setid" FromRole="DdFlds" ToRole="DdSet">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdSet 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelDdDtt" Relationship="Hongbin.Data.DataDict.DdDtt_Typcode_DdFld_Fldtype" FromRole="DdFlds" ToRole="DdDtt">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdDtt 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="DdObj">
+    <Documentation>
+      <Summary>数据集对象描述表 (DD_OBJ)</Summary>
+      <LongDescription>数据字典的数据库对象描述表，记录根据数据集描述信息创建的数据库对象</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Setid" />
+      <PropertyRef Name="Objowner" />
+      <PropertyRef Name="Objid" />
+      <PropertyRef Name="Objname" />
+    </Key>
+    <Property Name="Setid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>数据集标识  [SETID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objowner" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>拥有者  [OBJOWNER,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>对象标识  [OBJID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objname" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>对象名称  [OBJNAME,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objnote" Type="String" MaxLength="254">
+      <Documentation>
+        <Summary>对象说明  [OBJNOTE,A(变长字符串),254]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objcrtime" Type="DateTime">
+      <Documentation>
+        <Summary>创建时间  [OBJCRTIME,K(时间)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Objuptime" Type="DateTime">
+      <Documentation>
+        <Summary>更新时间  [OBJUPTIME,K(时间)]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelDdSet" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdObj_Setid" FromRole="DdObjs" ToRole="DdSet">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdSet 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="DdRel">
+    <Documentation>
+      <Summary>数据集关系表 (DD_REL)</Summary>
+      <LongDescription>数据库类型</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Relid" />
+    </Key>
+    <Property Name="Relid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>关系标识  [RELID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Relcode" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>关系代码  [RELCODE,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Relname" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>关系名称  [RELNAME,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ParentDset" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>主数据集  [PARENT_DSET,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ParentFldid" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>主数据集字段  [PARENT_FLDID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ParentMultiplicity" Type="String" MaxLength="10">
+      <Documentation>
+        <Summary>主多重性  [PARENT_MULTIPLICITY,A(变长字符串),10]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ParentRoleName" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>主角色名称  [PARENT_ROLE_NAME,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ChildDset" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>子数据集  [CHILD_DSET,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ChildFldid" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>子数据集字段  [CHILD_FLDID,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ChildMultiplicity" Type="String" MaxLength="10">
+      <Documentation>
+        <Summary>子多重性  [CHILD_MULTIPLICITY,A(变长字符串),10]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="ChildRoleName" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>子角色名称  [CHILD_ROLE_NAME,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="DdSet">
+    <Documentation>
+      <Summary>数据集描述表 (DD_SET)</Summary>
+      <LongDescription>数据字典的数据集描述表，描述应用系统中所有数据集的信息</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Setid" />
+    </Key>
+    <Property Name="Setid" Type="String" Nullable="false" MaxLength="50">
+      <Documentation>
+        <Summary>数据集标识  [SETID,A(变长字符串),非空,50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setname" Type="String" Nullable="false" MaxLength="100">
+      <Documentation>
+        <Summary>数据集名称  [SETNAME,A(变长字符串),非空,100]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Settype" Type="String" Nullable="false" MaxLength="8">
+      <Documentation>
+        <Summary>类型  [SETTYPE,A(变长字符串),非空,8]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setccode" Type="String" MaxLength="8">
+      <Documentation>
+        <Summary>数据集类别  [SETCCODE,A(变长字符串),8]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setnote" Type="String" MaxLength="254">
+      <Documentation>
+        <Summary>数据集说明  [SETNOTE,A(变长字符串),254]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setobjowner" Type="String" MaxLength="50">
+      <Documentation>
+        <Summary>拥有者  [SETOBJOWNER,A(变长字符串),50]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setobjname" Type="String" MaxLength="80">
+      <Documentation>
+        <Summary>对象名  [SETOBJNAME,A(变长字符串),80]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setcond" Type="String" MaxLength="512">
+      <Documentation>
+        <Summary>约束条件  [SETCOND,A(变长字符串),512]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setupdateperiod" Type="String" MaxLength="4">
+      <Documentation>
+        <Summary>更新周期  [SETUPDATEPERIOD,A(变长字符串),4]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setupdatemode" Type="String" MaxLength="4">
+      <Documentation>
+        <Summary>更新方式  [SETUPDATEMODE,A(变长字符串),4]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setupdatesql" Type="Binary">
+      <Documentation>
+        <Summary>更新SQL  [SETUPDATESQL,I(备注(2G变长字符数据))]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelDdSql" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdSql_Setid" FromRole="DdSet" ToRole="DdSql">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdSql 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelDdFlds" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdFld_Setid" FromRole="DdSet" ToRole="DdFlds">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdFld 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelDdObjs" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdObj_Setid" FromRole="DdSet" ToRole="DdObjs">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdObj 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+    <NavigationProperty Name="RelDdExts" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdExt_Setid" FromRole="DdSet" ToRole="DdExts">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdExt 的对象集合.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <EntityType Name="DdSql">
+    <Documentation>
+      <Summary>数据集描述表的创建SQL (DD_SQL)</Summary>
+      <LongDescription>数据字典的数据集描述表的创建SQL。因为某些DBMS（如Oracle）在一个表中只能包含一个备注型字段，而在数据集描述表中已有一个更新SQL是备注型字段，所以，单独建此表储存创建SQL.</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Setid" />
+    </Key>
+    <Property Name="Setid" Type="String" Nullable="false" MaxLength="30">
+      <Documentation>
+        <Summary>数据集标识  [SETID,A(变长字符串),非空,30]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <Property Name="Setcreatesql" Type="Binary">
+      <Documentation>
+        <Summary>创建SQL  [SETCREATESQL,I(备注(2G变长字符数据))]</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </Property>
+    <NavigationProperty Name="RelDdSet" Relationship="Hongbin.Data.DataDict.DdSet_Setid_DdSql_Setid" FromRole="DdSql" ToRole="DdSet">
+      <Documentation>
+        <Summary>返回类型为 Hongbin.Data.DataDict.DdSet 的对象实例.</Summary>
+        <LongDescription>
+        </LongDescription>
+      </Documentation>
+    </NavigationProperty>
+  </EntityType>
+  <Association Name="DdSet_Setid_DdSql_Setid">
+    <Documentation>
+      <Summary>
+      </Summary>
+      <LongDescription>DdSet_Setid_DdSql_Setid</LongDescription>
+    </Documentation>
+    <End Role="DdSet" Type="Hongbin.Data.DataDict.DdSet" Multiplicity="1" />
+    <End Role="DdSql" Type="Hongbin.Data.DataDict.DdSql" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DdSet">
+        <PropertyRef Name="Setid" />
+      </Principal>
+      <Dependent Role="DdSql">
+        <PropertyRef Name="Setid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DdSet_Setid_DdFld_Setid">
+    <Documentation>
+      <Summary>
+      </Summary>
+      <LongDescription>DdSet_Setid_DdFld_Setid</LongDescription>
+    </Documentation>
+    <End Role="DdSet" Type="Hongbin.Data.DataDict.DdSet" Multiplicity="1" />
+    <End Role="DdFlds" Type="Hongbin.Data.DataDict.DdFld" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DdSet">
+        <PropertyRef Name="Setid" />
+      </Principal>
+      <Dependent Role="DdFlds">
+        <PropertyRef Name="Setid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DdSet_Setid_DdObj_Setid">
+    <Documentation>
+      <Summary>
+      </Summary>
+      <LongDescription>DdSet_Setid_DdObj_Setid</LongDescription>
+    </Documentation>
+    <End Role="DdSet" Type="Hongbin.Data.DataDict.DdSet" Multiplicity="1" />
+    <End Role="DdObjs" Type="Hongbin.Data.DataDict.DdObj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DdSet">
+        <PropertyRef Name="Setid" />
+      </Principal>
+      <Dependent Role="DdObjs">
+        <PropertyRef Name="Setid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DdSet_Setid_DdExt_Setid">
+    <Documentation>
+      <Summary>
+      </Summary>
+      <LongDescription>DdSet_Setid_DdExt_Setid</LongDescription>
+    </Documentation>
+    <End Role="DdSet" Type="Hongbin.Data.DataDict.DdSet" Multiplicity="1" />
+    <End Role="DdExts" Type="Hongbin.Data.DataDict.DdExt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DdSet">
+        <PropertyRef Name="Setid" />
+      </Principal>
+      <Dependent Role="DdExts">
+        <PropertyRef Name="Setid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DdDtt_Typcode_DdFld_Fldtype">
+    <Documentation>
+      <Summary>
+      </Summary>
+      <LongDescription>DdDtt_Typcode_DdFld_Fldtype</LongDescription>
+    </Documentation>
+    <End Role="DdDtt" Type="Hongbin.Data.DataDict.DdDtt" Multiplicity="0..1" />
+    <End Role="DdFlds" Type="Hongbin.Data.DataDict.DdFld" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DdDtt">
+        <PropertyRef Name="Typcode" />
+      </Principal>
+      <Dependent Role="DdFlds">
+        <PropertyRef Name="Fldtype" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

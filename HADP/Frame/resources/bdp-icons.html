@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>平台图标参考表</title>
+    <script src="js/bdp-base.js"></script>
+    <script src="js/bdp-base-loader.js"></script>
+
+    <style type="text/css">
+        body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0 auto;
+            overflow: auto;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+
+        .long {
+            width: 170px;
+        }
+
+        .icon {
+            width: 30px;
+        }
+
+        .head {
+            background-color: #d9ebf8;
+            height: 30px;
+            width: 1010px;
+            margin: 0px auto;
+            border-left: 1px solid #3e83c9;
+        }
+
+            .head ul {
+            }
+
+                .head ul li {
+                    float: left;
+                    line-height: 30px;
+                    padding: 0px 0px;
+                    border-bottom: 1px solid #3e83c9;
+                    border-right: 1px solid #3e83c9;
+                }
+
+        .pange {
+            height: 30px;
+            width: 1010px;
+            margin: 0px auto;
+            border-left: 1px solid #3e83c9;
+        }
+
+            .pange ul {
+                border-bottom: 1px solid #3e83c9;
+            }
+
+                .pange ul li {
+                    float: left;
+                    line-height: 30px;
+                    padding: 0px 0px;
+                }
+
+        .icon_pic {
+            width: 16px;
+            height: 16px;
+            margin: 7px 7px 0px 7px;
+            float: left;
+        }
+
+        .css_name {
+            width: 170px;
+            padding-left: 10px;
+            border-left: 1px solid #3e83c9;
+            border-right: 1px solid #3e83c9;
+            white-space: nowrap;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function getCssNames() {
+            var csses = [];
+            for (var i = 0, len = document.styleSheets.length; i < len; i++) {
+                var cssHref = document.styleSheets[i].href || '';
+                if (cssHref.toLowerCase().indexOf('bdp-icons.css') >= 0) {
+                    var cssRules = document.styleSheets[i].cssRules || document.styleSheets[i].rules;
+                    for (var j = 0, lenRules = cssRules.length; j < lenRules; j++) {
+                        var cssName = cssRules[j].selectorText || '';
+                        if (cssName.toLowerCase().startsWith('.bdp-icons-')) {
+                            csses.push({ text: cssName.substring(1), value: cssName.substring(1) });
+                        }
+                    }
+                    $('#summary').append('图标文件：' + cssHref + '<br />图标数量：' + csses.length);
+                    break;
+                }
+            }
+            return csses;
+        }
+        $(document).ready(function () {
+            var iconCsses = getCssNames().sort(function (a, b) {
+                s1 = (a.value || '').toLowerCase(); s2 = (b.value || '').toLowerCase();
+                if (s1 > s2) return 1;
+                if (s1 < s2) return -1;
+                return 0;
+            });
+            var col = 0, ht = [];
+            for (var i = 0, len = iconCsses.length; i < len; i++) {
+                var iconCss = iconCsses[i];
+                if (col == 0) {
+                    ht.push('<div class="pange"><ul>');
+                }
+                ht.push('<li class="', iconCss.value, ' icon_pic"></li>');
+                ht.push('<li class="css_name">', iconCss.value, '</li>');
+                col++;
+                if (col == 5 || i == len - 1) {
+                    ht.push('</ul></div>');
+                    $('body').append(ht.join(''));
+                    ht = [];
+                    col = 0;
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>图标表</h1>
+    <p id="summary" style="text-align: left; padding: 5px;"></p>
+    <hr />
+    <div class="head">
+        <ul>
+            <li class="icon">图标</li>
+            <li class="long">css名称</li>
+            <li class="icon">图标</li>
+            <li class="long">css名称</li>
+            <li class="icon">图标</li>
+            <li class="long">css名称</li>
+            <li class="icon">图标</li>
+            <li class="long">css名称</li>
+            <li class="icon">图标</li>
+            <li class="long">css名称</li>
+        </ul>
+    </div>
+    <i class="glyphicon glyphicon-refresh"></i>
+</body>
+</html>

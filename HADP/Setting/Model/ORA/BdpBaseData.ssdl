@@ -1,0 +1,1235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hongbin.Data.BdpBaseData.Store" Alias="Self" Provider="Devart.Data.Oracle" ProviderManifestToken="Ora10gR2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0">
+  <EntityContainer Name="BdpBaseDataEntitiesStoreContainer">
+    <EntitySet Name="BDP_ONLINE_USERs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ONLINE_USER" store:Type="Tables" Schema="AFPLAN" Table="BDP_ONLINE_USER" />
+    <EntitySet Name="BDP_OPERATION_LOGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_OPERATION_LOG" store:Type="Tables" Schema="AFPLAN" Table="BDP_OPERATION_LOG" />
+    <EntitySet Name="BDP_ORG_COMPANYs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_COMPANY" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_COMPANY" />
+    <EntitySet Name="BDP_ORG_COMPANY_HISs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_COMPANY_HIS" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_COMPANY_HIS" />
+    <EntitySet Name="BDP_ORG_COMPANY_KINDs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_COMPANY_KIND" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_COMPANY_KIND" />
+    <EntitySet Name="BDP_ORG_DEPARTMENTs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_DEPARTMENT" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_DEPARTMENT" />
+    <EntitySet Name="BDP_ORG_EMPLOYEEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_EMPLOYEE" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_EMPLOYEE" />
+    <EntitySet Name="BDP_ORG_EMPLOYEE_BASEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_EMPLOYEE_BASE" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_EMPLOYEE_BASE" />
+    <EntitySet Name="BDP_ORG_EMPLOYEE_STATIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_EMPLOYEE_STATION" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_EMPLOYEE_STATION" />
+    <EntitySet Name="BDP_ORG_EMPLOYEE_TYPEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_EMPLOYEE_TYPE" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_EMPLOYEE_TYPE" />
+    <EntitySet Name="BDP_ORG_EMPLOYEE_UFs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_EMPLOYEE_UF" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_EMPLOYEE_UF" />
+    <EntitySet Name="BDP_ORG_JOBSs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_JOBS" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_JOBS" />
+    <EntitySet Name="BDP_ORG_STATIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_ORG_STATION" store:Type="Tables" Schema="AFPLAN" Table="BDP_ORG_STATION" />
+    <EntitySet Name="BDP_PRIV_DATA_PERMISSIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_PRIV_DATA_PERMISSION" store:Type="Tables" Schema="AFPLAN" Table="BDP_PRIV_DATA_PERMISSION" />
+    <EntitySet Name="BDP_PRIV_FUNCTION_PERMISSIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_PRIV_FUNCTION_PERMISSION" store:Type="Tables" Schema="AFPLAN" Table="BDP_PRIV_FUNCTION_PERMISSION" />
+    <EntitySet Name="BDP_PRIV_ROLEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_PRIV_ROLE" store:Type="Tables" Schema="AFPLAN" Table="BDP_PRIV_ROLE" />
+    <EntitySet Name="BDP_PRIV_USERs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_PRIV_USER" store:Type="Tables" Schema="AFPLAN" Table="BDP_PRIV_USER" />
+    <EntitySet Name="BDP_PRIV_USER_MAPPINGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_PRIV_USER_MAPPING" store:Type="Tables" Schema="AFPLAN" Table="BDP_PRIV_USER_MAPPING" />
+    <EntitySet Name="BDP_PRIV_USER_ROLEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_PRIV_USER_ROLE" store:Type="Tables" Schema="AFPLAN" Table="BDP_PRIV_USER_ROLE" />
+    <EntitySet Name="BDP_SI_SYSTEMSs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SI_SYSTEMS" store:Type="Tables" Schema="AFPLAN" Table="BDP_SI_SYSTEMS" />
+    <EntitySet Name="BDP_SYS_LOB_DATAs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYS_LOB_DATA" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYS_LOB_DATA" />
+    <EntitySet Name="BDP_SYS_LOGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYS_LOG" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYS_LOG" />
+    <EntitySet Name="BDP_SYS_OPERATE_LOGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYS_OPERATE_LOG" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYS_OPERATE_LOG" />
+    <EntitySet Name="BDP_SYS_PARAMSs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYS_PARAMS" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYS_PARAMS" />
+    <EntitySet Name="BDP_SYS_TEMPORARY_DATAs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYS_TEMPORARY_DATA" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYS_TEMPORARY_DATA" />
+    <EntitySet Name="BDP_SYSTEMs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYSTEM" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYSTEM" />
+    <EntitySet Name="BDP_SYSTEM_LOGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYSTEM_LOG" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYSTEM_LOG" />
+    <EntitySet Name="BDP_SYSTEM_VERSIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_SYSTEM_VERSION" store:Type="Tables" Schema="AFPLAN" Table="BDP_SYSTEM_VERSION" />
+    <EntitySet Name="BDP_WEB_LANGUAGEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_WEB_LANGUAGE" store:Type="Tables" Schema="AFPLAN" Table="BDP_WEB_LANGUAGE" />
+    <EntitySet Name="BDP_WEB_RESOURCEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_WEB_RESOURCE" store:Type="Tables" Schema="AFPLAN" Table="BDP_WEB_RESOURCE" />
+    <EntitySet Name="BDP_WEB_TREEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_WEB_TREE" store:Type="Tables" Schema="AFPLAN" Table="BDP_WEB_TREE" />
+    <EntitySet Name="BDP_CALENDARs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CALENDAR" store:Type="Tables" Schema="AFPLAN" Table="BDP_CALENDAR" />
+    <EntitySet Name="BDP_CODE_COMMONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_COMMON" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_COMMON" />
+    <EntitySet Name="BDP_CODE_COMPANY_TYPEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_COMPANY_TYPE" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_COMPANY_TYPE" />
+    <EntitySet Name="BDP_CODE_DEGREEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_DEGREE" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_DEGREE" />
+    <EntitySet Name="BDP_CODE_ECONOMYs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_ECONOMY" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_ECONOMY" />
+    <EntitySet Name="BDP_CODE_EDUs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_EDU" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_EDU" />
+    <EntitySet Name="BDP_CODE_INDUSTRYs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_INDUSTRY" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_INDUSTRY" />
+    <EntitySet Name="BDP_CODE_NATIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_NATION" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_NATION" />
+    <EntitySet Name="BDP_CODE_POLITICALs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_POLITICAL" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_POLITICAL" />
+    <EntitySet Name="BDP_CODE_REGIONALISMs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_REGIONALISM" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_REGIONALISM" />
+    <EntitySet Name="BDP_CODE_SEXs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_SEX" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_SEX" />
+    <EntitySet Name="BDP_CODE_TAXPAYERs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_TAXPAYER" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_TAXPAYER" />
+    <EntitySet Name="BDP_CODE_UNIT_TYPEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_UNIT_TYPE" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_UNIT_TYPE" />
+    <EntitySet Name="BDP_CODE_USER_TYPEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODE_USER_TYPE" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODE_USER_TYPE" />
+    <EntitySet Name="BDP_CODINGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODING" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODING" />
+    <EntitySet Name="BDP_CODING_RULESs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CODING_RULES" store:Type="Tables" Schema="AFPLAN" Table="BDP_CODING_RULES" />
+    <EntitySet Name="BDP_CUS_ADDRESSs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CUS_ADDRESS" store:Type="Tables" Schema="AFPLAN" Table="BDP_CUS_ADDRESS" />
+    <EntitySet Name="BDP_CUST_COMBINEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CUST_COMBINE" store:Type="Tables" Schema="AFPLAN" Table="BDP_CUST_COMBINE" />
+    <EntitySet Name="BDP_CUSTOMER_BANKs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CUSTOMER_BANK" store:Type="Tables" Schema="AFPLAN" Table="BDP_CUSTOMER_BANK" />
+    <EntitySet Name="BDP_CUSTOMER_BASEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CUSTOMER_BASE" store:Type="Tables" Schema="AFPLAN" Table="BDP_CUSTOMER_BASE" />
+    <EntitySet Name="BDP_CUSTOMER_DOCs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_CUSTOMER_DOC" store:Type="Tables" Schema="AFPLAN" Table="BDP_CUSTOMER_DOC" />
+    <EntitySet Name="BDP_DEPT_STATIONs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_DEPT_STATION" store:Type="Tables" Schema="AFPLAN" Table="BDP_DEPT_STATION" />
+    <EntitySet Name="BDP_INSTALL_MODULEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_INSTALL_MODULE" store:Type="Tables" Schema="AFPLAN" Table="BDP_INSTALL_MODULE" />
+    <EntitySet Name="BDP_MODULEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MODULE" store:Type="Tables" Schema="AFPLAN" Table="BDP_MODULE" />
+    <EntitySet Name="BDP_MODULE_TOTREEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MODULE_TOTREE" store:Type="Tables" Schema="AFPLAN" Table="BDP_MODULE_TOTREE" />
+    <EntitySet Name="BDP_MSG_CODEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_CODE" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_CODE" />
+    <EntitySet Name="BDP_MSG_DEFINEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_DEFINE" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_DEFINE" />
+    <EntitySet Name="BDP_MSG_LOGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_LOG" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_LOG" />
+    <EntitySet Name="BDP_MSG_TASKs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_TASK" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_TASK" />
+    <EntitySet Name="BDP_MSG_TASK_LOGs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_TASK_LOG" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_TASK_LOG" />
+    <EntitySet Name="BDP_MSG_ATTACHs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_ATTACH" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_ATTACH" />
+    <EntitySet Name="BDP_MSG_NOTICEs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_NOTICE" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_NOTICE" />
+    <EntitySet Name="BDP_MSG_TOPICs" EntityType="Hongbin.Data.BdpBaseData.Store.BDP_MSG_TOPIC" store:Type="Tables" Schema="AFPLAN" Table="BDP_MSG_TOPIC" />
+  </EntityContainer>
+  <EntityType Name="BDP_ONLINE_USER">
+    <Key>
+      <PropertyRef Name="LOGIN_ID" />
+    </Key>
+    <Property Name="LOGIN_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_NAME" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CURRENT_MODULE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CURRENT_MODULE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REQUEST_URL" Type="NVARCHAR2" MaxLength="600" />
+    <Property Name="LOGOUT_TIME" Type="DATE" />
+    <Property Name="ONLINE_FLAG" Type="int" />
+    <Property Name="LAST_ACTIVE_TIME" Type="DATE" />
+    <Property Name="REMOTE_ADDRESS" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="LOGIN_TIME" Type="DATE" />
+  </EntityType>
+  <EntityType Name="BDP_OPERATION_LOG">
+    <Key>
+      <PropertyRef Name="OPER_ID" />
+    </Key>
+    <Property Name="OPER_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LOGIN_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_NAME" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="OPER_TIME" Type="DATE" />
+    <Property Name="OPER_MODULE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OPER_MODULE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OPER_FUNCTION_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OPER_FUNCTION_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REMOTE_ADDRESS" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="OPER_DESC" Type="NVARCHAR2" MaxLength="512" />
+    <Property Name="REQUEST_URL" Type="NVARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_COMPANY">
+    <Key>
+      <PropertyRef Name="COMPANY_ID" />
+    </Key>
+    <Property Name="COMPANY_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FATHER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SHORT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_IS_INDEPENDENT" Type="bool" />
+    <Property Name="COMPANY_LOGO" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ZIP" Type="NVARCHAR2" MaxLength="6" />
+    <Property Name="PRINCIPAL_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRINCIPAL_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FOREIGN_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OWNER_SHARERATE" Type="decimal" />
+    <Property Name="HOLD_FLAG" Type="bool" />
+    <Property Name="INDUSTRY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ECOTYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAX_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SALEADDR" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="POSTADDR" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="PHONE1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PHONE2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PHONE3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="WEBADD" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MEMO" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="ISSEAL" Type="bool" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+    <Property Name="PROVINCE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CITYCOUNTY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BRIEFINTRO" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="SEALED_DATE" Type="DATE" />
+    <Property Name="CORPTYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRINCIPAL_IDNUMBER" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CURRENCY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHARGEDEPT_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHARGEDEPT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CORP_KIND" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UNITDISTINCTION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REGION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAXPAYER_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="COMPANY_ORDER" Type="int" />
+    <Property Name="INNER_CODE" Type="NVARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_COMPANY_HIS">
+    <Key>
+      <PropertyRef Name="COMPANY_HIS_ID" />
+    </Key>
+    <Property Name="COMPANY_HIS_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FATHER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SHORT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_IS_INDEPENDENT" Type="bool" />
+    <Property Name="COMPANY_LOGO" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ZIP" Type="NVARCHAR2" MaxLength="6" />
+    <Property Name="PRINCIPAL_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRINCIPAL_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FOREIGN_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OWNER_SHARERATE" Type="decimal" />
+    <Property Name="HOLD_FLAG" Type="bool" />
+    <Property Name="INDUSTRY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ECOTYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAX_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SALEADDR" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="POSTADDR" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="PHONE1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PHONE2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PHONE3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="WEBADD" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MEMO" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="ISSEAL" Type="bool" />
+    <Property Name="CREATE_DATE" Type="DATE" />
+    <Property Name="PROVINCE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CITYCOUNTY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BRIEFINTRO" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="SEALED_DATE" Type="DATE" />
+    <Property Name="CORPTYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRINCIPAL_IDNUMBER" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CURRENCY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHARGEDEPT_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CHARGEDEPT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CORP_KIND" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UNITDISTINCTION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REGION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAXPAYER_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="COMPANY_ORDER" Type="int" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_COMPANY_KIND">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_DEPARTMENT">
+    <Key>
+      <PropertyRef Name="ORG_DEPARTMENT_ID" />
+    </Key>
+    <Property Name="ORG_DEPARTMENT_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_PARENT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_ORDER" Type="int" />
+    <Property Name="DEPT_LEVEL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_SHORT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_KIND" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_NOTE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="DEPT_PRINCIPAL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_PRINCIPAL_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="DEPT_CODE" Type="NVARCHAR2" MaxLength="16" />
+    <Property Name="INNER_CODE" Type="NVARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_ID" />
+    </Key>
+    <Property Name="EMPLOYEE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMP_CODE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="EMP_SERIAL" Type="int" />
+    <Property Name="EMP_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USED_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMP_GENDER" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NATION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LEADERSHIP" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ID_NUMBER_CODE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="BIRTHDAY" Type="DATE" />
+    <Property Name="CULTURAL_LEVEL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEGREE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="POLITICAL_BACKGROUND" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="JOIN_WORK_DATE" Type="DATE" />
+    <Property Name="JOIN_COMPANY_DATE" Type="DATE" />
+    <Property Name="ADDRESS" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="POSTAL_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="OFFICE_PHONE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="FAMILY_PHONE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="PHONE" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="E_MAIL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMP_STATE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ORG_DEPARTMENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_EMPLOYEE_BASE">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_BASE_ID" />
+    </Key>
+    <Property Name="EMPLOYEE_BASE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USED_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="IDNUMBER" Type="NVARCHAR2" MaxLength="25" />
+    <Property Name="SSNUM" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SEX" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="BIRTHDAY" Type="DATE" />
+    <Property Name="JOIN_WORK_DATE" Type="DATE" />
+    <Property Name="ADDR" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ZIPCODE" Type="NVARCHAR2" MaxLength="6" />
+    <Property Name="OFFICE_PHONE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAMILY_PHONE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MOBILE_PHONE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_EMPLOYEE_STATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMPLOYEE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="STATION_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MAIN_STATION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_EMPLOYEE_TYPE">
+    <Key>
+      <PropertyRef Name="TYPE_ID" />
+    </Key>
+    <Property Name="TYPE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TYPE_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TYPE_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_EMPLOYEE_UF">
+    <Key>
+      <PropertyRef Name="EMPLOYEE_ID" />
+    </Key>
+    <Property Name="EMPLOYEE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ORG_DEPARTMENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMPLOYEE_BASE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TYPE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMP_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMP_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMP_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="STATION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SCOPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="STATION_LEVEL" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="STATION_SEQ" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BIZ_MAN" Type="bool" />
+    <Property Name="BIZ_MAN_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="START_TIME" Type="DATE" />
+    <Property Name="OUT_TIME" Type="DATE" />
+    <Property Name="EMP_STATE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="MOVE" Type="bool" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_JOBS">
+    <Key>
+      <PropertyRef Name="JOBS_ID" />
+    </Key>
+    <Property Name="JOBS_ID" Nullable="false" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="PARENT_JOBS_ID" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="JOBS_ORDER" Type="int" />
+    <Property Name="JOBS_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="JOBS_CODE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="INNER_CODE" Type="NVARCHAR2" MaxLength="30" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_ORG_STATION">
+    <Key>
+      <PropertyRef Name="STATION_ID" />
+    </Key>
+    <Property Name="STATION_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BELONG_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DUTY" Type="NVARCHAR2" MaxLength="500" />
+    <Property Name="GUARTERS_GB_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="GUARTERS_COM_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SEQUENCE" Type="int" />
+    <Property Name="STATION_PARENT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="STATION_LEVEL" Type="int" />
+    <Property Name="IS_HARM" Type="bool" />
+    <Property Name="IS_DOWN" Type="bool" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="WORK_CONTENT" Type="NVARCHAR2" MaxLength="500" />
+    <Property Name="JOBS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="WORK_PLACE" Type="NVARCHAR2" MaxLength="60" />
+    <Property Name="INNER_CODE" Type="NVARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="BDP_PRIV_DATA_PERMISSION">
+    <Key>
+      <PropertyRef Name="PERMISSION_ID" />
+    </Key>
+    <Property Name="PERMISSION_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DATASET_ID" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="DATASET_NAME" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="DISPLAY_FIELDS" Type="BLOB" />
+    <Property Name="EDITABLE_FIELDS" Type="BLOB" />
+    <Property Name="FILTER_CONDITION" Type="BLOB" />
+    <Property Name="OP_INSERT" Type="bool" />
+    <Property Name="OP_DELETE" Type="bool" />
+    <Property Name="OP_UPDATE" Type="bool" />
+    <Property Name="OP_SELECT" Type="bool" />
+    <Property Name="DESCRIPTION" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_PRIV_FUNCTION_PERMISSION">
+    <Key>
+      <PropertyRef Name="PERMISSION_ID" />
+    </Key>
+    <Property Name="PERMISSION_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PAGE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="RESOURCE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FUNC_VISIBLE" Type="bool" />
+    <Property Name="FUNC_ENABLE" Type="bool" />
+    <Property Name="DESCRIPTION" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_PRIV_ROLE">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ROLE_CODE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="ROLE_ORDER" Type="int" />
+    <Property Name="ROLE_NAME" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="BELONG_SYSTEM_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BELONG_COMPANY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="IS_PUBLIC" Type="bool" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_PRIV_USER">
+    <Key>
+      <PropertyRef Name="PRIV_USERS_ID" />
+    </Key>
+    <Property Name="PRIV_USERS_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMPLOYEE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ABLE_TIME" Type="DATE" />
+    <Property Name="DISABLE_TIME" Type="DATE" />
+    <Property Name="LOCK_FLAG" Type="bool" />
+    <Property Name="DESCRIPITION" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="PWD" Type="NVARCHAR2" MaxLength="500" />
+    <Property Name="AUTHEN_TYPE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="PWD_TYPE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="PWD_PARAM" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="PWD_LEVEL" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="REAL_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SEX" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="PHONE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="EMAIL" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="USER_TYPE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="NOTE" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="ACTIVITY" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="PORTAL_USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PORTAL_USER_TS" Type="NVARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="BDP_PRIV_USER_MAPPING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BINDING_SYS_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BINDING_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BINDING_DATE" Type="DATE" />
+    <Property Name="IS_DISABLED" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_PRIV_USER_ROLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRIV_USERS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPARTMENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="STATION_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DESCRIPTION" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SI_SYSTEMS">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+    </Key>
+    <Property Name="SYSTEM_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_SYSTEM_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_TITLE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="SYSTEM_SHORT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="NODE_TYPE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="LOGIN_URL" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="HOME_URL" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="TARGET" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="SYSTEM_ICON" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_DESCRIPTION" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="SNAPSHOT" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="IS_INTEGATED" Type="bool" />
+    <Property Name="IS_ACTIVE" Type="bool" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ROLE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="APPLIANCE_SIGN" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYS_LOB_DATA">
+    <Key>
+      <PropertyRef Name="LOB_ID" />
+    </Key>
+    <Property Name="LOB_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FLAG1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FLAG2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DATA_LENGTH" Type="int" />
+    <Property Name="DATA_KIND" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="DATA_DESC" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="DATA_CONTEXT" Type="BLOB" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYS_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRIV_USERS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LOG_TIME" Type="DATE" />
+    <Property Name="LOG_INFO" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="LOG_USER_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LOG_PARTICULAR" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYS_OPERATE_LOG">
+    <Key>
+      <PropertyRef Name="OPERATE_LOG_ID" />
+    </Key>
+    <Property Name="OPERATE_LOG_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PRIV_USERS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BILL_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BILL_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BILL_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BIZ_LOG" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="BIZ_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_NAME" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="ENTER_BUTTON" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ENTER_FUNCTION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ENTER_FUNCTION_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ENTER_IP" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ENTER_SYSTEM" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LOGIN_TIME" Type="DATE" />
+    <Property Name="LOGOUT_TIME" Type="DATE" />
+    <Property Name="OPERATE_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OPERATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="OPERATOR_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYS_PARAMS">
+    <Key>
+      <PropertyRef Name="PARAM_ID" />
+    </Key>
+    <Property Name="PARAM_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARAM_FLAG1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARAM_FLAG2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARAM_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARAM_NAME2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARAM_VALUE" Type="NVARCHAR2" MaxLength="128" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARAM_DESC" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYS_TEMPORARY_DATA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REF_FLAG" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="GEN_TIME" Type="DATE" />
+    <Property Name="TEMP_DATA" Type="BLOB" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYSTEM">
+    <Key>
+      <PropertyRef Name="SYSTEM_ID" />
+    </Key>
+    <Property Name="SYSTEM_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_NAME" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="SYSTEM_CODE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="CUSTOMER_COMPANY" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="WEB_TREE_ROOT_NODE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_ICON_URL" Type="NVARCHAR2" MaxLength="128" />
+    <Property Name="SERVICE_PHONE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SERVICE_EMAIL" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="SERVICE_WEB" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="INSTALL_TIME" Type="DATE" />
+    <Property Name="SYSTEM_LICENCE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="START_TIME" Type="DATE" />
+    <Property Name="DISABLE_TIME" Type="DATE" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_SYSTEM_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LOG_LEVEL" Type="int" />
+    <Property Name="LOG_DATE_TIME" Type="DATE" />
+    <Property Name="LOG_MESSAGE" Type="NVARCHAR2" MaxLength="300" />
+    <Property Name="DETAIL_MESSAGE" Type="BLOB" />
+    <Property Name="USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPARTMENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REQUEST_URL" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="USER_HOST_ADDRESS" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_HOST_NAME" Type="NVARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BDP_SYSTEM_VERSION">
+    <Key>
+      <PropertyRef Name="SYSTEM_VERSION_ID" />
+    </Key>
+    <Property Name="SYSTEM_VERSION_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MODULE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="VERSION_DESCRIPTION" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="VERSION_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UPDATE_TIME" Type="DATE" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_WEB_LANGUAGE">
+    <Key>
+      <PropertyRef Name="LANG_ID" />
+    </Key>
+    <Property Name="LANG_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NODE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="URL" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="SELECTOR" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="SRC" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="CN" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="EN" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="L1" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="L2" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="L3" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BDP_WEB_RESOURCE">
+    <Key>
+      <PropertyRef Name="RES_ID" />
+    </Key>
+    <Property Name="RES_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NODE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="RES_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DESCRIPTION" Type="NVARCHAR2" MaxLength="128" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_WEB_TREE">
+    <Key>
+      <PropertyRef Name="NODE_ID" />
+    </Key>
+    <Property Name="NODE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NODE_PARENT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NODE_ORDER" Type="int" />
+    <Property Name="NODE_TEXT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NODE_COMMENT" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="NODE_TYPE" Type="int" />
+    <Property Name="NODE_URL" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="NODE_IMAGE" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="NODE_PARAM" Type="NVARCHAR2" MaxLength="2000" />
+    <Property Name="NODE_ACTIVE" Type="bool" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CALENDAR">
+    <Key>
+      <PropertyRef Name="CALENDAR_ID" />
+    </Key>
+    <Property Name="CALENDAR_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="YEARS" Type="int" />
+    <Property Name="DAYS" Type="DATE" />
+    <Property Name="HOLIDAY" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="HOLIDAY_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UNIT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_COMMON">
+    <Key>
+      <PropertyRef Name="CODE_ID" />
+    </Key>
+    <Property Name="CODE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CODE_KIND" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="CODE_TEXT" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="CODE_VALUE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="CODE_SEQ" Type="int" />
+    <Property Name="CODE_FATHER" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="120" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_COMPANY_TYPE">
+    <Key>
+      <PropertyRef Name="COMPANY_TYPE_ID" />
+    </Key>
+    <Property Name="COMPANY_TYPE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_TYPE_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="COMPANY_TYPE_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_TYPE_SEQUENCE" Type="int" />
+    <Property Name="COMPANY_TYPE_DESC" Type="NVARCHAR2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_DEGREE">
+    <Key>
+      <PropertyRef Name="DEGREE_ID" />
+    </Key>
+    <Property Name="DEGREE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SEQUENCE" Type="int" />
+    <Property Name="DEGREE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="SHORT_NAME" Type="NVARCHAR2" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_ECONOMY">
+    <Key>
+      <PropertyRef Name="ECONOMY_ID" />
+    </Key>
+    <Property Name="ECONOMY_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ECONOMY_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="PARENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ECONOMY_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ECONOMY_DESC" Type="NVARCHAR2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_EDU">
+    <Key>
+      <PropertyRef Name="EDU_ID" />
+    </Key>
+    <Property Name="EDU_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EDU_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_ID" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="SEQUENCE" Type="int" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SHORT_NAME" Type="NVARCHAR2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_INDUSTRY">
+    <Key>
+      <PropertyRef Name="INDUSTRY_ID" />
+    </Key>
+    <Property Name="INDUSTRY_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INDUSTRY_CODE" Type="NVARCHAR2" MaxLength="5" />
+    <Property Name="INDUSTRY_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INDUSTRY_DESC" Type="NVARCHAR2" MaxLength="500" />
+    <Property Name="BIG_NUM" Type="NVARCHAR2" MaxLength="5" />
+    <Property Name="LEVEL1" Type="NVARCHAR2" MaxLength="5" />
+    <Property Name="LEVEL2" Type="NVARCHAR2" MaxLength="5" />
+    <Property Name="LEVEL3" Type="NVARCHAR2" MaxLength="5" />
+    <Property Name="INDUSTRY_SEQENCE" Type="int" />
+    <!--<Property Name="PCODE" Type="NVARCHAR2" MaxLength="50" />-->
+  </EntityType>
+  <EntityType Name="BDP_CODE_NATION">
+    <Key>
+      <PropertyRef Name="NATION_ID" />
+    </Key>
+    <Property Name="NATION_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NATION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="SEQUENCE" Type="int" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_POLITICAL">
+    <Key>
+      <PropertyRef Name="POLITICAL_STATUS_ID" />
+    </Key>
+    <Property Name="POLITICAL_STATUS_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SEQUENCE" Type="int" />
+    <Property Name="POLITICAL_STATUS" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_REGIONALISM">
+    <Key>
+      <PropertyRef Name="REGIONALISM_ID" />
+    </Key>
+    <Property Name="REGIONALISM_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PARENT_REGION_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REGION_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="REGION_LEVEL" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="REGION_NAME" Type="NVARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_SEX">
+    <Key>
+      <PropertyRef Name="SEX_ID" />
+    </Key>
+    <Property Name="SEX_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_TAXPAYER">
+    <Key>
+      <PropertyRef Name="TAXPAYER_ID" />
+    </Key>
+    <Property Name="TAXPAYER_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAXPAYER_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="TAXPAYER_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAXPAYER_DESC" Type="NVARCHAR2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_UNIT_TYPE">
+    <Key>
+      <PropertyRef Name="UNIT_TYPE_ID" />
+    </Key>
+    <Property Name="UNIT_TYPE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UNIT_TYPE_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="UNIT_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UNIT_SEQUENCE" Type="int" />
+    <Property Name="UNIT_TYPE_DESC" Type="NVARCHAR2" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="BDP_CODE_USER_TYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BDP_CODING">
+    <Key>
+      <PropertyRef Name="CODING_ID" />
+    </Key>
+    <Property Name="CODING_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TABLE_NAME" Type="NVARCHAR2" MaxLength="80" />
+    <Property Name="CODING_FIELD_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LAST_CODE_VALUE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LAST_NUM_VALUE" Type="int" />
+    <Property Name="CODING_RULE_ID" Type="NVARCHAR2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BDP_CODING_RULES">
+    <Key>
+      <PropertyRef Name="CODING_RULE_ID" />
+    </Key>
+    <Property Name="CODING_RULE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="RULE_DESC" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="CODING_TYPE" Type="int" />
+    <Property Name="CODE_LENGTH" Type="int" />
+    <Property Name="STEP_VALUE" Type="int" />
+    <Property Name="PATTERN" Type="NVARCHAR2" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="BDP_CUS_ADDRESS">
+    <Key>
+      <PropertyRef Name="CUS_ADDRESS_ID" />
+    </Key>
+    <Property Name="CUS_ADDRESS_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUSTOMER_BASE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ADD_NAME" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="LINK_MAN" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="PHONE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEFAULT_ADDR" Type="bool" />
+    <Property Name="REGION" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PLACE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ROUTE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CUST_COMBINE">
+    <Key>
+      <PropertyRef Name="CUST_COMBINE_ID" />
+    </Key>
+    <Property Name="CUST_COMBINE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUSTOMER_BASE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SRC_CUS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SRC_CUS_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SRC_CUS_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEST_CUS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEST_CUS_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEST_CUS_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CUSTOMER_BANK">
+    <Key>
+      <PropertyRef Name="CUSTOMER_BANK_ID" />
+    </Key>
+    <Property Name="CUSTOMER_BANK_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUSTOMER_BASE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BANK_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BANK_ACC_NO" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BANK_ADDR" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="DEFAULT_BANK" Type="bool" />
+    <Property Name="MEMO" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="REGISTER_BANK" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CURR_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CUSTOMER_BASE">
+    <Key>
+      <PropertyRef Name="CUSTOMER_BASE_ID" />
+    </Key>
+    <Property Name="CUSTOMER_BASE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BDP_CUSTOMER_BASE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUS_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUS_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUS_SHORT_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ENGLISH_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MNE_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TRADE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FREE_CUST_FLAG" Type="bool" />
+    <Property Name="IS_CONN_FLAG" Type="bool" />
+    <Property Name="HEAD_QUATERS_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUST_PROP" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="AREA_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TAXPAYE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LEGAL_BODY" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CREDIT_MNY" Type="decimal" />
+    <Property Name="ECO_TYPESINCEFIVE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SALE_ADDR" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CON_ADDR" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ZIP_CODE" Type="NVARCHAR2" MaxLength="6" />
+    <Property Name="PHONE1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PHONE2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PHONE3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FAX3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MOBILE_PHONE1" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MOBILE_PHONE2" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MOBILE_PHONE3" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EMAIL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="WEB_ADD" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REGISTER_FUND" Type="decimal" />
+    <Property Name="SEAL_FLAG" Type="bool" />
+    <Property Name="MEMO" Type="NVARCHAR2" MaxLength="1000" />
+    <Property Name="CORRESPOND_UNIT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REGISTER_NUM" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_CUSTOMER_DOC">
+    <Key>
+      <PropertyRef Name="CUSTOMER_DOC_ID" />
+    </Key>
+    <Property Name="CUSTOMER_DOC_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CUSTOMER_BASE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="IS_CUST" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="LINK_MAN" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MOBILE_PHONE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEFAULT_BIZ" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FROZEN_FLAG" Type="bool" />
+    <Property Name="FROZEN_TIME" Type="DATE" />
+    <Property Name="DISCOUNT_RATE" Type="decimal" />
+    <Property Name="CREDIT_LEVEL" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CREDIT_MNY" Type="decimal" />
+    <Property Name="CREDIT_LIMIT_NUM" Type="int" />
+    <Property Name="ACC_AWMNY" Type="decimal" />
+    <Property Name="BIZ_AWMNY" Type="decimal" />
+    <Property Name="ORD_AWMNY" Type="decimal" />
+    <Property Name="DEPT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BIZ_MAN_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DIFF_CUN_FLAG" Type="bool" />
+    <Property Name="DEVELOP_DATE" Type="DATE" />
+    <Property Name="CREDIT_LIMIT_FLAG" Type="bool" />
+    <Property Name="MNY_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BILL_CUST_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CONSIGNOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DILIVERY_TYPE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="HOUSE_WARE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="PROTOCOL_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COOPERATE_FLAG" Type="bool" />
+    <Property Name="CREDIT_MONEY" Type="decimal" />
+    <Property Name="TEST_SALE_MONEY" Type="decimal" />
+    <Property Name="SALES_STRU_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="WARE_STRU_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="IO_UNIT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="APPROVE_DATE" Type="DATE" />
+    <Property Name="SEAL_FLAG" Type="bool" />
+    <Property Name="CUST_STATE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FREEOF_CREMNY_CHECK" Type="bool" />
+    <Property Name="FREEOF_ACCLMT_CHECK" Type="bool" />
+    <Property Name="BALANCE_MNY" Type="decimal" />
+    <Property Name="ACC_LIMIT" Type="int" />
+    <Property Name="ACC_LIMIT_BEGIN_DATE" Type="DATE" />
+    <Property Name="CMNE_CODE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="GRADE" Type="int" />
+    <Property Name="COOPERATING_FROM" Type="DATE" />
+    <Property Name="COOPERATING_END" Type="DATE" />
+    <Property Name="CORRESP_SETTLE_UNIT" Type="bool" />
+    <Property Name="SETTLE_UNIT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNERCTL_DAYS" Type="int" />
+    <Property Name="IS_PROMETE_SETTLEMENT" Type="bool" />
+    <Property Name="STOCK_PRICE_RATIO" Type="int" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_DEPT_STATION">
+    <Key>
+      <PropertyRef Name="DEPT_STATION_ID" />
+    </Key>
+    <Property Name="STATION_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPT_STATION_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ORG_DEPARTMENT_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_INSTALL_MODULE">
+    <Key>
+      <PropertyRef Name="INTALL_MODULE_ID" />
+    </Key>
+    <Property Name="INTALL_MODULE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MODULE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="BUILD_TIME" Type="DATE" />
+    <Property Name="COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MODULE">
+    <Key>
+      <PropertyRef Name="MODULE_ID" />
+    </Key>
+    <Property Name="MODULE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MODULE_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SYSTEM_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INSTALL_STATE" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MODULE_LICENCE" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="MODULE_DESCRIPTION" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="MODULE_ICON" Type="BLOB" />
+    <Property Name="SEQUENCE" Type="int" />
+    <Property Name="START_TIME" Type="DATE" />
+    <Property Name="DISABEL_TIME" Type="DATE" />
+    <Property Name="VERSION" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MODULE_TOTREE">
+    <Key>
+      <PropertyRef Name="MODULE_TOTREE_ID" />
+    </Key>
+    <Property Name="MODULE_TOTREE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MODULE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NODE_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_CODE">
+    <Key>
+      <PropertyRef Name="MSG_CODE_ID" />
+    </Key>
+    <Property Name="MSG_CODE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="CODE" Nullable="false" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_DEFINE">
+    <Key>
+      <PropertyRef Name="MSG_DEF_ID" />
+    </Key>
+    <Property Name="MSG_DEF_ID" Nullable="false" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="MSG_NO" Nullable="false" Type="int" />
+    <Property Name="MSG_NAME" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MSG_CODE_ID" Nullable="false" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="PROCESS_URL" Type="NVARCHAR2" MaxLength="120" />
+    <Property Name="MSG_TEXT_FORMAT" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="MSG_GENERATOR" Type="NVARCHAR2" MaxLength="80" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_LOG">
+    <Key>
+      <PropertyRef Name="MSG_LOG_ID" />
+    </Key>
+    <Property Name="MSG_LOG_ID" Nullable="false" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="MSG_TEXT" Type="NVARCHAR2" MaxLength="512" />
+    <Property Name="MSG_NO" Type="int" />
+    <Property Name="MSG_CODE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="SENDER_USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="SEND_TIME" Type="DATE" />
+    <Property Name="RECEIVE_TIME" Type="DATE" />
+    <Property Name="IS_PROCESSED" Type="bool" />
+    <Property Name="PROCESS_URL" Type="NVARCHAR2" MaxLength="120" />
+    <Property Name="PROCESS_TIME" Type="DATE" />
+    <Property Name="MSG_PARAM" Type="NVARCHAR2" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_TASK">
+    <Key>
+      <PropertyRef Name="TASK_ID" />
+    </Key>
+    <Property Name="TASK_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TASK_NAME" Nullable="false" Type="NVARCHAR2" MaxLength="60" />
+    <Property Name="TASK_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="EXEC_CLASS" Nullable="false" Type="NVARCHAR2" MaxLength="80" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="128" />
+    <Property Name="ACTIVE" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_TASK_LOG">
+    <Key>
+      <PropertyRef Name="LOG_ID" />
+    </Key>
+    <Property Name="LOG_ID" Nullable="false" Type="NVARCHAR2" MaxLength="38" />
+    <Property Name="TASK_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="EXEC_TIME" Type="DATE" />
+    <Property Name="EXEC_SUCCESSED" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_ATTACH">
+    <Key>
+      <PropertyRef Name="ATTACH_ID" />
+    </Key>
+    <Property Name="ATTACH_ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REL_FLAG" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="REL_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ATTACH_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="UPLOAD_TIME" Type="DATE" />
+    <Property Name="FILE_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="FILE_EXT" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="FILE_SIZE" Type="int64" />
+    <Property Name="FILE_URL" Type="NVARCHAR2" MaxLength="100" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="80" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_NOTICE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="NOTICE_TITLE" Type="NVARCHAR2" MaxLength="500" />
+    <Property Name="NOTICE_CONTENT" Type="NVARCHAR2" MaxLength="2000" />
+    <Property Name="CLASS_CODE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="CLASS_TEXT" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="CONTENT_TYPE" Type="NVARCHAR2" MaxLength="10" />
+    <Property Name="DEPLOY_USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="DEPLOY_TIME" Type="DATE" />
+    <Property Name="LOB_DATA_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="ATTACH_COUNT" Type="int" />
+    <Property Name="REMARK" Type="NVARCHAR2" MaxLength="200" />
+    <Property Name="NOTICE_STATE" Type="int" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+  </EntityType>
+  <EntityType Name="BDP_MSG_TOPIC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Nullable="false" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TOPIC_CONTENT" Type="NVARCHAR2" MaxLength="2000" />
+    <Property Name="CONTENT_TYPE" Type="NVARCHAR2" MaxLength="20" />
+    <Property Name="LOB_DATA_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="USER_NAME" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="POST_TIME" Type="DATE" />
+    <Property Name="POST_IP" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="IS_LOCK" Type="bool" />
+    <Property Name="READ_COUNT" Type="int" />
+    <Property Name="IS_TOP" Type="bool" />
+    <Property Name="IS_RECOMMEND" Type="bool" />
+    <Property Name="PRAISE_COUNT" Type="int" />
+    <Property Name="PRAISE_REMAK" Type="NVARCHAR2" MaxLength="500" />
+    <Property Name="REFER_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="TOPIC_ID" Type="NVARCHAR2" MaxLength="50" />
+    <Property Name="INNER_DELETE_FLAG" Type="bool" />
+    <Property Name="INNER_CREATE_TIME" Type="DATE" />
+  </EntityType>
+</Schema>

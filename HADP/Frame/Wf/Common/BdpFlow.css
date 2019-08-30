@@ -1,0 +1,211 @@
+﻿/***************************************************************
+ * 产品名称：红彬应用程序开发平台
+ * 英文名称：Hongbin Application Develop Platform
+ * 产品代号：HADP
+ * 版 本 号：V3.0
+ * 版权所有：西安红彬科技发展有限公司 Copyright@2016
+ * 开发人员：彭正府
+ * ------------------------------------------------------------
+ * 模块功能：
+ *   
+ *   
+ **************************************************************/
+.GooFlow table {
+    border: none;
+}
+
+.wf-node-auditor {
+    color: #222;
+    /*font-weight: bolder;*/
+}
+
+.wf-node {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #49afcd;
+    *background-color: #2f96b4;
+    background-image: -moz-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#5bc0de),to(#2f96b4));
+    background-image: -webkit-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: -o-linear-gradient(top,#5bc0de,#2f96b4);
+    background-image: linear-gradient(to bottom,#5bc0de,#2f96b4);
+    background-repeat: repeat-x;
+    border-color: #2f96b4 #2f96b4 #1f6377;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de',endColorstr='#ff2f96b4',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+    .wf-node:hover, .wf-node:active, .wf-node.active, .wf-node.disabled, .wf-node[disabled] {
+        color: #fff;
+        background-color: #2f96b4;
+        *background-color: #2a85a0;
+    }
+
+    .wf-node:active, .wf-node.active {
+        background-color: #24748c \9;
+    }
+
+.wf-node-current {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #da4f49;
+    *background-color: #bd362f;
+    background-image: -moz-linear-gradient(top,#ee5f5b,#bd362f);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#ee5f5b),to(#bd362f));
+    background-image: -webkit-linear-gradient(top,#ee5f5b,#bd362f);
+    background-image: -o-linear-gradient(top,#ee5f5b,#bd362f);
+    background-image: linear-gradient(to bottom,#ee5f5b,#bd362f);
+    background-repeat: repeat-x;
+    border-color: #bd362f #bd362f #802420;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b',endColorstr='#ffbd362f',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+    .wf-node-current:hover, .wf-node-current:active, .wf-node-current.active, .wf-node-current.disabled, .wf-node-current[disabled] {
+        color: #fff;
+        background-color: #bd362f;
+        *background-color: #a9302a;
+    }
+
+    .wf-node-current:active, .wf-node-current.active {
+        background-color: #942a25 \9;
+    }
+
+.wf-node-past {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #5bb75b;
+    *background-color: #51a351;
+    background-image: -moz-linear-gradient(top,#62c462,#51a351);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+    background-image: -webkit-linear-gradient(top,#62c462,#51a351);
+    background-image: -o-linear-gradient(top,#62c462,#51a351);
+    background-image: linear-gradient(to bottom,#62c462,#51a351);
+    background-repeat: repeat-x;
+    border-color: #51a351 #51a351 #387038;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462',endColorstr='#ff51a351',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+    .wf-node-past:hover, .wf-node-past:active, .wf-node-past.active, .wf-node-past.disabled, .wf-node-past[disabled] {
+        color: #fff;
+        background-color: #51a351;
+        *background-color: #499249;
+    }
+
+    .wf-node-past:active, .wf-node-past.active {
+        background-color: #408140 \9;
+    }
+
+.wf-node-subsequent {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    background-color: #363636;
+    *background-color: #222;
+    background-image: -moz-linear-gradient(top,#444,#222);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#444),to(#222));
+    background-image: -webkit-linear-gradient(top,#444,#222);
+    background-image: -o-linear-gradient(top,#444,#222);
+    background-image: linear-gradient(to bottom,#444,#222);
+    background-repeat: repeat-x;
+    border-color: #222 #222 #000;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444',endColorstr='#ff222222',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+    .wf-node-subsequent:hover, .wf-node-subsequent:active, .wf-node-subsequent.active, .wf-node-subsequent.disabled, .wf-node-subsequent[disabled] {
+        color: #fff;
+        background-color: #222;
+        *background-color: #151515;
+    }
+
+    .wf-node-subsequent:active, .wf-node-subsequent.active {
+        background-color: #080808 \9;
+    }
+
+
+/*#region 流程面板 bdpWfAuditPanel */
+.wf_form {
+    margin: 2px;
+    /*padding: 5px;*/
+    /*max-width: 310px;*/
+    /*border: 1px solid rgb(134, 163, 196);*/
+    line-height: 1.5;
+    font-size: 12px;
+}
+
+.wf_objname {
+    padding: 7px;
+    border: 1px solid rgb(134, 163, 196);
+}
+
+    .wf_objname label {
+    }
+
+    .wf_objname input {
+        border: 1px solid rgb(134, 163, 196);
+        width: 97%;
+        padding: 5px 0 5px 2px;
+    }
+
+.wf_form .wf_opinion {
+    padding: 7px;
+    border: 1px solid rgb(134, 163, 196);
+}
+
+    .wf_form .wf_opinion .opinion {
+        border: 1px solid rgb(134, 163, 196);
+        width: 97%;
+        padding: 5px 0 5px 2px;
+    }
+
+    .wf_form .wf_opinion .jielun {
+        margin-left: 7px;
+        margin-right: 14px;
+    }
+
+        .wf_form .wf_opinion .jielun input {
+            margin-right: 7px;
+            margin-top: 5px;
+        }
+
+.wf_form .flowpanel {
+    margin-top: 2px;
+    padding: 7px;
+    border: 1px solid rgb(134, 163, 196);
+}
+
+    .wf_form .flowpanel .spr {
+        padding: 7px 2px;
+    }
+
+.wf_form .row {
+    position: relative;
+    /*clear: both;*/
+}
+
+    .wf_form .row .left {
+        /*float: left;*/
+        display: inline-block;
+        width: 49%;
+    }
+
+    .wf_form .row .right {
+        /*float: right;*/
+        display: inline-block;
+        width: 49%;
+        text-align: right;
+    }
+
+    .wf_form .row .label {
+    }
+
+.wf_form .hintmsg {
+    min-height: 5px;
+    padding: 3px;
+}
+/*#endregion */

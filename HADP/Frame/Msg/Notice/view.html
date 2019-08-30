@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .header {
+            padding-top: 11px;
+            padding-bottom: 11px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 20px;
+        }
+
+        .subtitle {
+            font-size: 9px;
+        }
+
+        .content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title"></div>
+        <div class="subtitle">
+            <span class="fbrq"></span>
+            <span class="author"></span>
+        </div>
+    </div>
+    <div class="content">
+        <textarea id="editor" name="editor"></textarea>
+    </div>
+
+    <script src="../../resources/js/jquery.min.js"></script>
+    <script src="../../resources/ueditor/ueditor.config.js"></script>
+    <script src="../../resources/ueditor/ueditor.all.min.js"></script>
+    <script src="../../resources/js/bdp-base.js"></script>
+    <script src="../../resources/js/bdp-utils.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var id = $.getUrlParam('id') || '';
+            if (id == '') return;
+            var ue = null;
+            $(window).resize(function () {
+                if (ue) {
+                    var maxHeight = $(window).innerHeight();
+                    ue.setHeight(maxHeight - $('.header').outerHeight() - 60);
+                }
+            }).trigger('resize');
+
+            $.getJSON(getCommonDataUrl('NewsQueryContent', { id: id }),
+                function (result) {
+                    if (result.Succeed) {
+                        var data = result.Data || {};
+                        $('.title').text(data.title || '');
+                        $('.fbrq').text(data.time);
+                        $('.author').text(data.author);
+
+                        ue = UE.getEditor('editor', {
+                            toolbars: null,
+                            readonly: true,
+                            autoHeightEnabled: true,
+                            initialFrameWidth: "99%",//设置编辑器宽度
+                            //initialFrameHeight: 360,//设置编辑器高度
+                            scaleEnabled: true
+                        });
+                        ue.addListener("ready", function () {
+                            var maxHeight = $(window).innerHeight();
+                            ue.setHeight(maxHeight - $('.header').outerHeight() - 60);
+                            ue.execCommand('inserthtml', data.content);
+                        });
+                    }
+                });
+
+        });
+    </script>
+</body>
+</html>

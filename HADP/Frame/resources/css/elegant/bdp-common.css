@@ -1,0 +1,184 @@
+﻿/***** CSS Reset *****/
+/**解决所有浏览器兼容性的重置样式代码**/
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}*/
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Default.aspx 首页样式 */
+/*html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}*/
+
+.topdiv {
+    /*border-bottom-style: outset;
+            border-bottom: solid 1px #C8C8C8;*/
+    position: absolute;
+    z-index: 1;
+    background-image: url(images/bdp/emp-top-bj.gif);
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 66px;
+}
+
+.headTitle {
+    height: 66px;
+    min-width: 420px;
+    width: e­xpression(document.body.clientWidth < 700? "800px": "auto" );
+    position: absolute;
+    z-index: 3;
+}
+
+.headText {
+    float: left;
+    bottom: 0px;
+    height: 66px;
+    left: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+.rightTitle {
+    width: 242px;
+    float: right;
+    height: 66px;
+    top: 0;
+    margin: 0;
+    background-image: url(images/bdp/emp-top-Convenient.gif);
+    background-repeat: no-repeat;
+    background-position: right;
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+    padding-top: 0px;
+}
+
+#nav_left {
+    padding-top: 6px;
+    padding-left: 12px;
+    float: left;
+}
+
+#nav_right {
+    text-align: right;
+    right: 0px;
+    padding-top: 1px;
+    padding-right: 10px;
+    position: absolute;
+}
+
+/*#region 重载om-default.css*/
+
+.om-buttonbar {
+    height: 30px;
+    background: url("images/grid/pager-bg.png");
+    border: 0;
+}
+
+
+/*#endregion*/
+
+
+/*#region 开始 模板页中特定元素的样式*/
+#master_toolbar {
+    position: relative;
+    height: 30px; /*26px;*/
+    background: url("images/grid/pager-bg.png");
+    border: 0;
+}
+
+#master_tools {
+    position: relative;
+    float: left;
+}
+
+#master_search {
+    position: relative;
+    float: right;
+    width: auto;
+    padding-right: 12px;
+    vertical-align: baseline;
+}
+/*#endregion 结束 模板页中特定元素的样式*/
+
+.om-grid-summary-row {
+    background-color: #daf7ce;
+}
+
+
+
+/*页面资源图标*/
+.om-tree ul li span.res {
+    background: url("images/bdp/resource.png") no-repeat;
+}
+/*系统模块图标*/
+.om-tree ul li span.mod {
+    background: url("images/bdp/module.png") no-repeat;
+}
+/*单位*/
+.om-tree li.om-tree-node span.common-users,
+.om-tree li.om-tree-node span.company {
+    background: url("images/bdp/treeunit.gif") no-repeat;
+}
+/*部门*/
+.om-tree li.om-tree-node span.dept {
+    background: url("images/bdp/treedept.gif") no-repeat;
+}
+/*角色*/
+.om-tree ul li span.role {
+    background: url("images/bdp/role.png") no-repeat;
+}
+/*用户*/
+.om-tree ul li span.user {
+    background: url("images/bdp/user.gif") no-repeat;
+}
+
+.om-state-hover .bdp-refer-trigger {
+    background-color: #a5c7ff;
+}
+
+.img_user {
+    background: url(images/bdp/user.gif) no-repeat;
+    height: 17px;
+    width: 17px;
+}
+
+.img_sousuo {
+    background: url('images/bdp/sousuo.gif') no-repeat;
+}
+
+.bdp-refer-trigger {
+    background: url("images/bdp-icons/dev1.png") no-repeat -110px 11px;
+    background-color: #E6E6E6;
+    width: 19px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.om-messageBox-buttonset .om-btn-center {
+    width: 65px;
+}

@@ -1,0 +1,191 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    background: #fff;
+}
+
+
+ .navbar {
+    background: #fff;
+    padding: 17px 0 21px 0;
+    border-bottom: 1px solid #cdcdcd;
+    margin-bottom:0px;
+}
+
+.logo {
+    /*width: 165px;*/
+    height: 65px;
+    background-image: url(images/bdp-login-front/front-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo-title {
+    height: 65px;
+    line-height: 75px;
+    color: #666666;
+    /*font-family: "方正宋黑简体";*/
+    font-size: 24px;
+    font-weight: 800;
+    padding-top: 10px;
+}
+
+.mid-area {
+    width: auto;
+    height: 522px;
+    border-bottom: 2px solid #d8d8d8;
+    background-color: #61c9fe;
+    /*margin-left:-200px;*/
+}
+
+.mid-box {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.login-banner {
+    /*background-image: url(images/bdp-login-front/front-banner.png);*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background: url(images/bdp-login-front/front-banner.png) 45% no-repeat;
+    /*background: url(images/bdp-login-front/front-banner.jpg) 45% no-repeat #94a34c; padding-right:0px; padding-left:0px;*/
+}
+
+.login-box {
+    /*border: 1px solid #dddddd;*/
+    width: 330px;
+    height: auto;
+    background-color: #fff;
+    color: #6d6d6d;
+	border: medium none;
+	border-radius:5px;
+	-webkit-box-shadow:0 5px 15px rgba(0,0,0,.5);
+	box-shadow:0 5px 15px rgba(0,0,0,.5);
+	background-clip:padding-box;
+	outline:0;
+    padding:0px 20px 20px 20px;
+    margin-top:50px;
+}
+
+@media only screen and (max-width:768px) {
+    .login-box {
+        /*float: left!important;*/
+        margin-top: 7px;
+        margin-right: 0px;
+       
+        /*padding-left: 0px;*/
+        /*padding-right: 50px;*/
+    }
+    .mid-area {
+        margin-left: 0px;
+    }
+    .container {
+        padding-right:0px;
+        padding-left:0px;
+    }
+    .navbar #navbar_container .row {
+        margin-left:0px;
+        margin-right:0px;
+    }
+    .col-md-4 {
+        float:left;
+    }
+    .yzm {
+        width:100%;
+    }
+    .login-box div .clearfix .col-md-8, .login-box div .clearfix .col-md-4 {
+        width:50%;
+    }
+    .pull-right {
+        float:none!important;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .login-box {
+         width:100%;
+    }
+    .pull-right {
+        float:none!important
+    }
+}
+@media only screen and (min-width:768px) and (max-width:992px) {
+    .login-box div .clearfix .col-md-8, .login-box div .clearfix .col-md-4 {
+        width:50%;
+    }
+    .pull-right {
+        float:none!important
+    }
+}
+.bdp-inet-login {
+    /*background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAANoSURBVFhH1ZdbSBRRGMf/s667qanZxaIyKu0CXYjCeo2ipB4DK7KnIJQushRqdjOttNYM065UQiJEBNGNMrSiexTdCdp0K7PVCldNV11nZ/frzJkT61IPO77s9nuZ//ffb3fO+WbOOd9KxMAgqTzZjPnz4rAgNV44+jGIa+hQK6CXvj4vbcn/yPWDV24qq2jiejD8fxV49KSDSo9oM3alryGqOUe9TFvybOTz+bivB10DKD/WRPV3nVx3rV1HzvEp1H/9BnkuXORe0QE7vXzdxXWwhPwRSFXVDoowSujt9QpLIEmQ4uIAr1eVaHb0I9cyGrFMuzI3Q75RKxKB6MKdiEhKQuSSRah94sabdy4kDDOy6mqfk8ulCYHBwH6EMXvG0NAvQ8nW0EO36p3YnJUkLD/erExEzJ4J9PezTPVC8DS3QL5yXWT4icrbAurohDnKCLWiUGcfHQ04ncD2XVrSAPILGlFSmBIGFVDfxDanjENHmnCgaIqwNXqLrXCfOC0i/URt2wpT2hJEpCQLB/jxUwbbuGDdp90r4Cyw5H1E+cGpItLoXrsOnnsPRBQ8Q6vPgM0M5vQVwgHYEsX9R52wbJwgnDA4CwIGoM5+Z5Ed6iP5Q2xNFUzL0kQUPMrDxwGzv1nXhi9f3QGzVwmvCqioG0hXd+CmRIoiVPBI8YE9QnuHglEjTSLyE14VsOTasCkzCZMnRgmHrYL1G+Cpuy2i4DGMGwv59l0RARkrx4D1Eag+3yocjfCogCz7kJ1jQ7l1Gsxm/5j6Tp1BzJ6/t9Fg6LHkQHn6HL72duEASxePQOrcOBSXfhYOe1fYkqOTZ79hR84kYflRVqbDuHgh2xL7+FngdhMURyvky9dEhp9o6374GhphGhIJo8l/FvjsdhisZVqSQFEIew9+QuGO5NA/Aqms4gsljjLB1fOPfmAYW0oehfcDrd9lFGQn8o9YNwRlwPYcc7ycva0umNeswosGH+ruODE8IVLrB9iXqbtbSxQY2WnZw+43Z1Zs6CugqycsLLHT2/curn+lZ/CeUH76jNyVx7l39NRXqq1r4zpY/q8KqFy6+oOqalq47lqxmpTDh7nemm8jZ7vMtR50D0DF0eKm3N2NXH9wEO3ep+nBEPplqI5CaN2wf0iYMT0Gy9NGCkc/Ia4A8Bs1EtQijaCGzwAAAABJRU5ErkJggg==')*/ /*images/bdp/inet.png*/ no-repeat;
+    background: url(images/bdp/inet.png) no-repeat; /* For IE 6 and 7 */
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    margin-top:20px;
+}
+
+.copyright p {
+    color: #999999;
+}
+#footer {
+    display:block;
+    padding-top:10px;
+    line-height:30px;
+}
+.form-control {
+    height:40px;
+    padding:6px 9px;
+}
+.login-box .form-group,.login-box .clearfix{
+    padding: 0 10px 0 10px
+}
+.login-box div .clearfix .col-md-8, .login-box div .clearfix .col-md-4 {
+    float:left;padding-left: 0; 
+}
+.btn-logo {
+	color:#fff;
+	background-color:#f76120;
+	border-color:#f76120; 
+    width:100%;height: 40px;
+    font-size:14px;
+}
+.btn-logo.focus,.btn-logo:focus {
+	color:#fff;
+	background-color:#dc4808;
+	border-color:#923005
+}
+.btn-logo:hover {
+	color:#fff;
+	background-color:#dc4808;
+	border-color:#d24508
+}
+.btn-logo.active,.btn-logo:active,.open>.dropdown-toggle.btn-logo {
+	color:#fff;
+	background-color:#dc4808;
+	border-color:#d24508
+}
+.btn-logo.active,.btn-logo:active,.open>.dropdown-toggle.btn-logo {
+	background-image:none
+}
+.btn-logo.disabled,.btn-logo.disabled.active{
+	background-color:#f76120;
+	border-color:#f76120
+}
+.header {
+    line-height:40px; border-bottom:1px  dashed #ddd;
+    margin-bottom:15px;
+}
+.login-box label {
+    font-weight:normal;vertical-align: top; margin-top:3px;
+}
+.logo_link_info {
+    cursor:pointer;display: block; position: absolute; margin: 0px; bottom: 20px;   margin-left:30px; clear:both; 
+}

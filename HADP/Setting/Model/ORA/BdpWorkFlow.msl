@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BdpWorkFlowEntitiesStoreContainer" CdmEntityContainer="BdpWorkFlowEntities">
+    <EntitySetMapping Name="BdpWfActionDetails">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfActionDetail">
+        <MappingFragment StoreEntitySet="BDP_WF_ACTION_DETAILs">
+          <ScalarProperty Name="ActionId" ColumnName="ACTION_ID" />
+          <ScalarProperty Name="AuditDate" ColumnName="AUDIT_DATE" />
+          <ScalarProperty Name="AuditOpinion" ColumnName="AUDIT_OPINION" />
+          <ScalarProperty Name="AuditPerson" ColumnName="AUDIT_PERSON" />
+          <ScalarProperty Name="DetailId" ColumnName="DETAIL_ID" />
+          <ScalarProperty Name="HintMessage" ColumnName="HINT_MESSAGE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="IsCountersign" ColumnName="IS_COUNTERSIGN" />
+          <ScalarProperty Name="IsDone" ColumnName="IS_DONE" />
+          <ScalarProperty Name="IsEnd" ColumnName="IS_END" />
+          <ScalarProperty Name="IsPassed" ColumnName="IS_PASSED" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+          <ScalarProperty Name="NodeOrder" ColumnName="NODE_ORDER" />
+          <ScalarProperty Name="SenderDetailId" ColumnName="SENDER_DETAIL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfActionMasters">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfActionMaster">
+        <MappingFragment StoreEntitySet="BDP_WF_ACTION_MASTERs">
+          <ScalarProperty Name="ActionId" ColumnName="ACTION_ID" />
+          <ScalarProperty Name="ActionName" ColumnName="ACTION_NAME" />
+          <ScalarProperty Name="AuditObjectKey" ColumnName="AUDIT_OBJECT_KEY" />
+          <ScalarProperty Name="AuditObjectKindId" ColumnName="AUDIT_OBJECT_KIND_ID" />
+          <ScalarProperty Name="AuditStatus" ColumnName="AUDIT_STATUS" />
+          <ScalarProperty Name="CurrentNodeId" ColumnName="CURRENT_NODE_ID" />
+          <ScalarProperty Name="EndFlag" ColumnName="END_FLAG" />
+          <ScalarProperty Name="FlowId" ColumnName="FLOW_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="SubmitDate" ColumnName="SUBMIT_DATE" />
+          <ScalarProperty Name="SubmitPerson" ColumnName="SUBMIT_PERSON" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfAssigns">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfAssign">
+        <MappingFragment StoreEntitySet="BDP_WF_ASSIGNs">
+          <ScalarProperty Name="ApplianceExp" ColumnName="APPLIANCE_EXP" />
+          <ScalarProperty Name="ApplianceSign" ColumnName="APPLIANCE_SIGN" />
+          <ScalarProperty Name="AssignId" ColumnName="ASSIGN_ID" />
+          <ScalarProperty Name="BillKindId" ColumnName="BILL_KIND_ID" />
+          <ScalarProperty Name="FlowId" ColumnName="FLOW_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfAuditPersons">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfAuditPerson">
+        <MappingFragment StoreEntitySet="BDP_WF_AUDIT_PERSONs">
+          <ScalarProperty Name="AuditorCondition" ColumnName="AUDITOR_CONDITION" />
+          <ScalarProperty Name="AuditorKind" ColumnName="AUDITOR_KIND" />
+          <ScalarProperty Name="AuditorValue" ColumnName="AUDITOR_VALUE" />
+          <ScalarProperty Name="AuditPersonId" ColumnName="AUDIT_PERSON_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfAuditStates">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfAuditState">
+        <MappingFragment StoreEntitySet="BDP_WF_AUDIT_STATEs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="StateCode" ColumnName="STATE_CODE" />
+          <ScalarProperty Name="StateId" ColumnName="STATE_ID" />
+          <ScalarProperty Name="StateName" ColumnName="STATE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfBillKinds">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfBillKind">
+        <MappingFragment StoreEntitySet="BDP_WF_BILL_KINDs">
+          <ScalarProperty Name="AuditUrl" ColumnName="AUDIT_URL" />
+          <ScalarProperty Name="BillKindId" ColumnName="BILL_KIND_ID" />
+          <ScalarProperty Name="BillKindName" ColumnName="BILL_KIND_NAME" />
+          <ScalarProperty Name="BillTableName" ColumnName="BILL_TABLE_NAME" />
+          <ScalarProperty Name="FldAuditDate" ColumnName="FLD_AUDIT_DATE" />
+          <ScalarProperty Name="FldAuditOpinion" ColumnName="FLD_AUDIT_OPINION" />
+          <ScalarProperty Name="FldAuditPerson" ColumnName="FLD_AUDIT_PERSON" />
+          <ScalarProperty Name="FldAuditState" ColumnName="FLD_AUDIT_STATE" />
+          <ScalarProperty Name="FldKey" ColumnName="FLD_KEY" />
+          <ScalarProperty Name="FldLabel" ColumnName="FLD_LABEL" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="ViewUrl" ColumnName="VIEW_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfBusinessAgents">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfBusinessAgent">
+        <MappingFragment StoreEntitySet="BDP_WF_BUSINESS_AGENTs">
+          <ScalarProperty Name="AgentId" ColumnName="AGENT_ID" />
+          <ScalarProperty Name="AgentName" ColumnName="AGENT_NAME" />
+          <ScalarProperty Name="AgentUserId" ColumnName="AGENT_USER_ID" />
+          <ScalarProperty Name="BizSign" ColumnName="BIZ_SIGN" />
+          <ScalarProperty Name="EnableFlag" ColumnName="ENABLE_FLAG" />
+          <ScalarProperty Name="EndDate" ColumnName="END_DATE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="StartDate" ColumnName="START_DATE" />
+          <ScalarProperty Name="UserId" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfFlows">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfFlow">
+        <MappingFragment StoreEntitySet="BDP_WF_FLOWs">
+          <ScalarProperty Name="AllowEdit" ColumnName="ALLOW_EDIT" />
+          <ScalarProperty Name="AllowSelectNode" ColumnName="ALLOW_SELECT_NODE" />
+          <ScalarProperty Name="BackToPrevenient" ColumnName="BACK_TO_PREVENIENT" />
+          <ScalarProperty Name="CategoryId" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="EnableFlag" ColumnName="ENABLE_FLAG" />
+          <ScalarProperty Name="FlowId" ColumnName="FLOW_ID" />
+          <ScalarProperty Name="FlowName" ColumnName="FLOW_NAME" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="PreserveTraces" ColumnName="PRESERVE_TRACES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfFlowCategories">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfFlowCategory">
+        <MappingFragment StoreEntitySet="BDP_WF_FLOW_CATEGORYs">
+          <ScalarProperty Name="CategoryId" ColumnName="CATEGORY_ID" />
+          <ScalarProperty Name="Code" ColumnName="CODE" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="Notes" ColumnName="NOTES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfFlowNodes">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfFlowNode">
+        <MappingFragment StoreEntitySet="BDP_WF_FLOW_NODEs">
+          <ScalarProperty Name="AllowEdit" ColumnName="ALLOW_EDIT" />
+          <ScalarProperty Name="AllowSelectAuditor" ColumnName="ALLOW_SELECT_AUDITOR" />
+          <ScalarProperty Name="AllowTerminate" ColumnName="ALLOW_TERMINATE" />
+          <ScalarProperty Name="AuditMode" ColumnName="AUDIT_MODE" />
+          <ScalarProperty Name="FlowId" ColumnName="FLOW_ID" />
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="NextNodeExp" ColumnName="NEXT_NODE_EXP" />
+          <ScalarProperty Name="NextNodeOrder" ColumnName="NEXT_NODE_ORDER" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+          <ScalarProperty Name="NodeName" ColumnName="NODE_NAME" />
+          <ScalarProperty Name="NodeOrder" ColumnName="NODE_ORDER" />
+          <ScalarProperty Name="NotifyAttn" ColumnName="NOTIFY_ATTN" />
+          <ScalarProperty Name="NotifyMode" ColumnName="NOTIFY_MODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BdpWfNotifyPersons">
+      <EntityTypeMapping TypeName="Hongbin.WorkFlow.Model.BdpWfNotifyPerson">
+        <MappingFragment StoreEntitySet="BDP_WF_NOTIFY_PERSONs">
+          <ScalarProperty Name="InnerCompanyId" ColumnName="INNER_COMPANY_ID" />
+          <ScalarProperty Name="InnerCreateTime" ColumnName="INNER_CREATE_TIME" />
+          <ScalarProperty Name="InnerCreatorId" ColumnName="INNER_CREATOR_ID" />
+          <ScalarProperty Name="InnerDeleteFlag" ColumnName="INNER_DELETE_FLAG" />
+          <ScalarProperty Name="NodeId" ColumnName="NODE_ID" />
+          <ScalarProperty Name="NotifyCondition" ColumnName="NOTIFY_CONDITION" />
+          <ScalarProperty Name="NotifyKind" ColumnName="NOTIFY_KIND" />
+          <ScalarProperty Name="NotifyPersonId" ColumnName="NOTIFY_PERSON_ID" />
+          <ScalarProperty Name="NotifyValue" ColumnName="NOTIFY_VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

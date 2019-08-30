@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hongbin.Redis.SessionProvider</name>
+    </assembly>
+    <members>
+        <member name="T:Hongbin.Redis.SessionProvider.RedisSessionStateStoreProvider">
+            <summary>
+            A SessionStateProvider implementation for Redis using the ServiceStack.Redis client.
+            </summary>
+            <example>
+            In your web.config (with the <code>host</code> and <code>clientType</code>
+            attributes being optional):
+            <code>
+            <![CDATA[
+              <system.web>
+                <sessionState mode="Custom" customProvider="RedisSessionStateProvider">
+                  <providers>
+                    <clear />
+                    <add name="RedisSessionStateProvider" 
+                         type="Harbour.RedisSessionStateStore.RedisSessionStateStoreProvider" 
+                         host="localhost:6379" clientType="pooled" />
+                  </providers>
+                </sessionState>
+              </system.web>
+            ]]>
+            </code>
+            If you wish to use a custom <code>IRedisClientsManager</code>, you can 
+            do the following in your <code>Global.asax.cs</code>:
+            <code>
+            <![CDATA[
+              private IRedisClientsManager clientManager;
+             
+              protected void Application_Start()
+              {
+                  // Or use your IoC container to wire this up.
+                  clientManager = new PooledRedisClientManager("localhost:6379");
+                  RedisSessionStateStoreProvider.SetClientManager(clientManager);
+              }
+             
+              protected void Application_End()
+              {
+                  clientManager.Dispose();
+              }
+            ]]>
+            </code>
+            </example>
+        </member>
+        <member name="P:Hongbin.Redis.SessionProvider.RedisSessionStateStoreProvider.ClientManager">
+            <summary>
+            Gets the client manager for the provider.
+            </summary>
+        </member>
+        <member name="M:Hongbin.Redis.SessionProvider.RedisSessionStateStoreProvider.SetClientManager(ServiceStack.Redis.IRedisClientsManager)">
+            <summary>
+            Sets the client manager to be used for the session state provider. 
+            This client manager's lifetime will not be managed by the RedisSessionStateProvider.
+            However, if this is not set, a client manager will be created and
+            managed by the RedisSessionStateProvider.
+            </summary>
+            <param name="clientManager"></param>
+        </member>
+        <member name="M:Hongbin.Redis.SessionProvider.RedisSessionStateStoreProvider.GetDistributedLock(ServiceStack.Redis.IRedisClient,System.String)">
+            <summary>
+            Create a distributed lock for cases where more-than-a-transaction
+            is used but we need to prevent another request from modifying the
+            session. For example, if we need to get the session, mutate it and
+            then write it back. We can't use *just* a transaction for this 
+            approach because the data is returned with the rest of the commands!
+            </summary>
+            <param name="client"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

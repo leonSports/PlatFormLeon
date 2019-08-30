@@ -1,0 +1,696 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hongbin.WebFrame</name>
+    </assembly>
+    <members>
+        <member name="T:Hongbin.WebFix.FixBOPrivilegeKind">
+            <summary>
+            修补业务组织权限类别。 
+            原来的BOPrivilegeKind枚举类定义为： 
+                MyCompany = 0 
+                MyDepartment = 1 
+                Specified = 3 
+            现在修改为： 
+                NoLimit = 0 
+                MyCompany = 1 
+                MyDepartment = 2 
+                Specified = 3 
+            这样以前保存的业务组织权限数据就不对了，该补丁读取所有业务组织权限对象进行修改， 然后保存。 
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Data.down.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Data.jdp">
+            <summary>
+            提供只读Session的REST服务，凡是不需要写Session的jdp函数都应该通过此页访问。
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Data.jdpns">
+            <summary>
+            提供不需要访问Session的REST服务
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Data.jdpsw">
+            <summary>
+            提供可以读写Session的REST服务
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Data.verify_code">
+            <summary>
+            verify_code 的摘要说明
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Frame.editor.GridEditor.GetEditModeMenuId">
+            <summary>
+            获取配置中的缺省编辑模式对应的菜单ID
+            参数配置中可使用的值是：行内、多行、固定面板、弹出框
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Hongbin.Web.Frame.FirstPage.Head1">
+            <summary>
+            Head1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.FirstPage.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Integate.Auth">
+            <summary>
+            认证子系统
+            1. 子系统携带ClientID访问
+            2. 列出同IP的登录用户
+            3. 如果同IP在平台上没有人登录则出现登录框，采集用户名密码后完成登录
+            4. 生成转向地址，算法：
+                1. 指定了redirect_url，则采用指定的地址
+                2. 没有指定采用子系统登录时指定的验证地址
+                3. 再没有则采用访问该页的前一个地址
+            5. 在地址上附加token, 执行转向回去
+            本页接收两个参数：
+                client_id       每个被集成的系统都有唯一的id, 由集成平台频布
+                redirect_url    成功认证后需要转向的地址
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.onlinUserCount">
+            <summary>
+            客户端平台的在线数
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.head1">
+            <summary>
+            head1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.edtUser">
+            <summary>
+            edtUser 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.edtPwd">
+            <summary>
+            edtPwd 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.btnLogin">
+            <summary>
+            btnLogin 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Integate.Auth.edtQuickId">
+            <summary>
+            edtQuickId 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Integate.Boot">
+            <summary>
+            启动集成的子系统，接收参数：子系统ID，即表BDP_SI_SYSTEMS的主键值.
+            因为平台登录时会生成登录ID,具有时效性，所以用该ID作为令牌值。
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Login">
+            <summary>
+            登录不从PageBase继承
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Login.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Login.txtUsername">
+            <summary>
+            txtUsername 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Login.txtVeriCode">
+            <summary>
+            txtVeriCode 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Login.hfvalue">
+            <summary>
+            hfvalue 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.Web.Frame.LoginFront">
+            <summary>
+            前端登录页，可适用于手机
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Frame.LoginFront.Head1">
+            <summary>
+            Head1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.LoginFront.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.LoginFront.footer">
+            <summary>
+            footer 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.ImportWizard.css">
+            <summary>
+            css 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.ImportWizard.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.ImportWizard.ScriptManager1">
+            <summary>
+            ScriptManager1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.ImportWizard.head">
+            <summary>
+            head 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.ImportWizard.CustomOptions">
+            <summary>
+            CustomOptions 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.PlaceCss">
+            <summary>
+            PlaceCss 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.ScriptManager1">
+            <summary>
+            ScriptManager1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.head">
+            <summary>
+            head 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.PlaceToolbar">
+            <summary>
+            PlaceToolbar 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.PlaceSearch">
+            <summary>
+            PlaceSearch 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.SingleTable.PlaceContent">
+            <summary>
+            PlaceContent 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.PlaceCss">
+            <summary>
+            PlaceCss 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.ScriptManager1">
+            <summary>
+            ScriptManager1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.head">
+            <summary>
+            head 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.PlaceToolbar">
+            <summary>
+            PlaceToolbar 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.PlaceSearch">
+            <summary>
+            PlaceSearch 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.PlaceLeft">
+            <summary>
+            PlaceLeft 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Master.TreeGrid.PlaceContent">
+            <summary>
+            PlaceContent 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.Web.Frame.Wf.wfsvc">
+            <summary>
+            对外提供有关流程的REST服务。
+            目前仅供待办精灵程序使用（TodoGenius）
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Default.Head1">
+            <summary>
+            Head1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.Web.Frame.Default.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.Web.Service.BdpTodoService">
+            <summary>
+            BdpTodoService 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.Config">
+            <summary>
+            Config 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.ConfigHandler">
+            <summary>
+            Config 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.CrawlerHandler">
+            <summary>
+            Crawler 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.Handler">
+            <summary>
+            Handler 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.ListFileManager">
+            <summary>
+            FileManager 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.NotSupportedHandler">
+            <summary>
+            NotSupportedHandler 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.PathFormatter">
+            <summary>
+            PathFormater 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebFrame.Frame.UEditor.UploadHandler">
+            <summary>
+            UploadHandler 的摘要说明
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebFrame.Frame.UEditor.UploadConfig.PathFormat">
+            <summary>
+            文件命名规则
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebFrame.Frame.UEditor.UploadConfig.UploadFieldName">
+            <summary>
+            上传表单域名称
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebFrame.Frame.UEditor.UploadConfig.SizeLimit">
+            <summary>
+            上传大小限制
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebFrame.Frame.UEditor.UploadConfig.AllowExtensions">
+            <summary>
+            上传允许的文件格式
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebFrame.Frame.UEditor.UploadConfig.Base64">
+            <summary>
+            文件是否以 Base64 的形式上传
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebFrame.Frame.UEditor.UploadConfig.Base64Filename">
+            <summary>
+            Base64 字符串所表示的文件名
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebService.BdpUserInfoService">
+            <summary>
+            BdpUserInfoService 的摘要说明
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebService.SynAccountBDP">
+            <summary>
+            集成到另一套基于本平台（BDP）开发的系统
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebService.AjaxUserResult.Succeed">
+            <summary>
+            标明是否成功
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebService.AjaxUserResult.Message">
+            <summary>
+            信息串
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebService.AjaxUserResult.Data">
+            <summary>
+            需返回前端的数据对象, JSON格式，数据或单对象
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebService.SynAccountJBDP">
+            <summary>
+            集成到基于JBDP平台开发的系统
+            </summary>
+        </member>
+        <member name="F:Hongbin.WebTest.html5.p2.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.html5.p2.flag">
+            <summary>
+            flag 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.html5.p2.options">
+            <summary>
+            options 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.iconcss.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.jsPlumb.Test1.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.omuiTest.RestTest.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:Hongbin.WebTest.omuiTest.Test1Handler">
+            <summary>
+            Test1Handler 的摘要说明
+            </summary>
+        </member>
+        <member name="F:Hongbin.WebTest.omuiTest.testEditPanel.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.ToExcel.ToExcel.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:Hongbin.WebTest.ToWord.ToWord.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="T:FinancialStaff.Web.Config">
+            <summary>
+            Config 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.ConfigHandler">
+            <summary>
+            Config 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.CrawlerHandler">
+            <summary>
+            Crawler 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.Handler">
+            <summary>
+            Handler 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.ListFileManager">
+            <summary>
+            FileManager 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.NotSupportedHandler">
+            <summary>
+            NotSupportedHandler 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.PathFormatter">
+            <summary>
+            PathFormater 的摘要说明
+            </summary>
+        </member>
+        <member name="T:FinancialStaff.Web.UploadHandler">
+            <summary>
+            UploadHandler 的摘要说明
+            </summary>
+        </member>
+        <member name="P:FinancialStaff.Web.UploadConfig.PathFormat">
+            <summary>
+            文件命名规则
+            </summary>
+        </member>
+        <member name="P:FinancialStaff.Web.UploadConfig.UploadFieldName">
+            <summary>
+            上传表单域名称
+            </summary>
+        </member>
+        <member name="P:FinancialStaff.Web.UploadConfig.SizeLimit">
+            <summary>
+            上传大小限制
+            </summary>
+        </member>
+        <member name="P:FinancialStaff.Web.UploadConfig.AllowExtensions">
+            <summary>
+            上传允许的文件格式
+            </summary>
+        </member>
+        <member name="P:FinancialStaff.Web.UploadConfig.Base64">
+            <summary>
+            文件是否以 Base64 的形式上传
+            </summary>
+        </member>
+        <member name="P:FinancialStaff.Web.UploadConfig.Base64Filename">
+            <summary>
+            Base64 字符串所表示的文件名
+            </summary>
+        </member>
+    </members>
+</doc>

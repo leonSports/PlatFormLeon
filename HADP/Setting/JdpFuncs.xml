@@ -1,0 +1,1316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JdpFuncs>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>NewsQuery</FuncName>
+    <FuncAlia>NewsQuery</FuncAlia>
+    <FuncDesc>查询通知公告列表
+接收参数：
+    cxword  可选，查询时在通知标题中模糊匹配
+    ksrq    可选，查询指定日期之后的记录
+    jsrq    可选，查询指定日期之前的记录
+返回：omGrid格式数据</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>NewsQueryContent</FuncName>
+    <FuncAlia>NewsQueryContent</FuncAlia>
+    <FuncDesc>查询指定新闻的内容
+接收参数：
+    id  必须，通知公告的主键ID
+返回：AjaxResult对象，其中Data格式为：
+    title   标题
+    state   状态，0 草稿，1 已发布
+    time    发布时间
+    clscode 分类代码
+    clstext 分类名称
+    author  作者
+    content 内容，HTML格式</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>NewsSave</FuncName>
+    <FuncAlia>NewsSave</FuncAlia>
+    <FuncDesc>保存通知公告内容，接收参数：BdpMsgNotice对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>NewsDelete</FuncName>
+    <FuncAlia>NewsDelete</FuncAlia>
+    <FuncDesc>删除通知公告，
+接收参数：
+    id  必须，主键ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>NewsDeploy</FuncName>
+    <FuncAlia>NewsDeploy</FuncAlia>
+    <FuncDesc>发布或取消发布通知公告
+接收参数：
+    id  必须，主键ID
+    fb  可选，1 发布，0 取消发布，缺省为1</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>BbsUserInfo</FuncName>
+    <FuncAlia>BbsUserInfo</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>BbsSaveData</FuncName>
+    <FuncAlia>BbsSaveData</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>BbsDeleteTopic</FuncName>
+    <FuncAlia>BbsDeleteTopic</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>BbsQueryTopic</FuncName>
+    <FuncAlia>BbsQueryTopic</FuncAlia>
+    <FuncDesc>查询话题及每个话题的评论前5条
+接收参数：
+    start   开始号，缺省为0
+    limit   取几条，缺省为10
+返回：AjaxResult对象，其中Data格式：
+    total   总数
+    rows    对象数组，对象格式：
+        Topic           话题对象，参考BdpMsgTopic
+        CommentCount    评论总数
+        Comments        评论对象数组，对象格式参考BdpMsgTopic</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.WebData.Json.JdpMsg</TypeFullName>
+    <FuncName>BbsQueryComment</FuncName>
+    <FuncAlia>BbsQueryComment</FuncAlia>
+    <FuncDesc>查询某个主题的评论
+接收参数：
+    topic   话题ID，必须
+    start   开始号，缺省为0
+    limit   取几条，缺省为10
+返回：AjaxResult对象，其中Data格式：
+    total   总数
+    rows    对象数组</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getUserClassifyData</FuncName>
+    <FuncAlia>getUserClassifyData</FuncAlia>
+    <FuncDesc>获取用户分类树数据。
+接收参数：
+    dwid    上级公司ID，为空时取顶级公司
+    bmid    上级部门ID，为空时取直接挂在公司dwid下的部门
+    companyFilter   公司表过滤条件，符合esql语法
+    companyOrderby  公司表排序字段，符合esql语法
+返回：
+    顶级节点的第一个是“系统用户”,id为common-users，
+    其它节点由公司和部门组成。应用业务组织权限。
+    返回简单树节点对象数组，对象类型为{id,pid,text,classes,tag,hasChildren}</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getUsers</FuncName>
+    <FuncAlia>getUsers</FuncAlia>
+    <FuncDesc>获取用户信息对象集。
+接收参数：
+    dwid    单位ID
+    bmid    部门ID
+    sub     是否包括下级单位或部门的用户
+    filter  在帐户名或用户真实姓名中模糊过滤的串
+返回：omGrid表格数据格式</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>UserBatchUpdate</FuncName>
+    <FuncAlia>UserBatchUpdate</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getCompanyInfos</FuncName>
+    <FuncAlia>getCo</FuncAlia>
+    <FuncDesc>获取公司信息集，应用业务组织权限。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getDeptInfos</FuncName>
+    <FuncAlia>getDeptInfos</FuncAlia>
+    <FuncDesc>获取指定公司下的部门信息集，应用业务组织权限。
+接收参数：
+    cid     公司ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getEmployees</FuncName>
+    <FuncAlia>getEmployees</FuncAlia>
+    <FuncDesc>获取指定公司和部门下的人员信息集。
+接收参数：
+    cid     公司ID
+    bmid    部门ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>saveUser</FuncName>
+    <FuncAlia>saveUser</FuncAlia>
+    <FuncDesc>保存单条用户信息，返回AjaxResult。
+注：接收数据中用户ID字段名必须是UserId，与物理表不一致。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>BdpUserSave</FuncName>
+    <FuncAlia>BdpUserSave</FuncAlia>
+    <FuncDesc>保存多条用户信息。返回AjaxResult
+接收数据：
+    格式如：[{oldValues:{},newValues:{}},{},...]
+注：接收数据中用户ID字段名必须是UserId，与物理表不一致。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>deleteUser</FuncName>
+    <FuncAlia>deleteUser</FuncAlia>
+    <FuncDesc>删除用户信息，接收数据为用户ID数组。
+注：该函数直接删除，未考虑用户是否已经使用，请谨慎使用。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>changePwd</FuncName>
+    <FuncAlia>changePwd</FuncAlia>
+    <FuncDesc>修改用户密码。
+接收数据：字符串数组。
+说明：
+    如果设定了valid参数，表示修改单个用户的密码，此时将检查原密码是否正确。
+若修改指定用户，接收数组的第1个元素为用户ID, 第2个为原密码，第3个是新密码。
+若修改当前用户的密码，接收数组第1个元素是原密码，第2个是新密码。
+    如果没有设定valid参数，表示修改一个或多个用户的密码，接收数组的最后元素
+是新密码，其它元素是用户ID。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getRoleTreeData</FuncName>
+    <FuncAlia>getRoleTreeData</FuncAlia>
+    <FuncDesc>获取由公司和角色名称组成的树型结构数据, 应用业务组织权限。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getUserRoleIds</FuncName>
+    <FuncAlia>getUserRoleIds</FuncAlia>
+    <FuncDesc>获取指定用户所拥有的角色ID
+接收参数：
+    uid     用户ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getUserRoleTreeData</FuncName>
+    <FuncAlia>getUserRoleTreeData</FuncAlia>
+    <FuncDesc>获取某用户的全部角色。
+接收参数：
+    uid     用户ID
+返回：
+    角色数据对象数组，对象结构：
+        RoleId  角色ID
+        RoleName    角色名称
+        BelongCompany   角色所属公司及上级公司组成的数组，顶级在后。元素结构：
+            Id  公司ID，如果是公共角色，值为-1
+            Name    公司名称</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>saveUserRoles</FuncName>
+    <FuncAlia>saveUserRoles</FuncAlia>
+    <FuncDesc>为指定用户授予一个或多个角色。
+接收数据格式为字符串数组，其中第一个是用户ID, 其它为角色ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>saveRole</FuncName>
+    <FuncAlia>saveRole</FuncAlia>
+    <FuncDesc>保存一个角色</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getFuncTreeData</FuncName>
+    <FuncAlia>getFuncTreeData</FuncAlia>
+    <FuncDesc>获取指定角色的操作权限数据，包括模块和操作功能权限。
+接收参数：
+    pid     上级模块id
+    roleid  角色id</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getFuncTreeDataAll</FuncName>
+    <FuncAlia>getFuncTreeDataAll</FuncAlia>
+    <FuncDesc>获取角色已经拥有的所有操作权限。
+接收参数：
+    roleid  角色ID
+返回：AjaxResult</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>saveFuncPrivData</FuncName>
+    <FuncAlia>saveFuncPrivData</FuncAlia>
+    <FuncDesc>保存指定角色的操作权限, 仅保存可见或可用的模块和操作功能权限。
+接收参数：
+    roleid      角色ID
+接收数据：操作权限信息</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>loadBOPrivs</FuncName>
+    <FuncAlia>loadBOPrivs</FuncAlia>
+    <FuncDesc>获取指定角色的业务组织权限
+接收参数：
+	roleid	角色id</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>saveBOPrivs</FuncName>
+    <FuncAlia>saveBOPrivs</FuncAlia>
+    <FuncDesc>保存指定角色的业务组织权限
+接收参数：
+	roleid	角色id</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>loadMsgPrivs</FuncName>
+    <FuncAlia>loadMsgPrivs</FuncAlia>
+    <FuncDesc>获取指定角色的消息权限，返回omGrid格式数据。
+接收参数：
+	roleid	角色id</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>saveMsgPrivs</FuncName>
+    <FuncAlia>saveMsgPrivs</FuncAlia>
+    <FuncDesc>保存指定角色的消息权限
+接收参数：
+	roleid	角色id</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>getRoleUsers</FuncName>
+    <FuncAlia>loadUsers</FuncAlia>
+    <FuncDesc>获取拥有指定角色的所有用户，返回omGrid格式数据。
+接收参数：
+	roleid	角色id</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>addUsers</FuncName>
+    <FuncAlia>addUsers</FuncAlia>
+    <FuncDesc>将角色授予一个或多个用户
+接收参数：
+    roleid      角色id
+接收数据：用户id数组</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>removeUsers</FuncName>
+    <FuncAlia>removeUsers</FuncAlia>
+    <FuncDesc>回收一个或多个用户的角色
+接收参数：
+    roleid      角色id
+接收数据：用户id数组</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>deleteRole</FuncName>
+    <FuncAlia>deleteRole</FuncAlia>
+    <FuncDesc>删除指定角色，同时删除角色分配的所有权限。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>BdpPageInfos</FuncName>
+    <FuncAlia>BdpPageInfos</FuncAlia>
+    <FuncDesc>获取页面初始化数据</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>MLangInfos</FuncName>
+    <FuncAlia>MLangInfos</FuncAlia>
+    <FuncDesc>获取系统中支持的语言，如果编码表中没有将自动增加几项缺省的，可在公共编码中维护.
+可在系统参数中设置MLangSupported=false禁用多语言。
+接收参数：无
+返回：AjaxResult对象，其中Data为：
+    MLangSupported: true/false      是否支持多语言，通过系统参数的MLangSupported控制
+    Languages:  []                  支持的语言清单，text/value数组
+    SelectedLanguage:CN             当前选中的语言
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpAccount</TypeFullName>
+    <FuncName>MLangChange</FuncName>
+    <FuncAlia>MLangChange</FuncAlia>
+    <FuncDesc>切换系统语言版本.要求Session写入权限</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>DbgServerInfo</FuncName>
+    <FuncAlia>DbgServerInfo</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>Pause</FuncName>
+    <FuncAlia>Pause</FuncAlia>
+    <FuncDesc>让程序暂停n秒，测试用。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>TestScript</FuncName>
+    <FuncAlia>TestScript</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>TestNoLogin</FuncName>
+    <FuncAlia>TestNoLogin</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpFilterConfig</FuncName>
+    <FuncAlia>BdpFilterConfig</FuncAlia>
+    <FuncDesc>获取自定义查询的相关配置，包括条件操作符、组合方式及传递查询条件的参数名字</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpJsonFormat</FuncName>
+    <FuncAlia>BdpJsonFormat</FuncAlia>
+    <FuncDesc>格式化JSON对象串，接收数据：JSON对象文本</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpQrCode</FuncName>
+    <FuncAlia>BdpQrCode</FuncAlia>
+    <FuncDesc>生成二维码
+接收参数：
+    src     源文本
+返回：AjaxResult对象，其中Data为生成的二维码的base64格式串。
+        注：可将该串加上 data:image/png;base64, 前缀赋给img的src即可查看二维码图片。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>Md5</FuncName>
+    <FuncAlia>Md5</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpEntityTypeNames</FuncName>
+    <FuncAlia>BdpEntityTypeNames</FuncAlia>
+    <FuncDesc>获取系统中所有的实体类名，返回TextValue对象集。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpTypeProperties</FuncName>
+    <FuncAlia>BdpTypeProperties</FuncAlia>
+    <FuncDesc>获取指定类的所有属性名称，返回TextValue对象集。
+接收参数：
+    type    类全名（含命名空间）</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>getCodes</FuncName>
+    <FuncAlia>BdpCodes</FuncAlia>
+    <FuncDesc>查询编码数据
+访问时需提供如下参数:
+    type:   实体类型名称，含命名空间
+    key:    主键字段名
+    text:   文本字段名
+    views:  结果集中需包含的字段名，逗号分隔
+    order:  排序字段名，目前仅支持单字段排序
+    keyword     查找关键字
+    keyfields   关键字匹配字段, 逗号分隔，缺省为key和text
+    filter: 过滤条件，引用字段名时必须以it.界定, 如it.Sex='男'
+    start:  开始记录号
+    limit:  查询的记录数，小于或等于0时不限制，全部提取
+说明：
+    返回结果集为主键字段和文本字段值组成的对象集合
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpTreeParents</FuncName>
+    <FuncAlia>BdpTreeParents</FuncAlia>
+    <FuncDesc>查询树型表中指定主键值的记录、同级记录、上级记录及上级记录的同级记录组成的记录集。
+接收参数:
+    type:   必须，实体类型名称，含命名空间. 
+    key:    必须，主键字段名
+    text:   必须，文本字段名
+    pkey:   可选，上级字段名
+    order:  可选，排序字段名，目前仅支持单字段排序
+    fields: 可选，要在结果中返回的其它字段，用逗号或分号分隔
+    filter: 可选，过滤条件，引用字段名时必须以it.界定, 如it.Sex='男'
+    id:     必须，主键值
+说明：
+    返回结果集中对象除了指定的主键字段、文本字段和上级字段外，还包括构成树的id,pid,text字段.
+    返回结果为对象数组，元素对象格式如下：
+{
+    Record:{id:'',pid:'',text:'',...},
+    SiblingNodes: [{id:'',pid:'',text:'',...},...]  
+}
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>getTreeNodes</FuncName>
+    <FuncAlia>BdpTreeNodes</FuncAlia>
+    <FuncDesc>查询树型数据，返回格式如:[{id:'',pid:'',text:'',hasChildren:false},...]。
+接收参数:
+    type:   必须，实体类型名称，含命名空间. 
+    key:    必须，主键字段名
+    text:   必须，文本字段名
+    pkey:   可选，上级字段名
+    order:  可选，排序字段名，目前仅支持单字段排序
+    fields: 可选，要在结果中返回的其它字段，用逗号或分号分隔
+    filter: 可选，过滤条件，引用字段名时必须以it.界定, 如it.Sex='男'
+    pid:    可选，上级值，为空时查询顶级节点
+    id:     可选，主键值，如果指定了则调用BdpTreeParents()，获取本级及上级节点。
+说明：
+    返回结果集除了指定的主键字段、文本字段和上级字段外，还包括构成树的id,pid,text字段.
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>getSuggest</FuncName>
+    <FuncAlia>BdpSuggest</FuncAlia>
+    <FuncDesc>查询推荐数据，返回结果为text/value值对数组。一般配合omSuggestion控件使用。
+访问时需提供如下参数:
+    type:       实体类型名称，含命名空间。必需
+    text:       文本字段名。必需
+    value:      取值字段名。必需
+    compare:    比较字段名，多个用逗号分隔。可选，缺省使用text参数。
+    filter:     过滤条件，引用字段名时必须以it.界定, 如it.Sex='男'。
+    limit:      限制返回的行数，缺省为0，即不限制。
+    qn:         查询参数名，可选，缺省为key。
+    qm:         是否精确匹配，为1时精确匹配，否则模糊匹配。
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>getOmGrid</FuncName>
+    <FuncAlia>BdpOmGrid</FuncAlia>
+    <FuncDesc>根据模块参数和数据字典设置，创建omGrid控件配置。
+接收参数：
+    必须指定type或实体类名，其它参数与在模块注册中模块参数一致。
+返回：
+    成功时返回OmGrid配置，失败时返回AjaxResult.Error。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>getESql</FuncName>
+    <FuncAlia>BdpESql</FuncAlia>
+    <FuncDesc>根据模块参数和数据字典设置，创建数据查询语句（ESQL）。
+接收参数：
+    必须指定type或实体类名，其它参数与在模块注册中模块参数一致。
+返回：
+    成功时返回ESQL，失败时返回AjaxResult.Error。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>getColModels</FuncName>
+    <FuncAlia>BdpColModels</FuncAlia>
+    <FuncDesc>根据模块参数和数据字典设置，创建符合omGrid规范的列模型。
+接收参数：
+    必须指定type或实体类名，其它参数与在模块注册中模块参数一致。
+返回：
+    成功时返回符合omGrid规范的列模型，失败时返回AjaxResult.Error。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>FileUploader</FuncName>
+    <FuncAlia>BdpFileUpload</FuncAlia>
+    <FuncDesc>上传文件。
+接收参数：
+    thum    创建缩略图，指定缩略大小，逗号创建的数值，若为空或0，表示不创建缩略图
+    path    相对于文件上传地址的子目录。文件上传地址是在系统参数中的UploadFileUrl
+            参数指定的，缺省为~/Files，比如path=Images/icons/，那么上传文件将保存
+            到 ~/Files/Images/Icons/路径下。
+返回：成功保存的文件地址数组。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpLobReadString</FuncName>
+    <FuncAlia>BdpLobReadString</FuncAlia>
+    <FuncDesc>从大数据表中获取指定的数据，返回AjaxResult对象，其中Data为数据内容。
+接收参数：
+    id  大数据表的主键值
+或：
+    f1  主标志. 在模块注册里获取模块初始化参数时，此值为“模块初始化”
+    f2  次标志. 在模块注册里获取模块初始化参数时，此值为模块的ID，即BdpWebTree的主键值</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpLobWriteString</FuncName>
+    <FuncAlia>BdpLobWriteString</FuncAlia>
+    <FuncDesc>在大数据表中保存指定的数据，返回AjaxResult对象，如果成功，其中Data为数据ID。
+接收参数：
+    id  大数据表的主键值
+或：
+    f1  主标志. 在模块注册里获取模块初始化参数时，此值为“模块初始化”
+    f2  次标志. 在模块注册里获取模块初始化参数时，此值为模块的ID，即BdpWebTree的主键值</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpProgress</FuncName>
+    <FuncAlia>BdpProgress</FuncAlia>
+    <FuncDesc>长时运算时查询处理状态。
+接收参数：
+    id  任务进度状态ID，TaskProgress对象的ID。
+返回：AjaxResult对象，其中Data为TaskProgressInfo对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpProgressCancel</FuncName>
+    <FuncAlia>BdpProgressCancel</FuncAlia>
+    <FuncDesc>长时运算时查询处理状态。
+接收参数：
+    id  任务进度状态ID，TaskProgress对象的ID。
+返回：AjaxResult对象，其中Data为TaskProgressInfo对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpCommon</TypeFullName>
+    <FuncName>BdpExport</FuncName>
+    <FuncAlia>BdpExport</FuncAlia>
+    <FuncDesc>导出数据。
+    导出需要不同的参数，这些参数在前台以JSON对象的方式组织，在Ajax调用时有两种方式传递：
+一是通过url地址传递，此时需要先将配置对象序列化为json串并编码，在地址中以options参数名
+传递。另一种是通过数据流传递，即ajax的data参数。
+    该服务分析导出参数，如果正确则创建一个执行导出过程的线程，然后返回监听该线程执行状
+况的进度对象ID(AjaxResult.Data)；如果参数分析失败或发生其它异常，刚返回错误信息对象(AjaxResult)
+    注意：导出参数中必须至少设置导出方法，即exportMethod参数。对于omGrid的导出，其值是
+GridToExcel，否则其值是CustomExporter的实现类。
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpDataStatistic</TypeFullName>
+    <FuncName>BdpDataCount</FuncName>
+    <FuncAlia>BdpDataCount</FuncAlia>
+    <FuncDesc>数据统计（计数）
+接收参数：
+    type    实体类名，统计的基础表
+    mgf     分组：纵向分组字段，1个或多个，逗号分隔
+    sgf     分栏：横向分组字段，1个或多个，逗号分隔
+    custom_filter_args  自定义查询条件
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpDbSql</TypeFullName>
+    <FuncName>DBExec</FuncName>
+    <FuncAlia>DBExec</FuncAlia>
+    <FuncDesc>执行SQL语句。
+接收数据：
+    本服务仅接收查询语句数组，格式如：[{sqlText: '', parameters: {}, isSelect: true},...]。
+    其中：
+        sqlText:    必须，数据库SQL语句，可以是查询语句，也可以是DML语句；
+        parameters: 可选，字典数组，至少一个元素。Sql语句中用到的参数一定要在字典中存在；
+        isSelect:   可选，缺省为true，标明是否为查询语句，如果不是SELECT语句，必须置为false
+返回数据：AjaxResult对象，格式如：
+    Succeed: true/false, 标明调用是否成功
+    Message: '',    如果不成功，传递错误信息串
+    Data:[数值|{total:1,rows:[{记录},...]},...]
+        Data为数组，每个元素保存接收数据数组中对应元素的语句执行结果，如果语句为DML，则返回的
+        是数值，表示受影响的记录数；否则返回查询结果集对象，其中total表明此次查询结果行数，
+        rows为记录数组。
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEFMetadata</TypeFullName>
+    <FuncName>getEdmAssociation</FuncName>
+    <FuncAlia>EdmGetAssociation</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEFMetadata</TypeFullName>
+    <FuncName>updateDict</FuncName>
+    <FuncAlia>EdmUpdateDict</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEFMetadata</TypeFullName>
+    <FuncName>getEdmPropertyMapping</FuncName>
+    <FuncAlia>EdmGetPropertyMapping</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEFMetadata</TypeFullName>
+    <FuncName>getEdmEntityMapping</FuncName>
+    <FuncAlia>EdmGetEntityMapping</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEFMetadata</TypeFullName>
+    <FuncName>getEdmTreeNodes</FuncName>
+    <FuncAlia>EdmGetTreeNodes</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEsqlData</TypeFullName>
+    <FuncName>DEGetEntityTypes</FuncName>
+    <FuncAlia>DEGetEntityTypes</FuncAlia>
+    <FuncDesc>获取数据容器/模型/实体类/属性的分级信息</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEsqlData</TypeFullName>
+    <FuncName>DEQueryMeta</FuncName>
+    <FuncAlia>DEQueryMeta</FuncAlia>
+    <FuncDesc>查询ESQL结果集元数据。
+接收参数：
+	esql	ESQL语句
+返回数据：
+	{
+		Succeed:	//是否调用成功
+		Message:	//错误信息
+		Data:{
+			RecordCount:	//记录数
+			FieldCount:	//字段数
+			ColModel:	//列模型，与omGrid兼容。 
+		}
+	}</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEsqlData</TypeFullName>
+    <FuncName>DEQuery</FuncName>
+    <FuncAlia>DEQuery</FuncAlia>
+    <FuncDesc>执行Entity SQL语句，返回查询结果集。
+接收参数：
+    type        实体类名，可选，如果指定了esql则忽略
+    filter      过滤条件，类似 a.CompanyId="xxxx"，可选，如果指定了esql则忽略
+    orderby     排序字段，可选，如果指定了esql则忽略
+    keyField    主键字段名, 可选，需要聚焦行时必须指定
+    focuskey    聚焦行的主键值，可选，如果指定则获取包含该记录的页，可能会调整页码
+    recc        最大记录数,为-1时自动计算
+    esql        ESQL语句
+    args        ESQL语句中用到的命名参数，如果语句中没有用到参数可以不设置。args必须是json对象的串</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEsqlData</TypeFullName>
+    <FuncName>DEUpdate</FuncName>
+    <FuncAlia>DEUpdate</FuncAlia>
+    <FuncDesc>数据更新通用方法。
+接收参数：
+    type    实体类名
+接收数据：json对象数组, 元素对象格式有两种：
+    1. 在bdpEditPanel中：{oldValues:{},newValue:{}}
+    2. 直接调用时可以是实体对象
+返回参数：
+    AjaxResult对象，标明数据是否更新成功。其中：Data为新建或更新的主键值数组。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEsqlData</TypeFullName>
+    <FuncName>DEBatchUpdate</FuncName>
+    <FuncAlia>DEBatchUpdate</FuncAlia>
+    <FuncDesc>批量更新数据，仅支持单表且不会增加记录。
+接收数据：批量更新设置对象（BatchUpdateOptions）：
+    type        必须，实体类名
+    keyField    可选，主键字段名, 没有后台根据类名自动判断
+    keyValues   可选，主键值数组，更新主键值对应的记录
+    filterSql   可选，esql语法的单表条件，如：Code='001'||Code='002'
+    customFilter    可选，自定义查询条件，bdpFilterBox.getFilters()的返回值
+    values  必须，需要更新的值
+返回：AjaxResult对象，标明数据是否更新成功，其中Data为成功更新的记录数。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpEsqlData</TypeFullName>
+    <FuncName>DEDelete</FuncName>
+    <FuncAlia>DEDelete</FuncAlia>
+    <FuncDesc>数据删除通用方法。
+接收参数：
+    type    实体类名
+接收数据：主键值数组
+返回参数：AjaxResult对象。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpIntegate</TypeFullName>
+    <FuncName>IAppQuery</FuncName>
+    <FuncAlia>IAppQuery</FuncAlia>
+    <FuncDesc>查询集成系统，接收参数：pid 上级ID，返回：{id,text,hasChildren,Data}, 其中Data为PortalIntegateApplication对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpIntegate</TypeFullName>
+    <FuncName>IAppQuerySimple</FuncName>
+    <FuncAlia>IAppQuerySimple</FuncAlia>
+    <FuncDesc>查询所有的集成系统</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpIntegate</TypeFullName>
+    <FuncName>IAppSave</FuncName>
+    <FuncAlia>IAppSave</FuncAlia>
+    <FuncDesc>保存集成系统信息，接收数据为PortalIntegateApplication对象，返回AjaxResult对象，其中Data为新生成的AppId</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpIntegate</TypeFullName>
+    <FuncName>IAppDelete</FuncName>
+    <FuncAlia>IAppDelete</FuncAlia>
+    <FuncDesc>删除集成系统及其子系统，接收参数：id 要删除的系统ID. 返回AjaxResult </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpIntegate</TypeFullName>
+    <FuncName>IAppMoveNode</FuncName>
+    <FuncAlia>IAppMoveNode</FuncAlia>
+    <FuncDesc>将选中节点移动到目标节点之下, 接收参数：src 选中节点ID， dst  目标节点ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>getOnlineInfo</FuncName>
+    <FuncAlia>getOnlineInfo</FuncAlia>
+    <FuncDesc>获取在线用户统计信息对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>getRootModules</FuncName>
+    <FuncAlia>getRootModules</FuncAlia>
+    <FuncDesc>获取登录用户可用的顶级模块</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>getModules</FuncName>
+    <FuncAlia>getModules</FuncAlia>
+    <FuncDesc>获取登录用户可用的子模块。
+接收参数：
+	pid	上级模块ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>findModule</FuncName>
+    <FuncAlia>findModule</FuncAlia>
+    <FuncDesc>查找模块，模糊匹配文本或地址，不检查权限。
+接收参数:
+	txt_or_url	查找串</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleGetNodeOrderDef</FuncName>
+    <FuncAlia>ModuleGetNodeOrderDef</FuncAlia>
+    <FuncDesc>获取系统模块的节点信息，不考虑权限。
+接收参数：pid    上级模块ID
+返回：AjaxResult对象，其中Data为节点同级序号值。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleGetNodes</FuncName>
+    <FuncAlia>ModuleGetNodes</FuncAlia>
+    <FuncDesc>获取系统模块的节点信息，不考虑权限，接收参数：pid    上级模块ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleQuery</FuncName>
+    <FuncAlia>ModuleQuery</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleGetNodeInfo</FuncName>
+    <FuncAlia>ModuleGetNodeInfo</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleSaveNodeInfo</FuncName>
+    <FuncAlia>ModuleSaveNodeInfo</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleDeleteNode</FuncName>
+    <FuncAlia>ModuleDeleteNode</FuncAlia>
+    <FuncDesc>删除模块及其子模块，同时删除模块的资源。接收参数：nodeid   模块ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleMoveNode</FuncName>
+    <FuncAlia>ModuleMoveNode</FuncAlia>
+    <FuncDesc>移动模块节点。
+接收参数：
+    src     源模块ID
+    dst     目标模块ID
+    mode    移动方式：0 之前，1 之后， 2 下级</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpModules</TypeFullName>
+    <FuncName>ModuleCopyNode</FuncName>
+    <FuncAlia>ModuleCopyNode</FuncAlia>
+    <FuncDesc>拷贝模块
+接收参数：
+    src     源模块ID
+    dst     目标模块ID, 拷贝生成的模块作为该模块的下级模块。
+返回：AjaxResult对象，其中Data为新节点对象。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>saveCompanyInfo</FuncName>
+    <FuncAlia>CorpSave</FuncAlia>
+    <FuncDesc>保存公司.</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>delCompany</FuncName>
+    <FuncAlia>CorpDel</FuncAlia>
+    <FuncDesc>删除公司及其子公司，但如果某公司已被引用，将失败。
+请求参数：
+    cid     要删除公司的id
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>getCompanyInfo</FuncName>
+    <FuncAlia>getCompanyInfo</FuncAlia>
+    <FuncDesc>获取公司信息。
+接收参数：
+	cid	公司ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>getDeptEmployees</FuncName>
+    <FuncAlia>getDeptEmployees</FuncAlia>
+    <FuncDesc>获取部门下的人员ID和姓名。
+接收参数：
+	deptid	部门ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>delDept</FuncName>
+    <FuncAlia>delDept</FuncAlia>
+    <FuncDesc>删除部门及其子部门。未作引用检查且真实删除，请小心使用。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>saveDeptInfo</FuncName>
+    <FuncAlia>saveDeptInfo</FuncAlia>
+    <FuncDesc>保存部门信息。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>getDeptInfo</FuncName>
+    <FuncAlia>getDeptInfo</FuncAlia>
+    <FuncDesc>获取部门信息。
+接收参数：
+    deptid  部门ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>getBOTreeData</FuncName>
+    <FuncAlia>BdpGetBOTreeData</FuncAlia>
+    <FuncDesc>返回由公司和部门组成的组织机构树。
+接收参数：
+    dept    是否包括部门节点，为0/no/n/f时不包括
+    dwid    上级公司ID，为空时取顶级公司
+    bmid    上级部门ID，为空时取直接挂在公司dwid下的部门
+    companyFilter   公司表过滤条件，符合esql语法
+    companyOrderby  公司表排序字段，符合esql语法
+返回：
+    树节点数据数组，元素类型为SimpleTreeNode。
+说明：
+    该函数应用组织机构权限。
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>OrgGetEmployees</FuncName>
+    <FuncAlia>OrgGetEmployees</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpOrgData</TypeFullName>
+    <FuncName>OrgEmpCodeCheck</FuncName>
+    <FuncAlia>OrgEmpCodeCheck</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpServerStatus</TypeFullName>
+    <FuncName>BdpStatus</FuncName>
+    <FuncAlia>BdpStatus</FuncAlia>
+    <FuncDesc>获取服务端状态，返回ServerStatus，值有Busy, Idle</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>LogGetData</FuncName>
+    <FuncAlia>LogGetData</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>LogDelete</FuncName>
+    <FuncAlia>LogDelete</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>ClearSystemBuffer</FuncName>
+    <FuncAlia>ClearSystemBuffer</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>LogOpExpData</FuncName>
+    <FuncAlia>LogOpExpData</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>LogOpGetData</FuncName>
+    <FuncAlia>LogOpGetData</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>LogOpDelete</FuncName>
+    <FuncAlia>LogOpDelete</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpsysLog</TypeFullName>
+    <FuncName>LogOpGetDetailData</FuncName>
+    <FuncAlia>LogOpGetDetailData</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpUserInfo</TypeFullName>
+    <FuncName>BdpLoginCheck</FuncName>
+    <FuncAlia>BdpLoginCheck</FuncAlia>
+    <FuncDesc>执行用户登录
+接收数据: UserLoginInfo对象，格式为：
+    Username    用户输入的登录名
+    Password    用户输入的密码
+    Remember    是否记住密码
+    SignCode    验证码
+返回：AjaxResult对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpUserInfo</TypeFullName>
+    <FuncName>BdpLogout</FuncName>
+    <FuncAlia>BdpLogout</FuncAlia>
+    <FuncDesc>注销用户, 返回对象的Data保存系统登录页地址。</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpUserInfo</TypeFullName>
+    <FuncName>BdpRefreshUserInfo</FuncName>
+    <FuncAlia>BdpRefreshUserInfo</FuncAlia>
+    <FuncDesc>刷新当前用户的权限信息, 一般是修改了单位等权限相关的信息后调用。需确保Session可写</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpUserInfo</TypeFullName>
+    <FuncName>BdpGetUserByToken</FuncName>
+    <FuncAlia>BdpGetUserByToken</FuncAlia>
+    <FuncDesc>根据令牌获取用户信息，接收参数：token</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFMasterQuery</FuncName>
+    <FuncAlia>WFMasterQuery</FuncAlia>
+    <FuncDesc>查询流程执行实例信息。
+接收参数：
+    QueryParam      查询参数对象（JSON对象串），结构结构如下：
+        ActionName      实例名称，模糊匹配
+        SubmitPerson    发起人，模糊匹配
+        BillKindId      业务单据类型ID
+        FlowId          流程ID
+        CurrentNodeId   当前审批节点ID
+        StartDate       发起日期-开始
+        EndDate         发起日期-结束
+返回：omGrid表格结构数据</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFGetFlowExecuteInfo</FuncName>
+    <FuncAlia>WFGetFlowExecuteInfo</FuncAlia>
+    <FuncDesc>获取流程执行信息对象，包括流程设计信息、流程节点定义信息和流程执行详细记录。
+接收参数：
+    id      流程执行ID，或：
+    wflogid 流程执行明细记录ID</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFGetDialogAuditors</FuncName>
+    <FuncAlia>WFGetDialogAuditors</FuncAlia>
+    <FuncDesc>获取节点的审批人。
+接收参数：
+    billtype    单据类名
+    billid      单据ID
+    nodeid      当前审批节点ID
+返回：AjaxResult对象，其中Data结构如下：
+    Auditors    审批人列表，omGrid数据格式
+    AutoSelectAll   是否需要自动选中所有审批人
+    ReadOnly        是否允许用户选择审批人
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFGetDialogInfo</FuncName>
+    <FuncAlia>WFGetDialogInfo</FuncAlia>
+    <FuncDesc>获取审批对话框的数据。
+接收参数：
+    billtype    单据类名
+    sign        适用标志串
+    billid      单据ID
+    wflogid     审批明细记录ID，仅审批过程中存在
+返回：AjaxResult对象，其中Data为WFDialogInfo对象，结构如下：
+    DefaultObjectName   缺省的审批对象名称
+    AllowTerminate      是否允许中断流程
+    FlowPanelVisible    是否显示下一流程环节
+    HintMsg             提示信息，仅最后节点、会签节点进存在
+    IsCountersign       是否会签节点
+    IsLast              是否最后节点
+    Flows               可用流程数组。提交审批时可能有多个，审批过程中不允许更改
+Flows为数组，元素为WFDlgFlowInfo对象，结构如下：
+    FlowId      流程ID
+    FlowName    流程名称
+    AllowSelectNode 是否允许选择节点
+    Nodes       节点数组，元素为WFDlgFlowNodeInfo对象，结构为：
+        NodeId      节点ID
+        NodeName    节点名称
+    
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFDialogSumbit</FuncName>
+    <FuncAlia>WFDialogSumbit</FuncAlia>
+    <FuncDesc>业务模块中发起审批或审批过程中提交审批意见。
+接收参数：无
+接收数据：WFDlgSubmitParam对象，结构如下：
+    billtype    单据类名，必须
+    billid      单据ID，必须
+    wflogid     当前审批明细记录ID，审批过程中必须
+    nodeid      当前审批节点ID，审批过程中必须
+    optionText  提交审批时为审批对象说明，审批过程中是审批意见
+    ispassed    是否通过，审批过程中可用
+    isend       是否结束流程，审批过程中可用
+    auditorIds  下一节点审批人ID数组，除了会签、结束流程、不同意外，其它情况均必须
+返回：AjaxResult对象
+</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFSubmitToAuditing</FuncName>
+    <FuncAlia>WFSubmitToAuditing</FuncAlia>
+    <FuncDesc>提交审批，发起一个新的流程实例。
+接收参数：
+    billtype    单据类名，必须
+    sign        适用标志串，可选
+    billid      单据ID，必须
+    billdesc    单据说明，可选
+返回：AjaxResult对象
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WFRevokeAuditing</FuncName>
+    <FuncAlia>WFRevokeAuditing</FuncAlia>
+    <FuncDesc>撤销流程审批申请，仅当所有审批人尚未处理时才能撤销。
+接收参数：
+    wflogid     流程审批记录明细ID
+返回：AjaxResult对象</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WfQueryWorks</FuncName>
+    <FuncAlia>WfQueryWorks</FuncAlia>
+    <FuncDesc>获取流程处理记录
+接收参数：
+    uid         用户ID，如果未指定则使用当前登录用户
+    done        是否已处理，若为0表示查询待办，即未处理过的记录
+    end         是否查询结束了的流程记录
+    dbg         是否调试，为1时如果当前用户是超级用户将返回所有人的记录
+    QueryParam  记录筛选参数，应为JSON对象串，对象结构如下：
+        Name        业务名称，模糊匹配
+        Creator     发起人，模糊匹配
+        SenderName  发送人，模糊匹配
+        AuditOpinion    审批意见，模糊匹配
+        StartDate   开始日期，取待办时过滤发起时间，否则过滤处理时间
+        EndDate     结束日期，取待办时过滤发起时间，否则过滤处理时间
+返回：omGrid格式数据
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WfQueryAuditors</FuncName>
+    <FuncAlia>WfQueryAuditors</FuncAlia>
+    <FuncDesc>获取指定节点下的所有审批人。
+接收参数：
+    nodeid      流程节点ID
+返回：omGrid格式数据，其中字段：
+    AuditorKindText     若AuditorKind==1为角色，否则为用户
+    AuditorValueText    若AuditorKind==1为角色名称，否则为用户名称</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Json.JdpWorkflow</TypeFullName>
+    <FuncName>WfQueryNotifyPersons</FuncName>
+    <FuncAlia>WfQueryNotifyPersons</FuncAlia>
+    <FuncDesc>获取指定节点下的所有通知人。
+接收参数：
+    nodeid      流程节点ID
+返回：omGrid格式数据，其中字段：
+    NotifyKindText     若AuditorKind==1为角色，否则为用户
+    NotifyValueText    若AuditorKind==1为角色名称，否则为用户名称</FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Import.JdpImport</TypeFullName>
+    <FuncName>BdpImpUploadFile</FuncName>
+    <FuncAlia>BdpImpUploadFile</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+  <JdpItem>
+    <AssemblyFile>D:/myself/work/平台发布20190816/PlatFormLeon/HADP/bin/Hongbin.Web.DLL</AssemblyFile>
+    <TypeFullName>Hongbin.Web.Data.Import.JdpImport</TypeFullName>
+    <FuncName>BdpImpExecute</FuncName>
+    <FuncAlia>BdpImpExecute</FuncAlia>
+    <FuncDesc>
+    </FuncDesc>
+  </JdpItem>
+</JdpFuncs>

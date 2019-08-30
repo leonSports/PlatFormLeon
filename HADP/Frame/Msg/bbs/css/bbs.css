@@ -1,0 +1,247 @@
+﻿
+/*#region 全局控制*/
+
+body {
+    font-size: 12px;
+    font: 12px/1.5 宋体,Arial,sans-serif;
+}
+
+.bbs-fix-top {
+    padding-top: 50px;
+}
+
+.bbs-main-bg {
+    background-color: #f6f6f6;
+}
+
+.bbs-content-bg {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 3px rgba(150, 152, 153, 0.3);
+    border: 1px solid #dddddd;
+}
+
+/*#endregion*/
+
+
+/*#region logo区 */
+.bbs-logo {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.bbs-logo-bkimg {
+    width: 100%;
+    height: 210px;
+    background-image: url('images/bg.jpg');
+    background-repeat: round;
+}
+
+.bbs-logo-bottom {
+    height: 30px;
+}
+
+.bbs-logo-user {
+    position: absolute;
+    bottom: 7px;
+    right: 17px;
+}
+
+    .bbs-logo-user .username {
+        float: left;
+        width: 90px;
+        color: #ffffff;
+        font-weight: 900;
+    }
+
+    .bbs-logo-user .head-photo {
+        float: right;
+        width: 80px;
+        height: 80px;
+        box-shadow: 0px 2px 3px rgba(150, 152, 153, 0.3);
+        border: 1px solid #dddddd;
+        background-image: url('images/txdefa.jpg');
+        background-repeat: round;
+    }
+/*#endregion logo区*/
+
+/*#region 新建话题 */
+.bbs-newtopic {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+#btnSaveNews, #btnCancelNews {
+    padding: 1px 7px 1px 6px;
+}
+
+#endregion
+/*#region 话题区 */
+.bbs-topic {
+    padding: 0;
+    min-height: 730px;
+}
+
+.bbs-topic .list-group {
+    border: none;
+    -webkit-box-shadow: none;
+}
+
+.bbs-topic .list-group-item {
+    padding: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 3px;
+}
+
+.bbs-topic-card {
+    display: table;
+    min-height: 70px;
+    width: 100%;
+}
+
+    .bbs-topic-card .head {
+        float: left;
+        padding: 5px 5px 5px 7px;
+        display: inherit;
+    }
+
+        .bbs-topic-card .head img {
+            width: 50px;
+            height: 50px;
+        }
+
+    .bbs-topic-card .mbody {
+        /*float: left;*/
+        padding: 2px 13px 5px 6px;
+        display: inherit;
+        margin: 0;
+        width: 89.999%;
+    }
+
+        .bbs-topic-card .mbody .anthor {
+            color: #0082ff;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        .bbs-topic-card .mbody .words {
+            clear: both;
+            display: inline-block;
+        }
+
+        .bbs-topic-card .mbody .tools {
+            clear: both;
+            padding-top: 11px;
+            padding-bottom: 11px;
+        }
+
+            .bbs-topic-card .mbody .tools .ptime {
+                color: #dddddd;
+                float: left;
+            }
+
+            .bbs-topic-card .mbody .tools .reply {
+                float: right;
+                padding-left: 33px;
+                padding-right: 11px;
+            }
+
+                .bbs-topic-card .mbody .tools .reply a {
+                    cursor: pointer;
+                    margin-left: 7px;
+                    text-decoration: none;
+                }
+
+        .bbs-topic-card .mbody .replybox {
+            clear: both;
+            padding: 7px 5px 5px 5px;
+            background-color: #f6f6f6;
+            border-radius: 7px;
+            border: 1px solid dotted;
+            width: 100%;
+            display: table;
+        }
+
+            .bbs-topic-card .mbody .replybox .zan {
+                clear: both;
+                display: table-row;
+            }
+
+            .bbs-topic-card .mbody .replybox .comment {
+                clear: both;
+                display: table-row;
+            }
+
+                .bbs-topic-card .mbody .replybox .comment .header {
+                    float: left;
+                    padding-right: 7px;
+                    cursor: pointer;
+                }
+
+                    .bbs-topic-card .mbody .replybox .comment .header .observer {
+                        color: #0082ff;
+                    }
+
+                .bbs-topic-card .mbody .replybox .comment .opinion {
+                    float: left;
+                }
+
+.bbs-comment-del {
+    padding-left: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.bbs-comment-more {
+}
+/*#endregion 话题区*/
+
+/*#region 加载状态条 */
+.bbs-nomore,
+.bbs-loading {
+    position: relative;
+    width: 100%;
+    /*max-width: 500px;*/
+    height: 75px;
+    text-align: center;
+    margin: 0px auto;
+    background-color: #fff;
+}
+
+    .bbs-loading .info {
+        display: inline-block;
+    }
+
+        .bbs-loading .info img {
+            float: left;
+        }
+
+        .bbs-loading .info span {
+            float: left;
+            font-weight: 100;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+
+/*#endregion */
+
+.bbs-footer {
+    padding-top: 11px;
+    min-height: 70px;
+    text-align: center;
+    color: #dddddd;
+}
+
+.bbs-gotop {
+    position: fixed;
+    /*bottom: 20px;*/
+    right: 19px;
+    z-index: 1000;
+}

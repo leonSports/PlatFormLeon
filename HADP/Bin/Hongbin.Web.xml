@@ -1,0 +1,2438 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hongbin.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Hongbin.Web.DontCheckPermissionsAttribute">
+            <summary>
+            在JsonDataProvider的后继类中，不需要参数且返回字符串的函数视作为JSON服务。
+            缺省的，这些服务在调用前需要检查是否已经登录。但在某些情况下，可能不需要
+            登录即可调用，比如在登录前就需要的服务等。此时，需要给函数或函数所在的类
+            上标记DontCheckPermissions特性。
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.NonLoginInfoException">
+            <summary>
+            未检查到登录信息异常
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.JsonDataProvider">
+            <summary>
+            JSON数据提供器的基类。
+            后继类所写的每个公共的、不带参数的、返回字符串的函数均可在前台调用
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.JsonDataProvider.Context">
+            <summary>
+            当前上下文
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.JsonDataProvider.UserInfo">
+            <summary>
+            当前登录用户信息，可能为null
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.InnerCanExecute(System.Reflection.MethodInfo)">
+            <summary>
+            是否允许执行某个数据提供函数
+            </summary>
+            <param name="method"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.AbsUrl(System.String)">
+            <summary>
+            将相对地址转换为绝对地址
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Web.JsonDataProvider.SysParam">
+            <summary>
+            系统配置参数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.JsonDataProvider.IsSuperUser">
+            <summary>
+            当前登录用户是否是超级用户
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.PageEnabled(System.String)">
+            <summary>
+            当前用户是否可以使用指定页面，超级用户不受限制。权限从紧
+            </summary>
+            <param name="pageId">页面ID，即WebTree的NodeId</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.PageVisible(System.String)">
+            <summary>
+            当前用户是否可以访问指定页面，超级用户不受限制。权限从紧
+            </summary>
+            <param name="pageId">页面ID，即WebTree的NodeId</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.FixUploadFileUrl(System.String@)">
+            <summary>
+            获取上传文件全地址和对应的文件全名。如果路径不存在则会自动创建
+            </summary>
+            <param name="url">可以只传相对路径，结果会修补为全地址. 如何是绝对地址（~/开头或地址中包含://）则url不会变化。</param>
+            <returns>返回对应的文件全名</returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.Create``1">
+            <summary>
+            创建一个JsonDataProvider实现类的对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.Create``1(System.Web.HttpContext)">
+            <summary>
+            创建一个JsonDataProvider实现类的对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.Create``1(System.Web.HttpContext,Hongbin.Security.UserPrivilegeInfo)">
+            <summary>
+            创建一个JsonDataProvider实现类的对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonDataProvider.BOrgGrantCompany(System.String,System.String)">
+            <summary>
+            将新创建的公司授权给当前用户. 注意：当前jdp请求必须要允许写Session
+            </summary>
+            <param name="newCompanyId"></param>
+            <param name="parentId"></param>
+        </member>
+        <member name="T:Hongbin.Web.CustomHttpHandler">
+            <summary>
+            一般处理程序的公共基类，可访问当前登录用户的权限信息.
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.CustomHttpHandler.Context">
+            <summary>
+            当前上下文
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.CustomHttpHandler.UserInfo">
+            <summary>
+            当前登录用户信息，可能为null
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.CustomHttpHandler.IsReusable">
+            <summary>
+            获取一个值，该值指示其他请求是否可以使用 System.Web.IHttpHandler 实例。
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomHttpHandler.ProcessRequest">
+            <summary>
+            http请求处理过程, 后继类实现具体的处理
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomHttpHandler.AbsUrl(System.String)">
+            <summary>
+            将相对地址转换为绝对地址
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.JsonDataHttpHandler">
+            <summary>
+            处理http请求，返回json格式数据的通用类。
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.JsonDataHttpHandler.JdpFuncs">
+            <summary>
+            JDP函数信息表
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JdpFinder.LoadJdpInfos(System.String)">
+            <summary>
+            调入jdp信息，如果filename文件不存在则创建.
+            如果文件存在直接调入文件内容，不会更新文件内容
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JdpFinder.RecreateJdpHelpFile(System.String)">
+            <summary>
+            重建JDP信息文件
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:Hongbin.Web.JdpFinder.GetJdpFuncInfos">
+            <summary>
+            直接在内存中查找jdp函数信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JdpFinder.CreateJdpHelpFile(System.String)">
+            <summary>
+            查找JDP函数信息，fn可以是函数名也可以是函数别名，fn中可以包括类型全名
+            </summary>
+            <param name="fn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JdpFinder.GetMethodDesc(System.Reflection.MethodInfo)">
+            <summary>
+            获取函数注释. 先查找函数的Description属性，如果没有再查找注释文件
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.CustomPage">
+            <summary>
+            所有Web页的基类，实现一些通用的函数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.CustomPage.EnableGridViewColorBar">
+            <summary>
+            是否允许自动为GridView设置光标条
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.CustomPage.AccessType">
+            <summary>
+            页面访问类型：
+            0 正常
+            -1 显示页面控件选择对话框
+            </summary>
+        </member>
+        <!-- 对于成员“M:Hongbin.Web.CustomPage.CheckScriptSrcInHeader”忽略有格式错误的 XML 注释 -->
+        <member name="M:Hongbin.Web.CustomPage.CheckAndRegisterInitScripts">
+            <summary>
+            检查并注册页面的初始化脚本
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.GetParam(System.String)">
+            <summary>
+            获取系统参数
+            参数名顺序：如果请求地址中有pnp参数（参数前缀）,则加上前缀后取值，如果没有再取没有前缀的参数值
+            参数值：1 当前用户的Cookie，2 系统参数表中，3 web.config中
+            </summary>
+            <param name="pn"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Web.CustomPage.CurrentPageId">
+            <summary>
+            读取当前页面标识, 值为页面在栏目表中注册的ID值.
+            todo: 在栏目树中统一装配的页面（即Index页），装配时URL中包括了 cnNodeId，通过访问页的Request可以得到，
+            但是，如果是二级页面，如Add页，这个ID该如何得到呢？
+            或者说：在PageBase中该如何取得当前运行页面在栏目表中对应的记录？可能的方法有：
+                1.通过URL在栏目表中找NODE_URL，可能重
+                2.
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.GetSecondaryPageId">
+            <summary>
+            取二级页面的页面标识
+            如果是通用页面，必须在NodeUrl中加以区别
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetCtrlEnabled(System.Boolean,System.Web.UI.WebControls.WebControl[])">
+            <summary>
+            设置控件的可用性
+            </summary>
+            <param name="value">是否可用</param>
+            <param name="args">控件</param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetCtrlVisible(System.Boolean,System.Web.UI.WebControls.WebControl[])">
+            <summary>
+            设置控件的可见性
+            </summary>
+            <param name="value">是否可见</param>
+            <param name="args">控件</param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetCtrlEnabled(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            设置单个控件的可用性，权限系统重载此方法实现权限应用
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetCtrlVisible(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            设置单个控件的可见性，权限系统重载此方法实现权限应用
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetGridViewColorBar(System.Web.UI.Page)">
+            <summary>
+            设置GridView具有光标条
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetGridViewColorBar(System.Web.UI.ControlCollection)">
+            <summary>
+            设置GridView具有光标条
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetGridViewColorBar(System.Web.UI.WebControls.GridView)">
+            <summary>
+            设置GridView具有光标条
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.AbsUrl(System.String)">
+            <summary>
+            返回绝对地址
+            </summary>
+            <param name="p"></param>
+            <param name="relUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.GetPostBackControl">
+            <summary>
+            取引起回发的控件
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.CltShowMsg(System.String)">
+            <summary>
+            客户端显示消息对话框
+            </summary>
+            <param name="Msg">显示的文本</param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.CloseDialog(System.Boolean)">
+            <summary>
+            关闭模态对话框
+            </summary>
+            <param name="refreshParent">若为true，通过跳转到index.aspx刷新,一般在关闭查询窗口时使用</param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.CloseDialog(System.String)">
+            <summary>
+            关闭模态对话框
+            </summary>
+            <param name="refreshFlag">直接刷新父页面,一般在关闭增加或修改窗口时使用，可传add或upd,若传空串则不刷新</param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.GetPageState(System.String)">
+            <summary>
+            获得页面状态键值对，记录页面需要保存的状态
+            </summary>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.SetPageState(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            设置页面状态键值对，记录页面需要保存的状态
+            </summary>
+            <param name="Key"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.Clear(System.String)">
+            <summary>
+            清空状态Session，页面传递参数Session
+            </summary>
+            <param name="PageKey"></param>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.GetDataState(System.Object)">
+            <summary>
+            获得数据是否为新的图标，当天录入的表示为新数据，小于当天的为旧数据的图标
+            </summary>
+            <param name="IsNew"></param>
+            <param name="IsDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.GetDataDeleted(System.Object)">
+            <summary>
+            获得标志为删除时数据行的图标
+            </summary>
+            <param name="IsDeleted"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Hongbin.Web.CustomPage.TargetLanguageCode">
+            <summary>
+            目标语言代码：
+                CN: 中文
+                EN: 英文
+                L1-3: 备用
+            只有设计时语言代码与目标语言代码不同时才会进行多语言处理.
+            与个人相关：
+                1 检查session
+                2 检查系统参数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.CustomPage.DesignLanguageCode">
+            <summary>
+            设计时语言代码
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.ProcessMultiLanguage">
+            <summary>
+            检查调入当前页面的多语言词典，并将页面翻译为当前语言版本
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPage.LoadMultiLanguage(System.Collections.Generic.List{Hongbin.Web.MultiLangDictItem})">
+            <summary>
+            调入多语言词典，后继页面重载此函数提供自己的多语言词典条目。
+            </summary>
+            <param name="dict"></param>
+        </member>
+        <member name="T:Hongbin.Web.MultiLangDictItem">
+            <summary>
+            多语言词典条目
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.MultiLangDictItem.NodeId">
+            <summary>
+            当前页面ID
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.MultiLangDictItem.Url">
+            <summary>
+            页面地址
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.MultiLangDictItem.Selector">
+            <summary>
+            页面控件ID或符合jQuery要求的选择器
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.MultiLangDictItem.Src">
+            <summary>
+            设计时文本
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.MultiLangDictItem.Dst">
+            <summary>
+            目标语言文本
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.CustomPageExtension">
+            <summary>
+            对CustomPage进行扩展，所有扩展函数均以CP打头
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.CustomPageExtension.CPGetModuleIdByPageUrl(Hongbin.Web.CustomPage,Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            根据页面地址返回模块ID，即在模块管理中注册模块的内部ID
+            </summary>
+            <param name="page"></param>
+            <param name="gdc"></param>
+            <param name="pageUrlFlags">模块地址标志串，在WebTree的NodeUrl中模糊匹配</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPageExtension.CPGetOpenModuleScript(Hongbin.Web.CustomPage,Hongbin.Data.GeneralDataContainer,System.String,System.String)">
+            <summary>
+            返回打开模块的Javascript的脚本
+            </summary>
+            <param name="page"></param>
+            <param name="gdc"></param>
+            <param name="pageUrlFlags">模块地址标志串，在WebTree的NodeUrl中模糊匹配</param>
+            <param name="processParam">附加到页面地址上的参数串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPageExtension.CPGetOpenModuleScript(Hongbin.Web.CustomPage,Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            返回打开模块的Javascript的脚本
+            </summary>
+            <param name="page"></param>
+            <param name="gdc"></param>
+            <param name="pageUrlFlags">模块地址标志串，在WebTree的NodeUrl中模糊匹配</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPageExtension.CPGetOpenModuleScriptById(Hongbin.Web.CustomPage,Hongbin.Data.GeneralDataContainer,System.String,System.String)">
+            <summary>
+            返回打开模块的Javascript的脚本
+            </summary>
+            <param name="page"></param>
+            <param name="gdc"></param>
+            <param name="pageId">页面ID,即WebTree的NodeId</param>
+            <param name="processParam">附加到页面地址上的参数串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.CustomPageExtension.CPGetOpenModuleScriptById(Hongbin.Web.CustomPage,Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            返回打开模块的Javascript的脚本
+            </summary>
+            <param name="page"></param>
+            <param name="gdc"></param>
+            <param name="pageId">页面ID,即WebTree的NodeId</param>
+            <returns></returns>
+        </member>
+        <member name="F:Hongbin.Web.LightPrivilege.cnUserLoginId">
+            <summary>
+            在Session中保存当前登录用户的登录ID的键名
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.LightPrivilege.cnCurrentLoginUserId">
+            <summary>
+            在Session中保存当前登录用户ID的键名
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.LightPrivilege.LightLogin(System.String,System.String,System.Web.SessionState.HttpSessionState,System.Web.HttpRequest)">
+            <summary>
+            轻量权限的用户登录，供互联的LoginFront.aspx调用
+            </summary>
+            <param name="username"></param>
+            <param name="pwd"></param>
+            <param name="Session"></param>
+            <param name="Request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.LightPrivilege.LightLoginRecording(Hongbin.Data.GeneralDataContainer,Hongbin.Data.BdpBaseData.BdpPrivUser,System.Web.SessionState.HttpSessionState)">
+            <summary>
+            记录登录信息：创建登录日志，在Session中保存用户ID和登录ID
+            </summary>
+            <param name="baseUser"></param>
+        </member>
+        <member name="T:Hongbin.Web.LightUserPrivilegeInfo">
+            <summary>
+            轻量级的用户权限信息，仅BaseInfo和Roles可用
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.LoginPage.CheckIsIntegratedLogin">
+            <summary>
+            检查是否为集成登录，若是将根据传入的token检查用户合法性，不会显示登录界面, 但可以报告检查结果。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.LoginPage.CheckIsSpecificLogin">
+            <summary>
+            检查是否为特定用户登录，根据传入的user和pwd参数检查合法性，若合法则完成登录，在Response中写入1，否则写入0
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.LoginPage.Login(System.String,System.String)">
+            <summary>
+            执行登录，返回是否成功
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.LoginPage.Login(System.String,System.String,System.String)">
+            <summary>
+            执行登录，返回是否成功
+            </summary>
+            <param name="username">用户名</param>
+            <param name="password">密码</param>
+            <param name="redictUrl">登录成功后的转向地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.ModuleParam">
+            <summary>
+            处理模块参数的类
+            模块参数是指在模块管理中页面参数的内容，每行设置一个参数，每个参数的格式为：参数名=参数值
+            模块参数覆盖数据字典中控件参数的内容，即如果某个参数模块参数中设定了则以模块参数中的为准，
+            如果模块没有设定，则以数据字典控件参数中的设置为准。
+            模块参数中可设置两大类参数：
+            一、页面级（模块级）参数：
+                1.实体类名：必须，值必须是实体类全名称（即包含整个命名空间和类名）。
+                2.主键字段：可选，值必须是实体类的一个属性，如果没有设置则取实体类的第一个主键属性。
+                3.排序字段：可选，以升序排序，值为一个或多个属性名，以逗号或分号分隔，每个属性名必须在实体类中存在。
+                4.非空字段：可选，编辑时不能为空，值为一个或多个属性名，以逗号或分号分隔，每个属性名必须在实体类中存在。
+                5.上级字段：树表编辑器使用，必须
+                6.标签字段：树表编辑器使用，可选
+                7.显示过滤行：可选，是否显示表格的过滤行，缺省显示。
+                8.选择模式：可选，行选择模式：多选、单选、不允许选择
+                9.编辑器模式：可选，编辑器模式：行内、多行、固定面板、弹出框。缺省：弹出框
+                10.编辑器列数：可选，编辑器控件排列的列数，缺省为1.
+                11.浏览字段: 可选，在表格中出现的字段，以逗号或分号分隔。缺省为所有字段
+                12.编辑字段：可选，在编辑器中出现的字段，以逗号或分号分隔。缺省为所有字段
+                13.过滤条件: 可选，简单的数据源过滤条件，如：it.CompanyId="xxxx"
+            二、字段级参数：
+                字段级参数的设置会覆盖数据字典中的缺省设置，每个参数的格式为：
+                    属性名.参数名=值
+                其中属性名必须是实体类的属性，参数名如下：
+                    1.宽度：指定列宽，必须是数值，数据字典本身也会使用该参数。
+                    2.列宽：指定列宽，数值后面可以指定计量单位：px,pt,em,%等。
+                    3.标签：列标题串和编辑控件前面的标签。
+                    4.提示：列提示或编辑控件提示信息串。
+                    5.参考类：参考表的实体类名
+                    6.查找数据集：参考表的数据集标识
+                    7.查找字段：在参考表中搜索的字段名
+                    8.显示字段：参考表中要显示的一个或多个字段名，多个字段以分号分隔。
+                    9.标识字段：参考表中的主键字段名。
+                    10.标签字段：组成树节点标签的字段名。
+                    11.上层字段：树上层节点的字段名。
+                    12.序号字段：树同级节点排序顺序的字段名。
+                    13.排序字段：参考表中的排序字段名，多个字段以分号分隔。
+                    14.行数：多选文本控件或下拉控件的行数。
+                    15.可空：该字段在编辑时是否允许为空。
+                    16.只读：该字段在编辑时是否只读。
+                    17.可见：该字段是否可见，如果不可见，在表格或编辑框中均不会出现。
+                    18.编辑可见: 是否出现在编辑器中
+                    19.排序：该控件的排序模式：升序、降序、无
+                    20.控件类型：编辑该字段的控件类型，详见数据字典的编辑类型。
+                    21.项目表：编辑该字段时的值域，以分号分隔。
+                    22.缺省值: 字段的缺省值表达式
+                    23.过滤条件: 可选，查找数据集的简单过滤条件，如：it.CompanyId="xxxx"
+                    24.值验证:可靠，字段值的验证正则表达式，如：^\S{1,10}$  表示长度在1-10之间
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.Load(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            调入实例化的模块参数对象
+            </summary>
+            <param name="gdc"></param>
+            <param name="pageIdOrParams">如果字符串中没有=，则视作页面ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.Load``1(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            调入实例化的模块参数对象
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="gdc"></param>
+            <param name="pageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.LoadCfg(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            调入模块配置参数
+            </summary>
+            <param name="gdc"></param>
+            <param name="pageId">页面ID, 即在模块管理BdpWebTree中的主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.LoadCfg(Hongbin.Data.GeneralDataContainer,System.String,System.String,System.String)">
+            <summary>
+            调入模块配置参数, 返回指定的参数值
+            </summary>
+            <param name="gdc"></param>
+            <param name="pageId">页面ID, 即在模块管理BdpWebTree中的主键值</param>
+            <param name="paramName">参数名</param>
+            <param name="defValue">缺省值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.#ctor(Hongbin.Data.GeneralDataContainer,System.String)">
+            <summary>
+            解析模块参数字符串，实例化模块参数类
+            </summary>
+            <param name="gdc"></param>
+            <param name="moduleParams"></param>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.gdc">
+            <summary>
+            数据容器
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.ModuleParams">
+            <summary>
+            模块参数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.EntityClassName">
+            <summary>
+            实体类名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.EntityType">
+            <summary>
+            实体类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.KeyFieldName">
+            <summary>
+            主键属性名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.FilterText">
+            <summary>
+            获取或设置过滤条件
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.FieldInfos">
+            <summary>
+            字段信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.FilterRowVisible">
+            <summary>
+            读取是否显示过滤行
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.RowSelectMode">
+            <summary>
+            读取行选择模式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ModuleParam.Item(System.String)">
+            <summary>
+            获取指定名字的参数值
+            </summary>
+            <param name="pn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.Exist(System.String)">
+            <summary>
+            返回参数名是否存在
+            </summary>
+            <param name="pn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.GetParamValue(System.String)">
+            <summary>
+            获取指定名字的参数值
+            </summary>
+            <param name="pn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ModuleParam.ApplyFieldParam">
+            <summary>
+            应用字段参数。字段参数在模块参数中指定的格式为：属性名.参数名=值
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.GridRowSelectMode">
+            <summary>
+            表格行选择模式
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.GridRowSelectMode.Mutil">
+            <summary>
+            多选
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.GridRowSelectMode.Single">
+            <summary>
+            单选
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.GridRowSelectMode.Disable">
+            <summary>
+            不允许
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.PageBase">
+            <summary>
+            具有权限检查机制的页面基类，所有需要进行访问合法性验证的页面都应该继承于该类
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.PageBase.cnUserInfoSessionName">
+            <summary>
+            权限信息对象在SESSION中保存的名字
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.PageBase.cnIdentifyingCodeKey">
+            <summary>
+            验证码在Session中保存的名字
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.PageBase.SysParam">
+            <summary>
+            系统配置参数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.PageBase.UserInfo">
+            <summary>
+            用户权限信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.PageBase.IsSuperUser">
+            <summary>
+            当前登录用户是否是超级用户
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.PageBase.AbstainCheckPermission">
+            <summary>
+            是否阻止权限检查,缺省为否，后继类可以重载。
+            由于在页的OnInit中就要使用该属性，而后继类一般在OnLoad事件中处理类似的初始化设置，这比OnInit晚，
+            因此将此属性声明为虚拟属性，后继类如果需要屏蔽权限检查，必须重载此属性并返回 True
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.AppendOperLog(System.String)">
+            <summary>
+            为当前登录用户增加一条操作记录
+            </summary>
+            <param name="operDesc">操作描述串不能超过512字节</param>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.CheckAndLoadPermissions">
+            <summary>
+            检查并调入权限信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.WriteCtrlId(System.Web.UI.ControlCollection)">
+            <summary>
+            获取本页面的控制按钮名称
+            </summary>
+            <param name="cc"></param>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.WriteCtrJS">
+            <summary>
+            输入返回页面控件的一些JS脚本
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.LoginCheck(System.String,System.String,System.Web.UI.Page,System.String)">
+            <summary>
+            检查登录信息，一般由Login页面调用。
+            如: PageBase.LoginCheck("admin","123",this,"default.aspx");
+            </summary> 
+            <param name="userName">用户名</param>
+            <param name="userPwd">密码</param>
+            <param name="loginPage">登录页</param>
+            <param name="destUrl">登录成功后的转向地址, 如果不为空则自动转到目标地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.LoginCheck(System.String,System.String,System.Web.SessionState.HttpSessionState,System.Web.HttpRequest)">
+            <summary>
+            检查登录信息，一般由Login页面调用。
+            如: PageBase.LoginCheck("admin","123",this,"default.aspx");
+            </summary> 
+            <param name="userName">用户名</param>
+            <param name="userPwd">密码</param>
+            <param name="Session">当前客户的Session</param>
+            <param name="Request">当前请求对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.LoginCheck(System.String,System.Web.SessionState.HttpSessionState,System.Web.HttpRequest)">
+            <summary>
+            检查登录信息，一般由Login页面调用。
+            </summary> 
+            <param name="uid">用户ID</param>
+            <param name="Session">当前客户的Session</param>
+            <param name="Request">当前请求对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.Logout">
+            <summary>
+            退出
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.ResolveImageUrl(System.String)">
+            <summary>
+            将图片URL转换为在请求客户端可用的URL
+            </summary>
+            <param name="imageUrl">图片相对地址，若为空返回缺省图标地址，若不包括路径，默认为系统菜单图标路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.PageEnabled(System.String)">
+            <summary>
+            当前用户是否可以使用指定页面，超级用户不受限制
+            </summary>
+            <param name="pageId">页面ID，即WebTree的NodeId</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.PageVisible(System.String)">
+            <summary>
+            当前用户是否可以访问指定页面，超级用户不受限制
+            </summary>
+            <param name="pageId">页面ID，即WebTree的NodeId</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.SetCtrlEnabled(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            关于页面控件的可用性和可见性，必须与权限配置相结合。如果某个控件在页面的受限控件清单中，
+            只有其可用性为真时才能设置其Enable为True，可见性也一样。SetCtrlEnabled和SetCtrlVisible
+            进行统一处理，这就要求：页中如果需要编码设置控件的Enable或Visible，必须调用
+            SetCtrlEnabled或SetCtrlVisible，而不是直接设置属性值。
+            
+            实现方式：
+                从权限配置中取出当前页的受限清单，
+                检查控件是否在清单中，
+                如果在，是否可用或可见
+                
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.SetCtrlVisible(System.Web.UI.WebControls.WebControl,System.Boolean)">
+            <summary>
+            设置控件可以见性
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.PageBase.LimitedCtrlList">
+            <summary>
+            当前页面受限控件清单
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.PageBase.getDsp(System.Type)">
+            <summary>
+            获取数据权限
+            </summary>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.GetRealUserIp(System.Web.HttpRequest)">
+            <summary>
+            获取真实的访问者IP
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.AbsUrl(System.Web.UI.Page,System.String)">
+            <summary>
+            返回绝对地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.GetUrlFileName(System.Web.UI.Page,System.String)">
+            <summary>
+            返回地址对应的服务端文件名
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CheckUrlFileExists(System.Web.UI.Page,System.String)">
+            <summary>
+            检查地址对应的文件是否存在
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.GetPostBackControl(System.Web.UI.Page)">
+            <summary>
+            取引起回发的控件
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CheckModuleUrl(System.String,System.String)">
+            <summary>
+            在URL地址中加入访问类型accessType和节点标识nodeid
+            </summary>
+            <param name="url"></param>
+            <param name="nodeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CloseDialog(System.Web.UI.Page,System.Boolean)">
+            <summary>
+            关闭模态对话框
+            </summary>
+            <param name="refreshParent">若为true，通过跳转到index.aspx刷新,一般在关闭查询窗口时使用</param>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CloseDialog(System.Web.UI.Page,System.String)">
+            <summary>
+            关闭模态对话框
+            </summary>
+            <param name="refreshFlag">直接刷新父页面,一般在关闭增加或修改窗口时使用，可传add或upd,若传空串则不刷新</param>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CltResponseScript(System.Web.UI.Page,System.String)">
+            <summary>
+            注册页面脚本，脚本中不需要包含<script></script>标记
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CltShow(System.Web.UI.Page,System.String)">
+            <summary>
+            在客户端显示信息框
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CltShowAndRedirect(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            客户端显示一个信息框后转到新页面
+            </summary>
+            <param name="page"></param>
+            <param name="msg"></param>
+            <param name="url"></param>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.CltShowConfirm(System.Web.UI.WebControls.WebControl,System.String)">
+            <summary>
+            为控件添加显示询问对话框的单击事件
+            </summary>
+            <param name="Control"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.SetCtrolEnabled(System.Boolean,System.Web.UI.WebControls.WebControl[])">
+            <summary>
+            设置页面控件的可用
+            </summary>
+            <param name="enabled"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.SetCtrolEnabled(System.Web.UI.Page,System.Boolean,System.Web.UI.WebControls.WebControl[])">
+            <summary>
+            设置页面控件的可用
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.RegisterScriptInclude(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            注册脚本包含文件, 尝试注册到 head 中
+            </summary>
+            <param name="page"></param>
+            <param name="key"></param>
+            <param name="url"></param>
+        </member>
+        <member name="M:Hongbin.Web.WebPageHelper.JsCssAddTs(System.Web.UI.Page,System.String)">
+            <summary>
+            将HTML文档中所有的js和css引用加入时间戳，返回修改后的HTML
+            </summary>
+            <param name="page"></param>
+            <param name="html">需要处理HTML文档内容</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.UI.BdpReportViewer">
+            <summary>
+            扩展微软报表查看器控件，支持RDL文件，根据报表中定义查询语句为报表准备数据源
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.UI.BdpReportViewer.Rdl">
+            <summary>
+            报表定义文件
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.UI.BdpReportViewer.RdlFileName">
+            <summary>
+            读取或设置报表定义文件，即RDL文件
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.UI.BdpReportViewer.LoadFromRdl(System.String)">
+            <summary>
+            将RDL文件转换为RDLC文件，转换后的内容调入到本地报表中. 
+            </summary>
+            <param name="rdlFilename"></param>
+        </member>
+        <member name="M:Hongbin.Web.UI.BdpReportViewer.PrepareDataSource(Hongbin.Data.GeneralDataContainer)">
+            <summary>
+            准备报表数据源
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.UI.BdpReportViewer.RdlGetQueryText(System.String)">
+            <summary>
+            获取报表中定义的数据集查询SQL
+            </summary>
+            <param name="dataSetName">报表中的数据集名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.UI.BdpReportViewer.RdlGetQueryParamterNames(System.String)">
+            <summary>
+            获取报表中定义的数据集查询参数
+            </summary>
+            <param name="dataSetName">报表中的数据集名称</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“T:Hongbin.Web.Service.BdpTodoServer”忽略有格式错误的 XML 注释 -->
+        <member name="P:Hongbin.Web.Service.MessageInfo.Success">
+            <summary>
+            成功标志位
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.MessageInfo.Errcode">
+            <summary>
+            错误代码
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.MessageInfo.Message">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.MessageInfo.UserMessages">
+            <summary>
+            用户代办信息集合
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Service.ISynAccountService">
+            <summary>
+            帐户同步接口
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Service.ISynAccountService.GetUserCountByTs(System.String)">
+            <summary>
+            返回更新的用户数
+            </summary>
+            <param name="ts">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.ISynAccountService.GetUsersByTs(System.String)">
+            <summary>
+            返回更新的用户清单
+            </summary>
+            <param name="ts">时间戳</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.ISynAccountService.GetUsersByUserName(System.String)">
+            <summary>
+            返回更新的用户清单
+            </summary>
+            <param name="userName">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.ISynAccountService.GetUsersByTs(System.String,System.Int32,System.Int32)">
+            <summary>
+            返回更新的用户清单
+            </summary>
+            <param name="ts">时间戳</param>
+            <param name="pageIndex">页号，从0开始</param>
+            <param name="countPerPage">每页行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.ISynAccountService.GetUserByToken(System.String)">
+            <summary>
+            返回指定令牌对应的用户对象
+            </summary>
+            <param name="token">令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.ISynAccountService.GetUserByUserId(System.String)">
+            <summary>
+            根据用户主键值返回服务端的用户信息
+            </summary>
+            <param name="userId">服务端的用户主键值</param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.Service.SynAccountBaseInfo">
+            <summary>
+            帐户的基础接口信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.UserId">
+            <summary>
+            帐户主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.UserName">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.Password">
+            <summary>
+            密码,需明文
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.CompanyId">
+            <summary>
+            单位主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.DepartmentId">
+            <summary>
+            部门主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.PersonId">
+            <summary>
+            对应人员主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.IsEnabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.Ts">
+            <summary>
+            时间戳，数据最近更新的时间
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Service.SynAccountBaseInfo.Dr">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Service.SynHelper.GetEndPointName">
+            <summary>
+            获取服务端口配置名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.SynHelper.GetIntfTypeName">
+            <summary>
+            获取服务接口类名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Service.SynHelper.GetSynAccountService">
+            <summary>
+            获取帐户同步服务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.ServiceBase.UserServerResult">
+            <summary>
+            REST服务返回的对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ServiceBase.UserServerResult.Succeed">
+            <summary>
+            标明是否成功
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ServiceBase.UserServerResult.Message">
+            <summary>
+            信息串
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.ServiceBase.UserServerResult.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.JsonColModelGenerator">
+            <summary>
+            JSON格式的列模型生成器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonColModelGenerator.#ctor(System.Collections.Generic.IEnumerable{Hongbin.Data.DataDict.DdFld})">
+            <summary>
+            实例化模型生成器JsonColModelGenerator
+            </summary>
+            <param name="fieldInfos">字段信息表</param>
+        </member>
+        <member name="M:Hongbin.Web.JsonColModelGenerator.CreateColModelDictionary">
+            <summary>
+            返回列模型枚举器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.ESqlGenerator">
+            <summary>
+            根据实体类及字段信息生成查询ESQL
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.ESqlGenerator.TakeESql(System.String)">
+            <summary>
+            返回查询ESQL。
+            可以指定条件，但条件必须符合ESQL语法。条件中引用属性时必须指定表别名限定。
+            表别名的规则为：主表一定是a, 关联表以出现的先后顺序为a1,a2...
+            </summary>
+            <param name="strWhere"></param>
+        </member>
+        <member name="M:Hongbin.Web.ESqlGenerator.TakeESql(System.String,System.String,System.String,System.String)">
+            <summary>
+            生成查询ESQL
+            </summary>
+            <param name="keyFieldName"></param>
+            <param name="parentFieldName"></param>
+            <param name="hasChildrenName"></param>
+            <param name="strWhere"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.ESqlGenerator.TakeESql(System.Text.StringBuilder,System.String,System.String,System.String,System.String)">
+            <summary>
+            生成ESQL查询语句.
+                查询语句自动建立关联，可以通过strWhere指定数据过滤条件，条件必须符合ESQL语法，引用字段时需要指定表别名限定。
+            表别名的规则为：主表一定是a, 关联表以出现的先后顺序为a1,a2...
+                如果指定了parentFieldName，表示主表是树型表，查询结果中生成一个名为hasChildrenName值的逻辑字段，表名该记录
+            是否有下级，此时必须指定keyFieldName主键字段
+            </summary>
+            <param name="sb"></param>
+            <param name="strWhere"></param>
+        </member>
+        <member name="T:Hongbin.Web.JsonModuleParam">
+            <summary>
+            扩展模块参数对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.CreateColModels(Hongbin.Web.ModuleParam)">
+            <summary>
+            根据模块参数中的配置生成列模型，返回JSON格式的字符串
+            </summary>
+            <param name="mp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.CreateEntitySql(Hongbin.Web.ModuleParam,System.String[])">
+            <summary>
+            根据模块参数配置生成数据查询SQL语句（ESQL）.
+            模块参数对象mp中一定有实体类，即主表。缺省查询主表所有字段和关联表的标签字段或显示字段，
+            可以指定relatedFields参数以查询部分字段，该参数为字符串数组，每个元素为要查询的字段名，
+            对于关联字段名，其格式为：主表字段名+"_"+关联表字段名。因此，真正的查询结果集中的字段不
+            一定与relatedFields参数中列的字段一致，还包括关联的字段。
+            注意：主表字段名+"_"+关联表字段名的方式仅当控件参数中设定了查找数据集和查找字段才有效。
+            </summary>
+            <param name="mp"></param>
+            <param name="relatedFields">相关的字段名，不指定返回全部字段，否则只查询相关的字段</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.GetReferenceFields(Hongbin.Data.DataDict.DdFld)">
+            <summary>
+            获取外键关联时需要显示的关联表字段
+            </summary>
+            <param name="fld"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.CreateOmGrid(Hongbin.Web.ModuleParam,System.Boolean)">
+            <summary>
+            根据模块参数生成OmGrid控件的前台配置
+            </summary>
+            <param name="mp"></param>
+            <param name="takeESQL">是否生成数据查询SQL，缺省要生成</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.SerializeDictionary(System.Collections.Generic.Dictionary{System.String,System.Object},System.Text.StringBuilder,System.Int32)">
+            <summary>
+            将字典对象序列化为JSON对象字符串。如果某个字典项的值也是字典对象，将递归处理。
+            </summary>
+            <param name="dict">保存Key/Value的字典对象</param>
+            <param name="sb">接收序列化结果的对象</param>
+            <param name="ident">初始缩进，缺省为0</param>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.CheckParam(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Object,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            检查参数，在dict中增加或修改一个参数，如果配置参数nvc中指定了同名参数使用参数值，
+            否则使用缺省值defV。defV==null则不增加。
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.JsonModuleParam.CopyParam(System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            从配置参数表中拷贝某一级别的参数值
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Export.CustomExporter">
+            <summary>
+            数据导出基类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.ExportParams">
+            <summary>
+            导出参数数组，每个元素都是一个导出参数字典，一般只有一个元素，即只有一套参数。
+            但是，比如导出到Excel时需要生成多个Sheet页，则会有多套参数。
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.ExportParam">
+            <summary>
+            导出参数字典。ExportParams中的第一个，如果没有则创建一个空的参数字典。
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.FilePath">
+            <summary>
+            文件存放目录
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.FilePathUrl">
+            <summary>
+            对应文件存放目录的地址
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.Filename">
+            <summary>
+            文件名,包括路径
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.UserInfo">
+            <summary>
+            用户权限信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CustomExporter.ExportResult">
+            <summary>
+            导出结果对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object}[])">
+            <summary>
+            初始化导出器
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.Hint(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            更新进度
+            </summary>
+            <param name="Msg">消息</param>
+            <param name="Position">进度值</param>
+            <param name="min">最小进度值，初始化进度条</param>
+            <param name="max">最大进度值，初始化进度条</param>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.Hint(System.String)">
+            <summary>
+            更新进度消息
+            </summary>
+            <param name="Msg"></param>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.Hint(System.String,System.Int32)">
+            <summary>
+            更新进度消息
+            </summary>
+            <param name="Msg"></param>
+            <param name="Position"></param>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.Execute">
+            <summary>
+            执行导出
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.Save">
+            <summary>
+            保存文件
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.CustomExporter.Save(System.String)">
+            <summary>
+            保存文件
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Export.GridColumnInfo">
+            <summary>
+            表格列信息类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Header">
+            <summary>
+            列标题
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Name">
+            <summary>
+            字段名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Colspan">
+            <summary>
+            跨列
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Rowspan">
+            <summary>
+            跨行
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.ColIndex">
+            <summary>
+            列序号, 从0开始
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Wrap">
+            <summary>
+            是否允许换行
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.DataFormat">
+            <summary>
+            数据格式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.MergeRowBy">
+            <summary>
+            根据某个字段的值进行数据行合并
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridColumnInfo.Params">
+            <summary>
+            参数字典
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Export.CellInfo">
+            <summary>
+            特定单元格信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.x">
+            <summary>
+            开始列号, 从0开始
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.y">
+            <summary>
+            开始行号, 从0开始
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.x1">
+            <summary>
+            结束列号, 从0开始
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.y1">
+            <summary>
+            结束行号, 从0开始
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.value">
+            <summary>
+            单元格的值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.border">
+            <summary>
+            边框粗细
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.wrap">
+            <summary>
+            是否允许换行
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.align">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.rowHeight">
+            <summary>
+            行高
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.CellInfo.Params">
+            <summary>
+            参数字典
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridExporter.Options">
+            <summary>
+            当前导出参数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridExporter.GridHeaders">
+            <summary>
+            表格的表头信息对象：多行多列
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridExporter.Columns">
+            <summary>
+            所有数据列信息对象, 即表格的数据列
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridExporter.Headers">
+            <summary>
+            表头定义
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Export.GridExporter.Tails">
+            <summary>
+            表尾定义
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Data.Export.GridExporter.TotalCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Data.Export.GridExporter.RequestData">
+            <summary>
+            获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.Data.Export.JdpInvoker">
+            <summary>
+            摸拟前端调用JDP函数，获取其返回的JSON数据。
+            
+                大费周章，采取了几种方式都不理想。用WebClient或HttpWebRequest摸拟前台调用是最初最直接的想法，
+            可是一个问题难以解决，即如果jdp函数需要访问权限信息，实质是需要访问session，但WebClient没有Cookie，
+            jdp函数运行时上下文就没有Session，也就没有权限信息。查了很多资料给WebClient设置Cookie传递SessionId,
+            但不知为什么，只要设置了Cookie，返回就非常慢，甚至超时。再想想这种方式因为要摸拟网络访问，效率并不
+            高，不得不另想办法。
+                现在的办法是：调用jdp函数前伪造上下文、请求对象、提供用户信息，也就是满足jdp函数的运行环境，还是
+            走 JsonDataHttpHandler的方式调用jdp函数，直接返回结果。因为不再以网络方式访问，实际是在一个线程中执行，
+            这种方式的效率应该是最好的。
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.JdpCommon">
+            <summary>
+            提供通用的数据查询方法的类
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Data.Json.JdpCommon.ESqlTreeQuery(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            结果字段：id,text,pid,hasChildren,[fnKey,fnText,fnPKey]
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.JdpCommon.TreeLevelInfo.SiblingNodes">
+            <summary>
+            同级节点
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.JdpDataStatistic">
+            <summary>
+            提供统计相关的jdp服务
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.JdpDbSql">
+            <summary>
+            这个类提供几个对数据库直接执行查询的服务
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.JdpModules">
+            <summary>
+            模块管理和装配相关的数据提供程序
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.JdpOrgData">
+            <summary>
+            和组织机构相关的数据提供器
+            </summary>
+        </member>
+        <member name="M:Hongbin.Web.Data.Json.JdpOrgData.saveCompanyInfo">
+            <summary>
+            保存公司
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Data.Json.JdpOrgData.delCompany">
+            <summary>
+            删除公司及其子公司，但如果某公司已被引用，将失败。
+            请求参数：
+                cid     要删除公司的id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Web.Data.Json.JdpServerStatus.BdpStatus">
+            <summary>
+            获取服务端状态，返回ServerStatus，值有Busy, Idle
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.ServerStatus">
+            <summary>
+            定义服务器状态
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Data.Json.ServerStatus.Idle">
+            <summary>
+            空闲
+            </summary>
+        </member>
+        <member name="F:Hongbin.Web.Data.Json.ServerStatus.Busy">
+            <summary>
+            忙
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.ProgressInfo">
+            <summary>
+            进度信息类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.ProgressInfo.Status">
+            <summary>
+            服务当前状态
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.ProgressInfo.MinValue">
+            <summary>
+            最小进度值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.ProgressInfo.MaxValue">
+            <summary>
+            最大进度值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.ProgressInfo.Position">
+            <summary>
+            当前进度值
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.ProgressInfo.Message">
+            <summary>
+            当前进度信息串
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.ProgressInfo.ProcessResult">
+            <summary>
+            过程处理结果对象
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.AccountInfo">
+            <summary>
+            帐户的基础接口信息
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.UserId">
+            <summary>
+            帐户主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.UserName">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.Password">
+            <summary>
+            密码,需明文
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.CompanyId">
+            <summary>
+            单位主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.DepartmentId">
+            <summary>
+            部门主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.PersonId">
+            <summary>
+            对应人员主键
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.IsEnabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.Ts">
+            <summary>
+            时间戳，数据最近更新的时间
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.AccountInfo.Dr">
+            <summary>
+            删除标记
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.UserLoginInfo">
+            <summary>
+            用户登录时需要传递的登录信息类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.UserLoginInfo.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.UserLoginInfo.Password">
+            <summary>
+            用户输入的密码，明文
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.UserLoginInfo.Remember">
+            <summary>
+            是否记住
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.UserLoginInfo.SignCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.JdpWorkflow.wf">
+            <summary>
+            工作流对象
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.WfDesignNode">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.WfDesignNode.type">
+            <summary>
+            取值：start,end,task,node,chat,state,plug,fork,join,complex
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.WfDesignLine">
+            <summary>
+            连线
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.WfDesignLine.type">
+            <summary>
+            取值：sl,lr,tb
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.WfDesignArea">
+            <summary>
+            分区
+            </summary>
+        </member>
+        <member name="P:Hongbin.Web.Data.Json.WfDesignArea.color">
+            <summary>
+            取值：red,yellow,blue,green
+            </summary>
+        </member>
+        <member name="T:Hongbin.Web.Data.Json.WfDesignFlowData">
+            <summary>
+            流程数据集
+            </summary>
+        </member>
+        <member name="T:Hongbin.Common.CustomFilter">
+            <summary>
+            自定义查询类
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.CustomFilter.pnCustomFilter">
+            <summary>
+            自定义查询参数对象封装到后台时使用的参数名字
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.HasCustomFilter(System.Web.HttpContext)">
+            <summary>
+            检查请求中是否有自定义查询条件
+            </summary>
+            <param name="Context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.GetCustomFilterItems(System.Web.HttpContext)">
+            <summary>
+            获取请求中的自定义条件参数
+            </summary>
+            <param name="Context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.ApplyCustomFilter``1(System.Linq.IQueryable{``0},System.Web.HttpContext)">
+            <summary>
+            为查询附加自定义条件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="q"></param>
+            <param name="Context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.ApplyCustomFilter(System.Linq.IQueryable,System.Collections.Generic.IEnumerable{Hongbin.Common.FilterItem})">
+            <summary>
+            为查询附加自定义条件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="q"></param>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.GetFieldInfos(Hongbin.Data.GeneralDataContainer,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            获取查询语句结果集的字段信息
+            </summary>
+            <param name="gdc"></param>
+            <param name="esqlText"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.AppendCustomFilter(Hongbin.Data.GeneralDataContainer,System.Collections.Generic.IEnumerable{Hongbin.Common.FilterItem},System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            将自定义查询条件附加到查询语句中
+            </summary>
+            <param name="gdc"></param>
+            <param name="customFilters"></param>
+            <param name="esqlText"></param>
+            <param name="args">不能为空，因为要将自定义查询的值作为参数传递给查询语句！</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.AppendCustomFilter(System.Web.HttpContext,Hongbin.Data.GeneralDataContainer,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            检查当前请求里是否有自定义查询，如果有，附加到查询语句中
+            </summary>
+            <param name="Context"></param>
+            <param name="gdc"></param>
+            <param name="esqlText"></param>
+            <param name="args">sql语句中用到的参数</param>
+            <returns></returns>
+        </member>
+        <member name="F:Hongbin.Common.CustomFilter.UnaryOperators">
+            <summary>
+            一元操作符，即不需要比较值的条件操作符，包括：None,IsNull,IsNotNull
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.GetOperatorTypes">
+            <summary>
+            获取条件操作符词典，即操作符对应的中文串
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.CustomFilter.GetCombinateTypes">
+            <summary>
+            获取条件组合类型扁，即组合类型对应的中文串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Common.FilterItem">
+            <summary>
+            查询项描述类
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.FilterItem.fn">
+            <summary>
+             比较项名，即字段名，取列模型中的editor.name,若未指定则取列模型的name.
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.FilterItem.op">
+            <summary>
+            比较符字符串
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.FilterItem.opType">
+            <summary>
+            条件比较操作符
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.FilterItem.fv">
+            <summary>
+             比较值，若不需要比较值的为null
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.FilterItem.cc">
+            <summary>
+            与下一个条件项的组合方式
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.FilterItem.ccType">
+            <summary>
+            与下一个条件项的组合方式
+            </summary>
+        </member>
+        <member name="T:Hongbin.Common.OperatorType">
+            <summary>
+            条件操作符
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.Equals">
+            <summary>
+            等于
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.NotEqual">
+            <summary>
+            不等于
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.Greater">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.GreaterOrEqual">
+            <summary>
+            大于或等于
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.Less">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.LessOrEqual">
+            <summary>
+            小于或等于
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.Contains">
+            <summary>
+            包含
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.DoesNotContain">
+            <summary>
+            未包含
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.BeginsWith">
+            <summary>
+            开头是
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.EndsWith">
+            <summary>
+            结尾是
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.IsNull">
+            <summary>
+            值为空
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.OperatorType.IsNotNull">
+            <summary>
+            值不为空
+            </summary>
+        </member>
+        <member name="T:Hongbin.Common.CombinateType">
+            <summary>
+            条件组合类型
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.CombinateType.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.CombinateType.And">
+            <summary>
+            并且
+            </summary>
+        </member>
+        <member name="F:Hongbin.Common.CombinateType.Or">
+            <summary>
+            或者
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.BdpFile.Instance">
+            <summary>
+            文件操纵实例对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.Exists(System.String)">
+            <summary>
+            返回文件是否存在
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.Delete(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.WriteAllBytes(System.String,System.Byte[])">
+            <summary>
+            保存文件
+            </summary>
+            <param name="path"></param>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.ReadAllBytes(System.String)">
+            <summary>
+            读取文件内容
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.Copy(System.String,System.String,System.Boolean)">
+            <summary>
+            拷贝文件
+            </summary>
+            <param name="sourceFile"></param>
+            <param name="destFile"></param>
+            <param name="overwrite"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.SaveAs(System.Web.HttpPostedFile,System.String)">
+            <summary>
+            保存上传文件
+            </summary>
+            <param name="file"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.SaveAs(System.Drawing.Image,System.String,System.Drawing.Imaging.ImageFormat)">
+            <summary>
+            保存图片文件
+            </summary>
+            <param name="image"></param>
+            <param name="filename"></param>
+            <param name="format"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.SaveAs(System.String,System.String)">
+            <summary>
+            保存本地文件
+            </summary>
+            <param name="sourceFilename"></param>
+            <param name="destFilename"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.SaveAs(System.Byte[],System.String)">
+            <summary>
+            保存文件
+            </summary>
+            <param name="buffer"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.CreateWriteStream(System.String,System.IO.FileMode)">
+            <summary>
+            创建写入流，即将内容写入到path中
+            </summary>
+            <param name="path"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.CreateReadStream(System.String,System.IO.FileMode)">
+            <summary>
+            创建读取流，即将path的内容读入到流中
+            </summary>
+            <param name="path"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.CreateThumbnailFile(System.String,System.Int32,System.String)">
+            <summary>
+            创建图片文件的缩略图
+            </summary>
+            <param name="picFilePath">图片文件名</param>
+            <param name="thumbnailSize">缩略尺寸</param>
+            <param name="thumbnailFilePath">缩略图文件名</param>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.DirectoryExists(System.String)">
+            <summary>
+            检查 目录是否存在
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.DirectoryCreate(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.BdpFile.DirectoryDelete(System.String,System.Boolean)">
+            <summary>
+            删除目录
+            </summary>
+            <param name="path"></param>
+            <param name="recursive"></param>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.HasSortBy(System.Web.HttpContext)">
+            <summary>
+            检查请求中是否有排序参数
+            </summary>
+            <param name="Context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.ApplySortBy``1(System.Linq.IQueryable{``0},System.Web.HttpContext,System.String)">
+            <summary>
+            在查询中附加请求中的排序参数
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="q"></param>
+            <param name="Context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.AppendSortBy(System.Web.HttpContext,System.String)">
+            <summary>
+            在ESQL语句上附加请求中的排序参数
+            </summary>
+            <param name="Context"></param>
+            <param name="esql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.HasFocuskey(System.Web.HttpContext)">
+            <summary>
+            检查请求中是否有聚焦行参数
+            </summary>
+            <param name="Context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.GridData``1(System.Web.HttpContext,System.Linq.IQueryable{``0},System.String)">
+            <summary>
+            获取一页数据
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="Context"></param>
+            <param name="q"></param>
+            <param name="keyField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.GridData``1(System.Linq.IQueryable{``0},System.Web.HttpContext,System.String)">
+            <summary>
+            获取一页数据
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="q"></param>
+            <param name="Context"></param>
+            <param name="keyField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.GridData``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            获取一页数据
+            </summary>
+        </member>
+        <member name="M:Hongbin.Common.JdpAssistHelper.GridData``1(System.Linq.IQueryable{``0},System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取包含聚焦行的一页数据
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="q"></param>
+            <param name="keyField">主键字段名</param>
+            <param name="focuskey">主键值</param>
+            <param name="limit">每页行数</param>
+            <param name="start">缺省的开始行，如果未找到聚焦行则使用该值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.EsqlEncryptor.EsqlEncrypt(System.String)">
+            <summary>
+            加密ESQL语句
+            </summary>
+            <param name="esql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.EsqlEncryptor.EsqlDecrypt(System.String)">
+            <summary>
+            解密ESQL语句
+            </summary>
+            <param name="esql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Common.ExtendSystemParamter.GetUploadFileUrl(Hongbin.Common.SystemParameters)">
+            <summary>
+            获取上传文件存放地址，缺省是“~/Files/”。
+            注意：系统部署后一定要将该地址对应的物理目录授予可读写的权限
+            </summary>
+            <param name="sysparam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Common.WebGridPageData`1">
+            <summary>
+            封装UI端表格类数据
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.WebGridPageData`1.total">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.WebGridPageData`1.rows">
+            <summary>
+            当前页数据
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.WebGridPageData`1.focuskey">
+            <summary>
+            聚焦行主键值,UI渲染数据后自动聚焦到该行
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.WebGridPageData`1.pageIndex">
+            <summary>
+            包含有聚焦行的页码
+            </summary>
+        </member>
+        <member name="P:Hongbin.Common.WebGridPageData`1.summary">
+            <summary>
+            汇总行数据，数据格式与rows的元素对应，但数据为汇总值
+            </summary>
+        </member>
+        <member name="T:Hongbin.WebJs.AjaxResult">
+            <summary>
+            前台通过Ajax调用后台过程后的返回对象
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebJs.AjaxResult.Succeed">
+            <summary>
+            标明是否成功
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebJs.AjaxResult.Message">
+            <summary>
+            信息串
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebJs.AjaxResult.ErrCode">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:Hongbin.WebJs.AjaxResult.Data">
+            <summary>
+            需返回前端的数据对象, JSON格式，数据或单对象
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.AjaxResult.Success(System.Object)">
+            <summary>
+            封装成功调用返回信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.AjaxResult.Success(System.String)">
+            <summary>
+            封装成功调用返回信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.AjaxResult.Success(System.Object,System.String)">
+            <summary>
+            封装成功调用返回信息
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.AjaxResult.Error(System.String)">
+            <summary>
+            封装错误信息
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.AjaxResult.Error(System.String,System.String,System.Object)">
+            <summary>
+            封装错误信息
+            </summary>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.WebJs.Json.BaseEntityObjectConverter">
+            <summary>
+            让BaseEntityObject对象支持json序列化
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.Json.JsonHelper.JsonDeserialize``1(System.String)">
+            <summary>
+            将指定的 JSON 字符串转换为 T 类型的对象。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input">要进行反序列化的 JSON 字符串。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.Json.JsonHelper.JsonDeserialize``1(System.IO.Stream)">
+            <summary>
+            将JSON数据流转换为 T 类型的对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="InputStream">JSON数据流</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.Json.JsonHelper.JsonToDictionary(System.String)">
+            <summary>
+            将指定的 JSON 字符串转换为 键/值 集合类型的对象。
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.Json.JsonHelper.JsonSerialize(System.Object,System.Boolean)">
+            <summary>
+            将对象序列化为JSON字符串，支持直接序列化 BaseEntityObject
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.WebJs.Omui.OmuiDataSerializer">
+            <summary>
+            Omui扩展: json数据格式转换
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.Omui.OmuiDataSerializer.OmuiSerialize``1(System.Linq.IQueryable{``0},System.String,System.Boolean)">
+            <summary>
+            序列化查询结果中的每个对象为JS对象，返回以separator分隔的字符串
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="q"></param>
+            <param name="separator">分隔符</param>
+            <param name="isArray">是否拼接为数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.Omui.OmuiDataSerializer.OmuiSerialize``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            序列化查询结果中的每个对象为JS对象，返回以逗号分隔的JSON数组字符串
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.Omui.OmuiDataSerializer.OmuiSerialize``1(System.Linq.IQueryable{``0})">
+            <summary>
+            序列化查询结果中的每个对象为JS对象，返回以逗号分隔的JSON数组字符串
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.Omui.OmuiDataSerializer.OmuiSerializeGridData``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            序列化omui表格数据
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="q"></param>
+            <param name="start"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.WebJs.Omui.OmuiDataSerializer.OmuiSerializeGridData``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            返回序列化的omui表格数据, list中为当前页数据，必须指明总行数
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="list"></param>
+            <param name="totalRowCount"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.WebJs.Omui.OmuiHelper">
+            <summary>
+            om-ui序列化扩展类
+            </summary>
+        </member>
+        <member name="M:Hongbin.WebJs.Omui.OmuiHelper.OmEmptyGrid">
+            <summary>
+            返回omGrid的空数据结构
+            </summary>
+            <param name="bus"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Data.BdpSqlQuery">
+            <summary>
+            构建ESQL查询
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.BdpSqlQuery.GetRecordCount">
+            <summary>
+            查询记录条数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpSqlQuery.GetPageData(System.Int32,System.Int32,System.String[])">
+            <summary>
+            查询分页数据
+            </summary>
+            <param name="start"></param>
+            <param name="limit"></param>
+            <param name="orderByFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpSqlQuery.GetPageData``1(System.Int32,System.Int32,System.String[])">
+            <summary>
+            查询分页数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="start"></param>
+            <param name="limit"></param>
+            <param name="orderByFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpSqlQuery.GetAllData``1">
+            <summary>
+            查询全部数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.SqlQueryExtend.CreateSqlQuery(Hongbin.Data.GeneralDataContainer,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            根据传入的ESQL语句构建查询
+            </summary>
+            <param name="gdc"></param>
+            <param name="sqlText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.SqlQueryExtend.CreateSqlQuery(Hongbin.Data.GeneralDataContainer,System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.IEnumerable{Hongbin.Common.FilterItem})">
+            <summary>
+            根据传入的ESQL语句和过滤条件构建查询
+            </summary>
+            <param name="gdc"></param>
+            <param name="sqlText"></param>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.JsonDataStatistic.FillData(Hongbin.Data.DataStatisticResult,System.Data.DataTable)">
+            <summary>
+            将数据填充到内存表
+            </summary>
+            <param name="dsr"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:Hongbin.Data.JsonDataStatistic.FillData(Hongbin.Data.DataStatisticResult,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            将数据填充到字典清单中
+            </summary>
+            <param name="dsr"></param>
+            <param name="dataRows"></param>
+        </member>
+        <member name="M:Hongbin.Data.JsonDataStatistic.ToGridData(Hongbin.Data.DataStatisticResult)">
+            <summary>
+            生成表格对象，格式：
+            total   记录数
+            rows    数据行集
+            columns 数据对象属性定义集
+            </summary>
+            <param name="dsr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hongbin.Data.DssData">
+            <summary>
+            统计结果数据格式，包括记录数、数据行集、数据对象属性定义集
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.DssData.total">
+            <summary>
+            数据总行数
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.DssData.rows">
+            <summary>
+            数据行集合
+            </summary>
+        </member>
+        <member name="P:Hongbin.Data.DssData.columns">
+            <summary>
+            数据对象列集合
+            </summary>
+        </member>
+        <member name="T:Hongbin.Data.DssColumnInfo">
+            <summary>
+            统计结果数据对象列描述格式
+            </summary>
+        </member>
+        <member name="M:Hongbin.Data.BdpBaseData.OrgPrivilege.GetSubCompanyIds(System.Linq.IQueryable{Hongbin.Data.BdpBaseData.BdpOrgCompany},System.String,Hongbin.Security.UserPrivilegeInfo,System.Boolean)">
+            <summary>
+            获取可访问的单位ID
+            </summary>
+            <param name="ds"></param>
+            <param name="startKey">开始单位ID</param>
+            <param name="UserInfo">授权信息，为null表示不限</param>
+            <param name="includeChildren">是否包括下级</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hongbin.Data.BdpBaseData.OrgPrivilege.GetSubDeptIds(System.Linq.IQueryable{Hongbin.Data.BdpBaseData.BdpOrgDepartment},System.String,Hongbin.Security.UserPrivilegeInfo,System.Boolean)">
+            <summary>
+            获取可访问的部门ID
+            </summary>
+            <param name="ds"></param>
+            <param name="startKey">开始部门ID</param>
+            <param name="UserInfo">授权信息，为null表示不限</param>
+            <param name="includeChildren">是否包括下级</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

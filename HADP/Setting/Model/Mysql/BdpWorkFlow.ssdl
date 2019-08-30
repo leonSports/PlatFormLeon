@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Hongbin.WorkFlow.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0">
+  <EntityContainer Name="BdpWorkFlowEntitiesStoreContainer">
+    <EntitySet Name="BDP_WF_ACTION_DETAILs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_ACTION_DETAIL" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_ACTION_DETAIL" />
+    <EntitySet Name="BDP_WF_ACTION_MASTERs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_ACTION_MASTER" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_ACTION_MASTER" />
+    <EntitySet Name="BDP_WF_ASSIGNs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_ASSIGN" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_ASSIGN" />
+    <EntitySet Name="BDP_WF_AUDIT_PERSONs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_AUDIT_PERSON" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_AUDIT_PERSON" />
+    <EntitySet Name="BDP_WF_AUDIT_STATEs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_AUDIT_STATE" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_AUDIT_STATE" />
+    <EntitySet Name="BDP_WF_BILL_KINDs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_BILL_KIND" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_BILL_KIND" />
+    <EntitySet Name="BDP_WF_BUSINESS_AGENTs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_BUSINESS_AGENT" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_BUSINESS_AGENT" />
+    <EntitySet Name="BDP_WF_FLOWs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_FLOW" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_FLOW" />
+    <EntitySet Name="BDP_WF_FLOW_CATEGORYs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_FLOW_CATEGORY" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_FLOW_CATEGORY" />
+    <EntitySet Name="BDP_WF_FLOW_NODEs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_FLOW_NODE" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_FLOW_NODE" />
+    <EntitySet Name="BDP_WF_NOTIFY_PERSONs" EntityType="Hongbin.WorkFlow.Model.Store.BDP_WF_NOTIFY_PERSON" store:Type="Tables" Schema="ISIGN_DATA" Table="BDP_WF_NOTIFY_PERSON" />
+  </EntityContainer>
+  <EntityType Name="BDP_WF_ACTION_DETAIL">
+    <Key>
+      <PropertyRef Name="DETAIL_ID" />
+    </Key>
+    <Property Name="DETAIL_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="ACTION_ID" Type="varchar" MaxLength="50" />
+    <Property Name="NODE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="NODE_ORDER" Type="bigint" />
+    <Property Name="HINT_MESSAGE" Type="varchar" MaxLength="1000" />
+    <Property Name="AUDIT_PERSON" Type="varchar" MaxLength="50" />
+    <Property Name="AUDIT_DATE" Type="datetime" />
+    <Property Name="AUDIT_OPINION" Type="varchar" MaxLength="500" />
+    <Property Name="IS_PASSED" Type="boolean" />
+    <Property Name="IS_END" Type="boolean" />
+    <Property Name="IS_COUNTERSIGN" Type="boolean" />
+    <Property Name="IS_DONE" Type="boolean" />
+    <Property Name="SENDER_DETAIL_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_ACTION_MASTER">
+    <Key>
+      <PropertyRef Name="ACTION_ID" />
+    </Key>
+    <Property Name="ACTION_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="ACTION_NAME" Type="varchar" MaxLength="1000" />
+    <Property Name="FLOW_ID" Type="varchar" MaxLength="50" />
+    <Property Name="CURRENT_NODE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="AUDIT_OBJECT_KEY" Type="varchar" MaxLength="50" />
+    <Property Name="AUDIT_OBJECT_KIND_ID" Type="varchar" MaxLength="50" />
+    <Property Name="AUDIT_STATUS" Type="varchar" MaxLength="50" />
+    <Property Name="END_FLAG" Type="boolean" />
+    <Property Name="SUBMIT_PERSON" Type="varchar" MaxLength="50" />
+    <Property Name="SUBMIT_DATE" Type="datetime" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_ASSIGN">
+    <Key>
+      <PropertyRef Name="ASSIGN_ID" />
+    </Key>
+    <Property Name="ASSIGN_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="BILL_KIND_ID" Type="varchar" MaxLength="50" />
+    <Property Name="APPLIANCE_SIGN" Type="varchar" MaxLength="50" />
+    <Property Name="APPLIANCE_EXP" Type="varchar" MaxLength="500" />
+    <Property Name="FLOW_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_AUDIT_PERSON">
+    <Key>
+      <PropertyRef Name="AUDIT_PERSON_ID" />
+    </Key>
+    <Property Name="AUDIT_PERSON_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="NODE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="AUDITOR_CONDITION" Type="varchar" MaxLength="500" />
+    <Property Name="AUDITOR_KIND" Type="int" />
+    <Property Name="AUDITOR_VALUE" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_AUDIT_STATE">
+    <Key>
+      <PropertyRef Name="STATE_ID" />
+    </Key>
+    <Property Name="STATE_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="STATE_NAME" Type="varchar" MaxLength="30" />
+    <Property Name="STATE_CODE" Type="int" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_BILL_KIND">
+    <Key>
+      <PropertyRef Name="BILL_KIND_ID" />
+    </Key>
+    <Property Name="BILL_KIND_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="BILL_KIND_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="BILL_TABLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="FLD_KEY" Type="varchar" MaxLength="50" />
+    <Property Name="FLD_LABEL" Type="varchar" MaxLength="50" />
+    <Property Name="FLD_AUDIT_PERSON" Type="varchar" MaxLength="50" />
+    <Property Name="FLD_AUDIT_DATE" Type="varchar" MaxLength="50" />
+    <Property Name="FLD_AUDIT_OPINION" Type="varchar" MaxLength="50" />
+    <Property Name="FLD_AUDIT_STATE" Type="varchar" MaxLength="50" />
+    <Property Name="AUDIT_URL" Type="varchar" MaxLength="200" />
+    <Property Name="VIEW_URL" Type="varchar" MaxLength="200" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_BUSINESS_AGENT">
+    <Key>
+      <PropertyRef Name="AGENT_ID" />
+    </Key>
+    <Property Name="AGENT_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="AGENT_NAME" Type="varchar" MaxLength="100" />
+    <Property Name="USER_ID" Type="varchar" MaxLength="50" />
+    <Property Name="BIZ_SIGN" Type="varchar" MaxLength="50" />
+    <Property Name="AGENT_USER_ID" Type="varchar" MaxLength="50" />
+    <Property Name="ENABLE_FLAG" Type="boolean" />
+    <Property Name="START_DATE" Type="datetime" />
+    <Property Name="END_DATE" Type="datetime" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_FLOW">
+    <Key>
+      <PropertyRef Name="FLOW_ID" />
+    </Key>
+    <Property Name="FLOW_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="FLOW_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="CATEGORY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="BACK_TO_PREVENIENT" Type="boolean" />
+    <Property Name="ALLOW_EDIT" Type="boolean" />
+    <Property Name="ALLOW_SELECT_NODE" Type="boolean" />
+    <Property Name="PRESERVE_TRACES" Type="boolean" />
+    <Property Name="ENABLE_FLAG" Type="boolean" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="1000" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_FLOW_CATEGORY">
+    <Key>
+      <PropertyRef Name="CATEGORY_ID" />
+    </Key>
+    <Property Name="CATEGORY_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" />
+    <Property Name="CODE" Type="varchar" MaxLength="10" />
+    <Property Name="NOTES" Type="varchar" MaxLength="100" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_FLOW_NODE">
+    <Key>
+      <PropertyRef Name="NODE_ID" />
+    </Key>
+    <Property Name="NODE_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="FLOW_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="NODE_ORDER" Nullable="false" Type="bigint" />
+    <Property Name="NODE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="ALLOW_EDIT" Type="boolean" />
+    <Property Name="AUDIT_MODE" Type="int" />
+    <Property Name="ALLOW_SELECT_AUDITOR" Type="boolean" />
+    <Property Name="ALLOW_TERMINATE" Type="boolean" />
+    <Property Name="NEXT_NODE_ORDER" Type="bigint" />
+    <Property Name="NEXT_NODE_EXP" Type="varchar" MaxLength="500" />
+    <Property Name="NOTIFY_ATTN" Type="boolean" />
+    <Property Name="NOTIFY_MODE" Type="int" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+  <EntityType Name="BDP_WF_NOTIFY_PERSON">
+    <Key>
+      <PropertyRef Name="NOTIFY_PERSON_ID" />
+    </Key>
+    <Property Name="NOTIFY_PERSON_ID" Nullable="false" Type="varchar" MaxLength="50" />
+    <Property Name="NODE_ID" Type="varchar" MaxLength="50" />
+    <Property Name="NOTIFY_CONDITION" Type="varchar" MaxLength="500" />
+    <Property Name="NOTIFY_KIND" Type="int" />
+    <Property Name="NOTIFY_VALUE" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_COMPANY_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATOR_ID" Type="varchar" MaxLength="50" />
+    <Property Name="INNER_CREATE_TIME" Type="datetime" />
+    <Property Name="INNER_DELETE_FLAG" Type="boolean" />
+  </EntityType>
+</Schema>
