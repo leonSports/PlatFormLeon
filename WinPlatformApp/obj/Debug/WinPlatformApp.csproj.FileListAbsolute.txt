@@ -66,3 +66,4 @@ D:\myself\work\平台发布20190816\PlatFormLeon\WinPlatformApp\obj\Debug\WinPla
 D:\myself\work\平台发布20190816\PlatFormLeon\WinPlatformApp\obj\Debug\WinPlatformApp.Work.Weight.XucFocusWeight.resources
 D:\myself\work\平台发布20190816\PlatFormLeon\WinPlatformApp\obj\Debug\WinPlatformApp.Work.Weight.XtraForm1.resources
 D:\myself\work\平台发布20190816\PlatFormLeon\WinPlatformApp\obj\Debug\WinPlatformApp.FormAbout.resources
+D:\myself\work\平台发布20190816\PlatFormLeon\WinPlatformApp\obj\Debug\WinPlatformApp.exe.licenses

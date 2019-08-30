@@ -39,6 +39,8 @@
             this.barBtnAbout = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnReLoadCache = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnFunList = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnUpdatePassword = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -56,8 +58,6 @@
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.barButtonGroup2 = new DevExpress.XtraBars.BarButtonGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barBtnUpdatePassword = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
@@ -85,7 +85,7 @@
             this.barButtonItem1,
             this.barBtnUpdatePassword});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 66;
+            this.ribbonControl.MaxItemId = 67;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -121,6 +121,11 @@
             this.barButtonGroup1.Id = 49;
             this.barButtonGroup1.Name = "barButtonGroup1";
             // 
+            // barButtonGroup3
+            // 
+            this.barButtonGroup3.Id = 66;
+            this.barButtonGroup3.Name = "barButtonGroup3";
+            // 
             // barBtnAbout
             // 
             this.barBtnAbout.Caption = "关于";
@@ -140,9 +145,22 @@
             // 
             this.barBtnFunList.Caption = "功能列表";
             this.barBtnFunList.Id = 60;
-            this.barBtnFunList.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtn.ImageOptions.SvgImage")));
+            this.barBtnFunList.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnFunList.ImageOptions.SvgImage")));
             this.barBtnFunList.Name = "barBtnFunList";
             this.barBtnFunList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnFunList_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 63;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barBtnUpdatePassword
+            // 
+            this.barBtnUpdatePassword.Caption = "修改密码";
+            this.barBtnUpdatePassword.Id = 65;
+            this.barBtnUpdatePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnUpdatePassword.ImageOptions.SvgImage")));
+            this.barBtnUpdatePassword.Name = "barBtnUpdatePassword";
             // 
             // ribbonPage1
             // 
@@ -276,19 +294,6 @@
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "ribbonPage4";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 63;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barBtnUpdatePassword
-            // 
-            this.barBtnUpdatePassword.Caption = "修改密码";
-            this.barBtnUpdatePassword.Id = 65;
-            this.barBtnUpdatePassword.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barBtnUpdatePassword.ImageOptions.SvgImage")));
-            this.barBtnUpdatePassword.Name = "barBtnUpdatePassword";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -303,6 +308,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
