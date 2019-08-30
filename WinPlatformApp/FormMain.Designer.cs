@@ -237,6 +237,8 @@
             this.dockPanel.Controls.Add(this.dockPanel_Container);
             this.dockPanel.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel.ID = new System.Guid("a045df26-1503-4d9a-99c1-a531310af22b");
+            this.dockPanel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("dockPanel.ImageOptions.SvgImage")));
+            this.dockPanel.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.dockPanel.Location = new System.Drawing.Point(0, 147);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.OriginalSize = new System.Drawing.Size(200, 200);

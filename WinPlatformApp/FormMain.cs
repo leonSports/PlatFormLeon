@@ -4,6 +4,7 @@ using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using FormFactory;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -56,16 +57,19 @@ namespace WinPlatformApp
         {
             //1、根据权限获取节点名称,并绑定左侧树
             //2、根据节点名称从容器中获取树对象
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Images\\devexpress\\";
 
             AccordionControlElement accordionControlElement = new AccordionControlElement();
             accordionControlElement.Text = "系统参数";
             accordionControlElement.Style = ElementStyle.Group;
             accordionControl.Elements.Add(accordionControlElement);
+            accordionControlElement.Image= Image.FromFile(path + "customizegrid_32x32.png");
 
             AccordionControlElement childElement = new AccordionControlElement();
             childElement.Text = "系统参数";
             childElement.Name = "XucSystemSet";
             childElement.Style = ElementStyle.Item;
+            childElement.Image= Image.FromFile(path + "scripts_16x16.png");
             //TODO 模块图标
             accordionControlElement.Elements.Add(childElement);
 
@@ -86,11 +90,14 @@ namespace WinPlatformApp
             accordionControlElement1.Text = "称重计量";
             accordionControlElement1.Style = ElementStyle.Group;
             accordionControl.Elements.Add(accordionControlElement1);
+            accordionControlElement1.Image= Image.FromFile(path + "addnewdatasource_32x32.png");
 
             AccordionControlElement childElement1 = new AccordionControlElement();
             childElement1.Text = "集中计量";
             childElement1.Name = "XucFocusWeight";
             childElement1.Style = ElementStyle.Item;
+            
+            childElement1.Image = Image.FromFile(path + "addheader_16x16.png");
             //TODO 模块图标
             //childElement1.Image = "";
             accordionControlElement1.Elements.Add(childElement1);
@@ -102,24 +109,13 @@ namespace WinPlatformApp
                 pagesModel.xtraUserControl = FromsObject.formsDic["XucFocusWeight"];
                 listUserControl.Add(pagesModel);
             }
-
-            AccordionControlElement childElement2 = new AccordionControlElement();
-            childElement2.Text = "集中计量222";
-            childElement2.Name = "XtraForm1";
-            childElement2.Style = ElementStyle.Item;
-            //TODO 模块图标
-            //childElement1.Image = "";
-            accordionControlElement1.Elements.Add(childElement2);
-            if (FromsObject.formsDic.ContainsKey("XtraForm1"))
-            {
-                pagesModel = new PagesModel();
-                pagesModel.PageName = "XtraForm1";
-                pagesModel.PageText = "集中计量222";
-                pagesModel.xtraUserControl = FromsObject.formsDic["XtraForm1"];
-                listUserControl.Add(pagesModel);
-            }
             #endregion
 
+        }
+
+        private void GetSystemImage()
+        {
+           
         }
 
         /// <summary>

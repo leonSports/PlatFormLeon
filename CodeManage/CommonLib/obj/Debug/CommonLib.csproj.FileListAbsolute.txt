@@ -1,0 +1,6 @@
+D:\myself\work\平台发布20190816\PlatFormLeon\CodeManage\CommonLib\obj\Debug\CommonLib.csprojAssemblyReference.cache
+D:\myself\work\平台发布20190816\PlatFormLeon\CodeManage\CommonLib\obj\Debug\CommonLib.csproj.CoreCompileInputs.cache
+D:\myself\work\平台发布20190816\PlatFormLeon\CodeManage\CommonLib\bin\Debug\CommonLib.dll
+D:\myself\work\平台发布20190816\PlatFormLeon\CodeManage\CommonLib\bin\Debug\CommonLib.pdb
+D:\myself\work\平台发布20190816\PlatFormLeon\CodeManage\CommonLib\obj\Debug\CommonLib.dll
+D:\myself\work\平台发布20190816\PlatFormLeon\CodeManage\CommonLib\obj\Debug\CommonLib.pdb
